@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <include layout="@layout/title_bar" />
+
+    <TextView
+        android:id="@+id/result"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:textColor="@color/black"
+        android:visibility="gone"/>
+
+    <view
+        android:id="@+id/viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/zero_dip"
+        android:layout_weight="1.0"
+        class="iori.hdoctor.view.MyViewPager" />
+
+    <RadioGroup
+        android:id="@+id/main_radio"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/bottom_bar_h"
+        android:layout_gravity="bottom"
+        android:background="@color/bottom_bar_bg"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingTop="@dimen/two_dip" >
+
+        <RadioButton
+            android:id="@+id/index_main"
+            style="@style/main_tab_bottom"
+            android:drawableTop="@drawable/tab_selector1"
+            android:drawablePadding="@dimen/bottom_padding"
+            android:text="@string/doctor_menu_gzt"
+            android:textColor="@drawable/textcolor_selected"/>
+
+        <RadioButton
+            android:id="@+id/shopping_main"
+            style="@style/main_tab_bottom"
+            android:drawableTop="@drawable/tab_selector2"
+            android:drawablePadding="@dimen/bottom_padding"
+            android:text="@string/doctor_menu_qz"
+            android:textColor="@drawable/textcolor_selected"/>
+
+        <RadioButton
+            android:id="@+id/personal_main"
+            style="@style/main_tab_bottom"
+            android:drawableTop="@drawable/tab_selector3"
+            android:drawablePadding="@dimen/bottom_padding"
+            android:text="@string/doctor_menu_wo"
+            android:textColor="@drawable/textcolor_selected"/>
+    </RadioGroup>
+
+</LinearLayout>

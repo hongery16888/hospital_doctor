@@ -8,4 +8,140 @@
     <string name="btn_shopping">中间</string>
     <string name="btn_activity">无名</string>
     <string name="btn_mine">我的</string>
+
+    <!--登录-->
+    <string name="doctor_login_title_main">医生登陆</string>
+    <string name="patient_login_title_main">普通登录</string>
+    <string name="doctor_login_type">医生入口</string>
+    <string name="patient_login_type">用户入口</string>
+    <string name="doctor_register">注册成为医生</string>
+    <string name="patient_register">注册成为新用户</string>
+    <string name="forget_password">找回密码</string>
+    <string name="phone_area">中国大陆+86</string>
+    <string name="phone_hint">请输入手机号码</string>
+    <string name="password_hint">请输入密码</string>
+    <string name="login">登录</string>
+    
+    <!-- 医生注册 -->
+    <string name="doctor_register_title_main">医生注册</string>
+    <string name="upload_head">上传头像</string>
+    <string name="doctor_username">真实姓名</string>
+    <string name="doctor_hospital">所属医院</string>
+    <string name="doctor_subject">所属科室</string>
+    <string name="doctor_work_phone">工作电话</string>
+    <string name="next_step">下一步</string>
+    <string name="doctor_register_name">账号</string>
+    <string name="doctor_register_password">密码</string>
+    <string name="doctor_register_check">验证</string>
+    <string name="doctor_register_get_verify">获取验证码</string>
+    <string name="register">注册</string>
+    <string name="register_phone_hint">请输入密码</string>
+    <string name="register_phone_hint_again">请再次输入密码</string>
+    <string name="register_credentials">身份证</string>
+    <string name="register_credentials_prompt">请上传身份证下面照片</string>
+    <string name="register_certificate">医生职业资格证</string>
+    <string name="register_certificate_prompt">请上传医生职业资格证</string>
+    <string name="register_work_card">医院工作证</string>
+    <string name="register_work_card_prompt">请上传能以证明所属医院职称的（工牌、名片、工作证明）照片</string>
+    <string name="register_check_prompt">您的信息不会被公开，公用于审核使用</string>
+    <string name="register_complete">提交审核</string>
+
+    <string name="doctor_username_ex">张德华</string>
+    <string name="doctor_hospital_ex">爱德华医院</string>
+    <string name="doctor_subject_ex">妇产科</string>
+    <string name="doctor_work_phone_ex">021－60323030</string>
+
+    <!-- 工作台 -->
+    <string name="doctor_title_main">工作台</string>
+    <string name="doctor_menu_gzt">工作台</string>
+    <string name="doctor_menu_qz">圈子</string>
+    <string name="doctor_menu_wo">我</string>
+    <string name="doctor_today_visitor">今日访客</string>
+    <string name="doctor_today_patient">今日患者</string>
+    <string name="doctor_today_visitor_ex">120</string>
+    <string name="doctor_today_patient_ex">29</string>
+    <string name="doctor_phone_consult">电话咨询</string>
+    <string name="doctor_online_consult">在线咨询</string>
+    <string name="doctor_reserve_consult">预约咨询</string>
+    <string name="doctor_bl_center">病例中心</string>
+    <string name="doctor_yy_center">预约中心</string>
+    <string name="doctor_cz_setting">出诊设置</string>
+    <string name="doctor_fw_manager">服务管理</string>
+
+    <!-- 病例管理 -->
+    <string name="doctor_blgl_title_main">病例管理</string>
+    <string name="all_order">全部</string>
+    <string name="delay_order">待处理</string>
+    <string name="complete_order">已处理</string>
+    <string name="blgl_item_name">大布丁</string>
+    <string name="blgl_item_sex">男</string>
+    <string name="blgl_item_age">53岁</string>
+    <string name="blgl_item_time">9分钟前</string>
+    <string name="blgl_item_illness">疾病：</string>
+    <string name="blgl_item_description">描述：</string>
+    <string name="blgl_item_reserve_type">类型：预约咨询</string>
+    <string name="blgl_item_reserve_price">15元</string>
+    <string name="blgl_item_pay">已支付</string>
+    <string name="blgl_item_do">处理</string>
+    <string name="blgl_info_data">查看资料</string>
+    <string name="blgl_info_reply">确认并回复</string>
+
+    <string name="blgl_item_illness_ex">前列腺炎</string>
+    <string name="blgl_item_description_ex">肠胃不适，虚汗频发，多梦失眠！</string>
+    
+    <!-- 预约管理 -->
+    <string name="doctor_yygl_title_main">预约中心</string>
+    <string name="yygl_bar_all_order">全部</string>
+    <string name="yygl_bar_add">今日新增</string>
+    <string name="yygl_bar_arrive">今日到诊</string>
+    <string name="yygl_item_time">2015-07-15</string>
+    <string name="yygl_item_hour">15:00</string>
+    <string name="yygl_item_confirm">确认</string>
+
+    <!-- 出诊管理 -->
+    <string name="doctor_czgl_title_main">出诊设置</string>
+    <string name="doctor_czgl_time">出诊时间</string>
+    <string name="doctor_czgl_time_ex">周一，周三，周五</string>
+    <string name="doctor_czgl_yy_count">最大预约量</string>
+    <string name="doctor_czgl_yy_count_ex">30人</string>
+    <string name="doctor_cagl_stop_diagnose">暂停接诊</string>
+    
+    <!-- 服务管理 -->
+    <string name="doctor_ffgl_title_main">服务管理</string>
+    <string name="doctor_ffgl_zxzx">在线咨询</string>
+    <string name="doctor_ffgl_dhzx">电话咨询</string>
+    <string name="doctor_ffgl_yyzx">预约咨询</string>
+    <string name="doctor_ffgl_add">已添加</string>
+    <string name="doctor_ffgl_no_add">未添加</string>
+    <string name="doctor_ffgl_info_price">价格</string>
+    <string name="doctor_ffgl_info_price_ex">20</string>
+    <string name="doctor_ffgl_info_unit">元/次</string>
+    <string name="doctor_ffgl_info_save">保存</string>
+
+    <!-- 个人中心 -->
+    <string name="doctor_personal_title_main">个人中心</string>
+    <string name="doctor_personal_name">盗版哥</string>
+    <string name="doctor_personal_income">累计收入</string>
+    <string name="doctor_personal_income_ex">2000元</string>
+    <string name="doctor_personal_zhzx">账户中心</string>
+    <string name="doctor_personal_szzx">设置中心</string>
+    <string name="doctor_personal_wdzl">我的资料</string>
+    <string name="doctor_personal_info_head">头像</string>
+    <string name="doctor_personal_info_name">姓名</string>
+    <string name="doctor_personal_info_intro">简介</string>
+    <string name="doctor_personal_info_skilled">擅长</string>
+    <string name="doctor_personal_info_hospital">医院</string>
+    <string name="doctor_personal_info_subject">科室</string>
+    <string name="doctor_personal_info_job">职称</string>
+    <string name="doctor_personal_info_certificate">身份证</string>
+    <string name="doctor_personal_info_email">邮箱</string>
+
+    <string name="doctor_personal_info_name_ex">盗版哥</string>
+    <string name="doctor_personal_info_intro_ex">个人的简介</string>
+    <string name="doctor_personal_info_skilled_ex">外科</string>
+    <string name="doctor_personal_info_hospital_ex">人民医院</string>
+    <string name="doctor_personal_info_subject_ex">急诊室</string>
+    <string name="doctor_personal_info_job_ex">主治医生</string>
+
+
 </resources>

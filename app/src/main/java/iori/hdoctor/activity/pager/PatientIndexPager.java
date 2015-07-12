@@ -10,25 +10,35 @@ import iori.hdoctor.activity.base.BasePager;
 /**
  * Created by Administrator on 2015/7/10.
  */
-public class MinePager extends BasePager{
+public class PatientIndexPager extends BasePager{
 
     private View view;
     private Context context;
 
-    public MinePager(Context ct) {
+    private boolean isInit = false;
+
+    public PatientIndexPager(Context ct) {
         super(ct);
         context = ct;
     }
 
     @Override
     public View initView(LayoutInflater inflater) {
-        view = inflater.inflate(R.layout.pager_mine, null);
+        view = inflater.inflate(R.layout.doctor_pager_gzt, null);
         return view;
     }
 
     @Override
     public void initData() {
 
+    }
+
+    @Override
+    public void onResume() {
+        if (!isInit) {
+            initData();
+            isInit = !isInit;
+        }
     }
 
 }

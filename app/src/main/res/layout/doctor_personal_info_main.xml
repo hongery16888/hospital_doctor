@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/global_bg">
+
+    <include layout="@layout/title_bar" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout style="@style/LayerMainMyItem"
+                android:paddingTop="@dimen/global_padding"
+                android:paddingBottom="@dimen/global_padding">
+                <ImageView style="@style/ImageMainMyItemNext"
+                    android:src="@drawable/img_avater_grzx" />
+
+                <TextView style="@style/TxtMainMyItem"
+                    android:text="@string/doctor_personal_info_head"
+                    android:textColor="@color/grey_deep"
+                    android:gravity="right"
+                    android:paddingRight="@dimen/global_padding"/>
+
+                <ImageView style="@style/ImageMainMyItemNext" />
+            </LinearLayout>
+
+            <View style="@style/divider_line_horizontal" />
+
+            <LinearLayout style="@style/LayerMainMyItem">
+                <TextView style="@style/TxtMainMyItem"
+                    android:text="@string/doctor_personal_info_name"
+                    android:textColor="@color/global_title_color"/>
+
+                <TextView style="@style/TxtMainMyItem"
+                    android:text="@string/doctor_personal_info_name_ex"
+                    android:gravity="right"
+                    android:textColor="@color/grey_deep"
+                    android:paddingRight="@dimen/global_padding"/>
+
+                <ImageView style="@style/ImageMainMyItemNext" />
+            </LinearLayout>
+
+            <View style="@style/divider_line_horizontal" />
+
+            <LinearLayout style="@style/LayerMainMyItem">
+                <TextView style="@style/TxtMainMyItem"
+                    android:text="@string/doctor_personal_info_intro"
+                    android:textColor="@color/global_title_color"/>
+
+                <TextView style="@style/TxtMainMyItem"
+                    android:text="@string/doctor_personal_info_intro_ex"
+                    android:gravity="right"
+                    android:textColor="@color/grey_deep"
+                    android:paddingRight="@dimen/global_padding"/>
+
+                <ImageView style="@style/ImageMainMyItemNext" />
+            </LinearLayout>
+
+            <View style="@style/divider_line_horizontal" />
+
+            <LinearLayout style="@style/LayerMainMyItem">
+                <TextView style="@style/TxtMainMyItem"
+                    android:text="@string/doctor_personal_info_skilled"
+                    android:textColor="@color/global_title_color"/>
+
+                <TextView style="@style/TxtMainMyItem"
+                    android:text="@string/doctor_personal_info_skilled_ex"
+                    android:gravity="right"
+                    android:textColor="@color/grey_deep"
+                    android:paddingRight="@dimen/global_padding"/>
+
+                <ImageView style="@style/ImageMainMyItemNext" />
+            </LinearLayout>
+
+            <View style="@style/divider_line_horizontal" />
+
+            <LinearLayout style="@style/LayerMainMyItem">
+                <TextView style="@style/TxtMainMyItem"
+                    android:text="@string/doctor_personal_info_hospital"
+                    android:textColor="@color/global_title_color"/>
+
+                <TextView style="@style/TxtMainMyItem"
+                    android:text="@string/doctor_personal_info_hospital_ex"
+                    android:gravity="right"
+                    android:textColor="@color/grey_deep"
+                    android:paddingRight="@dimen/global_padding"/>
+
+                <ImageView style="@style/ImageMainMyItemNext" />
+            </LinearLayout>
+
+            <View style="@style/divider_line_horizontal" />
+
+            <LinearLayout style="@style/LayerMainMyItem">
+                <TextView style="@style/TxtMainMyItem"
+                    android:text="@string/doctor_personal_info_subject"
+                    android:textColor="@color/global_title_color"/>
+
+                <TextView style="@style/TxtMainMyItem"
+                    android:text="@string/doctor_personal_info_subject_ex"
+                    android:gravity="right"
+                    android:textColor="@color/grey_deep"
+                    android:paddingRight="@dimen/global_padding"/>
+
+                <ImageView style="@style/ImageMainMyItemNext" />
+            </LinearLayout>
+
+            <View style="@style/divider_line_horizontal" />
+
+            <LinearLayout style="@style/LayerMainMyItem">
+                <TextView style="@style/TxtMainMyItem"
+                    android:text="@string/doctor_personal_info_job"
+                    android:textColor="@color/global_title_color"/>
+
+                <TextView style="@style/TxtMainMyItem"
+                    android:text="@string/doctor_personal_info_job_ex"
+                    android:gravity="right"
+                    android:textColor="@color/grey_deep"
+                    android:paddingRight="@dimen/global_padding"/>
+
+                <ImageView style="@style/ImageMainMyItemNext" />
+            </LinearLayout>
+
+            <View style="@style/divider_line_horizontal" />
+
+            <View style="@style/divider_line_horizontal"
+                android:layout_marginTop="@dimen/global_line_padding"/>
+
+            <LinearLayout style="@style/LayerMainMyItem">
+                <TextView style="@style/TxtMainMyItem"
+                    android:text="@string/doctor_personal_info_certificate"
+                    android:textColor="@color/global_title_color"/>
+
+                <ImageView style="@style/ImageMainMyItemNext" />
+            </LinearLayout>
+
+            <View style="@style/divider_line_horizontal" />
+
+            <LinearLayout style="@style/LayerMainMyItem">
+                <TextView style="@style/TxtMainMyItem"
+                    android:text="@string/doctor_personal_info_email"
+                    android:textColor="@color/global_title_color"/>
+
+                <ImageView style="@style/ImageMainMyItemNext" />
+            </LinearLayout>
+
+            <View style="@style/divider_line_horizontal" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

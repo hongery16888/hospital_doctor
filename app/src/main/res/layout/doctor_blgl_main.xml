@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/global_bg">
+
+    <include layout="@layout/title_bar" />
+
+    <include layout="@layout/doctor_blgl_status_bar" />
+
+    <com.handmark.pulltorefresh.library.PullToRefreshListView
+        android:id="@+id/blgl_listview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:cacheColorHint="@android:color/transparent"
+        android:layout_marginTop="@dimen/global_line_padding"
+        android:divider="@color/global_bg"
+        android:layout_gravity="start"
+        android:choiceMode="singleChoice"
+        android:dividerHeight="@dimen/global_line_padding"
+        android:background="@color/white"/>
+
+</LinearLayout>

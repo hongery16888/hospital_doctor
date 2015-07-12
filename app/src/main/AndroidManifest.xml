@@ -1,10 +1,11 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android" package="iori.hdoctor">
 
     <application android:allowBackup="true" android:label="@string/app_name"
-        android:icon="@drawable/ic_launcher" android:theme="@style/AppTheme">
+        android:icon="@drawable/ic_launcher"
+        android:theme="@android:style/Theme.NoTitleBar">
 
         <activity
-            android:name=".activity.MainActivity"
+            android:name=".activity.DoctorLoginActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -12,6 +13,19 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity android:name=".activity.DoctorMainActivity" />
+        <activity android:name=".activity.DoctorRegisterActivity" />
+        <activity android:name=".activity.DoctorRegisterPhoneActivity" />
+        <activity android:name=".activity.DoctorRegisterCompleteActivity" />
+        <activity android:name=".activity.DoctorBLGLActivity" />
+        <activity android:name=".activity.DoctorBLGLInfoActivity" />
+        <activity android:name=".activity.DoctorYYZXActivity" />
+        <activity android:name=".activity.DoctorYYZXInfoActivity" />
+        <activity android:name=".activity.DoctorCZSZActivity" />
+        <activity android:name=".activity.DoctorFFGLActivity" />
+        <activity android:name=".activity.DoctorFFGLInfoActivity" />
+        <activity android:name=".activity.DoctorGRZXActivity" />
 
     </application>
 

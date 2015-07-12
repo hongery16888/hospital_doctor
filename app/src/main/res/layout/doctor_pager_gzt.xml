@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/global_bg">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@color/doctor_gzt_top_bg">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:paddingTop="@dimen/global_btn_padding"
+            android:paddingBottom="@dimen/global_btn_padding">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/doctor_today_visitor_ex"
+                android:textColor="@color/white"
+                android:textSize="@dimen/doctor_visitor_count_size"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/doctor_today_visitor"
+                android:textColor="@color/doctor_gzt_visitor"
+                android:paddingTop="@dimen/global_padding"
+                android:textSize="@dimen/global_title_size"/>
+        </LinearLayout>
+
+        <View style="@style/divider_line_vertical"
+            android:layout_marginTop="@dimen/global_btn_padding"
+            android:layout_marginBottom="@dimen/global_btn_padding"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:paddingTop="@dimen/global_btn_padding"
+                android:paddingBottom="@dimen/global_btn_padding">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/doctor_today_visitor_ex"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/doctor_visitor_count_size"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/doctor_today_visitor"
+                    android:textColor="@color/doctor_gzt_visitor"
+                    android:paddingTop="@dimen/global_padding"
+                    android:textSize="@dimen/global_title_size"/>
+            </LinearLayout>
+
+            <ImageView style="@style/ImageMainMyItemNext"
+                android:layout_gravity="center_vertical"
+                android:layout_marginRight="@dimen/global_line_padding"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout style="@style/LayerMainMyItem">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:paddingTop="@dimen/global_line_padding"
+            android:paddingBottom="@dimen/global_line_padding">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/doctor_phone_consult"
+                android:textColor="@color/global_title_color"
+                android:drawableTop="@drawable/btn_dhzx"
+                android:drawablePadding="@dimen/five_dip"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:paddingTop="@dimen/global_line_padding"
+            android:paddingBottom="@dimen/global_line_padding">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/doctor_online_consult"
+                android:textColor="@color/global_title_color"
+                android:drawableTop="@drawable/btn_zxzx"
+                android:drawablePadding="@dimen/five_dip"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:paddingTop="@dimen/global_line_padding"
+            android:paddingBottom="@dimen/global_line_padding">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/doctor_reserve_consult"
+                android:textColor="@color/global_title_color"
+                android:drawableTop="@drawable/btn_yyzx"
+                android:drawablePadding="@dimen/five_dip"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <View style="@style/divider_line_horizontal" />
+
+    <View style="@style/divider_line_horizontal"
+        android:layout_marginTop="@dimen/global_padding"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@color/white">
+
+        <LinearLayout
+            android:id="@+id/blgl"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:paddingTop="@dimen/global_line_padding"
+            android:paddingBottom="@dimen/global_line_padding"
+            android:background="@drawable/bg_titlebar_action">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/doctor_bl_center"
+                android:textColor="@color/global_title_color"
+                android:drawableLeft="@drawable/icon_zy_blzx"
+                android:drawablePadding="@dimen/five_dip"
+                android:gravity="center_vertical"/>
+
+        </LinearLayout>
+
+        <View style="@style/divider_line_vertical" />
+
+        <LinearLayout
+            android:id="@+id/yyzx"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:paddingTop="@dimen/global_line_padding"
+            android:paddingBottom="@dimen/global_line_padding"
+            android:background="@drawable/bg_titlebar_action">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/doctor_yy_center"
+                android:textColor="@color/global_title_color"
+                android:drawableLeft="@drawable/icon_zy_yyzx"
+                android:drawablePadding="@dimen/five_dip"
+                android:gravity="center_vertical"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@color/white">
+
+        <LinearLayout
+            android:id="@+id/czsz"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:paddingTop="@dimen/global_line_padding"
+            android:paddingBottom="@dimen/global_line_padding"
+            android:background="@drawable/bg_titlebar_action">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/doctor_cz_setting"
+                android:textColor="@color/global_title_color"
+                android:drawableLeft="@drawable/icon_zy_czsz"
+                android:drawablePadding="@dimen/five_dip"
+                android:gravity="center_vertical"/>
+
+        </LinearLayout>
+
+        <View style="@style/divider_line_vertical" />
+
+        <LinearLayout
+            android:id="@+id/ffgl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:paddingTop="@dimen/global_line_padding"
+            android:paddingBottom="@dimen/global_line_padding"
+            android:background="@drawable/bg_titlebar_action">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/doctor_fw_manager"
+                android:textColor="@color/global_title_color"
+                android:drawableLeft="@drawable/icon_zy_fwgl"
+                android:drawablePadding="@dimen/five_dip"
+                android:gravity="center_vertical"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

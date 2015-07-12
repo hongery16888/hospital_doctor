@@ -61,8 +61,12 @@ public abstract class BaseActivity extends SysKeyInvalidActivity {
     protected abstract void initData();
 
     public void setBackAction(){
-        leftIcon.setImageResource(R.drawable.back);
+        leftIcon.setImageResource(R.drawable.btn_back);
         leftIcon.setOnClickListener(backListener);
+    }
+
+    public void setHideBackAction(){
+        leftIcon.setVisibility(View.GONE);
     }
 
     public void setLeftIconAction(int resId, View.OnClickListener listener){

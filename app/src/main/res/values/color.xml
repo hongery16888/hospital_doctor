@@ -17,11 +17,30 @@
   <color name="main_back_ground_color">#ffffff00</color>
   <color name="transparent">#00000000</color>
   <color name="grey">#bfbfbf</color>
+  
+  <!-- 全局色调 -->
+  <color name="global_bg">#f2f2f2</color>
+  <color name="global_title_color">#444444</color>
+  <color name="global_sub_title_color">#666666</color>
+  <color name="click_item">#f0f0f0</color>
+  <color name="gray_color">#494949</color>
+  <color name="black_color">#2e2624</color>
+  <color name="pink_color">#ff5e5e</color>
+  <color name="grey_deep">#999999</color>
 
   <!-- title bar and bottom bar bg -->
-  <color name="top_bar_bg">#2e2624</color>
-  <color name="bottom_bar_bg">#2e2624</color>
-  <color name="bottom_textcolor_check">#838383</color>
+  <color name="top_bar_bg">#1e9ef3</color>
+  <color name="bottom_bar_bg">#ffffff</color>
+  <color name="bottom_textcolor_check">#999999</color>
   <color name="bottom_textcolor_checked">#fff</color>
+
+  <!-- 注册 -->
+  <color name="register_title_name">#b0b0b0</color>
+  <color name="register_title_name_ex">#666666</color>
+  <color name="register_phone_title_name">#444444</color>
+
+  <!-- 工作台 -->
+  <color name="doctor_gzt_top_bg">#1e9cf3</color>
+  <color name="doctor_gzt_visitor">#a3cdf5</color>
 
 </resources>

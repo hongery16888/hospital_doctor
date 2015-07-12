@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@drawable/selector_item_blue_color">
+
+    <LinearLayout style="@style/LayerMainMyItem"
+        android:background="@color/transparent">
+
+        <TextView style="@style/TxtMainMyItem"
+            android:text="@string/blgl_item_name"
+            android:textColor="@color/top_bar_bg"
+            android:drawableLeft="@drawable/img_avater_blgl_head"
+            android:gravity="center_vertical"
+            android:layout_weight="2"
+            android:paddingLeft="@dimen/global_padding"/>
+
+        <TextView style="@style/TxtMainMyItem"
+            android:text="@string/blgl_item_sex"
+            android:textColor="@color/global_sub_title_color"
+            android:gravity="center_horizontal"/>
+
+        <TextView style="@style/TxtMainMyItem"
+            android:text="@string/blgl_item_age"
+            android:textColor="@color/global_sub_title_color"
+            android:gravity="center_horizontal"/>
+
+        <TextView style="@style/TxtMainMyItem"
+            android:text="@string/blgl_item_time"
+            android:textColor="@color/global_sub_title_color"
+            android:gravity="center_horizontal"/>
+
+    </LinearLayout>
+
+    <View style="@style/divider_line_horizontal" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@color/transparent">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/img_bl"
+            android:layout_margin="@dimen/global_padding"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:paddingTop="@dimen/global_padding"
+                    android:text="@string/blgl_item_illness"
+                    android:textColor="@color/grey_deep"
+                    android:paddingLeft="@dimen/global_padding"
+                    android:textSize="@dimen/global_title_size"/>
+
+                <TextView android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:paddingTop="@dimen/global_padding"
+                    android:text="@string/blgl_item_illness_ex"
+                    android:textColor="@color/grey_deep"
+                    android:textSize="@dimen/global_title_size"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:paddingTop="@dimen/global_padding"
+                    android:text="@string/blgl_item_description"
+                    android:textColor="@color/grey_deep"
+                    android:paddingLeft="@dimen/global_padding"
+                    android:textSize="@dimen/global_title_size"/>
+
+                <TextView android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:paddingTop="@dimen/global_padding"
+                    android:text="@string/blgl_item_description_ex"
+                    android:textColor="@color/grey_deep"
+                    android:textSize="@dimen/global_title_size"
+                    android:maxLines="2"
+                    android:lineSpacingExtra="@dimen/global_padding"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <View style="@style/divider_line_horizontal" />
+
+    <LinearLayout style="@style/LayerMainMyItem"
+        android:background="@color/transparent">
+
+        <TextView style="@style/TxtMainMyItem"
+            android:text="@string/blgl_item_reserve_type"
+            android:textColor="@color/grey_deep"
+            android:layout_weight="2"/>
+
+        <TextView style="@style/TxtMainMyItem"
+            android:text="@string/blgl_item_reserve_price"
+            android:textColor="@color/red"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView style="@style/TxtMainMyItem"
+                android:text="@string/blgl_item_do"
+                android:textColor="@color/white"
+                android:textSize="@dimen/global_sub_title_size"
+                android:background="@drawable/btn_orange"
+                android:paddingTop="@dimen/five_dip"
+                android:paddingBottom="@dimen/five_dip"
+                android:paddingLeft="@dimen/global_line_padding"
+                android:paddingRight="@dimen/global_line_padding"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

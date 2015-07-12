@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/global_bg">
+
+    <include layout="@layout/title_bar" />
+
+    <View style="@style/divider_line_horizontal" />
+
+    <LinearLayout
+        style="@style/LayerMainMyItem">
+
+        <TextView style="@style/TxtMainMyItem"
+            android:paddingTop="@dimen/global_line_padding"
+            android:paddingBottom="@dimen/global_line_padding"
+            android:text="@string/doctor_czgl_time"
+            android:textColor="@color/grey_deep"
+            android:layout_weight="0.5"/>
+
+        <TextView style="@style/TxtMainMyItem"
+            android:paddingTop="@dimen/global_line_padding"
+            android:paddingBottom="@dimen/global_line_padding"
+            android:text="@string/doctor_czgl_time_ex"
+            android:textColor="@color/global_title_color"
+            android:gravity="right"
+            android:paddingRight="@dimen/global_padding"/>
+
+        <ImageView style="@style/ImageMainMyItemNext" />
+
+    </LinearLayout>
+
+    <View style="@style/divider_line_horizontal" />
+
+    <LinearLayout
+        style="@style/LayerMainMyItem">
+
+        <TextView style="@style/TxtMainMyItem"
+            android:paddingTop="@dimen/global_line_padding"
+            android:paddingBottom="@dimen/global_line_padding"
+            android:text="@string/doctor_czgl_yy_count"
+            android:textColor="@color/grey_deep"
+            android:layout_weight="0.5"/>
+
+        <TextView style="@style/TxtMainMyItem"
+            android:paddingTop="@dimen/global_line_padding"
+            android:paddingBottom="@dimen/global_line_padding"
+            android:text="@string/doctor_czgl_yy_count_ex"
+            android:textColor="@color/global_title_color"
+            android:gravity="right"
+            android:paddingRight="@dimen/global_padding"/>
+
+        <ImageView style="@style/ImageMainMyItemNext" />
+
+    </LinearLayout>
+
+    <View style="@style/divider_line_horizontal" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/doctor_cagl_stop_diagnose"
+            android:textColor="@color/grey_deep"
+            android:textSize="@dimen/global_title_size"
+            android:drawableTop="@drawable/icon_ztjz"
+            android:drawablePadding="@dimen/global_padding"
+            android:layout_marginTop="@dimen/doctor_czgl_btn_top"/>
+
+    </LinearLayout>
+
+</LinearLayout>

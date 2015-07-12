@@ -10,6 +10,15 @@
     <dimen name="one_px">1px</dimen>
     <dimen name="five_dip">5dip</dimen>
 
+    <!-- 全局变量 -->
+    <dimen name="global_label">20sp</dimen>
+    <dimen name="global_title_size">18sp</dimen>
+    <dimen name="global_sub_title_size">16sp</dimen>
+    <dimen name="global_padding">10dip</dimen>
+    <dimen name="global_line_padding">20dip</dimen>
+    <dimen name="global_btn_padding">30dip</dimen>
+    <dimen name="global_prompt">14dip</dimen>
+
     <!-- title bar -->
     <dimen name="title_lefticon_width">42dp</dimen>
     <dimen name="top_bar_h" >50dip</dimen>
@@ -23,4 +32,13 @@
     <dimen name="bottom_bar_img_w">30dip</dimen>
     <dimen name="bottom_bar_img_h">30dip</dimen>
     <dimen name="bottom_padding">-5dip</dimen>
+
+    <!-- 注册 -->
+    <dimen name="register_head_padding">50dip</dimen>
+
+    <!-- 工作台 -->
+    <dimen name="doctor_visitor_count_size">30sp</dimen>
+    <dimen name="doctor_gzt_top_h">50dip</dimen>
+    <dimen name="doctor_czgl_btn_top">100dip</dimen>
+
 </resources>

@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/global_bg">
+
+    <include layout="@layout/title_bar" />
+
+    <LinearLayout style="@style/LayerMainMyItem"
+        android:background="@color/transparent">
+        <TextView style="@style/TxtMainMyItem"
+            android:text="@string/doctor_ffgl_add"
+            android:textColor="@color/grey_deep"/>
+    </LinearLayout>
+
+    <View style="@style/divider_line_horizontal" />
+
+    <LinearLayout
+        android:id="@+id/czsz"
+        style="@style/LayerMainMyItem">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/doctor_czgl_time"
+            android:textColor="@color/global_title_color"
+            android:textSize="@dimen/global_title_size"
+            android:paddingTop="@dimen/global_padding"
+            android:paddingBottom="@dimen/global_padding"
+            android:drawableLeft="@drawable/icon_fwgl_zxzx"
+            android:drawablePadding="@dimen/global_padding"
+            android:gravity="center_vertical"/>
+
+        <TextView android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:paddingTop="@dimen/global_line_padding"
+            android:paddingBottom="@dimen/global_line_padding"
+            android:text="@string/doctor_ffgl_add"
+            android:textColor="@color/grey_deep"
+            android:textSize="@dimen/global_title_size"
+            android:gravity="center"
+            android:paddingRight="@dimen/global_padding"
+            android:singleLine="false"/>
+
+        <ImageView style="@style/ImageMainMyItemNext" />
+
+    </LinearLayout>
+
+    <View style="@style/divider_line_horizontal" />
+
+    <LinearLayout
+        style="@style/LayerMainMyItem">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/doctor_ffgl_dhzx"
+            android:textColor="@color/global_title_color"
+            android:textSize="@dimen/global_title_size"
+            android:paddingTop="@dimen/global_padding"
+            android:paddingBottom="@dimen/global_padding"
+            android:drawableLeft="@drawable/icon_fwgl_dhzx"
+            android:drawablePadding="@dimen/global_padding"
+            android:gravity="center_vertical"/>
+
+        <TextView android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:paddingTop="@dimen/global_line_padding"
+            android:paddingBottom="@dimen/global_line_padding"
+            android:text="@string/doctor_ffgl_add"
+            android:textColor="@color/grey_deep"
+            android:textSize="@dimen/global_title_size"
+            android:gravity="center"
+            android:paddingRight="@dimen/global_padding"
+            android:singleLine="false"/>
+
+        <ImageView style="@style/ImageMainMyItemNext" />
+
+    </LinearLayout>
+
+    <View style="@style/divider_line_horizontal" />
+
+    <LinearLayout style="@style/LayerMainMyItem"
+        android:background="@color/transparent">
+        <TextView style="@style/TxtMainMyItem"
+            android:text="@string/doctor_ffgl_no_add"
+            android:textColor="@color/grey_deep"/>
+    </LinearLayout>
+
+    <View style="@style/divider_line_horizontal" />
+
+    <LinearLayout
+        style="@style/LayerMainMyItem">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/doctor_ffgl_yyzx"
+            android:textColor="@color/global_title_color"
+            android:textSize="@dimen/global_title_size"
+            android:paddingTop="@dimen/global_padding"
+            android:paddingBottom="@dimen/global_padding"
+            android:drawableLeft="@drawable/icon_fwgl_yyzx"
+            android:drawablePadding="@dimen/global_padding"
+            android:gravity="center_vertical"/>
+
+        <TextView android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:paddingTop="@dimen/global_line_padding"
+            android:paddingBottom="@dimen/global_line_padding"
+            android:text="@string/doctor_ffgl_no_add"
+            android:textColor="@color/grey_deep"
+            android:textSize="@dimen/global_title_size"
+            android:gravity="center"
+            android:paddingRight="@dimen/global_padding"
+            android:singleLine="false"/>
+
+        <ImageView style="@style/ImageMainMyItemNext"
+            android:src="@drawable/icon_list_plus"/>
+
+    </LinearLayout>
+
+    <View style="@style/divider_line_horizontal" />
+
+</LinearLayout>

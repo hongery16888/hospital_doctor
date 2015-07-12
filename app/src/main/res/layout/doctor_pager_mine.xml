@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/global_bg">
+
+   <LinearLayout
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:background="@color/white"
+       android:gravity="center_horizontal">
+
+       <TextView
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:text="@string/doctor_personal_name"
+           android:textColor="@color/global_title_color"
+           android:textSize="@dimen/global_title_size"
+           android:drawableTop="@drawable/img_avater_register"
+           android:gravity="center_horizontal"
+           android:drawablePadding="@dimen/global_padding"
+           android:padding="@dimen/global_padding" />
+
+   </LinearLayout>
+
+    <View style="@style/divider_line_horizontal" />
+
+    <LinearLayout
+        style="@style/LayerMainMyItem">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:paddingTop="@dimen/global_padding"
+            android:paddingBottom="@dimen/global_padding">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/doctor_personal_income"
+                android:textColor="@color/grey_deep"
+                android:textSize="@dimen/global_sub_title_size"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/doctor_personal_income_ex"
+                android:textColor="@color/red"
+                android:textSize="@dimen/global_title_size"
+                android:paddingTop="@dimen/five_dip"/>
+        </LinearLayout>
+
+        <ImageView style="@style/ImageMainMyItemNext" />
+
+    </LinearLayout>
+
+    <View style="@style/divider_line_horizontal"/>
+
+    <View style="@style/divider_line_horizontal"
+        android:layout_marginTop="@dimen/global_line_padding"/>
+
+    <LinearLayout style="@style/LayerMainMyItem">
+
+        <TextView style="@style/TxtMainMyItem"
+            android:text="@string/doctor_personal_zhzx"
+            android:textColor="@color/global_title_color"
+            android:drawableLeft="@drawable/icon_wo_zhzx"/>
+
+        <ImageView style="@style/ImageMainMyItemNext" />
+
+    </LinearLayout>
+
+    <View style="@style/divider_line_horizontal"/>
+
+    <LinearLayout style="@style/LayerMainMyItem">
+
+        <TextView style="@style/TxtMainMyItem"
+            android:text="@string/doctor_personal_szzx"
+            android:textColor="@color/global_title_color"
+            android:drawableLeft="@drawable/icon_wo_szzx"/>
+
+        <ImageView style="@style/ImageMainMyItemNext" />
+
+    </LinearLayout>
+
+    <View style="@style/divider_line_horizontal"/>
+
+    <View style="@style/divider_line_horizontal"
+        android:layout_marginTop="@dimen/global_line_padding"/>
+
+    <LinearLayout
+        android:id="@+id/wdzl"
+        style="@style/LayerMainMyItem">
+
+        <TextView style="@style/TxtMainMyItem"
+            android:text="@string/doctor_personal_wdzl"
+            android:textColor="@color/global_title_color"
+            android:drawableLeft="@drawable/icon_wo_wdzl"/>
+
+        <ImageView style="@style/ImageMainMyItemNext" />
+
+    </LinearLayout>
+
+    <View style="@style/divider_line_horizontal"/>
+
+</LinearLayout>
