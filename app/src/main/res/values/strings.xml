@@ -143,5 +143,16 @@
     <string name="doctor_personal_info_subject_ex">急诊室</string>
     <string name="doctor_personal_info_job_ex">主治医生</string>
 
+    <!-- 圈子 -->
+    <string name="doctor_circle_title_main">圈子</string>
+    <string name="doctor_circle_sq">社区</string>
+    <string name="doctor_circle_hy">好友</string>
+    <string name="doctor_circle_xx">消息</string>
+    <string name="doctor_circle_item_content">昨天我刚刚下载的这款APP可以时时关注自已的健康状况，整的很好用，推荐给你们不用谢！嘿嘿！</string>
+    <string name="doctor_circle_item_count">123</string>
+    <string name="doctor_circle_info_main">内容</string>
+    <string name="doctor_circle_info_reply_content">挺好的！</string>
+    <string name="doctor_circle_info_reply_time">2015-06-15</string>
+
 
 </resources>

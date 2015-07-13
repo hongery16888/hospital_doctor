@@ -26,6 +26,8 @@
         <activity android:name=".activity.DoctorFFGLActivity" />
         <activity android:name=".activity.DoctorFFGLInfoActivity" />
         <activity android:name=".activity.DoctorGRZXActivity" />
+        <activity android:name=".activity.DoctorCircleActivity" />
+        <activity android:name=".activity.DoctorCircleInfoActivity" />
 
     </application>
 
