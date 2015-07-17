@@ -29,6 +29,36 @@
 
     </FrameLayout>
 
+    <LinearLayout
+        android:id="@+id/mid_bar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/mid_left_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_tab2_left_hl"
+            android:text="@string/doctor_circle_info_friend"
+            android:textColor="@color/global_title_color"
+            android:textSize="@dimen/global_title_size"
+            android:gravity="center"/>
+
+        <TextView
+            android:id="@+id/mid_right_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_tab2_blue_right"
+            android:text="@string/doctor_circle_info_doctor"
+            android:textColor="@color/white"
+            android:textSize="@dimen/global_title_size"
+            android:gravity="center"/>
+
+    </LinearLayout>
+
     <FrameLayout
         android:layout_width="wrap_content"
         android:layout_height="match_parent"

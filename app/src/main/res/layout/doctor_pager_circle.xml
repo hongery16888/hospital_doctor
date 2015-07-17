@@ -39,6 +39,7 @@
             android:padding="@dimen/global_padding">
 
             <TextView
+                android:id="@+id/hy"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/doctor_circle_hy"
@@ -58,6 +59,7 @@
             android:padding="@dimen/global_padding">
 
             <TextView
+                android:id="@+id/xx"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/doctor_circle_xx"

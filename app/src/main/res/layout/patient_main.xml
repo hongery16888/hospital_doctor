@@ -5,7 +5,7 @@
     android:background="@color/white"
     android:orientation="vertical">
 
-    <include layout="@layout/title_bar" />
+    <include layout="@layout/patient_title_bar" />
 
     <TextView
         android:id="@+id/result"
@@ -35,38 +35,38 @@
         <RadioButton
             android:id="@+id/index_main"
             style="@style/main_tab_bottom"
-            android:drawableTop="@drawable/tab_selector1"
+            android:drawableTop="@drawable/patient_tab_selector1"
             android:drawablePadding="@dimen/bottom_padding"
             android:layout_marginBottom="@dimen/bottom_padding"
-            android:text="@string/btn_index"
-            android:textColor="@drawable/textcolor_selected"/>
+            android:text="@string/patient_menu_jk"
+            android:textColor="@drawable/patient_textcolor_selected"/>
 
         <RadioButton
             android:id="@+id/shopping_main"
             style="@style/main_tab_bottom"
-            android:drawableTop="@drawable/tab_selector2"
+            android:drawableTop="@drawable/patient_tab_selector2"
             android:drawablePadding="@dimen/bottom_padding"
             android:layout_marginBottom="@dimen/bottom_padding"
-            android:text="@string/btn_shopping"
-            android:textColor="@drawable/textcolor_selected"/>
+            android:text="@string/patient_menu_ys"
+            android:textColor="@drawable/patient_textcolor_selected"/>
 
         <RadioButton
             android:id="@+id/activity_main"
             style="@style/main_tab_bottom"
-            android:drawableTop="@drawable/tab_selector3"
+            android:drawableTop="@drawable/patient_tab_selector3"
             android:drawablePadding="@dimen/bottom_padding"
             android:layout_marginBottom="@dimen/bottom_padding"
-            android:text="@string/btn_activity"
-            android:textColor="@drawable/textcolor_selected"/>
+            android:text="@string/patient_menu_qz"
+            android:textColor="@drawable/patient_textcolor_selected"/>
 
         <RadioButton
             android:id="@+id/personal_main"
             style="@style/main_tab_bottom"
-            android:drawableTop="@drawable/tab_selector4"
+            android:drawableTop="@drawable/patient_tab_selector4"
             android:drawablePadding="@dimen/bottom_padding"
             android:layout_marginBottom="@dimen/bottom_padding"
-            android:text="@string/btn_activity"
-            android:textColor="@drawable/textcolor_selected"/>
+            android:text="@string/patient_menu_wo"
+            android:textColor="@drawable/patient_textcolor_selected"/>
     </RadioGroup>
 
 </LinearLayout>

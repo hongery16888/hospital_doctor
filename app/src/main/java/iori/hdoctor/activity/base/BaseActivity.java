@@ -26,6 +26,8 @@ public abstract class BaseActivity extends SysKeyInvalidActivity {
     TextView rightText;
     @InjectView(R.id.title_bar)
     View titleBar;
+    @InjectView(R.id.mid_bar)
+    View midBar;
 	
 	protected Toast mToast;
     protected RequestProgressDialog mProgressDialog;
@@ -72,6 +74,10 @@ public abstract class BaseActivity extends SysKeyInvalidActivity {
     public void setLeftIconAction(int resId, View.OnClickListener listener){
         leftIcon.setImageResource(resId);
         leftIcon.setOnClickListener(listener);
+    }
+
+    public void showMidIcon(){
+        midBar.setVisibility(View.VISIBLE);
     }
 
     public void setTitleAction(String titleStr){

@@ -21,7 +21,7 @@
     <string name="phone_hint">请输入手机号码</string>
     <string name="password_hint">请输入密码</string>
     <string name="login">登录</string>
-    
+
     <!-- 医生注册 -->
     <string name="doctor_register_title_main">医生注册</string>
     <string name="upload_head">上传头像</string>
@@ -45,6 +45,7 @@
     <string name="register_work_card_prompt">请上传能以证明所属医院职称的（工牌、名片、工作证明）照片</string>
     <string name="register_check_prompt">您的信息不会被公开，公用于审核使用</string>
     <string name="register_complete">提交审核</string>
+
 
     <string name="doctor_username_ex">张德华</string>
     <string name="doctor_hospital_ex">爱德华医院</string>
@@ -153,6 +154,46 @@
     <string name="doctor_circle_info_main">内容</string>
     <string name="doctor_circle_info_reply_content">挺好的！</string>
     <string name="doctor_circle_info_reply_time">2015-06-15</string>
+    <string name="doctor_circle_info_friend">好友</string>
+    <string name="doctor_circle_info_doctor">医生</string>
+    <string name="doctor_circle_info_friend_name">大布丁</string>
+    <string name="doctor_circle_info_friend_remark">这里是个性签名</string>
+    <string name="doctor_circle_info_friend_add">添加</string>
+    <string name="doctor_circle_info_message_last_comment">Hello 在吗？Doctor 李</string>
+    <string name="doctor_circle_info_message_last_comment_time">13分钟前</string>
 
+    <!-- 普通用户注册 -->
+    <string name="patient_register_title_main">普通注册</string>
+    <string name="patient_register_info_head">点击设置头像</string>
+    <string name="patient_register_info_name">姓名</string>
+    <string name="patient_register_info_intro">简介</string>
+    <string name="patient_register_info_skilled">擅长</string>
+    <string name="patient_register_info_hospital">医院</string>
+    <string name="patient_register_info_subject">科室</string>
+    <string name="patient_register_info_job">职称</string>
+    <string name="patient_register_info_certificate">身份证</string>
+    <string name="patient_register_info_email">邮箱</string>
+
+    <string name="patient_register_info_name_ex">请输入姓名</string>
+    <string name="patient_register_info_intro_ex">请输入简介</string>
+    <string name="patient_register_info_skilled_ex">请输入擅长</string>
+    <string name="patient_register_info_hospital_ex">请输入医院</string>
+    <string name="patient_register_info_subject_ex">请输入科室</string>
+    <string name="patient_register_info_job_ex">请输入职称</string>
+    <string name="patient_register_info_certificate_ex">请输入身份证</string>
+    <string name="patient_register_info_email_ex">请输入邮箱</string>
+
+    <!-- 用户主页 -->
+    <string name="patient_menu_jk">健康</string>
+    <string name="patient_menu_ys">医生</string>
+    <string name="patient_menu_qz">圈子</string>
+    <string name="patient_menu_wo">我</string>
+    <string name="patient_jk_zwzd">自我诊断</string>
+    <string name="patient_jk_fxbg">分析报告</string>
+    <string name="patient_jk_jkda">健康档案</string>
+    <string name="patient_jk_jktx">健康提醒</string>
+    <string name="patient_jk_wdyx">我的药箱</string>
+    <string name="patient_jk_fjys">附近医生</string>
+    <string name="patient_jk_zxkf">咨询客服</string>
 
 </resources>

@@ -1,6 +1,7 @@
 package iori.hdoctor.activity;
 
 import android.content.Intent;
+import android.view.View;
 
 import butterknife.OnClick;
 import iori.hdoctor.R;
@@ -28,12 +29,21 @@ public class DoctorLoginActivity extends BaseActivity {
 
     @Override
     protected void initView() {
-        setBackAction();
+        setHideBackAction();
         setTitleAction(getResources().getString(R.string.doctor_login_title_main));
+        setRightText(getResources().getString(R.string.patient_login_type), typeListener);
     }
 
     @Override
     protected void initData() {
 
     }
+
+    private View.OnClickListener typeListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            startActivity(new Intent(DoctorLoginActivity.this, PatientLoginActivity.class));
+            finish();
+        }
+    };
 }

@@ -28,6 +28,11 @@
         <activity android:name=".activity.DoctorGRZXActivity" />
         <activity android:name=".activity.DoctorCircleActivity" />
         <activity android:name=".activity.DoctorCircleInfoActivity" />
+        <activity android:name=".activity.DoctorFriendActivity" />
+        <activity android:name=".activity.DoctorMessageActivity" />
+        <activity android:name=".activity.PatientLoginActivity" />
+        <activity android:name=".activity.PatientRegisterCompleteActivity" />
+        <activity android:name=".activity.PatientMainActivity" />
 
     </application>
 

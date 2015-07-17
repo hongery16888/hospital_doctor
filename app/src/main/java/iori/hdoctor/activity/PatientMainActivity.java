@@ -42,7 +42,8 @@ public class PatientMainActivity extends BaseActivity implements NetworkConnectL
 
 	@Override
 	protected void initView() {
-		setBackAction();
+		setHideBackAction();
+		setTitleAction(getResources().getString(R.string.patient_menu_jk));
 	}
 
 	@Override
@@ -123,6 +124,7 @@ public class PatientMainActivity extends BaseActivity implements NetworkConnectL
 						oldPosition = 0;
 					}
 					viewPager.setCurrentItem(0, false);
+					setTitleAction(getResources().getString(R.string.patient_menu_jk));
 					break;
 				case R.id.shopping_main:
 					if (oldPosition != 1) {
@@ -130,6 +132,7 @@ public class PatientMainActivity extends BaseActivity implements NetworkConnectL
 						oldPosition = 1;
 					}
 					viewPager.setCurrentItem(1, false);
+					setTitleAction(getResources().getString(R.string.patient_menu_ys));
 					break;
 				case R.id.activity_main:
 					if (oldPosition != 2) {
@@ -137,6 +140,7 @@ public class PatientMainActivity extends BaseActivity implements NetworkConnectL
 						oldPosition = 2;
 					}
 					viewPager.setCurrentItem(2, false);
+					setTitleAction(getResources().getString(R.string.patient_menu_qz));
 					break;
 				case R.id.personal_main:
 					if (oldPosition != 3) {
@@ -144,6 +148,7 @@ public class PatientMainActivity extends BaseActivity implements NetworkConnectL
 						oldPosition = 3;
 					}
 					viewPager.setCurrentItem(3, false);
+					setTitleAction(getResources().getString(R.string.patient_menu_wo));
 					break;
 			}
 			currentItem = checkedId;

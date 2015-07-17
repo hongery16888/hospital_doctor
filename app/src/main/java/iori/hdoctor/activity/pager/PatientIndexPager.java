@@ -24,7 +24,7 @@ public class PatientIndexPager extends BasePager{
 
     @Override
     public View initView(LayoutInflater inflater) {
-        view = inflater.inflate(R.layout.doctor_pager_gzt, null);
+        view = inflater.inflate(R.layout.patient_pager_jk, null);
         return view;
     }
 
