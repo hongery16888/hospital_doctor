@@ -41,4 +41,18 @@
     <dimen name="doctor_gzt_top_h">50dip</dimen>
     <dimen name="doctor_czgl_btn_top">100dip</dimen>
 
+    <!-- 自我诊断 -->
+    <dimen name="patient_zwzd_tz_size">30sp</dimen>
+    <dimen name="patient_zwzd_tz_top">30dip</dimen>
+    <dimen name="patient_zwzd_sr_top">40dip</dimen>
+    <dimen name="patient_zwzd_unit_top">60dip</dimen>
+    <dimen name="patient_zwzd_unit_bottom">50dip</dimen>
+    <dimen name="patient_zwzd_odds_size">14sp</dimen>
+    <dimen name="patient_zwzd_check_padding">30dip</dimen>
+    <dimen name="patient_zwzd_complete_w">200dip</dimen>
+
+    <!-- 分析报告 -->
+    <dimen name="patient_fxbg_point">50sp</dimen>
+    <dimen name="patient_fxbg_status">25sp</dimen>
+
 </resources>

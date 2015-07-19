@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ProgressWheel="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/global_bg"
+    android:orientation="vertical">
+
+    <include layout="@layout/patient_title_bar" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_report"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/global_line_padding">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/patient_fxbg_height"
+                android:textColor="@color/patient_fxbg_green_deep"
+                android:textSize="@dimen/global_sub_title_size" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/patient_fxbg_weight"
+                android:textColor="@color/patient_fxbg_green_deep"
+                android:textSize="@dimen/global_sub_title_size" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/patient_fxbg_age"
+                android:textColor="@color/patient_fxbg_green_deep"
+                android:textSize="@dimen/global_sub_title_size" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="@dimen/five_dip">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="126"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/global_title_size" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/patient_zwzd_height_unit"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/global_sub_title_size" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="54"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/global_title_size" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/patient_zwzd_weight_unit"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/global_sub_title_size" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="26"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/global_title_size" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="@dimen/global_line_padding"
+            android:paddingBottom="@dimen/global_line_padding">
+
+            <iori.hdoctor.view.ProgressWheel
+                android:id="@+id/progress"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_gravity="center_horizontal"
+                ProgressWheel:textColor="#222"
+                ProgressWheel:textSize="14sp"
+                ProgressWheel:rimColor="#22666666"
+                ProgressWheel:barLength="60dp"
+                ProgressWheel:barCColor="#f2f793"
+                ProgressWheel:barWidth="5dp"
+                ProgressWheel:rimWidth="2dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="200dip"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="75"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/patient_fxbg_point"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/patient_fxbg_point_unit"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/global_title_size"
+                        android:paddingLeft="@dimen/five_dip"/>
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/patient_fxbg_jkzs"
+                    android:textColor="@color/patient_fxbg_green_deep"
+                    android:textSize="@dimen/global_title_size"
+                    android:paddingTop="@dimen/five_dip"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/patient_fxbg_status"
+                    android:textColor="@color/patient_fxbg_status"
+                    android:textSize="@dimen/patient_fxbg_status"
+                    android:paddingTop="@dimen/five_dip"/>
+
+            </LinearLayout>
+
+        </FrameLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/patient_fxbg_info"
+            android:textColor="@color/white"
+            android:textSize="@dimen/global_title_size"
+            android:gravity="center"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/zwzd_again"
+        android:layout_width="200dip"
+        android:layout_height="@dimen/top_bar_h"
+        android:text="@string/patient_zwzd_complete_again"
+        android:textColor="@color/white"
+        android:textSize="@dimen/global_title_size"
+        android:background="@drawable/blgl_green_deep_button_selector"
+        android:gravity="center"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/global_line_padding"/>
+
+</LinearLayout>

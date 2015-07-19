@@ -44,4 +44,20 @@
   <color name="doctor_gzt_top_bg">#1e9cf3</color>
   <color name="doctor_gzt_visitor">#a3cdf5</color>
 
+  <!-- 自我诊断 -->
+  <color name="patient_bottom_last_step_bg">#666666</color>
+  <color name="patient_fxbg_green_deep">#068d2f</color>
+  <color name="patient_fxbg_status">#f2f793</color>
+
+  <!-- 日程添加 -->
+  <color name="event_color_01">#59dbe0</color>
+  <color name="event_color_02">#f57f68</color>
+  <color name="event_color_03">#87d288</color>
+  <color name="event_color_04">#f8b552</color>
+  <color name="toolbar">#efefef</color>
+  <color name="toolbar_text">#8f000000</color>
+  <color name="accent">#2789e4</color>
+  <color name="grid_bg">#FFFFFFFF</color>
+  <color name="grid_border">#FFC6C6C6</color>
+
 </resources>

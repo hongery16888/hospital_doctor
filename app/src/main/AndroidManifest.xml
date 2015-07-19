@@ -33,6 +33,25 @@
         <activity android:name=".activity.PatientLoginActivity" />
         <activity android:name=".activity.PatientRegisterCompleteActivity" />
         <activity android:name=".activity.PatientMainActivity" />
+        <activity android:name=".activity.PatientZWZD02Activity" />
+        <activity android:name=".activity.PatientZWZD01Activity" />
+        <activity android:name=".activity.PatientZWZD03Activity" />
+        <activity android:name=".activity.PatientZWZD04Activity" />
+        <activity android:name=".activity.PatientZWZD05Activity" />
+        <activity android:name=".activity.PatientZWZD06Activity" />
+        <activity android:name=".activity.PatientZWZD07Activity" />
+        <activity android:name=".activity.PatientZWZD08Activity" />
+        <activity android:name=".activity.PatientZWZD09Activity" />
+        <activity android:name=".activity.PatientZWZD10Activity" />
+        <activity android:name=".activity.PatientZWZD11Activity" />
+        <activity android:name=".activity.PatientZWZD12Activity" />
+        <activity android:name=".activity.PatientZWZD13Activity" />
+        <activity android:name=".activity.PatientZWZD14Activity" />
+        <activity android:name=".activity.PatientZWZD15Activity" />
+        <activity android:name=".activity.PatientFXBGActivity" />
+        <activity android:name=".activity.PatientJKTXActivity" />
+        <activity android:name=".activity.PatientCalendarActivity" />
+        <activity android:name=".activity.PatientWDYXActivity" />
 
     </application>
 

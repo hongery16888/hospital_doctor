@@ -196,4 +196,106 @@
     <string name="patient_jk_fjys">附近医生</string>
     <string name="patient_jk_zxkf">咨询客服</string>
 
+    <!-- 自我诊断 -->
+    <string name="patient_zwzd_title_main">自我诊断</string>
+    <string name="patient_zwzd_weight">体重</string>
+    <string name="patient_zwzd_birth">生日</string>
+    <string name="patient_zwzd_height">身高</string>
+    <string name="patient_zwzd_weight_unit">.0kg</string>
+    <string name="patient_zwzd_weight_unit_ex">55.0kg</string>
+    <string name="patient_zwzd_height_unit">cm</string>
+    <string name="patient_zwzd_height_unit_ex">175cm</string>
+    <string name="patient_zwzd_last_step">上一步</string>
+    <string name="patient_zwzd_next_step">下一步</string>
+    <string name="patient_zwzd_sit_time">每天维持坐姿时间？</string>
+    <string name="patient_zwzd_sit_6">6</string>
+    <string name="patient_zwzd_sit_time_unit">小时</string>
+    <string name="patient_zwzd_sit_prompt">提示：左右滑动可以选择更多</string>
+    <string name="patient_zwzd_piss">是否有尿不尽感？</string>
+    <string name="patient_zwzd_piss_odds_unit">%</string>
+    <string name="patient_zwzd_piss_unit_little">偶尔有</string>
+    <string name="patient_zwzd_piss_unit_little_more">经常有</string>
+    <string name="patient_zwzd_piss_unit_much">基本都是</string>
+    <string name="patient_zwzd_piss_unit_ex">50%</string>
+    <string name="patient_zwzd_piss_unit_ex_0">0%</string>
+    <string name="patient_zwzd_piss_unit_ex_50">50%</string>
+    <string name="patient_zwzd_piss_unit_ex_100">100%</string>
+    <string name="patient_zwzd_piss_never">从来没有</string>
+    <string name="patient_zwzd_piss_every">每次都是</string>
+    <string name="patient_zwzd_piss_prompt">排尿不尽：就是尿不干净、尿不完，残留有余尿的感觉，有时站了很长时间，小便还是滴滴答答没完没了。</string>
+    <string name="patient_zwzd_piss_odds_time">排尿间隔小于2小时？</string>
+    <string name="patient_zwzd_piss_odds_time_prompt">即所谓“尿频”，老是有尿意频繁地想上厕所，上完厕所回来间隔不到2小时又要去，每天折腾很多次。</string>
+    <string name="patient_zwzd_piss_indirectness">是否有间断性排尿？</string>
+    <string name="patient_zwzd_piss_indirectness_prompt">间断性排尿是指在一次排尿过程中出现中断的现象，间隔几秒到几分钟，或者腹部用力又继续排尿。</string>
+    <string name="patient_zwzd_piss_urination">是否有尿急现象？</string>
+    <string name="patient_zwzd_piss_urination_prompt">憋尿困难，即所谓“尿急”，出现下腹疼痛，无法控制出小便，尿液“夺路而出”甚至有时出现“尿裤子”的现象。</string>
+    <string name="patient_zwzd_piss_thin">排尿变细？</string>
+    <string name="patient_zwzd_piss_thin_prompt">感觉尿线不如以前粗，象管子被堵住一样尿线细，甚至一滴一滴的出来，也没有力道，容易弄湿自己的鞋子。</string>
+    <string name="patient_zwzd_piss_forced">是否有排尿费力？</string>
+    <string name="patient_zwzd_piss_forced_prompt">排尿本应该很轻松，但却出现需要腹部用力，将小便压出体外的情况，否则尿液很难出来。</string>
+    <string name="patient_zwzd_piss_time">夜间排尿次数？</string>
+    <string name="patient_zwzd_piss_time_zt">（入睡 - 早起）</string>
+    <string name="patient_zwzd_piss_time_unit">次/晚</string>
+    <string name="patient_zwzd_zz">是否有以下症状？</string>
+    <string name="patient_zwzd_zz_dx">（多选）</string>
+    <string name="patient_zwzd_01">排尿烧灼感</string>
+    <string name="patient_zwzd_02">性功能障碍</string>
+    <string name="patient_zwzd_03">射精后疼痛</string>
+    <string name="patient_zwzd_04">失眠</string>
+    <string name="patient_zwzd_05">腰酸</string>
+    <string name="patient_zwzd_06">注意力不集中</string>
+    <string name="patient_zwzd_07">下会阴部不适</string>
+    <string name="patient_zwzd_08">记忆力下降</string>
+    <string name="patient_zwzd_09">腹坠涨</string>
+    <string name="patient_zwzd_10">焦虑</string>
+    <string name="patient_zwzd_experience">是否有过就医院诊经历？</string>
+    <string name="patient_zwzd_experience_true">是</string>
+    <string name="patient_zwzd_experience_false">否</string>
+    <string name="patient_zwzd_area">是否有下列区域不适？</string>
+    <string name="patient_zwzd_area_yb">腰部</string>
+    <string name="patient_zwzd_area_fb">腹部</string>
+    <string name="patient_zwzd_area_gg">股沟</string>
+    <string name="patient_zwzd_area_hy">会阴</string>
+    <string name="patient_zwzd_medicine">目前在用药物？</string>
+    <string name="patient_zwzd_medicine_01">保列治</string>
+    <string name="patient_zwzd_medicine_02">可多华</string>
+    <string name="patient_zwzd_medicine_03">安福达</string>
+    <string name="patient_zwzd_medicine_04">刘索</string>
+    <string name="patient_zwzd_medicine_05">哈乐</string>
+    <string name="patient_zwzd_medicine_06">坦洛新</string>
+    <string name="patient_zwzd_medicine_07">必坦</string>
+    <string name="patient_zwzd_medicine_08">中成药</string>
+    <string name="patient_zwzd_medicine_complete">确认提交</string>
+    <string name="patient_zwzd_complete_status">身体良好</string>
+    <string name="patient_zwzd_complete_info">哎呦！身体还挺好的，良好的生活习惯必不可少，继续保持哈！</string>
+    <string name="patient_zwzd_complete_again">重新检测</string>
+    <string name="patient_zwzd_complete_result">分析报告</string>
+
+    <!-- 分析报告 -->
+    <string name="patient_fxbg_title_main">分析报告</string>
+    <string name="patient_fxbg_height">身高</string>
+    <string name="patient_fxbg_weight">体重</string>
+    <string name="patient_fxbg_age">年龄</string>
+    <string name="patient_fxbg_point_unit">分</string>
+    <string name="patient_fxbg_jkzs">健康指数</string>
+    <string name="patient_fxbg_status">良好</string>
+    <string name="patient_fxbg_info">恭喜！你身体很健康！棒棒达！</string>
+
+    <!-- 健康提醒 -->
+    <string name="patient_jktx_title_main">健康提醒</string>
+    <string name="patient_jktx_item_name">上海人民医院</string>
+    <string name="patient_jktx_item_info">李医生面诊</string>
+    <string name="patient_jktx_item_prompt">预约提醒</string>
+    <string name="patient_jktx_add">添加</string>
+
+    <!-- 出诊时间 -->
+    <string name="patient_czsj_title_main">出诊时间</string>
+
+    <!-- 我的药箱 -->
+    <string name="patient_wdyx_title_main">我的药箱</string>
+    <string name="patient_wdyx_sdtj">手动添加</string>
+    <string name="patient_wdyx_smtj">扫码添加</string>
+    <string name="patient_wdyx_item_name">999感冒灵颗粒</string>
+    <string name="patient_wdyx_item_info">主治：发烧头疼 感冒</string>
+
 </resources>

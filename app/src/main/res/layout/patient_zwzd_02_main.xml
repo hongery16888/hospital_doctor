@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/global_bg"
+    android:orientation="vertical">
+
+    <include layout="@layout/patient_title_bar" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawablePadding="@dimen/global_padding"
+            android:drawableTop="@drawable/icon_avator_default"
+            android:gravity="center_horizontal"
+            android:paddingTop="@dimen/patient_zwzd_tz_top"
+            android:text="@string/patient_zwzd_weight"
+            android:textColor="@color/global_title_color"
+            android:textSize="@dimen/patient_zwzd_tz_size" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/weight_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/patient_zwzd_weight_unit_ex"
+            android:textColor="@color/patient_top_bar_bg"
+            android:textSize="@dimen/patient_zwzd_tz_size"
+            android:layout_marginTop="@dimen/patient_zwzd_unit_top"
+            android:layout_marginBottom="@dimen/patient_zwzd_unit_bottom"/>
+
+    </LinearLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:paddingLeft="@dimen/global_line_padding"
+        android:paddingRight="@dimen/global_line_padding">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_zwjc_tz_kd"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="92px"
+            android:gravity="bottom">
+
+            <SeekBar
+                android:id="@+id/seekbar_self"
+                android:layout_width="match_parent"
+                android:layout_height="92px"
+                android:max="74"
+                android:progress="37"
+                android:progressDrawable="@drawable/seek_bar_bg"
+                android:thumb="@drawable/thumb_bar"/>
+        </LinearLayout>
+
+    </FrameLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:gravity="bottom">
+
+        <TextView
+            android:id="@+id/last_step"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/top_bar_h"
+            android:layout_weight="1"
+            android:text="@string/patient_zwzd_last_step"
+            android:textColor="@color/white"
+            android:textSize="@dimen/global_title_size"
+            android:background="@color/patient_bottom_last_step_bg"
+            android:gravity="center"/>
+
+        <TextView
+            android:id="@+id/next_step"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/top_bar_h"
+            android:layout_weight="1"
+            android:text="@string/patient_zwzd_next_step"
+            android:textColor="@color/white"
+            android:textSize="@dimen/global_title_size"
+            android:background="@color/patient_top_bar_bg"
+            android:gravity="center"/>
+
+    </LinearLayout>
+
+</LinearLayout>

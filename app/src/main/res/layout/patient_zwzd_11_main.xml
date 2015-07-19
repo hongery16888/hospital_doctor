@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/global_bg"
+    android:orientation="vertical">
+
+    <include layout="@layout/patient_title_bar" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:paddingTop="@dimen/patient_zwzd_unit_top"
+        android:paddingBottom="@dimen/patient_zwzd_unit_bottom">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:text="@string/patient_zwzd_piss_time"
+            android:textColor="@color/global_title_color"
+            android:textSize="@dimen/patient_zwzd_tz_size" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:text="@string/patient_zwzd_piss_time_zt"
+            android:textColor="@color/global_title_color"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/patient_zwzd_sit_ball"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/sit_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/patient_zwzd_sit_6"
+            android:textSize="@dimen/patient_zwzd_tz_size"
+            android:textColor="@color/patient_top_bar_bg"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/patient_zwzd_piss_time_unit"
+            android:textSize="@dimen/global_title_size"
+            android:textColor="@color/patient_top_bar_bg"/>
+
+    </LinearLayout>
+
+    <View style="@style/divider_line_horizontal"
+        android:layout_marginTop="@dimen/patient_zwzd_unit_top" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:gravity="center">
+
+        <Gallery
+            android:id="@+id/sit_list"
+            android:layout_width="250dip"
+            android:layout_height="wrap_content"
+            android:spacing="0dp"
+            android:layout_gravity="center"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="60dip"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:layout_gravity="center"
+            android:paddingTop="@dimen/global_padding"
+            android:paddingBottom="@dimen/global_padding">
+
+            <ImageView
+                android:layout_width="@dimen/one_dip"
+                android:layout_height="match_parent"
+                android:background="@color/grey"/>
+
+            <ImageView
+                android:layout_width="@dimen/one_dip"
+                android:layout_height="match_parent"
+                android:background="@color/grey"
+                android:layout_marginLeft="50dip"/>
+
+        </LinearLayout>
+
+    </FrameLayout>
+
+    <View style="@style/divider_line_horizontal" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/patient_zwzd_sit_prompt"
+        android:layout_gravity="center_horizontal"
+        android:paddingTop="@dimen/patient_zwzd_unit_top"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:gravity="bottom">
+
+        <TextView
+            android:id="@+id/last_step"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/top_bar_h"
+            android:layout_weight="1"
+            android:text="@string/patient_zwzd_last_step"
+            android:textColor="@color/white"
+            android:textSize="@dimen/global_title_size"
+            android:background="@color/patient_bottom_last_step_bg"
+            android:gravity="center"/>
+
+        <TextView
+            android:id="@+id/next_step"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/top_bar_h"
+            android:layout_weight="1"
+            android:text="@string/patient_zwzd_next_step"
+            android:textColor="@color/white"
+            android:textSize="@dimen/global_title_size"
+            android:background="@color/patient_top_bar_bg"
+            android:gravity="center"/>
+
+    </LinearLayout>
+
+</LinearLayout>

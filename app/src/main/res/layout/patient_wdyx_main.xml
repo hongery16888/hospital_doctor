@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/global_bg">
+
+    <include layout="@layout/patient_title_bar" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/top_bar_h"
+        android:background="@color/white"
+        android:layout_marginBottom="@dimen/global_line_padding">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/patient_wdyx_sdtj"
+                android:textColor="@color/global_title_color"
+                android:padding="@dimen/global_padding"
+                android:drawableLeft="@drawable/icon_wdyx_sdtj"
+                android:gravity="center_vertical"
+                android:drawablePadding="@dimen/global_padding"/>
+
+        </LinearLayout>
+
+        <View style="@style/divider_line_vertical"
+            android:layout_marginTop="@dimen/five_dip"
+            android:layout_marginBottom="@dimen/five_dip"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/patient_wdyx_smtj"
+                android:textColor="@color/global_title_color"
+                android:padding="@dimen/global_padding"
+                android:drawableLeft="@drawable/icon_wdyx_ewm"
+                android:gravity="center_vertical"
+                android:drawablePadding="@dimen/global_padding"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ListView
+            android:id="@+id/wdyx_listview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:cacheColorHint="@android:color/transparent"
+            android:divider="@color/global_bg"
+            android:choiceMode="singleChoice"
+            android:dividerHeight="@dimen/global_padding" />
+
+    </LinearLayout>
+
+</LinearLayout>

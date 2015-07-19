@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/global_bg"
+    android:orientation="vertical">
+
+    <include layout="@layout/patient_title_bar" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawablePadding="@dimen/global_padding"
+            android:drawableTop="@drawable/icon_avator_default"
+            android:gravity="center_horizontal"
+            android:paddingTop="@dimen/patient_zwzd_tz_top"
+            android:text="@string/patient_zwzd_complete_status"
+            android:textColor="@color/global_title_color"
+            android:textSize="@dimen/patient_zwzd_tz_size" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/global_line_padding"
+        android:paddingBottom="@dimen/global_padding"
+        android:paddingLeft="@dimen/patient_zwzd_tz_top"
+        android:paddingRight="@dimen/patient_zwzd_tz_top"
+        android:paddingTop="@dimen/global_padding">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/patient_zwzd_complete_info"
+            android:textColor="@color/grey_deep"
+            android:textSize="@dimen/global_title_size" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/global_line_padding"
+        android:paddingBottom="@dimen/global_padding"
+        android:paddingLeft="@dimen/patient_zwzd_tz_top"
+        android:paddingRight="@dimen/patient_zwzd_tz_top"
+        android:paddingTop="@dimen/global_padding">
+
+        <TextView
+            android:id="@+id/zwzd_again"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/top_bar_h"
+            android:layout_weight="1"
+            android:text="@string/patient_zwzd_complete_again"
+            android:textColor="@color/white"
+            android:textSize="@dimen/global_title_size"
+            android:background="@drawable/blgl_green_deep_button_selector"
+            android:gravity="center"
+            android:layout_gravity="center_horizontal"/>
+
+        <View
+            android:layout_width="@dimen/global_line_padding"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/zwzd_result"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/top_bar_h"
+            android:layout_weight="1"
+            android:text="@string/patient_zwzd_complete_result"
+            android:textColor="@color/white"
+            android:textSize="@dimen/global_title_size"
+            android:background="@drawable/blgl_gray_button_selector"
+            android:gravity="center"
+            android:layout_gravity="center_horizontal"/>
+
+    </LinearLayout>
+
+</LinearLayout>

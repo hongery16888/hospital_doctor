@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/global_bg"
+    android:orientation="vertical">
+
+    <include layout="@layout/patient_title_bar" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:paddingTop="@dimen/patient_zwzd_unit_top"
+        android:paddingBottom="@dimen/patient_zwzd_unit_bottom">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:text="@string/patient_zwzd_medicine"
+            android:textColor="@color/global_title_color"
+            android:textSize="@dimen/patient_zwzd_tz_size" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:text="@string/patient_zwzd_zz_dx"
+            android:textColor="@color/global_title_color"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/global_padding"
+        android:paddingLeft="30dip"
+        android:paddingRight="30dip">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center">
+                <CheckBox style="@style/CustomCheckboxTheme"
+                    android:text="@string/patient_zwzd_medicine_01"
+                    android:checked="true"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center">
+                <CheckBox style="@style/CustomCheckboxTheme"
+                    android:text="@string/patient_zwzd_medicine_02"/>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/global_padding"
+        android:paddingLeft="30dip"
+        android:paddingRight="30dip">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center">
+                <CheckBox style="@style/CustomCheckboxTheme"
+                    android:text="@string/patient_zwzd_medicine_03"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center">
+                <CheckBox style="@style/CustomCheckboxTheme"
+                    android:text="@string/patient_zwzd_medicine_04"/>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/global_padding"
+        android:paddingLeft="30dip"
+        android:paddingRight="30dip">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center">
+                <CheckBox style="@style/CustomCheckboxTheme"
+                    android:text="@string/patient_zwzd_medicine_05"
+                    android:checked="true"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center">
+                <CheckBox style="@style/CustomCheckboxTheme"
+                    android:text="@string/patient_zwzd_medicine_06"/>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/global_padding"
+        android:paddingLeft="30dip"
+        android:paddingRight="30dip">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center">
+                <CheckBox style="@style/CustomCheckboxTheme"
+                    android:text="@string/patient_zwzd_medicine_07"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center">
+                <CheckBox style="@style/CustomCheckboxTheme"
+                    android:text="@string/patient_zwzd_medicine_08"/>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/zwzd_complete"
+        android:layout_width="@dimen/patient_zwzd_complete_w"
+        android:layout_height="@dimen/top_bar_h"
+        android:text="@string/patient_zwzd_medicine_complete"
+        android:textColor="@color/white"
+        android:textSize="@dimen/global_title_size"
+        android:background="@drawable/blgl_green_deep_button_selector"
+        android:gravity="center"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/patient_zwzd_tz_top"/>
+
+    <TextView
+        android:id="@+id/last_step"
+        android:layout_width="@dimen/patient_zwzd_complete_w"
+        android:layout_height="@dimen/top_bar_h"
+        android:text="@string/patient_zwzd_last_step"
+        android:textColor="@color/white"
+        android:textSize="@dimen/global_title_size"
+        android:background="@drawable/blgl_gray_button_selector"
+        android:gravity="center"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/patient_zwzd_tz_top"/>
+
+</LinearLayout>
