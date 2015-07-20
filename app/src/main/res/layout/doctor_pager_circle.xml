@@ -25,7 +25,7 @@
                 android:text="@string/doctor_circle_sq"
                 android:textColor="@color/global_title_color"
                 android:textSize="@dimen/global_title_size"
-                android:drawableTop="@drawable/icon_fwgl_dhzx"
+                android:drawableTop="@drawable/icon_qz_sq"
                 android:drawablePadding="@dimen/global_padding"
                 android:gravity="center_horizontal"/>
 
@@ -45,7 +45,7 @@
                 android:text="@string/doctor_circle_hy"
                 android:textColor="@color/global_title_color"
                 android:textSize="@dimen/global_title_size"
-                android:drawableTop="@drawable/icon_fwgl_dhzx"
+                android:drawableTop="@drawable/icon_qz_hy"
                 android:drawablePadding="@dimen/global_padding"
                 android:gravity="center_horizontal"/>
 
@@ -65,7 +65,7 @@
                 android:text="@string/doctor_circle_xx"
                 android:textColor="@color/global_title_color"
                 android:textSize="@dimen/global_title_size"
-                android:drawableTop="@drawable/icon_fwgl_dhzx"
+                android:drawableTop="@drawable/icon_qz_xx"
                 android:drawablePadding="@dimen/global_padding"
                 android:gravity="center_horizontal"/>
 

@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 
 import iori.hdoctor.R;
+import iori.hdoctor.activity.PatientFJActivity;
 import iori.hdoctor.activity.PatientFXBGActivity;
 import iori.hdoctor.activity.PatientJKTXActivity;
 import iori.hdoctor.activity.PatientWDYXActivity;
@@ -40,6 +41,7 @@ public class PatientIndexPager extends BasePager implements View.OnClickListener
         view.findViewById(R.id.fxbg).setOnClickListener(this);
         view.findViewById(R.id.jktx).setOnClickListener(this);
         view.findViewById(R.id.wdyx).setOnClickListener(this);
+        view.findViewById(R.id.fjys).setOnClickListener(this);
     }
 
     @Override
@@ -64,6 +66,9 @@ public class PatientIndexPager extends BasePager implements View.OnClickListener
                 break;
             case R.id.wdyx:
                 context.startActivity(new Intent(context, PatientWDYXActivity.class));
+                break;
+            case R.id.fjys:
+                context.startActivity(new Intent(context, PatientFJActivity.class));
                 break;
             default:
                 break;

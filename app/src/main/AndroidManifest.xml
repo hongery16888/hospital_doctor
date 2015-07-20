@@ -52,6 +52,12 @@
         <activity android:name=".activity.PatientJKTXActivity" />
         <activity android:name=".activity.PatientCalendarActivity" />
         <activity android:name=".activity.PatientWDYXActivity" />
+        <activity android:name=".activity.PatientFJActivity" />
+        <activity android:name=".activity.PatientCircleActivity" />
+        <activity android:name=".activity.PatientFriendActivity" />
+        <activity android:name=".activity.PatientMessageActivity" />
+        <activity android:name=".activity.PatientCircleInfoActivity" />
+        <activity android:name=".activity.PatientBLGLInfoActivity" />
 
     </application>
 

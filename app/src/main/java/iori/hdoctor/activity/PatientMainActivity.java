@@ -12,6 +12,7 @@ import iori.hdoctor.activity.base.BaseActivity;
 import iori.hdoctor.activity.base.BasePager;
 import iori.hdoctor.activity.pager.DoctorIndexPager;
 import iori.hdoctor.activity.pager.DoctorMinePager;
+import iori.hdoctor.activity.pager.PatientCirclePager;
 import iori.hdoctor.activity.pager.PatientIndexPager;
 import iori.hdoctor.activity.pager.PatientMinePager;
 import iori.hdoctor.adapter.ViewPagerAdapter;
@@ -51,7 +52,7 @@ public class PatientMainActivity extends BaseActivity implements NetworkConnectL
 		pages.clear();
 		pages.add(new PatientIndexPager(this));
 		pages.add(new PatientMinePager(this));
-		pages.add(new PatientIndexPager(this));
+		pages.add(new PatientCirclePager(this));
 		pages.add(new PatientMinePager(this));
 		viewPagerAdapter = new ViewPagerAdapter(pages);
 		viewPager.setAdapter(viewPagerAdapter);

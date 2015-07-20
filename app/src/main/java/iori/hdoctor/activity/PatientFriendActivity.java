@@ -1,25 +1,22 @@
 package iori.hdoctor.activity;
 
-import android.content.Intent;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.TextView;
 
 import com.handmark.pulltorefresh.library.PullToRefreshListView;
 
-import org.w3c.dom.Text;
-
 import butterknife.InjectView;
 import butterknife.OnClick;
 import iori.hdoctor.R;
 import iori.hdoctor.activity.base.BaseActivity;
-import iori.hdoctor.adapter.DoctorBLGLAdapter;
 import iori.hdoctor.adapter.DoctorFriendAdapter;
+import iori.hdoctor.adapter.PatientFriendAdapter;
 
 /**
  * Created by Administrator on 2015/7/11.
  */
-public class DoctorFriendActivity extends BaseActivity {
+public class PatientFriendActivity extends BaseActivity {
 
     @InjectView(R.id.friend_listview)
     PullToRefreshListView listView;
@@ -32,13 +29,13 @@ public class DoctorFriendActivity extends BaseActivity {
         if (clickTV == textView.getId()) {
             midLeftText.setTextColor(getResources().getColor(R.color.white));
             midRightText.setTextColor(getResources().getColor(R.color.global_title_color));
-            midLeftText.setBackgroundResource(R.drawable.bg_tab2_blue_lef);
+            midLeftText.setBackgroundResource(R.drawable.bg_tab2_lef);
             midRightText.setBackgroundResource(R.drawable.bg_tab2_right_hl);
         }else{
             midLeftText.setTextColor(getResources().getColor(R.color.global_title_color));
             midRightText.setTextColor(getResources().getColor(R.color.white));
             midLeftText.setBackgroundResource(R.drawable.bg_tab2_left_hl);
-            midRightText.setBackgroundResource(R.drawable.bg_tab2_blue_right);
+            midRightText.setBackgroundResource(R.drawable.bg_tab2_right);
         }
     }
 
@@ -46,7 +43,7 @@ public class DoctorFriendActivity extends BaseActivity {
 
     @Override
     protected int setContentViewResId() {
-        return R.layout.doctor_circle_friend_main;
+        return R.layout.patient_circle_friend_main;
     }
 
     @Override
@@ -54,11 +51,16 @@ public class DoctorFriendActivity extends BaseActivity {
         setBackAction();
         setRightText(getResources().getString(R.string.doctor_circle_info_friend_add), addListener);
         showMidIcon();
+
+        midLeftText.setTextColor(getResources().getColor(R.color.white));
+        midRightText.setTextColor(getResources().getColor(R.color.global_title_color));
+        midLeftText.setBackgroundResource(R.drawable.bg_tab2_lef);
+        midRightText.setBackgroundResource(R.drawable.bg_tab2_right_hl);
     }
 
     @Override
     protected void initData() {
-        listView.setAdapter(new DoctorFriendAdapter(this));
+        listView.setAdapter(new PatientFriendAdapter(this));
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {

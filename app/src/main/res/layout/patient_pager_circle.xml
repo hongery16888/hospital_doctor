@@ -19,12 +19,13 @@
             android:padding="@dimen/global_padding">
 
             <TextView
+                android:id="@+id/sq"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/doctor_circle_sq"
                 android:textColor="@color/global_title_color"
                 android:textSize="@dimen/global_title_size"
-                android:drawableTop="@drawable/icon_fwgl_dhzx"
+                android:drawableTop="@drawable/icon_qz_sq"
                 android:drawablePadding="@dimen/global_padding"
                 android:gravity="center_horizontal"/>
 
@@ -38,12 +39,13 @@
             android:padding="@dimen/global_padding">
 
             <TextView
+                android:id="@+id/hy"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/doctor_circle_hy"
                 android:textColor="@color/global_title_color"
                 android:textSize="@dimen/global_title_size"
-                android:drawableTop="@drawable/icon_fwgl_dhzx"
+                android:drawableTop="@drawable/icon_qz_hy"
                 android:drawablePadding="@dimen/global_padding"
                 android:gravity="center_horizontal"/>
 
@@ -57,12 +59,13 @@
             android:padding="@dimen/global_padding">
 
             <TextView
+                android:id="@+id/xx"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/doctor_circle_xx"
                 android:textColor="@color/global_title_color"
                 android:textSize="@dimen/global_title_size"
-                android:drawableTop="@drawable/icon_fwgl_dhzx"
+                android:drawableTop="@drawable/icon_qz_xx"
                 android:drawablePadding="@dimen/global_padding"
                 android:gravity="center_horizontal"/>
 
@@ -72,21 +75,16 @@
 
     <View style="@style/divider_line_horizontal" />
 
-    <LinearLayout
+    <com.handmark.pulltorefresh.library.PullToRefreshListView
+        android:id="@+id/circle_listview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:padding="@dimen/global_padding">
-
-        <com.handmark.pulltorefresh.library.PullToRefreshListView
-            android:id="@+id/circle_listview"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:cacheColorHint="@android:color/transparent"
-            android:divider="@color/global_bg"
-            android:layout_gravity="start"
-            android:choiceMode="singleChoice"
-            android:dividerHeight="@dimen/global_line_padding" />
-
-    </LinearLayout>
+        android:cacheColorHint="@android:color/transparent"
+        android:layout_marginTop="@dimen/global_line_padding"
+        android:divider="@color/global_bg"
+        android:layout_gravity="start"
+        android:choiceMode="singleChoice"
+        android:dividerHeight="@dimen/global_line_padding"
+        android:background="@color/white"/>
 
 </LinearLayout>

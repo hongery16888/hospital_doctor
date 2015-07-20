@@ -55,4 +55,9 @@
     <dimen name="patient_fxbg_point">50sp</dimen>
     <dimen name="patient_fxbg_status">25sp</dimen>
 
+    <!-- 附近 -->
+    <dimen name="patient_fj_bar_padding">20dip</dimen>
+    <dimen name="patient_fj_item_name">20sp</dimen>
+    <dimen name="patient_fj_item_zx">10sp</dimen>
+
 </resources>

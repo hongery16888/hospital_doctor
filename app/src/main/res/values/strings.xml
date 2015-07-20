@@ -298,4 +298,25 @@
     <string name="patient_wdyx_item_name">999感冒灵颗粒</string>
     <string name="patient_wdyx_item_info">主治：发烧头疼 感冒</string>
 
+    <!-- 附近 -->
+    <string name="patient_fj_title_main">附近</string>
+    <string name="patient_fj_bar_left">医生</string>
+    <string name="patient_fj_bar_right">医院</string>
+    <string name="patient_fj_bar_area">上海</string>
+    <string name="patient_fj_bar_order">排序</string>
+    <string name="patient_fj_item_name">王美零</string>
+    <string name="patient_fj_item_distance">160m</string>
+    <string name="patient_fj_item_zl">资历：</string>
+    <string name="patient_fj_item_zl_ex">主治医生</string>
+    <string name="patient_fj_item_jg">机构：</string>
+    <string name="patient_fj_item_jg_ex">上海市疾病控制中心</string>
+    <string name="patient_fj_item_sc">擅长：</string>
+    <string name="patient_fj_item_sc_ex">男科泌尿疾病 尿道感染</string>
+    <string name="patient_fj_item_online">在线</string>
+    <string name="patient_fj_item_yy_name">四川华西医院</string>
+    <string name="patient_fj_item_yy_type">类型：</string>
+    <string name="patient_fj_item_yy_type_ex">一级甲级医院</string>
+    <string name="patient_fj_item_yy_adds">地址：</string>
+    <string name="patient_fj_item_yy_adds_ex">上海普陀区人民路125号</string>
+
 </resources>
