@@ -60,4 +60,7 @@
   <color name="grid_bg">#FFFFFFFF</color>
   <color name="grid_border">#FFC6C6C6</color>
 
+  <!-- 医生介绍 -->
+  <color name="patient_doctor_status">#f8b552</color>
+
 </resources>

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout style="@style/LayerMainMyItem">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/global_padding"
+            android:src="@drawable/img_fj_doctor" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/global_padding"
+            android:paddingTop="@dimen/global_padding">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/patient_wdyy_item_yy"
+                android:textColor="@color/global_title_color"
+                android:textSize="@dimen/global_title_size" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="@dimen/five_dip"
+                android:singleLine="true"
+                android:text="@string/patient_wdyy_item_name"
+                android:textColor="@color/global_title_color"
+                android:textSize="@dimen/global_title_size" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/global_padding"
+            android:paddingTop="@dimen/global_padding"
+            android:paddingRight="@dimen/global_padding">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/patient_wddd_item_price"
+                android:textColor="@color/red"
+                android:textSize="@dimen/global_third_title_size" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="@dimen/global_padding"
+                android:singleLine="true"
+                android:text="@string/patient_wddd_item_type"
+                android:textColor="@color/global_title_color"
+                android:textSize="@dimen/global_third_title_size" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <View style="@style/divider_line_horizontal" />
+
+    <LinearLayout style="@style/LayerMainMyItem">
+        <TextView style="@style/TxtMainMyItem"
+            android:text="@string/patient_wddd_item_reply"
+            android:textColor="@color/patient_top_bar_bg"
+            android:textSize="@dimen/global_third_title_size"
+            android:paddingRight="@dimen/global_padding"
+            android:gravity="right"/>
+
+    </LinearLayout>
+
+</LinearLayout>

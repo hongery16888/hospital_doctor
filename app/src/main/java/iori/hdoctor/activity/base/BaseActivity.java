@@ -28,6 +28,8 @@ public abstract class BaseActivity extends SysKeyInvalidActivity {
     View titleBar;
     @InjectView(R.id.mid_bar)
     View midBar;
+    @InjectView(R.id.setting)
+    View setting;
 	
 	protected Toast mToast;
     protected RequestProgressDialog mProgressDialog;
@@ -99,7 +101,16 @@ public abstract class BaseActivity extends SysKeyInvalidActivity {
     }
 
     public void setHideTitleBar(boolean flag){
-        titleBar.setVisibility(flag?View.GONE:View.VISIBLE);
+        titleBar.setVisibility(flag ? View.GONE : View.VISIBLE);
+    }
+
+    public void showSetting(View.OnClickListener listener){
+        setting.setVisibility(View.VISIBLE);
+        setting.setOnClickListener(listener);
+    }
+
+    public void setHideSetting(){
+        setting.setVisibility(View.GONE);
     }
 
     public void setTitleBarBackground(int color){

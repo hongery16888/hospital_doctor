@@ -14,6 +14,7 @@
     <dimen name="global_label">20sp</dimen>
     <dimen name="global_title_size">18sp</dimen>
     <dimen name="global_sub_title_size">16sp</dimen>
+    <dimen name="global_third_title_size">14sp</dimen>
     <dimen name="global_padding">10dip</dimen>
     <dimen name="global_line_padding">20dip</dimen>
     <dimen name="global_btn_padding">30dip</dimen>
@@ -59,5 +60,10 @@
     <dimen name="patient_fj_bar_padding">20dip</dimen>
     <dimen name="patient_fj_item_name">20sp</dimen>
     <dimen name="patient_fj_item_zx">10sp</dimen>
+    <dimen name="patient_fj_doctor_info_top_lay">100dip</dimen>
+    <dimen name="patient_fj_doctor_avater_padding">65dip</dimen>
+    <dimen name="patient_fj_doctor_price">25dip</dimen>
+    <dimen name="patient_fj_doctor_price_unit">10dip</dimen>
+    
 
 </resources>

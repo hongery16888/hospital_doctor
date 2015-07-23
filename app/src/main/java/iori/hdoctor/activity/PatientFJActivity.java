@@ -1,5 +1,6 @@
 package iori.hdoctor.activity;
 
+import android.content.Intent;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
@@ -62,7 +63,7 @@ public class PatientFJActivity extends BaseActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
+                startActivity(new Intent(PatientFJActivity.this, PatientDoctorIntroduceActivity.class));
             }
         });
     }

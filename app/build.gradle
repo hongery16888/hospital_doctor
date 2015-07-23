@@ -27,4 +27,5 @@ dependencies {
     compile 'com.google.code.gson:gson:2.2.4'
     compile files('libs/httpmime-4.2.1.jar')
     compile project(':pulltorefresh')
+    compile 'com.ms-square:expandableTextView:0.1.4'
 }

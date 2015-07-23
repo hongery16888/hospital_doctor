@@ -1,0 +1,484 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:expandableTextView="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/global_bg">
+
+    <include layout="@layout/patient_title_bar" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/patient_fj_doctor_info_top_lay"
+                    android:background="@color/patient_top_bar_bg" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:layout_gravity="center_horizontal"
+                    android:orientation="vertical"
+                    android:layout_marginTop="@dimen/patient_fj_doctor_avater_padding">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/patient_doctor_introduce_avater"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/patient_doctor_name"
+                        android:textColor="@color/global_title_color"
+                        android:textSize="@dimen/global_title_size"
+                        android:paddingTop="@dimen/five_dip"/>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingTop="@dimen/global_padding">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/patient_doctor_jg"
+                                android:textColor="@color/grey_deep"
+                                android:textSize="@dimen/global_sub_title_size"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/patient_doctor_jg_ex"
+                                android:textColor="@color/global_title_color"
+                                android:textSize="@dimen/global_sub_title_size"/>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingTop="@dimen/global_padding"
+                            android:paddingBottom="@dimen/global_padding">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/patient_doctor_jg_zl"
+                                android:textColor="@color/grey_deep"
+                                android:textSize="@dimen/global_sub_title_size"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/patient_doctor_jg_zl_ex"
+                                android:textColor="@color/global_title_color"
+                                android:textSize="@dimen/global_sub_title_size"/>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="right">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/patient_doctor_status"
+                                    android:textColor="@color/global_title_color"
+                                    android:textSize="@dimen/global_sub_title_size"
+                                    android:drawableLeft="@drawable/icon_ysjs_czz"
+                                    android:drawablePadding="@dimen/five_dip"/>
+
+                            </LinearLayout>
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </FrameLayout>
+
+            <LinearLayout style="@style/LayerMainMyItem"
+                android:layout_marginTop="@dimen/global_line_padding">
+
+                <TextView style="@style/TxtMainMyItem"
+                    android:text="@string/patient_doctor_fwxm"
+                    android:textColor="@color/grey_deep"
+                    android:paddingLeft="@dimen/global_padding"/>
+
+            </LinearLayout>
+
+            <View style="@style/divider_line_horizontal" />
+
+            <LinearLayout style="@style/LayerMainMyItem">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/icon_ysjs_yycx"
+                    android:layout_margin="@dimen/global_padding"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:paddingTop="@dimen/global_padding"
+                    android:paddingBottom="@dimen/global_padding">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/patient_doctor_yyzx"
+                        android:textColor="@color/global_title_color"
+                        android:textSize="@dimen/global_title_size"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/patient_doctor_yyzx_ex"
+                        android:textColor="@color/grey_deep"
+                        android:textSize="@dimen/global_sub_title_size"
+                        android:paddingTop="@dimen/five_dip"
+                        android:singleLine="true"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/patient_doctor_unit_ex"
+                            android:textColor="@color/red"
+                            android:textSize="@dimen/patient_fj_doctor_price"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="bottom">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/patient_doctor_unit"
+                            android:textColor="@color/red"
+                            android:textSize="@dimen/patient_fj_doctor_price_unit"
+                            android:paddingBottom="4dip"
+                            android:layout_marginRight="@dimen/global_padding"/>
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/patient_doctor_buy"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/global_title_size"
+                        android:background="@drawable/btn_green"
+                        android:layout_marginRight="@dimen/global_padding"/>
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <View style="@style/divider_line_horizontal" />
+
+            <LinearLayout style="@style/LayerMainMyItem">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/icon_ysjs_zx"
+                    android:layout_margin="@dimen/global_padding"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:paddingTop="@dimen/global_padding"
+                    android:paddingBottom="@dimen/global_padding">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/patient_doctor_zxzx"
+                        android:textColor="@color/global_title_color"
+                        android:textSize="@dimen/global_title_size"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/patient_doctor_zxzx_ex"
+                        android:textColor="@color/grey_deep"
+                        android:textSize="@dimen/global_sub_title_size"
+                        android:paddingTop="@dimen/five_dip"
+                        android:singleLine="true"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/patient_doctor_unit_ex"
+                            android:textColor="@color/red"
+                            android:textSize="@dimen/patient_fj_doctor_price"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="bottom">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/patient_doctor_unit"
+                            android:textColor="@color/red"
+                            android:textSize="@dimen/patient_fj_doctor_price_unit"
+                            android:paddingBottom="4dip"
+                            android:layout_marginRight="@dimen/global_padding"/>
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/patient_doctor_buy"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/global_title_size"
+                        android:background="@drawable/btn_green"
+                        android:layout_marginRight="@dimen/global_padding"/>
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <View style="@style/divider_line_horizontal" />
+
+            <LinearLayout style="@style/LayerMainMyItem">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/icon_ysjs_dh"
+                    android:layout_margin="@dimen/global_padding"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:paddingTop="@dimen/global_padding"
+                    android:paddingBottom="@dimen/global_padding">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/patient_doctor_dhzx"
+                        android:textColor="@color/global_title_color"
+                        android:textSize="@dimen/global_title_size"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/patient_doctor_dhzx_ex"
+                        android:textColor="@color/grey_deep"
+                        android:textSize="@dimen/global_sub_title_size"
+                        android:paddingTop="@dimen/five_dip"
+                        android:singleLine="true"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/patient_doctor_unit_ex"
+                            android:textColor="@color/red"
+                            android:textSize="@dimen/patient_fj_doctor_price"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="bottom">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/patient_doctor_unit"
+                            android:textColor="@color/red"
+                            android:textSize="@dimen/patient_fj_doctor_price_unit"
+                            android:paddingBottom="4dip"
+                            android:layout_marginRight="@dimen/global_padding"/>
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/patient_doctor_buy"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/global_title_size"
+                        android:background="@drawable/btn_green"
+                        android:layout_marginRight="@dimen/global_padding"/>
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout style="@style/LayerMainMyItem"
+                android:layout_marginTop="@dimen/global_line_padding">
+
+                <TextView style="@style/TxtMainMyItem"
+                    android:text="@string/patient_doctor_info_introduce"
+                    android:textColor="@color/patient_top_bar_bg"
+                    android:paddingLeft="@dimen/global_padding"/>
+
+            </LinearLayout>
+
+            <com.ms.square.android.expandabletextview.ExpandableTextView
+                android:id="@+id/doctor_introduce"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                expandableTextView:maxCollapsedLines="2"
+                android:background="@color/white">
+
+                <TextView
+                    android:id="@id/expandable_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/global_line_padding"
+                    android:layout_marginRight="@dimen/global_line_padding"
+                    android:fontFamily="sans-serif-light"
+                    android:textSize="16sp"
+                    android:textColor="#666666"
+                    android:lineSpacingExtra="@dimen/five_dip"
+                    android:paddingBottom="@dimen/global_padding"/>
+
+                <ImageButton
+                    android:id="@id/expand_collapse"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/global_line_padding"
+                    android:layout_marginBottom="@dimen/global_padding"
+                    android:layout_gravity="right|bottom"
+                    android:background="@android:color/transparent"/>
+            </com.ms.square.android.expandabletextview.ExpandableTextView>
+
+            <LinearLayout style="@style/LayerMainMyItem"
+                android:layout_marginTop="@dimen/global_line_padding">
+
+                <TextView style="@style/TxtMainMyItem"
+                    android:text="@string/patient_doctor_info_sc"
+                    android:textColor="@color/patient_top_bar_bg"
+                    android:paddingLeft="@dimen/global_padding"/>
+
+            </LinearLayout>
+
+            <com.ms.square.android.expandabletextview.ExpandableTextView
+                android:id="@+id/doctor_skill"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                expandableTextView:maxCollapsedLines="2"
+                android:background="@color/white"
+                android:layout_marginBottom="@dimen/global_line_padding">
+
+                <TextView
+                    android:id="@id/expandable_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/global_line_padding"
+                    android:layout_marginRight="@dimen/global_line_padding"
+                    android:fontFamily="sans-serif-light"
+                    android:textSize="16sp"
+                    android:textColor="#666666"
+                    android:lineSpacingExtra="@dimen/five_dip"
+                    android:paddingBottom="@dimen/global_padding"/>
+
+                <ImageButton
+                    android:id="@id/expand_collapse"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/global_line_padding"
+                    android:layout_marginBottom="@dimen/global_padding"
+                    android:layout_gravity="right|bottom"
+                    android:background="@android:color/transparent"/>
+            </com.ms.square.android.expandabletextview.ExpandableTextView>
+        </LinearLayout>
+
+    </ScrollView>
+
+    <View style="@style/divider_line_horizontal" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/global_padding"
+        android:gravity="right"
+        android:background="@color/white">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/patient_doctor_yyys"
+            android:textColor="@color/white"
+            android:textSize="@dimen/global_title_size"
+            android:background="@drawable/btn_orange"
+            android:layout_marginRight="@dimen/global_line_padding"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/patient_doctor_zxys"
+            android:textColor="@color/white"
+            android:textSize="@dimen/global_title_size"
+            android:background="@drawable/btn_green"/>
+
+    </LinearLayout>
+
+</LinearLayout>

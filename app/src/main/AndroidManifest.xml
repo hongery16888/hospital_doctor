@@ -58,6 +58,9 @@
         <activity android:name=".activity.PatientMessageActivity" />
         <activity android:name=".activity.PatientCircleInfoActivity" />
         <activity android:name=".activity.PatientBLGLInfoActivity" />
+        <activity android:name=".activity.PatientDoctorIntroduceActivity" />
+        <activity android:name=".activity.PatientWDYYActivity" />
+        <activity android:name=".activity.PatientWDDDActivity" />
 
     </application>
 

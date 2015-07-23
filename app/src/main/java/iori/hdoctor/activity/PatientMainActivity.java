@@ -1,5 +1,6 @@
 package iori.hdoctor.activity;
 
+import android.view.View;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 
@@ -13,6 +14,7 @@ import iori.hdoctor.activity.base.BasePager;
 import iori.hdoctor.activity.pager.DoctorIndexPager;
 import iori.hdoctor.activity.pager.DoctorMinePager;
 import iori.hdoctor.activity.pager.PatientCirclePager;
+import iori.hdoctor.activity.pager.PatientDoctorPager;
 import iori.hdoctor.activity.pager.PatientIndexPager;
 import iori.hdoctor.activity.pager.PatientMinePager;
 import iori.hdoctor.adapter.ViewPagerAdapter;
@@ -51,7 +53,7 @@ public class PatientMainActivity extends BaseActivity implements NetworkConnectL
 	protected void initData() {
 		pages.clear();
 		pages.add(new PatientIndexPager(this));
-		pages.add(new PatientMinePager(this));
+		pages.add(new PatientDoctorPager(this));
 		pages.add(new PatientCirclePager(this));
 		pages.add(new PatientMinePager(this));
 		viewPagerAdapter = new ViewPagerAdapter(pages);
@@ -125,7 +127,8 @@ public class PatientMainActivity extends BaseActivity implements NetworkConnectL
 						oldPosition = 0;
 					}
 					viewPager.setCurrentItem(0, false);
-					setTitleAction(getResources().getString(R.string.patient_menu_jk));
+					setTitleAction(getString(R.string.patient_menu_jk));
+					setHideSetting();
 					break;
 				case R.id.shopping_main:
 					if (oldPosition != 1) {
@@ -133,7 +136,8 @@ public class PatientMainActivity extends BaseActivity implements NetworkConnectL
 						oldPosition = 1;
 					}
 					viewPager.setCurrentItem(1, false);
-					setTitleAction(getResources().getString(R.string.patient_menu_ys));
+					setTitleAction(getString(R.string.patient_menu_ys));
+					setHideSetting();
 					break;
 				case R.id.activity_main:
 					if (oldPosition != 2) {
@@ -141,7 +145,8 @@ public class PatientMainActivity extends BaseActivity implements NetworkConnectL
 						oldPosition = 2;
 					}
 					viewPager.setCurrentItem(2, false);
-					setTitleAction(getResources().getString(R.string.patient_menu_qz));
+					setTitleAction(getString(R.string.patient_menu_qz));
+					setHideSetting();
 					break;
 				case R.id.personal_main:
 					if (oldPosition != 3) {
@@ -149,10 +154,18 @@ public class PatientMainActivity extends BaseActivity implements NetworkConnectL
 						oldPosition = 3;
 					}
 					viewPager.setCurrentItem(3, false);
-					setTitleAction(getResources().getString(R.string.patient_menu_wo));
+					setTitleAction(getString(R.string.text_null));
+					showSetting(settingListener);
 					break;
 			}
 			currentItem = checkedId;
+		}
+	};
+
+	private View.OnClickListener settingListener = new View.OnClickListener() {
+		@Override
+		public void onClick(View v) {
+
 		}
 	};
 }

@@ -32,7 +32,7 @@
 
                 <TextView style="@style/TxtMainMyItem"
                     android:text="@string/blgl_item_time"
-                    android:textColor="@color/global_sub_title_color"
+                    android:textColor="@color/grey_deep"
                     android:gravity="right"/>
 
             </LinearLayout>
@@ -90,7 +90,8 @@
                     android:text="@string/doctor_circle_item_count"
                     android:textColor="@color/grey_deep"
                     android:layout_weight="1"
-                    android:drawableLeft="@drawable/icon_list_plus"/>
+                    android:gravity="center_vertical"
+                    android:drawableLeft="@drawable/icon_zan"/>
 
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -104,8 +105,9 @@
                         android:textColor="@color/grey_deep"
                         android:textSize="@dimen/global_title_size"
                         android:paddingRight="@dimen/global_line_padding"
-                        android:drawableLeft="@drawable/icon_list_plus"
-                        android:drawablePadding="@dimen/global_padding"/>
+                        android:drawableLeft="@drawable/icon_comment"
+                        android:drawablePadding="@dimen/global_padding"
+                        android:gravity="center_vertical"/>
 
                 </LinearLayout>
 
@@ -129,8 +131,25 @@
 
     <View style="@style/divider_line_horizontal" />
 
-    <LinearLayout style="@style/LayerMainMyItem">
-        <TextView style="@style/TxtMainMyItem" />
+    <LinearLayout style="@style/LayerMainMyItem"
+        android:paddingTop="@dimen/global_padding"
+        android:paddingBottom="@dimen/global_padding">
+        <EditText style="@style/TxtMainMyItem"
+            android:textColor="@color/global_title_color"
+            android:textSize="@dimen/global_title_size"
+            android:background="@drawable/edit_bg"
+            android:layout_marginRight="@dimen/global_line_padding"
+            android:singleLine="true"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/patient_doctor_comment"
+            android:textColor="@color/white"
+            android:textSize="@dimen/global_title_size"
+            android:background="@drawable/btn_green"
+            android:paddingLeft="@dimen/global_line_padding"
+            android:paddingRight="@dimen/global_line_padding"/>
     </LinearLayout>
 
 </LinearLayout>

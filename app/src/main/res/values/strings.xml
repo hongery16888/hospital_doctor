@@ -2,6 +2,7 @@
 <resources>
     <string name="app_name">HDoctor</string>
     <string name="network_error">网络连接失败</string>
+    <string name="text_null"></string>
 
     <!-- bottom bar item -->
     <string name="btn_index">首页</string>
@@ -318,5 +319,77 @@
     <string name="patient_fj_item_yy_type_ex">一级甲级医院</string>
     <string name="patient_fj_item_yy_adds">地址：</string>
     <string name="patient_fj_item_yy_adds_ex">上海普陀区人民路125号</string>
+
+    <!-- 医生 -->
+    <string name="patient_ys_title_main">医生</string>
+    <string name="patient_ys_search">搜索药品、药房、医院等</string>
+    <string name="patient_ys_fj">附近</string>
+    <string name="patient_ys_fj_ex">查看您身边的医生和医院</string>
+    <string name="patient_ys_zzys">资质医生</string>
+    <string name="patient_ys_zzys_ex">查看所有的医生</string>
+    <string name="patient_ys_yygh">预约挂号</string>
+    <string name="patient_ys_yygh_ex">远程实现在线不吐不快 、无需排队</string>
+    <string name="patient_ys_czcx">出诊查询</string>
+    <string name="patient_ys_czcx_ex">查看医生的出诊日期</string>
+    
+    <!-- 医生介绍 -->
+    <string name="patient_doctor_introduce_main">医生介绍</string>
+    <string name="patient_doctor_name">王德华</string>
+    <string name="patient_doctor_jg">机构：</string>
+    <string name="patient_doctor_jg_ex">上海男科疾病控制中心</string>
+    <string name="patient_doctor_jg_zl">资历：</string>
+    <string name="patient_doctor_jg_zl_ex">主治医生</string>
+    <string name="patient_doctor_status">出诊中</string>
+    <string name="patient_doctor_fwxm">服务项目</string>
+    <string name="patient_doctor_yyzx">预约咨询</string>
+    <string name="patient_doctor_yyzx_ex">在线预约享受服务</string>
+    <string name="patient_doctor_zxzx">在线咨询</string>
+    <string name="patient_doctor_zxzx_ex">在线预约享受服务</string>
+    <string name="patient_doctor_dhzx">在话咨询</string>
+    <string name="patient_doctor_dhzx_ex">电话咨询享受服务</string>
+    <string name="patient_doctor_unit">元/次</string>
+    <string name="patient_doctor_unit_ex">15</string>
+    <string name="patient_doctor_buy">购买</string>
+    <string name="patient_doctor_info_introduce">医生介绍</string>
+    <string name="patient_doctor_info_introduce_ex">这里是医生的简单介绍呢荣阿斯顿发阿桑地方 撒点粉市劳动局发觉这里是医生的简单介绍呢荣阿斯顿发阿桑地方 撒点粉市劳动局发觉这里是医生的简单介绍呢荣阿斯顿发阿桑地方 撒点粉市劳动局发觉</string>
+    <string name="patient_doctor_info_sc">擅长</string>
+    <string name="patient_doctor_info_sc_ex">这里是医生的简单介绍呢哦荣阿斯顿发阿桑地方 又不清楚了</string>
+    <string name="patient_doctor_comment">评论</string>
+    <string name="patient_doctor_comment_01_name">大小布丁</string>
+    <string name="patient_doctor_comment_01_time">2015-08-99</string>
+    <string name="patient_doctor_comment_01_info">真心给力我一定往死里吃</string>
+    <string name="patient_doctor_yyys">预约医生</string>
+    <string name="patient_doctor_zxys">咨询医生</string>
+    
+    <!-- 我的预约 -->
+    <string name="patient_wdyy_title_main">我的预约</string>
+    <string name="patient_wdyy_item_yy">上海人民医院</string>
+    <string name="patient_wdyy_item_name">李医生</string>
+    <string name="patient_wdyy_item_day">2015-06-33</string>
+    <string name="patient_wdyy_item_hour">下午3点</string>
+    <string name="patient_wdyy_item_adds">上海武宁路123人民医院两楼</string>
+
+    <!-- 我的订单 -->
+    <string name="patient_wddd_title_main">我的订单</string>
+    <string name="patient_wddd_all_order">全部订单</string>
+    <string name="patient_wddd_wait_order">待评价</string>
+    <string name="patient_wddd_item_price">￥5元</string>
+    <string name="patient_wddd_item_type">在线咨询</string>
+    <string name="patient_wddd_item_reply">立即评价 >></string>
+
+    <!-- 患者个人中心 -->
+    <string name="patient_mine_name">爱德华</string>
+    <string name="patient_mine_wddd">我的订单</string>
+    <string name="patient_mine_wddd_ex">2</string>
+    <string name="patient_mine_wdyy">我的预约</string>
+    <string name="patient_mine_wdyy_ex">0</string>
+    <string name="patient_mine_zhzx">账户中心</string>
+    <string name="patient_mine_wdsc">我的收藏</string>
+    <string name="patient_mine_wdfb">我的发表</string>
+    <string name="patient_mine_wdzl">我的资料</string>
+    <string name="patient_mine_setting">设置</string>
+
+
+
 
 </resources>

@@ -13,6 +13,26 @@
         android:src="@drawable/btn_back"
         android:scaleType="center"
         android:background="@drawable/bg_titlebar_action" />
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/setting"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/patient_mine_setting"
+            android:textColor="@color/white"
+            android:textSize="@dimen/global_title_size"
+            android:background="@drawable/bg_titlebar_action"
+            android:paddingLeft="@dimen/global_padding"
+            android:drawableLeft="@drawable/icon_sz"
+            android:drawablePadding="@dimen/five_dip"
+            android:gravity="center_vertical"
+            android:visibility="gone"/>
+
+    </LinearLayout>
 
     <FrameLayout
         android:layout_width="wrap_content"
