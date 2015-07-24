@@ -11,6 +11,7 @@ import com.handmark.pulltorefresh.library.PullToRefreshListView;
 import iori.hdoctor.R;
 import iori.hdoctor.activity.DoctorCircleInfoActivity;
 import iori.hdoctor.activity.PatientCircleActivity;
+import iori.hdoctor.activity.PatientCircleInfoActivity;
 import iori.hdoctor.activity.PatientFriendActivity;
 import iori.hdoctor.activity.PatientMessageActivity;
 import iori.hdoctor.activity.base.BasePager;
@@ -45,7 +46,7 @@ public class PatientCirclePager extends BasePager{
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                context.startActivity(new Intent(context, DoctorCircleInfoActivity.class));
+                context.startActivity(new Intent(context, PatientCircleInfoActivity.class));
             }
         });
         view.findViewById(R.id.sq).setOnClickListener(sqListener);

@@ -19,6 +19,10 @@ public class PatientDoctorIntroduceActivity extends BaseActivity{
     ExpandableTextView doctorIntroduce;
     @InjectView(R.id.doctor_skill)
     ExpandableTextView doctorSkill;
+    @OnClick(R.id.patient_yy)
+    public void patientYY (){
+        startActivity(new Intent(PatientDoctorIntroduceActivity.this, PatientDoctorYYActivity.class));
+    }
 
     @Override
     protected int setContentViewResId() {

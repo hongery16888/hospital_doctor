@@ -61,6 +61,9 @@
         <activity android:name=".activity.PatientDoctorIntroduceActivity" />
         <activity android:name=".activity.PatientWDYYActivity" />
         <activity android:name=".activity.PatientWDDDActivity" />
+        <activity android:name=".activity.PatientPublishCommentActivity" />
+        <activity android:name=".activity.PatientDoctorYYActivity" />
+        <activity android:name=".activity.PatientWDZLActivity" />
 
     </application>
 

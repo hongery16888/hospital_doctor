@@ -30,6 +30,7 @@ public class DoctorCircleInfoActivity extends BaseActivity {
     protected void initView() {
         setBackAction();
         setTitleAction(getResources().getString(R.string.doctor_circle_title_main));
+        setRightIconAction(R.drawable.btn_sc, scListener);
     }
 
     @Override
@@ -43,4 +44,10 @@ public class DoctorCircleInfoActivity extends BaseActivity {
         });
     }
 
+    private View.OnClickListener scListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+
+        }
+    };
 }

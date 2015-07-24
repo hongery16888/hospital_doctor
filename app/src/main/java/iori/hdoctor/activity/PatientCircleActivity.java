@@ -10,6 +10,7 @@ import butterknife.InjectView;
 import iori.hdoctor.R;
 import iori.hdoctor.activity.base.BaseActivity;
 import iori.hdoctor.adapter.DoctorCircleAdapter;
+import iori.hdoctor.adapter.PatientCircleAdapter;
 
 /**
  * Created by Administrator on 2015/7/11.
@@ -32,7 +33,7 @@ public class PatientCircleActivity extends BaseActivity {
 
     @Override
     protected void initData() {
-        listView.setAdapter(new DoctorCircleAdapter(this));
+        listView.setAdapter(new PatientCircleAdapter(this));
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {

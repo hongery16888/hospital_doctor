@@ -6,7 +6,7 @@
     android:background="@drawable/selector_item_blue_color">
 
     <LinearLayout style="@style/LayerMainMyItem"
-        android:background="@color/transparent">
+        android:background="@color/white">
 
         <TextView style="@style/TxtMainMyItem"
             android:text="@string/blgl_item_name"
@@ -34,12 +34,13 @@
         android:paddingLeft="@dimen/global_padding"
         android:paddingRight="@dimen/global_padding"
         android:paddingTop="@dimen/global_line_padding"
-        android:paddingBottom="@dimen/global_line_padding" />
+        android:paddingBottom="@dimen/global_line_padding"
+        android:background="@color/white"/>
 
     <View style="@style/divider_line_horizontal" />
 
     <LinearLayout style="@style/LayerMainMyItem"
-        android:background="@color/transparent">
+        android:background="@color/white">
 
         <TextView style="@style/TxtMainMyItem"
             android:text="@string/yygl_item_time"

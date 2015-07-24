@@ -65,5 +65,9 @@
     <dimen name="patient_fj_doctor_price">25dip</dimen>
     <dimen name="patient_fj_doctor_price_unit">10dip</dimen>
     
+    <!-- 发表评价 -->
+    <dimen name="patient_publish_comment_height">150dip</dimen>
+    <dimen name="patient_yy_comment_height">100dip</dimen>
+    
 
 </resources>

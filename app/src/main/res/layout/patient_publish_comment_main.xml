@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/global_bg"
+    android:orientation="vertical">
+
+    <include layout="@layout/patient_title_bar" />
+
+    <LinearLayout
+        style="@style/LayerMainMyItem"
+        android:layout_marginTop="@dimen/global_line_padding">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/patient_publish_comment_height"
+            android:layout_weight="1"
+            android:background="@color/transparent"
+            android:hint="@string/patient_publish_comment_edit_hint"
+            android:textColor="@color/global_title_color"
+            android:textSize="@dimen/global_sub_title_size"
+            android:paddingTop="@dimen/global_line_padding"
+            android:paddingLeft="@dimen/global_padding"
+            android:paddingRight="@dimen/global_line_padding"
+            android:paddingBottom="@dimen/global_line_padding"
+            android:gravity="top"/>
+
+        <View style="@style/divider_line_vertical"
+            android:layout_marginTop="@dimen/global_line_padding"
+            android:layout_marginBottom="@dimen/global_line_padding"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/icon_camera"
+            android:layout_margin="@dimen/global_line_padding"/>
+
+    </LinearLayout>
+
+    <LinearLayout style="@style/LayerMainMyItem"
+        android:layout_marginTop="@dimen/global_line_padding"
+        android:paddingTop="@dimen/global_padding">
+
+        <TextView style="@style/TxtMainMyItem"
+            android:gravity="center"
+            android:text="@string/patient_publish_comment_satisfaction"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5">
+
+            <RatingBar
+                android:id="@+id/ratingbar_satisfaction"
+                style="@style/foodRatingBar"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:stepSize="1.0"
+                android:rating="3"
+                >
+            </RatingBar>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout style="@style/LayerMainMyItem"
+        android:paddingBottom="@dimen/global_padding"
+        android:layout_marginBottom="@dimen/global_line_padding">
+
+        <TextView style="@style/TxtMainMyItem"
+            android:gravity="center"
+            android:text="@string/patient_publish_comment_skill"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5">
+
+            <RatingBar
+                android:id="@+id/ratingbar_skill"
+                style="@style/foodRatingBar"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:stepSize="1.0"
+                android:rating="2">
+            </RatingBar>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/next_step"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/patient_publish_comment_title_main"
+        android:textColor="@color/white"
+        android:textSize="@dimen/global_label"
+        android:padding="@dimen/global_padding"
+        android:background="@drawable/fbpl_orange_button_selector"
+        android:layout_marginTop="@dimen/global_btn_padding"
+        android:layout_marginLeft="@dimen/global_btn_padding"
+        android:layout_marginRight="@dimen/global_btn_padding"
+        android:layout_marginBottom="@dimen/global_padding"
+        android:gravity="center" />
+
+</LinearLayout>

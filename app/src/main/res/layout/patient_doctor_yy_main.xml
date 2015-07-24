@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/global_bg"
+    android:orientation="vertical">
+
+    <include layout="@layout/patient_title_bar" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:layout_marginTop="@dimen/global_line_padding">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/patient_yy_comment_height"
+            android:background="@color/white"
+            android:hint="@string/patient_illness_info"
+            android:gravity="top"
+            android:paddingTop="@dimen/global_line_padding"
+            android:paddingBottom="@dimen/global_line_padding"
+            android:paddingLeft="@dimen/global_padding"
+            android:paddingRight="@dimen/global_padding"
+            android:textSize="@dimen/global_sub_title_size"/>
+
+        <View style="@style/divider_line_horizontal"
+            android:layout_marginLeft="@dimen/global_padding"
+            android:layout_marginRight="@dimen/global_padding"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/patient_add_photo_prompt"
+            android:textColor="@color/grey_deep"
+            android:padding="@dimen/global_padding"
+            android:drawableLeft="@drawable/btn_add_photo"
+            android:drawablePadding="@dimen/global_padding"
+            android:gravity="center_vertical"/>
+
+    </LinearLayout>
+
+    <LinearLayout style="@style/LayerMainMyItem"
+        android:layout_marginTop="@dimen/global_line_padding">
+
+        <TextView android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/patient_yy_yy"
+            android:textColor="@color/grey_deep"
+            android:textSize="@dimen/global_title_size"
+            android:paddingLeft="@dimen/global_padding" />
+
+        <TextView style="@style/TxtMainMyItem"
+            android:text="@string/patient_yy_yy_ex"
+            android:textColor="@color/global_title_color"
+            android:paddingLeft="@dimen/zero_dip" />
+
+        <ImageView style="@style/ImageMainMyItemNext"
+            android:src="@drawable/list_ys_arrow"
+            android:paddingRight="@dimen/global_line_padding"/>
+
+    </LinearLayout>
+
+    <View style="@style/divider_line_horizontal"
+        android:layout_marginLeft="@dimen/global_padding"
+        android:layout_marginRight="@dimen/global_padding"/>
+
+    <LinearLayout style="@style/LayerMainMyItem">
+
+        <TextView android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/patient_yy_ys"
+            android:textColor="@color/grey_deep"
+            android:textSize="@dimen/global_title_size"
+            android:paddingLeft="@dimen/global_padding" />
+
+        <TextView style="@style/TxtMainMyItem"
+            android:text="@string/patient_yy_ys_ex"
+            android:textColor="@color/global_title_color"
+            android:paddingLeft="@dimen/zero_dip" />
+
+        <ImageView style="@style/ImageMainMyItemNext"
+            android:src="@drawable/list_ys_arrow"
+            android:paddingRight="@dimen/global_line_padding"/>
+
+    </LinearLayout>
+
+    <View style="@style/divider_line_horizontal"
+        android:layout_marginLeft="@dimen/global_padding"
+        android:layout_marginRight="@dimen/global_padding"/>
+
+    <LinearLayout style="@style/LayerMainMyItem">
+
+        <TextView android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/patient_yy_time"
+            android:textColor="@color/grey_deep"
+            android:textSize="@dimen/global_title_size"
+            android:paddingLeft="@dimen/global_padding" />
+
+        <TextView style="@style/TxtMainMyItem"
+            android:text="@string/patient_yy_time_ex"
+            android:textColor="@color/global_title_color"
+            android:paddingLeft="@dimen/zero_dip" />
+
+        <ImageView style="@style/ImageMainMyItemNext"
+            android:src="@drawable/list_ys_arrow"
+            android:paddingRight="@dimen/global_line_padding"/>
+
+    </LinearLayout>
+
+    <View style="@style/divider_line_horizontal"
+        android:layout_marginLeft="@dimen/global_padding"
+        android:layout_marginRight="@dimen/global_padding"/>
+
+    <LinearLayout style="@style/LayerMainMyItem">
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:button="@drawable/yy_prompt_selector"
+            android:text="@string/patient_yy_need_prompt"
+            android:textColor="@color/grey_deep"
+            android:textSize="@dimen/global_third_title_size"
+            android:paddingLeft="@dimen/global_padding"
+            android:paddingTop="@dimen/global_padding"
+            android:paddingBottom="@dimen/global_padding"
+            android:layout_marginLeft="@dimen/global_padding"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/next_step"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/patient_yy_commit"
+        android:textColor="@color/white"
+        android:textSize="@dimen/global_label"
+        android:padding="@dimen/global_padding"
+        android:background="@drawable/fbpl_orange_button_selector"
+        android:layout_marginTop="@dimen/global_btn_padding"
+        android:layout_marginLeft="@dimen/global_btn_padding"
+        android:layout_marginRight="@dimen/global_btn_padding"
+        android:layout_marginBottom="@dimen/global_padding"
+        android:gravity="center" />
+
+</LinearLayout>

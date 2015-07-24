@@ -389,7 +389,38 @@
     <string name="patient_mine_wdzl">我的资料</string>
     <string name="patient_mine_setting">设置</string>
 
+    <!-- 发表评价 -->
+    <string name="patient_publish_comment_title_main">发表评价</string>
+    <string name="patient_publish_comment_edit_hint">亲，说点什么吧！您的意见对其他人很重要哦！</string>
+    <string name="patient_publish_comment_satisfaction">满意度</string>
+    <string name="patient_publish_comment_skill">专业度</string>
+    
+    <!-- 预约 -->
+    <string name="patient_doctor_yy_title_main">预约</string>
+    <string name="patient_illness_info">病情简述</string>
+    <string name="patient_add_photo_prompt">添加照片，方便医生准确诊断</string>
+    <string name="patient_yy_yy">医院：</string>
+    <string name="patient_yy_ys">医生：</string>
+    <string name="patient_yy_yy_ex">上海人民医院</string>
+    <string name="patient_yy_ys_ex">爱德华</string>
+    <string name="patient_yy_time">日期：</string>
+    <string name="patient_yy_time_ex">2015-06-33</string>
+    <string name="patient_yy_need_prompt">需要提醒我</string>
+    <string name="patient_yy_commit">提交预约</string>
 
-
+    <!-- 我的资料 -->
+    <string name="patient_personal_info_title_main">我的资料</string>
+    <string name="patient_personal_info__avater">头像</string>
+    <string name="patient_personal_info_nickname">昵称</string>
+    <string name="patient_personal_info_nickname_ex">大布丁</string>
+    <string name="patient_personal_info_sex">性别</string>
+    <string name="patient_personal_info_sex_ex">男</string>
+    <string name="patient_personal_info_age">年龄</string>
+    <string name="patient_personal_info_age_ex">30</string>
+    <string name="patient_personal_info_adds">住址</string>
+    <string name="patient_personal_info_adds_ex">上海</string>
+    <string name="patient_personal_info_phone">手机</string>
+    <string name="patient_personal_info_phone_ex">13400000000</string>
+    <string name="patient_personal_info_save">保存</string>
 
 </resources>

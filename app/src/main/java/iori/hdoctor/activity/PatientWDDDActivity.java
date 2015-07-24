@@ -1,10 +1,12 @@
 package iori.hdoctor.activity;
 
+import android.content.Intent;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
 import butterknife.InjectView;
+import butterknife.OnItemClick;
 import iori.hdoctor.R;
 import iori.hdoctor.activity.base.BaseActivity;
 import iori.hdoctor.adapter.PatientWDDDAdapter;
@@ -35,7 +37,7 @@ public class PatientWDDDActivity extends BaseActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
+                startActivity(new Intent(PatientWDDDActivity.this, PatientPublishCommentActivity.class));
             }
         });
     }
