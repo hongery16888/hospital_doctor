@@ -191,7 +191,6 @@ public class NetworkConnection implements HttpRequest {
 			ResponseFilter filter = new ResponseFilter(
 					ERROR_OTHER, ERRORMSG_OTHER, 
 					baseRequest.getRequestAction(),
-					baseRequest.getRequestMark(),
 					listener);
 			HttpResponse res = null;
 			try {
@@ -239,7 +238,7 @@ public class NetworkConnection implements HttpRequest {
 //					}
 					// 设置返回数据过滤
 					filter = getDataTransfer().handleResponse(result, baseRequest.getRequestAction(),
-									baseRequest.getRequestMark(), cls, listener);
+									cls, listener);
 				}
 			
 			} catch (UnsupportedEncodingException e) {
@@ -307,10 +306,9 @@ public class NetworkConnection implements HttpRequest {
 			NetworkConnectListener listener = filter.getListener();
 			if(listener != null) {
 				if (filter.getError() == ERROR_NONE) {
-					listener.onRequestSucceed(filter.getData(), filter.getRequestType(), filter.getRequestMark());
+					listener.onRequestSucceed(filter.getData(), filter.getRequestType());
 				} else {
-					listener.onRequestFailure(filter.getError(), (String) filter.getData(), filter.getRequestType(),
-							filter.getRequestMark());
+					listener.onRequestFailure(filter.getError(), (String) filter.getData(), filter.getRequestType());
 				}
 			}
 		} catch (Exception e) {

@@ -25,7 +25,7 @@ public interface NetworkConnectListener {
 	 * @return void </br>
 	 * @throws </br>
 	 */
-	public abstract void onRequestSucceed(Object data, String requestAction, int requestMark);
+	public abstract void onRequestSucceed(Object data, String requestAction);
 
 	/**
 	 * Summary : 请求失败的回调</br>
@@ -36,6 +36,6 @@ public interface NetworkConnectListener {
 	 * @return void </br>
 	 * @throws </br>
 	 */
-	public abstract void onRequestFailure(int error, String errorMsg, String requestAction, int requestMark);
+	public abstract void onRequestFailure(int error, String errorMsg, String requestAction);
 }
 

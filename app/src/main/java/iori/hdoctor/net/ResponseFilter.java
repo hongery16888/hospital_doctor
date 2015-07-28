@@ -29,16 +29,13 @@ public class ResponseFilter {
 
 	private final String requestType;
 
-	private final int requestMark;
-	
 	private NetworkConnectListener listener;
 
 	private Object data;
 
-	public ResponseFilter(int error, Object data, String requestType, int requestMark, NetworkConnectListener listener) {
+	public ResponseFilter(int error, Object data, String requestType, NetworkConnectListener listener) {
 
 		this.requestType = requestType;
-		this.requestMark = requestMark;
 		this.error = error;
 		this.data = data;
 		this.listener = listener;
@@ -52,11 +49,6 @@ public class ResponseFilter {
 	public String getRequestType() {
 
 		return requestType;
-	}
-
-	public int getRequestMark() {
-
-		return requestMark;
 	}
 
 	public Object getData() {
@@ -85,7 +77,7 @@ public class ResponseFilter {
 	@Override
 	public String toString() {
 		return "ResponseFilter [error=" + error + ", requestType="
-				+ requestType + ", requestMark=" + requestMark + ", data="
+				+ requestType  + ", data="
 				+ data + "]";
 	}
 	

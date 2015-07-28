@@ -62,7 +62,7 @@ public class PatientMainActivity extends BaseActivity implements NetworkConnectL
 		main_radio.setOnCheckedChangeListener(checkedChangeListener);
 		main_radio.check(currentItem);
 		pages.get(oldPosition).onResume();
-		NetworkAPI.getNetworkAPI().checkVersion("1", 0, null, this);
+		NetworkAPI.getNetworkAPI().checkVersion("1", null, this);
 	}
 
 	@Override
@@ -88,12 +88,12 @@ public class PatientMainActivity extends BaseActivity implements NetworkConnectL
 	}
 
 	@Override
-	public void onRequestSucceed(Object data, String requestAction, int requestMark) {
+	public void onRequestSucceed(Object data, String requestAction) {
 		result.setText(((CheckVersionResponse)data).toString());
 	}
 
 	@Override
-	public void onRequestFailure(int error, String errorMsg, String requestAction, int requestMark) {
+	public void onRequestFailure(int error, String errorMsg, String requestAction) {
 		result.setText("error message : " + errorMsg);
 	}
 

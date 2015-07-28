@@ -85,6 +85,17 @@ public abstract class BaseRequest implements HttpRequest {
 		// }
 		// 需要传递userId
 
+		try {
+            for (Field f : field) {
+                f.setAccessible(true);
+//                System.out.println(f.getName() + " :  " + f.get(this));
+				nameValuePairs.add(new BasicNameValuePair(f.getName(), f.get(this).toString()));
+            }
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+
 		if(postUserId() != UNABLE_POST) {
 			try {
 				dataObj.put(KEY_USER_ID, userId != null ? userId : "");
@@ -92,7 +103,7 @@ public abstract class BaseRequest implements HttpRequest {
 				e.printStackTrace();
 			}
 		}
-		nameValuePairs.add(new BasicNameValuePair("data", dataObj.toString()));
+//		nameValuePairs.add(new BasicNameValuePair("data", dataObj.toString()));
 		
 		return nameValuePairs;
 	}

@@ -423,4 +423,6 @@
     <string name="patient_personal_info_phone_ex">13400000000</string>
     <string name="patient_personal_info_save">保存</string>
 
+    <string name="test_test_test">完全是为了测试!</string>
+
 </resources>

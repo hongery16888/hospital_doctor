@@ -2,12 +2,14 @@ package iori.hdoctor.net.request;
 
 import java.util.HashMap;
 
-public class CheckVersionRequest extends BaseRequest {
+public class LoginRequest extends BaseRequest {
 
-	protected String versionCode;
+	protected String username;
+	protected String password;
 
-	public CheckVersionRequest(String versionCode) {
-		this.versionCode = versionCode;
+	public LoginRequest(String username, String password) {
+		this.username = username;
+		this.password = password;
 	}
 	
 	@Override
@@ -22,12 +24,12 @@ public class CheckVersionRequest extends BaseRequest {
 
 	@Override
 	public String getRequestUrl() {
-		return PATH_CHECK_VERSION;
+		return PATH_LOGIN;
 	}
 
 	@Override
 	public String getRequestAction() {
-		return CHECK_VERSION;
+		return LOGIN;
 	}
 
 	@Override

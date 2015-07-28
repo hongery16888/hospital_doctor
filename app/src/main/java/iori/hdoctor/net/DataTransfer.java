@@ -33,11 +33,11 @@ public class DataTransfer implements HttpRequest {
 	// ↓登录信息↓
 	private static String userID;
 	
-	public ResponseFilter handleResponse(String jsonString, String requestAction, int requestMark, Class<?> cls, NetworkConnectListener listener) throws JSONException {
+	public ResponseFilter handleResponse(String jsonString, String requestAction, Class<?> cls, NetworkConnectListener listener) throws JSONException {
 
 		ResponseFilter filter = new ResponseFilter(
 				ERROR_DATA_TRANSFORM, ERRORMSG_DATA_TRANSFORM, 
-				requestAction, requestMark, listener);
+				requestAction, listener);
 		
 		if (null == jsonString) {
 			return filter;

@@ -7,10 +7,9 @@ public class TestRequest extends BaseRequest {
 	protected String testKey1;
 	protected String testKey2;
 	
-	public TestRequest(String testKey1, String testKey2, int requestMark) {
+	public TestRequest(String testKey1, String testKey2) {
 		this.testKey1 = testKey1;
 		this.testKey2 = testKey2;
-		setRequestMark(requestMark);
 	}
 	
 	@Override

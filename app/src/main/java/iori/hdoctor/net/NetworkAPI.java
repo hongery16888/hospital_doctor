@@ -10,6 +10,7 @@
 package iori.hdoctor.net;
 
 import iori.hdoctor.net.request.CheckVersionRequest;
+import iori.hdoctor.net.request.LoginRequest;
 import iori.hdoctor.net.request.TestRequest;
 import iori.hdoctor.net.response.CheckVersionResponse;
 import iori.hdoctor.net.response.TestResponse;
@@ -50,15 +51,20 @@ public class NetworkAPI implements HttpRequest {
 	// ///////////////////////////////////////////////////////////////////////
 	// API
 	// ///////////////////////////////////////////////////////////////////////
-	public void testRequest(String testKey1, String testKey2, int requestMark, RequestProgressDialog diag,
+	public void testRequest(String testKey1, String testKey2, RequestProgressDialog diag,
 			NetworkConnectListener listener) {
-		TestRequest request = new TestRequest(testKey1, testKey2, requestMark);
+		TestRequest request = new TestRequest(testKey1, testKey2);
 		mConnection.sendRequestByPost(request, diag, TestResponse.class, listener);
 	}
 
-    public void checkVersion(String versionCode, int requestMark, RequestProgressDialog diag, NetworkConnectListener listener){
-        CheckVersionRequest request = new CheckVersionRequest(versionCode, requestMark);
+    public void checkVersion(String versionCode, RequestProgressDialog diag, NetworkConnectListener listener){
+        CheckVersionRequest request = new CheckVersionRequest(versionCode);
         mConnection.sendRequestByPost(request, diag, CheckVersionResponse.class, listener);
     }
+
+	public void login(String username, String password, RequestProgressDialog diag, NetworkConnectListener listener){
+		LoginRequest request = new LoginRequest(username, password);
+		mConnection.sendRequestByPost(request, diag, CheckVersionResponse.class, listener);
+	}
 
 }

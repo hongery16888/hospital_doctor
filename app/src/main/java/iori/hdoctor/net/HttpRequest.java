@@ -43,14 +43,16 @@ public interface HttpRequest {
 //	public static final String BASIC_PATH = "http://www.qingzaoyisheng.com/webservice/";
 //	public static final String PATH_NORMAL = BASIC_PATH + "im";
 
-    public static final String BASIC_PATH = "http://120.26.116.12:9090/";
+    public static final String BASIC_PATH = "http://61.155.202.142:51080/";
     public static final String PATH_NORMAL =  "etc_web";
     public static final String PATH_CHECK_VERSION = BASIC_PATH + "etc_web/json.html";
+	public static final String PATH_LOGIN = BASIC_PATH + "user/signin";
     public static final String CHECK_VERSION =  "check_version";
 
 
 	// ////////////////
 	public static final String TEST_PATH = "webserviceTest";
+	public static final String LOGIN = "login";
 	
 	/** 06、检查更新 **/
 //	public static final String CHECK_VERSION = "checkVersion";
