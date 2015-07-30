@@ -16,10 +16,16 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
-            <LinearLayout style="@style/LayerMainMyItem"
+            <LinearLayout
+                android:id="@+id/head_img"
+                style="@style/LayerMainMyItem"
                 android:paddingTop="@dimen/global_padding"
                 android:paddingBottom="@dimen/global_padding">
-                <ImageView style="@style/ImageMainMyItemNext"
+                <ImageView
+                    android:id="@+id/head"
+                    android:layout_width="80dip"
+                    android:layout_height="80dip"
+                    android:adjustViewBounds="true"
                     android:src="@drawable/img_avater_grzx" />
 
                 <TextView style="@style/TxtMainMyItem"

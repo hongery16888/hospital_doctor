@@ -25,6 +25,7 @@ public class PatientZWZD04Activity extends BaseActivity implements AdapterView.O
 
     @OnClick(R.id.next_step)
     public void nextStep() {
+        getApp().setActivities(this);
         startActivity(new Intent(PatientZWZD04Activity.this, PatientZWZD05Activity.class));
     }
 

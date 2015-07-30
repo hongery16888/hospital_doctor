@@ -9,6 +9,8 @@
  */
 package iori.hdoctor.net;
 
+import android.util.Log;
+
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
@@ -42,8 +44,8 @@ public class DataTransfer implements HttpRequest {
 		if (null == jsonString) {
 			return filter;
 		}
+		Log.i(TAG, jsonString);
 		JSONObject jsonObject = new JSONObject(jsonString);
-		// System.out.println("jsonString : " + jsonString);
 		Boolean result = jsonObject.optBoolean(KEY_RESULT);
 		if (result) {
 			JSONObject dataJson = jsonObject.optJSONObject(KEY_DATA);

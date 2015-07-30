@@ -54,6 +54,7 @@ public class DoctorLoginActivity extends BaseActivity implements NetworkConnectL
         @Override
         public void onClick(View v) {
             startActivity(new Intent(DoctorLoginActivity.this, PatientLoginActivity.class));
+            finish();
         }
     };
 

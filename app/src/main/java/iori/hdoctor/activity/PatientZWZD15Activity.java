@@ -1,7 +1,11 @@
 package iori.hdoctor.activity;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.widget.TextView;
+
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 
 import butterknife.OnClick;
 import iori.hdoctor.R;
@@ -14,7 +18,12 @@ public class PatientZWZD15Activity extends BaseActivity{
 
     @OnClick(R.id.zwzd_complete)
     public void complete() {
-        startActivity(new Intent(PatientZWZD15Activity.this, PatientZWZD05Activity.class));
+        for(int i = 0 ; i < getApp().getActivities().size() ; i++){
+            getApp().getActivities().get(i).finish();
+        }
+        startActivity(new Intent(PatientZWZD15Activity.this, PatientFXBGActivity.class));
+        getApp().getActivities().clear();
+        finish();
     }
 
     private TextView tempTV;

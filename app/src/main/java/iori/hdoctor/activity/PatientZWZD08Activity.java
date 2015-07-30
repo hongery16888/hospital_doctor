@@ -16,6 +16,7 @@ public class PatientZWZD08Activity extends BaseActivity implements SeekBar.OnSee
 
     @OnClick(R.id.next_step)
     public void nextStep() {
+        getApp().setActivities(this);
         startActivity(new Intent(PatientZWZD08Activity.this, PatientZWZD09Activity.class));
     }
 

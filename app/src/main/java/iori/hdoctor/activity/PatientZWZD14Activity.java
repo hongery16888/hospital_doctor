@@ -14,6 +14,7 @@ public class PatientZWZD14Activity extends BaseActivity{
 
     @OnClick(R.id.next_step)
     public void nextStep() {
+        getApp().setActivities(this);
         startActivity(new Intent(PatientZWZD14Activity.this, PatientZWZD15Activity.class));
     }
 
