@@ -3,7 +3,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/global_bg">
+    android:background="@color/global_bg"
+    android:id="@+id/persion_main">
 
     <include layout="@layout/title_bar" />
 
@@ -16,10 +17,16 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
-            <LinearLayout style="@style/LayerMainMyItem"
+            <LinearLayout
+                android:id="@+id/head_img"
+                style="@style/LayerMainMyItem"
                 android:paddingTop="@dimen/global_padding"
                 android:paddingBottom="@dimen/global_padding">
-                <ImageView style="@style/ImageMainMyItemNext"
+                <ImageView
+                    android:id="@+id/head"
+                    style="@style/ImageMainMyItemNext"
+                    android:layout_width="70dip"
+                    android:layout_height="70dip"
                     android:src="@drawable/img_avater_grzx" />
 
                 <TextView style="@style/TxtMainMyItem"
@@ -39,6 +46,7 @@
                     android:textColor="@color/global_title_color"/>
 
                 <TextView style="@style/TxtMainMyItem"
+                    android:id="@+id/name"
                     android:text="@string/doctor_personal_info_name_ex"
                     android:gravity="right"
                     android:textColor="@color/grey_deep"
@@ -55,6 +63,7 @@
                     android:textColor="@color/global_title_color"/>
 
                 <TextView style="@style/TxtMainMyItem"
+                    android:id="@+id/introduce"
                     android:text="@string/doctor_personal_info_intro_ex"
                     android:gravity="right"
                     android:textColor="@color/grey_deep"
@@ -70,7 +79,8 @@
                     android:text="@string/doctor_personal_info_skilled"
                     android:textColor="@color/global_title_color"/>
 
-                <TextView style="@style/TxtMainMyItem"
+                 <TextView style="@style/TxtMainMyItem"
+                    android:id="@+id/skill"
                     android:text="@string/doctor_personal_info_skilled_ex"
                     android:gravity="right"
                     android:textColor="@color/grey_deep"
@@ -87,6 +97,7 @@
                     android:textColor="@color/global_title_color"/>
 
                 <TextView style="@style/TxtMainMyItem"
+                    android:id="@+id/hospital"
                     android:text="@string/doctor_personal_info_hospital_ex"
                     android:gravity="right"
                     android:textColor="@color/grey_deep"
@@ -103,6 +114,7 @@
                     android:textColor="@color/global_title_color"/>
 
                 <TextView style="@style/TxtMainMyItem"
+                    android:id="@+id/keshi"
                     android:text="@string/doctor_personal_info_subject_ex"
                     android:gravity="right"
                     android:textColor="@color/grey_deep"
@@ -119,6 +131,7 @@
                     android:textColor="@color/global_title_color"/>
 
                 <TextView style="@style/TxtMainMyItem"
+                    android:id="@+id/post"
                     android:text="@string/doctor_personal_info_job_ex"
                     android:gravity="right"
                     android:textColor="@color/grey_deep"
@@ -134,6 +147,7 @@
 
             <LinearLayout style="@style/LayerMainMyItem">
                 <TextView style="@style/TxtMainMyItem"
+                    android:id="@+id/shenfen"
                     android:text="@string/doctor_personal_info_certificate"
                     android:textColor="@color/global_title_color"/>
 
@@ -144,6 +158,7 @@
 
             <LinearLayout style="@style/LayerMainMyItem">
                 <TextView style="@style/TxtMainMyItem"
+                    android:id="@+id/email"
                     android:text="@string/doctor_personal_info_email"
                     android:textColor="@color/global_title_color"/>
 

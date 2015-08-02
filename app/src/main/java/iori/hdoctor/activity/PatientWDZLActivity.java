@@ -16,6 +16,7 @@ import com.nostra13.universalimageloader.core.display.SimpleBitmapDisplayer;
 import butterknife.InjectView;
 import butterknife.OnClick;
 import iori.hdoctor.R;
+import iori.hdoctor.activity.base.HDoctorCode;
 import iori.hdoctor.app.MyApp;
 import iori.hdoctor.view.CircleBitmapDisplayer;
 import iori.hdoctor.view.crop.CropHelper;
@@ -26,7 +27,7 @@ import iori.hdoctor.view.crop.CropParams;
  */
 public class PatientWDZLActivity extends BasePhotoCropActivity {
 
-    private CropParams mCropParams = new CropParams();
+    private CropParams mCropParams = new CropParams(HDoctorCode.HEAD_PATH);
     private ImageLoader imageLoader;
     private DisplayImageOptions options;
 
@@ -74,8 +75,6 @@ public class PatientWDZLActivity extends BasePhotoCropActivity {
     public void onPhotoCropped(Uri uri) {
         Toast.makeText(this, "Photo Url : " + MyApp.PHOTO_BASIC_PATH + uri.getPath(), Toast.LENGTH_LONG).show();
         imageLoader.displayImage(MyApp.PHOTO_BASIC_PATH + uri.getPath(), head, options);
-//        new DisplayImageOptions.Builder()
-//                .cloneFrom(getApp().getOptions()).displayer(new CircleBitmapDisplayer()).build()
     }
 
     @Override

@@ -20,14 +20,16 @@
             android:paddingBottom="@dimen/global_padding"
             android:gravity="center_vertical"/>
 
-        <TextView
+        <EditText
+            android:id="@+id/price"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="2"
             android:text="@string/doctor_ffgl_info_price_ex"
             android:textColor="@color/red"
             android:textSize="@dimen/global_label"
-            android:gravity="right"/>
+            android:gravity="right"
+            android:background="@color/transparent"/>
 
         <TextView android:layout_width="wrap_content"
             android:layout_height="wrap_content"

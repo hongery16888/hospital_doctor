@@ -41,8 +41,8 @@ public class CropParams {
     public int outputX;
     public int outputY;
 
-    public CropParams() {
-        uri = CropHelper.buildUri();
+    public CropParams(String path) {
+        uri = CropHelper.buildUri(path);
         type = CROP_TYPE;
         outputFormat = OUTPUT_FORMAT;
         crop = "true";

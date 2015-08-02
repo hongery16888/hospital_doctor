@@ -37,6 +37,9 @@
     <!-- 注册 -->
     <dimen name="register_head_padding">50dip</dimen>
 
+    <dimen name="doctor_total_size">25sp</dimen>
+    <dimen name="doctor_total_info_size">30sp</dimen>
+
     <!-- 工作台 -->
     <dimen name="doctor_visitor_count_size">30sp</dimen>
     <dimen name="doctor_gzt_top_h">50dip</dimen>

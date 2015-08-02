@@ -38,6 +38,8 @@
     <string name="register">注册</string>
     <string name="register_phone_hint">请输入密码</string>
     <string name="register_phone_hint_again">请再次输入密码</string>
+    <string name="register_password_diff">两次密码输入不同</string>
+    <string name="register_info_empty">填写不能为空</string>
     <string name="register_credentials">身份证</string>
     <string name="register_credentials_prompt">请上传身份证下面照片</string>
     <string name="register_certificate">医生职业资格证</string>
@@ -52,6 +54,17 @@
     <string name="doctor_hospital_ex">爱德华医院</string>
     <string name="doctor_subject_ex">妇产科</string>
     <string name="doctor_work_phone_ex">021－60323030</string>
+
+    <!-- 统计 -->
+    <string name="doctor_statistics_title_main">统计</string>
+    <string name="doctor_visitor_total">总访客</string>
+    <string name="doctor_visitor_total_ex">301</string>
+    <string name="doctor_patient_total">总患者</string>
+    <string name="doctor_patient_total_ex">52</string>
+    <string name="doctor_today">今天</string>
+    <string name="doctor_yesterday">昨日</string>
+    <string name="doctor_tj_unit">访客</string>
+    <string name="doctor_patient">患者</string>
 
     <!-- 工作台 -->
     <string name="doctor_title_main">工作台</string>
@@ -119,6 +132,7 @@
     <string name="doctor_ffgl_info_price_ex">20</string>
     <string name="doctor_ffgl_info_unit">元/次</string>
     <string name="doctor_ffgl_info_save">保存</string>
+    <string name="doctor_ffgl_info_prompt">填写价格不能为空</string>
 
     <!-- 个人中心 -->
     <string name="doctor_personal_title_main">个人中心</string>
@@ -137,7 +151,12 @@
     <string name="doctor_personal_info_job">职称</string>
     <string name="doctor_personal_info_certificate">身份证</string>
     <string name="doctor_personal_info_email">邮箱</string>
-
+    <string name="open_photo">图片库</string>
+    <string name="open_camera">拍照</string>
+    <string name="photo_cancel">取消</string>
+    <string name="shenfen_prompt">请上传身体证照片</string>
+    <string name="zige_prompt">请上传医生职业资格证照片</string>
+    <string name="gongzuo_prompt">请上传医院工作证照片</string>
     <string name="doctor_personal_info_name_ex">盗版哥</string>
     <string name="doctor_personal_info_intro_ex">个人的简介</string>
     <string name="doctor_personal_info_skilled_ex">外科</string>
@@ -424,5 +443,26 @@
     <string name="patient_personal_info_save">保存</string>
 
     <string name="test_test_test">完全是为了测试!</string>
+
+    <!-- 医生详情 -->
+    <string name="doctor_doc_info_dt">他的动态</string>
+    <string name="doctor_doc_info_fj">附近哪里有医院啊？</string>
+    <string name="doctor_doc_info_remark">签名</string>
+    <string name="doctor_doc_info_remark_ex">你猜你猜我猜</string>
+    <string name="doctor_doc_info_age">年龄</string>
+    <string name="doctor_doc_info_age_ex">18</string>
+    <string name="doctor_doc_info_adds">住址</string>
+    <string name="doctor_doc_info_adds_ex">上海</string>
+    
+    <!-- 收入详情 -->
+    <string name="doctor_income_title_main">收入详情</string>
+    <string name="doctor_income_prompt">可提现金额</string>
+    <string name="doctor_income_count">955</string>
+    <string name="doctor_income_unit">元</string>
+    <string name="doctor_income_bank_card_zs">招商银行</string>
+    <string name="doctor_income_bank_card_ex">**** **** 5452</string>
+    <string name="doctor_income_add_bank_card">添加银行卡</string>
+    <string name="doctor_income_get_cash">提现记录</string>
+    <string name="doctor_income_apply">申请提现</string>
 
 </resources>

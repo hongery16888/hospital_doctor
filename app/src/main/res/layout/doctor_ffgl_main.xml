@@ -32,7 +32,9 @@
             android:drawablePadding="@dimen/global_padding"
             android:gravity="center_vertical"/>
 
-        <TextView android:layout_width="wrap_content"
+        <TextView
+            android:id="@+id/zx_switch"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:paddingTop="@dimen/global_line_padding"
@@ -65,7 +67,9 @@
             android:drawablePadding="@dimen/global_padding"
             android:gravity="center_vertical"/>
 
-        <TextView android:layout_width="wrap_content"
+        <TextView
+            android:id="@+id/dh_switch"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:paddingTop="@dimen/global_line_padding"
@@ -107,7 +111,9 @@
             android:drawablePadding="@dimen/global_padding"
             android:gravity="center_vertical"/>
 
-        <TextView android:layout_width="wrap_content"
+        <TextView
+            android:id="@+id/yy_switch"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:paddingTop="@dimen/global_line_padding"

@@ -35,7 +35,7 @@
             android:padding="@dimen/global_line_padding"
             android:drawablePadding="@dimen/global_line_padding"
             android:background="@color/transparent"
-            android:text="157623"
+            android:text="123"
             android:hint="@string/phone_hint"
             android:textColor="@color/black_color"
             android:textSize="@dimen/global_title_size"

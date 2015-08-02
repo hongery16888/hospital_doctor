@@ -37,13 +37,13 @@ public class CropHelper {
     public static final int REQUEST_CROP = 127;
     public static final int REQUEST_CAMERA = 128;
 
-    public static final String CROP_CACHE_FILE_NAME = "crop_cache_file.jpg";
+    public static final String CROP_CACHE_FILE_NAME = ".jpg";
 
-    public static Uri buildUri() {
+    public static Uri buildUri(String path) {
         return Uri
                 .fromFile(Environment.getExternalStorageDirectory())
                 .buildUpon()
-                .appendPath(CROP_CACHE_FILE_NAME)
+                .appendPath(path + CROP_CACHE_FILE_NAME)
                 .build();
     }
 

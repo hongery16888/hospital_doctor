@@ -33,7 +33,7 @@ public class DataTransfer implements HttpRequest {
 
 	private static final String TAG = "DataTransfer";
 	// ↓登录信息↓
-	private static String userID;
+	private static String uid;
 	
 	public ResponseFilter handleResponse(String jsonString, String requestAction, Class<?> cls, NetworkConnectListener listener) throws JSONException {
 
@@ -74,13 +74,12 @@ public class DataTransfer implements HttpRequest {
 		Gson gson = gsong.setPrettyPrinting().disableHtmlEscaping().create();
 		return gson.fromJson(strJson, cls);
 	}
-	
-	public static void setUserId(String userId) {
-		userID = userId;
+
+	public static String getUid() {
+		return uid;
 	}
-	
-	public static String getUserId() {
-		return userID;
+
+	public static void setUid(String uid) {
+		DataTransfer.uid = uid;
 	}
-	
 }

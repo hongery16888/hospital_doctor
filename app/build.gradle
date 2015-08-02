@@ -28,4 +28,5 @@ dependencies {
     compile files('libs/httpmime-4.2.1.jar')
     compile project(':pulltorefresh')
     compile 'com.ms-square:expandableTextView:0.1.4'
+    compile files('libs/mpandroidchartlibrary-2-1-2.jar')
 }

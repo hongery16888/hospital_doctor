@@ -8,9 +8,11 @@ import butterknife.InjectView;
 import butterknife.OnClick;
 import iori.hdoctor.R;
 import iori.hdoctor.activity.base.BaseActivity;
+import iori.hdoctor.net.DataTransfer;
 import iori.hdoctor.net.HttpRequest;
 import iori.hdoctor.net.NetworkAPI;
 import iori.hdoctor.net.NetworkConnectListener;
+import iori.hdoctor.net.response.DoctorLoginResponse;
 
 /**
  * Created by Administrator on 2015/7/11.
@@ -25,7 +27,7 @@ public class DoctorLoginActivity extends BaseActivity implements NetworkConnectL
 
     @OnClick(R.id.register)
     public void register() {
-        startActivity(new Intent(DoctorLoginActivity.this, DoctorRegisterActivity.class));
+        startActivity(new Intent(DoctorLoginActivity.this, DoctorRegisterPhoneActivity.class));
     }
 
     @OnClick(R.id.login)
@@ -60,10 +62,13 @@ public class DoctorLoginActivity extends BaseActivity implements NetworkConnectL
 
     @Override
     public void onRequestSucceed(Object data, String requestAction) {
-        if (HttpRequest.LOGIN.equals(requestAction)) {
-            finish();
+        if (HttpRequest.DOC_LOGIN.equals(requestAction)) {
+            showToast(((DoctorLoginResponse)data).getName());
+            DataTransfer.setUid(((DoctorLoginResponse) data).getUid());
+            getApp().setUser((DoctorLoginResponse)data);
+            startActivity(new Intent(DoctorLoginActivity.this, DoctorMainActivity.class));
+//            finish();
         }
-        startActivity(new Intent(DoctorLoginActivity.this, DoctorMainActivity.class));
         dismissProgressDialog();
     }
 

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/global_bg">
+
+    <include layout="@layout/title_bar" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:background="@color/top_bar_bg"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/img_avater_register"
+            android:layout_marginTop="@dimen/global_line_padding"
+            android:layout_marginBottom="@dimen/global_line_padding"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/doctor_personal_name"
+            android:textColor="@color/white"
+            android:textSize="@dimen/global_title_size"
+            android:paddingBottom="@dimen/global_line_padding"/>
+    </LinearLayout>
+
+    <LinearLayout style="@style/LayerMainMyItem">
+
+        <TextView style="@style/TxtMainMyItem"
+            android:text="@string/doctor_doc_info_dt"
+            android:textColor="@color/grey_deep"/>
+
+        <ImageView style="@style/ImageMainMyItemNext" />
+
+    </LinearLayout>
+
+    <View style="@style/divider_line_horizontal" />
+
+    <LinearLayout style="@style/LayerMainMyItem">
+
+        <TextView style="@style/TxtMainMyItem"
+            android:text="@string/doctor_doc_info_remark"
+            android:textColor="@color/grey_deep"
+            android:layout_weight="0.5"/>
+
+        <TextView style="@style/TxtMainMyItem"
+            android:text="@string/doctor_doc_info_remark_ex"
+            android:textColor="@color/grey_deep"/>
+
+        <ImageView style="@style/ImageMainMyItemNext" />
+
+    </LinearLayout>
+
+    <View style="@style/divider_line_horizontal" />
+
+    <LinearLayout style="@style/LayerMainMyItem">
+
+        <TextView style="@style/TxtMainMyItem"
+            android:text="@string/doctor_doc_info_age"
+            android:textColor="@color/grey_deep"
+            android:layout_weight="0.5"/>
+
+        <TextView style="@style/TxtMainMyItem"
+            android:text="@string/doctor_doc_info_age_ex" />
+
+        <ImageView style="@style/ImageMainMyItemNext" />
+
+    </LinearLayout>
+
+    <View style="@style/divider_line_horizontal" />
+
+    <LinearLayout style="@style/LayerMainMyItem">
+
+        <TextView style="@style/TxtMainMyItem"
+            android:text="@string/doctor_doc_info_adds"
+            android:textColor="@color/grey_deep"
+            android:layout_weight="0.5"/>
+
+        <TextView style="@style/TxtMainMyItem"
+            android:text="@string/doctor_doc_info_adds_ex" />
+
+        <ImageView style="@style/ImageMainMyItemNext" />
+
+    </LinearLayout>
+
+    <View style="@style/divider_line_horizontal" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dip"
+        android:background="@color/white"></LinearLayout>
+
+</LinearLayout>

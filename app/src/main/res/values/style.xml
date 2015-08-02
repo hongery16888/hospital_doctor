@@ -168,6 +168,12 @@
 		<item name="android:progressDrawable">@drawable/star_rating_bar_full</item>
 		<item name="android:minHeight">20dp</item>
 		<item name="android:maxHeight">20dp</item>
+	</style>
 
+	<style name="mypopwindow_anim_style">
+		<item name="android:windowEnterAnimation">@anim/pop_show</item>
+		<!-- 指定显示的动画xml -->
+		<item name="android:windowExitAnimation">@anim/pop_hide</item>
+		<!-- 指定消失的动画xml -->
 	</style>
 </resources>

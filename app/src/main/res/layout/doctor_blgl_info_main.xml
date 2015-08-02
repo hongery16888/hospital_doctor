@@ -153,6 +153,7 @@
         android:padding="@dimen/global_line_padding">
 
         <TextView
+            android:id="@+id/doctor_info"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -165,10 +166,11 @@
             android:gravity="center" />
 
         <TextView
+            android:id="@+id/reply"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="@string/blgl_info_data"
+            android:text="@string/blgl_info_reply"
             android:textColor="@color/white"
             android:textSize="@dimen/global_label"
             android:padding="@dimen/global_padding"

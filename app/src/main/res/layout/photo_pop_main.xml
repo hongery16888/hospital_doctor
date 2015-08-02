@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <View style="@style/divider_line_horizontal" />
+
+    <TextView
+        android:id="@+id/open_photo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/open_photo"
+        android:textColor="@color/global_title_color"
+        android:textSize="@dimen/global_sub_title_size"
+        android:background="@drawable/selector_item"
+        android:gravity="center"
+        android:padding="@dimen/global_padding"/>
+
+    <View style="@style/divider_line_horizontal" />
+
+    <TextView
+        android:id="@+id/open_camera"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/open_camera"
+        android:textColor="@color/global_title_color"
+        android:textSize="@dimen/global_sub_title_size"
+        android:background="@drawable/selector_item"
+        android:gravity="center"
+        android:padding="@dimen/global_padding"/>
+
+    <View style="@style/divider_line_horizontal" />
+
+    <TextView
+        android:id="@+id/photo_cancel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/photo_cancel"
+        android:textColor="@color/global_title_color"
+        android:textSize="@dimen/global_sub_title_size"
+        android:background="@drawable/selector_item"
+        android:gravity="center"
+        android:padding="@dimen/global_padding"/>
+
+</LinearLayout>

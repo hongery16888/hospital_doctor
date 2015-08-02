@@ -2,13 +2,13 @@ package iori.hdoctor.net.request;
 
 import java.util.HashMap;
 
-public class LoginRequest extends BaseRequest {
+public class DoctorLoginRequest extends BaseRequest {
 
-	protected String username;
+	protected String name;
 	protected String password;
 
-	public LoginRequest(String username, String password) {
-		this.username = username;
+	public DoctorLoginRequest(String name, String password) {
+		this.name = name;
 		this.password = password;
 	}
 	
@@ -24,12 +24,12 @@ public class LoginRequest extends BaseRequest {
 
 	@Override
 	public String getRequestUrl() {
-		return PATH_LOGIN;
+		return PATH_DOC_LOGIN;
 	}
 
 	@Override
 	public String getRequestAction() {
-		return LOGIN;
+		return DOC_LOGIN;
 	}
 
 	@Override

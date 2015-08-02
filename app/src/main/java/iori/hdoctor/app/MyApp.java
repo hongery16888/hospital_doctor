@@ -24,12 +24,14 @@ import java.io.File;
 import java.util.ArrayList;
 
 import iori.hdoctor.R;
+import iori.hdoctor.net.response.DoctorLoginResponse;
 
 public class MyApp extends Application {
 
     private float density;
     private ArrayList<Activity> activities = new ArrayList<Activity>();
     private DisplayImageOptions options;
+    private DoctorLoginResponse user;
 
     /*客户端在SD卡的存储根目录*/
     public final static String APP_ROOT = Environment.getExternalStorageDirectory().getPath() + File.separator;
@@ -126,5 +128,13 @@ public class MyApp extends Application {
 
     public void setOptions(DisplayImageOptions options) {
         this.options = options;
+    }
+
+    public DoctorLoginResponse getUser() {
+        return user;
+    }
+
+    public void setUser(DoctorLoginResponse user) {
+        this.user = user;
     }
 }

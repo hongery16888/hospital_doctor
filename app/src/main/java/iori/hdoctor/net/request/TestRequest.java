@@ -24,7 +24,7 @@ public class TestRequest extends BaseRequest {
 
 	@Override
 	public String getRequestUrl() {
-		return PATH_NORMAL;
+		return PATH_DOC_BENCH;
 	}
 
 	@Override

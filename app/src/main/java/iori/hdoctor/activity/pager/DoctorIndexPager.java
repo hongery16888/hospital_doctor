@@ -4,21 +4,32 @@ import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import iori.hdoctor.R;
 import iori.hdoctor.activity.DoctorBLGLActivity;
 import iori.hdoctor.activity.DoctorCZSZActivity;
 import iori.hdoctor.activity.DoctorFFGLActivity;
+import iori.hdoctor.activity.DoctorMainActivity;
+import iori.hdoctor.activity.DoctorStatisticsActivity;
 import iori.hdoctor.activity.DoctorYYZXActivity;
 import iori.hdoctor.activity.base.BasePager;
+import iori.hdoctor.net.HttpRequest;
+import iori.hdoctor.net.NetworkAPI;
+import iori.hdoctor.net.NetworkConnectListener;
+import iori.hdoctor.net.response.DoctorBenchResponse;
+import iori.hdoctor.view.BadgeView;
 
 /**
  * Created by Administrator on 2015/7/10.
  */
-public class DoctorIndexPager extends BasePager{
+public class DoctorIndexPager extends BasePager implements NetworkConnectListener{
 
     private View view;
     private Context context;
+    private TextView jrfk, jrhz;
+    private BadgeView zxzxBV;
 
     private boolean isInit = false;
 
@@ -39,6 +50,12 @@ public class DoctorIndexPager extends BasePager{
         view.findViewById(R.id.yyzx).setOnClickListener(yyzxglClickListener);
         view.findViewById(R.id.czsz).setOnClickListener(czszClickListener);
         view.findViewById(R.id.ffgl).setOnClickListener(ffglClickListener);
+        view.findViewById(R.id.jrfk).setOnClickListener(tjClickListener);
+        view.findViewById(R.id.jrhz).setOnClickListener(tjClickListener);
+        jrfk = (TextView)view.findViewById(R.id.jrfk_info);
+        jrhz = (TextView)view.findViewById(R.id.jrhz_info);
+        NetworkAPI.getNetworkAPI().docBench(((DoctorMainActivity)context).showProgressDialog(), this);
+        zxzxBV = new BadgeView(context, view.findViewById(R.id.zxzx));
     }
 
     @Override
@@ -77,4 +94,27 @@ public class DoctorIndexPager extends BasePager{
         }
     };
 
+    private View.OnClickListener tjClickListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            context.startActivity(new Intent(context, DoctorStatisticsActivity.class));
+        }
+    };
+
+    @Override
+    public void onRequestSucceed(Object data, String requestAction) {
+        if (HttpRequest.DOC_BENCH == requestAction) {
+            jrfk.setText(((DoctorBenchResponse)data).getVnum());
+            jrhz.setText(((DoctorBenchResponse)data).getHnum());
+            zxzxBV.setText(((DoctorBenchResponse)data).getNolooknum());
+            zxzxBV.show();
+        }
+        ((DoctorMainActivity) context).dismissProgressDialog();
+    }
+
+    @Override
+    public void onRequestFailure(int error, String errorMsg, String requestAction) {
+        Toast.makeText(context, errorMsg, Toast.LENGTH_LONG).show();
+        ((DoctorMainActivity) context).dismissProgressDialog();
+    }
 }

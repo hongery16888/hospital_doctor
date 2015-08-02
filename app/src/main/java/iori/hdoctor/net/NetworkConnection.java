@@ -7,6 +7,7 @@ import android.util.Log;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
+import org.apache.http.HttpStatus;
 import org.apache.http.HttpVersion;
 import org.apache.http.NameValuePair;
 import org.apache.http.client.ClientProtocolException;
@@ -23,6 +24,7 @@ import org.apache.http.entity.mime.MultipartEntity;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.impl.conn.tsccm.ThreadSafeClientConnManager;
 import org.apache.http.params.BasicHttpParams;
+import org.apache.http.params.CoreProtocolPNames;
 import org.apache.http.params.HttpConnectionParams;
 import org.apache.http.params.HttpParams;
 import org.apache.http.params.HttpProtocolParams;
@@ -196,23 +198,23 @@ public class NetworkConnection implements HttpRequest {
 			try {
 				// check&charge userId
 				if(baseRequest.postUserId() == BaseRequest.FORCE_POST) {
-					String userId= DataTransfer.getUserId();
+					String userId= DataTransfer.getUid();
 					if(TextUtils.isEmpty(userId)) {
 						filter.setError(ERROR_LOGOUT);
 						filter.setData(ERRORMSG_LOGOUT);
 						return;
 					}else {
-						baseRequest.setUserId(userId);
+						baseRequest.setUid(userId);
 					}
 				}else if(baseRequest.postUserId() == BaseRequest.ENABLE_POST) {
-					baseRequest.setUserId(DataTransfer.getUserId());
+					baseRequest.setUid(DataTransfer.getUid());
 				}
-				
+
 				// 请求地址
 				HttpPost postMethod = new HttpPost(baseRequest.getRequestUrl());
 				// 设置请求数据
 				if(baseRequest.postFile()) {
-					MultipartEntity entity = baseRequest.getMultiEntity(false);
+					MultipartEntity entity = baseRequest.getMultiEntity(true);
 					postMethod.setEntity(entity);
 				}else {
 					List<NameValuePair> para = baseRequest.postEncode();
@@ -220,19 +222,28 @@ public class NetworkConnection implements HttpRequest {
 					// 打印request
 					printRequest(baseRequest.getRequestUrl(), para);
 				}
-				
+
 
 				HttpEntity resEntity = null;
 				String result = null;
 				// 执行网络访问
 				res = getHttpClient().execute(postMethod);
+
+				int status = res.getStatusLine().getStatusCode();
+
+				if (status == HttpStatus.SC_OK) {
+					Log.i("Response Name" , "成功");
+				} else {
+					Log.i("Response Name", "失败 : " + status);
+				}
+
 				if(!isCancel){
 					// 获取返回结果
 					resEntity = res.getEntity();
 					// 转码
 					result = (resEntity == null) ? "" : EntityUtils.toString(resEntity, CHARSET);
 //					try{
-//						logger.i(TAG, "Response: " + result);
+//						Log.i(TAG, "Response: " + result);
 //					} catch (Exception e) {
 //						e.printStackTrace();
 //					}

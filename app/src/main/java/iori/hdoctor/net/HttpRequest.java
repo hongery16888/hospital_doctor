@@ -40,20 +40,34 @@ public interface HttpRequest {
 	// ///////////////////////////////////////////////////////////
 
 	// 开发环境
-//	public static final String BASIC_PATH = "http://www.qingzaoyisheng.com/webservice/";
-//	public static final String PATH_NORMAL = BASIC_PATH + "im";
 
     public static final String BASIC_PATH = "http://61.155.202.142:51080/";
-    public static final String PATH_NORMAL =  "etc_web";
-    public static final String PATH_CHECK_VERSION = BASIC_PATH + "etc_web/json.html";
-	public static final String PATH_LOGIN = BASIC_PATH + "user/signin";
+//    public static final String PATH_NORMAL =  "etc_web";
+    public static final String PATH_CHECK_VERSION = BASIC_PATH + "check_version";
     public static final String CHECK_VERSION =  "check_version";
-
-
 	// ////////////////
 	public static final String TEST_PATH = "webserviceTest";
-	public static final String LOGIN = "login";
-	
+	public static final String PHOTO_PATH = BASIC_PATH +  "app/";
+
+
+	public static final String DOC_LOGIN = "doc_login";
+	public static final String PATH_DOC_LOGIN = BASIC_PATH + "user/login";
+	public static final String DOC_REGISTER = "doc_register";
+	public static final String PATH_DOC_REGISTER = BASIC_PATH + "user/register";
+	public static final String DOC_REGISTER_INFO = "doc_register_info";
+	public static final String PATH_DOC_REGISTER_INFO = BASIC_PATH + "user/docregister";
+	public static final String DOC_REGISTER_INFO_2 = "doc_register_info_2";
+	public static final String PATH_DOC_REGISTER_INFO_2 = BASIC_PATH + "user/docregister2";
+	public static final String DOC_BENCH = "doc_bench";
+	public static final String PATH_DOC_BENCH = BASIC_PATH + "user/bench";
+	public static final String DOC_STATIC = "doc_static";
+	public static final String PATH_DOC_STATIC = BASIC_PATH + "user/docstatic";
+	public static final String DOC_SERVICE_MAG = "doc_service_mag";
+	public static final String PATH_DOC_SERVICE_MAG = BASIC_PATH + "user/docservmag";
+	public static final String DOC_SERVICE_MAG_SET = "doc_service_mag_set";
+	public static final String PATH_DOC_SERVICE_MAG_SET = BASIC_PATH + "user/docservmagset";
+
+
 	/** 06、检查更新 **/
 //	public static final String CHECK_VERSION = "checkVersion";
 

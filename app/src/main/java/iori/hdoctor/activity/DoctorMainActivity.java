@@ -57,7 +57,7 @@ public class DoctorMainActivity extends BaseActivity implements NetworkConnectLi
 		main_radio.setOnCheckedChangeListener(checkedChangeListener);
 		main_radio.check(currentItem);
 		pages.get(oldPosition).onResume();
-		NetworkAPI.getNetworkAPI().checkVersion("1", null, this);
+//		NetworkAPI.getNetworkAPI().checkVersion("1", null, this);
 	}
 
 	@Override
