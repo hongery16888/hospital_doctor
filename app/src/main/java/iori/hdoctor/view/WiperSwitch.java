@@ -163,6 +163,10 @@ public class WiperSwitch extends View implements OnTouchListener {
         nowStatus = checked;
     }
 
+    public boolean isChecked(){
+        return nowStatus;
+    }
+
 
     /**
      * 回调接口

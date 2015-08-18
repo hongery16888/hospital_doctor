@@ -40,7 +40,10 @@
 
             <View style="@style/divider_line_horizontal" />
 
-            <LinearLayout style="@style/LayerMainMyItem">
+            <LinearLayout
+                android:id="@+id/name_lay"
+                android:tag="realname"
+                style="@style/LayerMainMyItem">
                 <TextView style="@style/TxtMainMyItem"
                     android:text="@string/doctor_personal_info_name"
                     android:textColor="@color/global_title_color"/>
@@ -57,8 +60,12 @@
 
             <View style="@style/divider_line_horizontal" />
 
-            <LinearLayout style="@style/LayerMainMyItem">
+            <LinearLayout
+                android:id="@+id/introduce_lay"
+                android:tag="jianjie"
+                style="@style/LayerMainMyItem">
                 <TextView style="@style/TxtMainMyItem"
+                    android:layout_weight="0.4"
                     android:text="@string/doctor_personal_info_intro"
                     android:textColor="@color/global_title_color"/>
 
@@ -74,9 +81,13 @@
 
             <View style="@style/divider_line_horizontal" />
 
-            <LinearLayout style="@style/LayerMainMyItem">
+            <LinearLayout
+                android:id="@+id/skill_lay"
+                android:tag="shanchang"
+                style="@style/LayerMainMyItem">
                 <TextView style="@style/TxtMainMyItem"
                     android:text="@string/doctor_personal_info_skilled"
+                    android:layout_weight="0.4"
                     android:textColor="@color/global_title_color"/>
 
                  <TextView style="@style/TxtMainMyItem"
@@ -91,9 +102,14 @@
 
             <View style="@style/divider_line_horizontal" />
 
-            <LinearLayout style="@style/LayerMainMyItem">
-                <TextView style="@style/TxtMainMyItem"
+            <LinearLayout
+                android:id="@+id/hospital_lay"
+                android:tag="hospital"
+                style="@style/LayerMainMyItem">
+                <TextView
+                    style="@style/TxtMainMyItem"
                     android:text="@string/doctor_personal_info_hospital"
+                    android:layout_weight="0.4"
                     android:textColor="@color/global_title_color"/>
 
                 <TextView style="@style/TxtMainMyItem"
@@ -108,9 +124,13 @@
 
             <View style="@style/divider_line_horizontal" />
 
-            <LinearLayout style="@style/LayerMainMyItem">
+            <LinearLayout
+                android:id="@+id/keshi_lay"
+                android:tag="keshi"
+                style="@style/LayerMainMyItem">
                 <TextView style="@style/TxtMainMyItem"
                     android:text="@string/doctor_personal_info_subject"
+                    android:layout_weight="0.4"
                     android:textColor="@color/global_title_color"/>
 
                 <TextView style="@style/TxtMainMyItem"
@@ -125,9 +145,13 @@
 
             <View style="@style/divider_line_horizontal" />
 
-            <LinearLayout style="@style/LayerMainMyItem">
+            <LinearLayout
+                android:id="@+id/post_lay"
+                android:tag="zhicheng"
+                style="@style/LayerMainMyItem">
                 <TextView style="@style/TxtMainMyItem"
                     android:text="@string/doctor_personal_info_job"
+                    android:layout_weight="0.4"
                     android:textColor="@color/global_title_color"/>
 
                 <TextView style="@style/TxtMainMyItem"
@@ -142,10 +166,8 @@
 
             <View style="@style/divider_line_horizontal" />
 
-            <View style="@style/divider_line_horizontal"
-                android:layout_marginTop="@dimen/global_line_padding"/>
-
-            <LinearLayout style="@style/LayerMainMyItem">
+            <LinearLayout style="@style/LayerMainMyItem"
+                android:visibility="gone">
                 <TextView style="@style/TxtMainMyItem"
                     android:id="@+id/shenfen"
                     android:text="@string/doctor_personal_info_certificate"
@@ -156,11 +178,22 @@
 
             <View style="@style/divider_line_horizontal" />
 
-            <LinearLayout style="@style/LayerMainMyItem">
+            <LinearLayout
+                android:id="@+id/email_lay"
+                android:tag="email"
+                style="@style/LayerMainMyItem">
+
                 <TextView style="@style/TxtMainMyItem"
+                    android:layout_weight="0.4"
+                    android:text="@string/doctor_personal_info_email"/>
+
+                <TextView
+                    style="@style/TxtMainMyItem"
                     android:id="@+id/email"
-                    android:text="@string/doctor_personal_info_email"
-                    android:textColor="@color/global_title_color"/>
+                    android:tag="email"
+                    android:gravity="right"
+                    android:textColor="@color/grey_deep"
+                    android:paddingRight="@dimen/global_padding"/>
 
                 <ImageView style="@style/ImageMainMyItemNext" />
             </LinearLayout>

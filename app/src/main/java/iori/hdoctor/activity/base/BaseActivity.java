@@ -113,6 +113,16 @@ public abstract class BaseActivity extends SysKeyInvalidActivity {
         setting.setVisibility(View.GONE);
     }
 
+    public void showPublish(View.OnClickListener listener){
+        rightText.setText("发表");
+        rightText.setVisibility(View.VISIBLE);
+        rightText.setOnClickListener(listener);
+    }
+
+    public void setHidePublish(){
+        rightText.setVisibility(View.INVISIBLE);
+    }
+
     public void setTitleBarBackground(int color){
         titleBar.setBackgroundColor(color);
     }

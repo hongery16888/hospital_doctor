@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/global_bg">
+
+    <include layout="@layout/title_bar" />
+
+    <View style="@style/divider_line_horizontal" />
+
+    <LinearLayout style="@style/LayerMainMyItem"
+        android:layout_marginTop="@dimen/global_line_padding">
+
+        <TextView
+            android:id="@+id/version"
+            style="@style/TxtMainMyItem"
+            android:text="@string/version_code"/>
+
+    </LinearLayout>
+
+    <View style="@style/divider_line_horizontal" />
+
+    <LinearLayout style="@style/LayerMainMyItem" >
+
+        <TextView style="@style/TxtMainMyItem"
+            android:text="@string/check_version"/>
+
+    </LinearLayout>
+
+    <View style="@style/divider_line_horizontal" />
+
+    <LinearLayout style="@style/LayerMainMyItem" >
+
+        <TextView style="@style/TxtMainMyItem"
+            android:text="@string/logout"/>
+
+    </LinearLayout>
+
+    <View style="@style/divider_line_horizontal" />
+
+</LinearLayout>

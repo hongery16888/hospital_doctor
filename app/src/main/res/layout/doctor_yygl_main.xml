@@ -7,9 +7,9 @@
 
     <include layout="@layout/title_bar" />
 
-    <include layout="@layout/doctor_blgl_status_bar" />
+    <include layout="@layout/doctor_yyzx_status_bar" />
 
-    <com.handmark.pulltorefresh.library.PullToRefreshListView
+    <ListView
         android:id="@+id/yygl_listview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

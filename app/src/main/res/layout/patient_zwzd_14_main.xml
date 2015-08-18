@@ -43,66 +43,72 @@
             android:layout_height="wrap_content"
             android:src="@drawable/bg_zwjc_man"/>
 
-        <TextView
+        <CheckBox
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/patient_top_bar_bg"
-            android:drawableLeft="@drawable/icon_zwjc_man_hl"
+            android:textColor="@drawable/testing_text_selector"
+            android:drawableLeft="@drawable/testing_selector"
+            android:button="@null"
             android:drawablePadding="@dimen/five_dip"
             android:textSize="10sp"
             android:layout_marginLeft="55dip"
             android:layout_marginTop="120dip"/>
 
-        <TextView
+        <CheckBox
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/patient_zwzd_area_yb"
-            android:textColor="@color/patient_top_bar_bg"
-            android:drawableLeft="@drawable/icon_zwjc_man_hl"
+            android:textColor="@drawable/testing_text_selector"
+            android:drawableLeft="@drawable/testing_selector"
+            android:button="@null"
             android:drawablePadding="@dimen/five_dip"
             android:textSize="10sp"
             android:layout_marginLeft="110dip"
             android:layout_marginTop="120dip"/>
 
-        <TextView
+        <CheckBox
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/patient_top_bar_bg"
-            android:drawableLeft="@drawable/icon_zwjc_man"
+            android:textColor="@drawable/testing_text_selector"
+            android:drawableLeft="@drawable/testing_selector"
+            android:button="@null"
             android:drawablePadding="@dimen/five_dip"
             android:textSize="10sp"
             android:layout_marginLeft="62dip"
             android:layout_marginTop="150dip"/>
 
-        <TextView
+        <CheckBox
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/patient_zwzd_area_gg"
-            android:textColor="@color/grey_deep"
-            android:drawableLeft="@drawable/icon_zwjc_man"
+            android:textColor="@drawable/testing_text_selector"
+            android:drawableLeft="@drawable/testing_selector"
+            android:button="@null"
             android:drawablePadding="@dimen/five_dip"
             android:textSize="10sp"
             android:layout_marginLeft="105dip"
             android:layout_marginTop="150dip"/>
 
-        <TextView
+        <CheckBox
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/patient_zwzd_area_hy"
-            android:textColor="@color/grey_deep"
-            android:drawableTop="@drawable/icon_zwjc_man"
+            android:textColor="@drawable/testing_text_selector"
+            android:drawableLeft="@drawable/testing_selector"
+            android:button="@null"
             android:drawablePadding="@dimen/five_dip"
             android:textSize="10sp"
             android:layout_marginLeft="75dip"
             android:layout_marginTop="175dip"/>
 
-        <TextView
+        <CheckBox
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/patient_zwzd_area_fb"
-            android:textColor="@color/patient_top_bar_bg"
             android:textSize="10sp"
-            android:drawableRight="@drawable/icon_zwjc_man_hl"
+            android:textColor="@drawable/testing_text_selector"
+            android:drawableRight="@drawable/testing_selector"
+            android:button="@null"
             android:drawablePadding="@dimen/five_dip"
             android:layout_marginLeft="55dip"
             android:layout_marginTop="135dip"/>

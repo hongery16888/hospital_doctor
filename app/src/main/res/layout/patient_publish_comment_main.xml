@@ -3,7 +3,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/global_bg"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:id="@+id/persion_main">
 
     <include layout="@layout/patient_title_bar" />
 
@@ -12,6 +13,7 @@
         android:layout_marginTop="@dimen/global_line_padding">
 
         <EditText
+            android:id="@+id/content"
             android:layout_width="match_parent"
             android:layout_height="@dimen/patient_publish_comment_height"
             android:layout_weight="1"
@@ -30,10 +32,12 @@
             android:layout_marginBottom="@dimen/global_line_padding"/>
 
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:id="@+id/img"
+            android:layout_width="80dip"
+            android:layout_height="80dip"
             android:src="@drawable/icon_camera"
-            android:layout_margin="@dimen/global_line_padding"/>
+            android:scaleType="center"
+            android:layout_marginLeft="@dimen/global_padding"/>
 
     </LinearLayout>
 
@@ -51,13 +55,13 @@
             android:layout_weight="0.5">
 
             <RatingBar
-                android:id="@+id/ratingbar_satisfaction"
+                android:id="@+id/satisfaction"
                 style="@style/foodRatingBar"
                 android:layout_height="wrap_content"
                 android:layout_width="wrap_content"
                 android:stepSize="1.0"
-                android:rating="3"
-                >
+                android:rating="5"
+                android:numStars="5">
             </RatingBar>
 
         </LinearLayout>
@@ -78,12 +82,13 @@
             android:layout_weight="0.5">
 
             <RatingBar
-                android:id="@+id/ratingbar_skill"
+                android:id="@+id/skill"
                 style="@style/foodRatingBar"
                 android:layout_height="wrap_content"
                 android:layout_width="wrap_content"
                 android:stepSize="1.0"
-                android:rating="2">
+                android:rating="5"
+                android:numStars="5">
             </RatingBar>
 
         </LinearLayout>

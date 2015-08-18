@@ -12,6 +12,7 @@ import iori.hdoctor.activity.DoctorBLGLActivity;
 import iori.hdoctor.activity.DoctorCZSZActivity;
 import iori.hdoctor.activity.DoctorFFGLActivity;
 import iori.hdoctor.activity.DoctorMainActivity;
+import iori.hdoctor.activity.DoctorMessageActivity;
 import iori.hdoctor.activity.DoctorStatisticsActivity;
 import iori.hdoctor.activity.DoctorYYZXActivity;
 import iori.hdoctor.activity.base.BasePager;
@@ -52,9 +53,10 @@ public class DoctorIndexPager extends BasePager implements NetworkConnectListene
         view.findViewById(R.id.ffgl).setOnClickListener(ffglClickListener);
         view.findViewById(R.id.jrfk).setOnClickListener(tjClickListener);
         view.findViewById(R.id.jrhz).setOnClickListener(tjClickListener);
+        view.findViewById(R.id.zxzx).setOnClickListener(zxListClickListener);
         jrfk = (TextView)view.findViewById(R.id.jrfk_info);
         jrhz = (TextView)view.findViewById(R.id.jrhz_info);
-        NetworkAPI.getNetworkAPI().docBench(((DoctorMainActivity)context).showProgressDialog(), this);
+        NetworkAPI.getNetworkAPI().docBench(null, this);
         zxzxBV = new BadgeView(context, view.findViewById(R.id.zxzx));
     }
 
@@ -101,6 +103,15 @@ public class DoctorIndexPager extends BasePager implements NetworkConnectListene
         }
     };
 
+    private View.OnClickListener zxListClickListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            Intent intent = new Intent(context, DoctorMessageActivity.class);
+            intent.putExtra("title", context.getString(R.string.doctor_zx_list_title_main));
+            context.startActivity(intent);
+        }
+    };
+
     @Override
     public void onRequestSucceed(Object data, String requestAction) {
         if (HttpRequest.DOC_BENCH == requestAction) {
@@ -109,12 +120,10 @@ public class DoctorIndexPager extends BasePager implements NetworkConnectListene
             zxzxBV.setText(((DoctorBenchResponse)data).getNolooknum());
             zxzxBV.show();
         }
-        ((DoctorMainActivity) context).dismissProgressDialog();
     }
 
     @Override
     public void onRequestFailure(int error, String errorMsg, String requestAction) {
         Toast.makeText(context, errorMsg, Toast.LENGTH_LONG).show();
-        ((DoctorMainActivity) context).dismissProgressDialog();
     }
 }

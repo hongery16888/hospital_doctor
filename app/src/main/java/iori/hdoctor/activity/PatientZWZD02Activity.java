@@ -17,6 +17,7 @@ public class PatientZWZD02Activity extends BaseActivity implements SeekBar.OnSee
     @OnClick(R.id.next_step)
     public void nextStep() {
         getApp().setActivities(this);
+        showToast(getApp().getReport().getWeight() + "");
         startActivity(new Intent(PatientZWZD02Activity.this, PatientZWZD03Activity.class));
     }
 
@@ -49,7 +50,8 @@ public class PatientZWZD02Activity extends BaseActivity implements SeekBar.OnSee
 
     @Override
     public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-            weight.setText((progress + 18) + getResources().getString(R.string.patient_zwzd_weight_unit));
+            weight.setText((progress + 18) + getString(R.string.patient_zwzd_weight_unit));
+            getApp().getReport().setWeight(progress + 18);
     }
 
     @Override

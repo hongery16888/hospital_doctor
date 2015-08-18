@@ -157,7 +157,7 @@ public abstract class BaseRequest implements HttpRequest {
         try {
             for (Field f : field) {
                 f.setAccessible(true);
-                entity.addPart(f.getName(), new StringBody(f.get(this).toString()));
+                entity.addPart(f.getName(), new StringBody(f.get(this).toString(), CHARSET));
                 if (printRequst) printStr += f.getName() + ":" + f.get(this).toString() + ", ";
             }
         } catch (Exception e) {

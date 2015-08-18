@@ -15,11 +15,13 @@
        android:orientation="vertical">
 
        <ImageView
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"
+           android:id="@+id/head"
+           android:layout_width="100dip"
+           android:layout_height="100dip"
            android:src="@drawable/img_avater_register"/>
 
        <TextView
+           android:id="@+id/name"
            android:layout_width="wrap_content"
            android:layout_height="wrap_content"
            android:text="@string/doctor_personal_name"
@@ -50,6 +52,7 @@
             android:gravity="center_horizontal"
             android:background="@drawable/bg_titlebar_action">
             <TextView
+                android:id="@+id/order_num"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/patient_mine_wddd_ex"
@@ -80,6 +83,7 @@
             android:gravity="center_horizontal"
             android:background="@drawable/bg_titlebar_action">
             <TextView
+                android:id="@+id/yuyue_num"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/patient_mine_wdyy_ex"
@@ -108,7 +112,9 @@
 
     <LinearLayout style="@style/LayerMainMyItem">
 
-        <TextView style="@style/TxtMainMyItem"
+        <TextView
+            android:id="@+id/zhzx"
+            style="@style/TxtMainMyItem"
             android:text="@string/patient_mine_zhzx"
             android:textColor="@color/global_title_color"
             android:drawableLeft="@drawable/icon_wo_zhzx"/>
@@ -121,7 +127,9 @@
 
     <LinearLayout style="@style/LayerMainMyItem">
 
-        <TextView style="@style/TxtMainMyItem"
+        <TextView
+            android:id="@+id/wdsc"
+            style="@style/TxtMainMyItem"
             android:text="@string/patient_mine_wdsc"
             android:textColor="@color/global_title_color"
             android:drawableLeft="@drawable/icon_wo_wdsc"/>
@@ -134,7 +142,9 @@
 
     <LinearLayout style="@style/LayerMainMyItem">
 
-        <TextView style="@style/TxtMainMyItem"
+        <TextView
+            android:id="@+id/wdfb"
+            style="@style/TxtMainMyItem"
             android:text="@string/patient_mine_wdfb"
             android:textColor="@color/global_title_color"
             android:drawableLeft="@drawable/icon_wo_wdfb"/>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/global_bg">
+
+    <include layout="@layout/title_bar" />
+
+    <LinearLayout style="@style/LayerMainMyItem"
+        android:layout_marginTop="@dimen/global_padding">
+
+        <EditText
+            android:id="@+id/content"
+            style="@style/TxtMainMyItem"
+            android:background="@color/transparent"
+            android:hint="修改内容"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/confirm"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="提交修改"
+        android:textColor="@color/white"
+        android:textSize="@dimen/global_label"
+        android:padding="@dimen/global_padding"
+        android:background="@drawable/login_button_selector"
+        android:layout_margin="@dimen/global_btn_padding"
+        android:gravity="center" />
+
+</LinearLayout>

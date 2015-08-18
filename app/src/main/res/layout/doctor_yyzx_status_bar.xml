@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/llt_title_bar"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical"
+    android:background="@color/white">
+
+    <RadioGroup
+        android:id="@+id/main_radio"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/doctor_gzt_top_h"
+        android:layout_gravity="bottom"
+        android:background="@color/bottom_bar_bg"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/all"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:drawableBottom="@drawable/top_tab_selector"
+            android:text="@string/all_order"
+            android:textColor="@drawable/textcolor_selected"
+            android:button="@null"/>
+
+        <RadioButton
+            android:id="@+id/wait"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:drawableBottom="@drawable/top_tab_selector"
+            android:text="@string/yygl_bar_add"
+            android:textColor="@drawable/textcolor_selected"
+            android:button="@null"/>
+
+        <RadioButton
+            android:id="@+id/done"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:drawableBottom="@drawable/top_tab_selector"
+            android:text="@string/yygl_bar_arrive"
+            android:textColor="@drawable/textcolor_selected"
+            android:button="@null"/>
+    </RadioGroup>
+</LinearLayout>

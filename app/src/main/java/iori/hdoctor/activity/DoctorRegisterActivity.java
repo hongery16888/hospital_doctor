@@ -89,8 +89,7 @@ public class DoctorRegisterActivity extends BasePhotoCropActivity implements Net
     protected void initData() {
         imageLoader = ImageLoader.getInstance();
         options = new DisplayImageOptions.Builder()
-                .resetViewBeforeLoading(false)  // default
-                .delayBeforeLoading(1000)
+                .showImageOnLoading(R.drawable.img_avater_register)
                 .cacheInMemory(false) // default
                 .cacheOnDisk(false) // default
                 .considerExifParams(false) // default

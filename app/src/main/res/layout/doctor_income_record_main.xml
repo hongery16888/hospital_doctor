@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/global_bg">
+
+    <include layout="@layout/title_bar" />
+
+    <ListView
+        android:id="@+id/record_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:cacheColorHint="@color/transparent"
+        android:divider="@color/global_bg"
+        android:dividerHeight="@dimen/one_px"/>
+
+</LinearLayout>

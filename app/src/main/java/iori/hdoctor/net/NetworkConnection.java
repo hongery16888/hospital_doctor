@@ -243,7 +243,7 @@ public class NetworkConnection implements HttpRequest {
 					// 转码
 					result = (resEntity == null) ? "" : EntityUtils.toString(resEntity, CHARSET);
 //					try{
-//						Log.i(TAG, "Response: " + result);
+						Log.i(TAG, "Response: " + result);
 //					} catch (Exception e) {
 //						e.printStackTrace();
 //					}

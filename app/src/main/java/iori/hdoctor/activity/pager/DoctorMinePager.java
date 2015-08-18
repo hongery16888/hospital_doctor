@@ -3,28 +3,36 @@ package iori.hdoctor.activity.pager;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.os.Handler;
+import android.os.Message;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.assist.ImageScaleType;
 
 import iori.hdoctor.R;
-import iori.hdoctor.activity.DoctorBLGLActivity;
 import iori.hdoctor.activity.DoctorGRZXActivity;
 import iori.hdoctor.activity.DoctorMainActivity;
 import iori.hdoctor.activity.DoctorSRXQActivity;
+import iori.hdoctor.activity.DoctorSettingActivity;
+import iori.hdoctor.activity.DoctorZHZXctivity;
 import iori.hdoctor.activity.base.BasePager;
+import iori.hdoctor.app.MyApp;
 import iori.hdoctor.net.HttpRequest;
+import iori.hdoctor.net.NetworkAPI;
+import iori.hdoctor.net.NetworkConnectListener;
+import iori.hdoctor.net.response.DoctorPersonalResponse;
 import iori.hdoctor.view.CircleBitmapDisplayer;
 
 /**
  * Created by Administrator on 2015/7/10.
  */
-public class DoctorMinePager extends BasePager{
+public class DoctorMinePager extends BasePager implements View.OnClickListener, NetworkConnectListener{
 
     private View view;
     private Context context;
@@ -32,6 +40,13 @@ public class DoctorMinePager extends BasePager{
     private ImageView head;
     private ImageLoader imageLoader;
     private DisplayImageOptions options;
+    private Handler avatarHandler = new Handler(){
+        @Override
+        public void handleMessage(Message msg) {
+            super.handleMessage(msg);
+            imageLoader.displayImage(msg.obj.toString(), head, options);
+        }
+    };
 
     public DoctorMinePager(Context ct) {
         super(ct);
@@ -56,8 +71,6 @@ public class DoctorMinePager extends BasePager{
     public void initData() {
         imageLoader = ImageLoader.getInstance();
         options = new DisplayImageOptions.Builder()
-                .resetViewBeforeLoading(false)  // default
-                .delayBeforeLoading(1000)
                 .cacheInMemory(true) // default
                 .cacheOnDisk(true) // default
                 .considerExifParams(true) // default
@@ -65,27 +78,48 @@ public class DoctorMinePager extends BasePager{
                 .bitmapConfig(Bitmap.Config.ARGB_8888) // default
                 .displayer(new CircleBitmapDisplayer()) // default
                 .build();
-        view.findViewById(R.id.wdzl).setOnClickListener(wdzlClickListener);
         head = (ImageView)view.findViewById(R.id.head);
-        ((TextView)view.findViewById(R.id.name)).setText(((DoctorMainActivity)context).getApp().getUser().getName());
-        imageLoader.displayImage(HttpRequest.PHOTO_PATH + ((DoctorMainActivity) context).getApp().getUser().getImg(), head, options);
+            view.findViewById(R.id.srxq).setOnClickListener(this);
+        view.findViewById(R.id.zhzx).setOnClickListener(this);
+        view.findViewById(R.id.szzx).setOnClickListener(this);
+        view.findViewById(R.id.wdzl).setOnClickListener(this);
 
-        view.findViewById(R.id.zhzx).setOnClickListener(zhzxClickListener);
-        view.findViewById(R.id.szzx).setOnClickListener(zhzxClickListener);
+        ((DoctorMainActivity) context).getApp().setAvatarHandler(avatarHandler);
+
+        NetworkAPI.getNetworkAPI().docpersonal(null, this);
     }
 
-    private View.OnClickListener wdzlClickListener = new View.OnClickListener() {
-        @Override
-        public void onClick(View v) {
-            context.startActivity(new Intent(context, DoctorGRZXActivity.class));
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()){
+            case R.id.srxq:
+                context.startActivity(new Intent(context, DoctorSRXQActivity.class));
+                break;
+            case R.id.zhzx:
+                context.startActivity(new Intent(context, DoctorZHZXctivity.class));
+                break;
+            case R.id.szzx:
+                context.startActivity(new Intent(context, DoctorSettingActivity.class));
+                break;
+            case R.id.wdzl:
+                context.startActivity(new Intent(context, DoctorGRZXActivity.class));
+                break;
+            default:
+                break;
         }
-    };
+    }
 
-    private View.OnClickListener zhzxClickListener = new View.OnClickListener() {
-        @Override
-        public void onClick(View v) {
-            context.startActivity(new Intent(context, DoctorSRXQActivity.class));
+    @Override
+    public void onRequestSucceed(Object data, String requestAction) {
+        if (HttpRequest.DOC_PERSONAL.equals(requestAction)){
+            ((TextView) view.findViewById(R.id.name)).setText(((DoctorMainActivity) context).getApp().getUser().getName());
+            ((TextView) view.findViewById(R.id.income)).setText(((DoctorPersonalResponse)data).getTotal());
+            imageLoader.displayImage(HttpRequest.PHOTO_PATH + ((DoctorPersonalResponse)data).getImg(), head, options);
         }
-    };
+    }
 
+    @Override
+    public void onRequestFailure(int error, String errorMsg, String requestAction) {
+        Toast.makeText(context, errorMsg, Toast.LENGTH_LONG).show();
+    }
 }

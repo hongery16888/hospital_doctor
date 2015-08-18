@@ -2,15 +2,14 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/global_bg"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@color/global_bg">
 
     <include layout="@layout/patient_title_bar" />
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="1">
+        android:layout_height="match_parent">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -18,192 +17,142 @@
             android:orientation="vertical">
 
             <LinearLayout
+                android:id="@+id/head_img"
                 style="@style/LayerMainMyItem"
-                android:paddingBottom="@dimen/global_padding"
-                android:paddingTop="@dimen/global_padding">
-
+                android:paddingTop="@dimen/global_padding"
+                android:paddingBottom="@dimen/global_padding">
                 <ImageView
-                    style="@style/ImageMainMyItemNext"
+                    android:id="@+id/head"
+                    android:layout_width="80dip"
+                    android:layout_height="80dip"
+                    android:adjustViewBounds="true"
                     android:src="@drawable/img_avater_grzx" />
 
-                <TextView
-                    style="@style/TxtMainMyItem"
-                    android:background="@color/transparent"
+                <TextView style="@style/TxtMainMyItem"
+                    android:text="@string/patient_personal_info__avater"
+                    android:textColor="@color/grey_deep"
                     android:gravity="right"
-                    android:paddingRight="@dimen/global_padding"
-                    android:text="@string/patient_register_info_head"
-                    android:textColor="@color/grey_deep" />
+                    android:paddingRight="@dimen/global_padding"/>
 
+                <ImageView style="@style/ImageMainMyItemNext" />
             </LinearLayout>
 
             <View style="@style/divider_line_horizontal" />
 
             <LinearLayout style="@style/LayerMainMyItem">
-
-                <TextView
-                    style="@style/TxtMainMyItem"
-                    android:text="@string/patient_register_info_name"
-                    android:textColor="@color/global_title_color" />
+                <TextView style="@style/TxtMainMyItem"
+                    android:layout_weight="0.4"
+                    android:text="@string/patient_personal_info_nickname"
+                    android:textColor="@color/global_title_color"/>
 
                 <EditText
+                    android:id="@+id/nicheng"
                     style="@style/TxtMainMyItem"
                     android:background="@color/transparent"
+                    android:hint="设置昵称"
                     android:gravity="right"
-                    android:hint="@string/patient_register_info_name_ex"
-                    android:paddingRight="@dimen/global_padding"
-                    android:textColor="@color/grey_deep" />
+                    android:textColor="@color/grey_deep"
+                    android:paddingRight="@dimen/global_padding"/>
 
+                <ImageView style="@style/ImageMainMyItemNext" />
             </LinearLayout>
 
             <View style="@style/divider_line_horizontal" />
 
             <LinearLayout style="@style/LayerMainMyItem">
-
-                <TextView
-                    style="@style/TxtMainMyItem"
-                    android:text="@string/patient_register_info_intro"
-                    android:textColor="@color/global_title_color" />
+                <TextView style="@style/TxtMainMyItem"
+                    android:layout_weight="0.4"
+                    android:text="@string/patient_personal_info_sex"
+                    android:textColor="@color/global_title_color"/>
 
                 <EditText
+                    android:id="@+id/sex"
                     style="@style/TxtMainMyItem"
                     android:background="@color/transparent"
+                    android:hint="设置性别"
                     android:gravity="right"
-                    android:hint="@string/patient_register_info_intro_ex"
-                    android:paddingRight="@dimen/global_padding"
-                    android:textColor="@color/grey_deep" />
+                    android:textColor="@color/grey_deep"
+                    android:paddingRight="@dimen/global_padding"/>
 
+                <ImageView style="@style/ImageMainMyItemNext" />
             </LinearLayout>
 
             <View style="@style/divider_line_horizontal" />
 
             <LinearLayout style="@style/LayerMainMyItem">
-
-                <TextView
-                    style="@style/TxtMainMyItem"
-                    android:text="@string/patient_register_info_skilled"
-                    android:textColor="@color/global_title_color" />
+                <TextView style="@style/TxtMainMyItem"
+                    android:layout_weight="0.4"
+                    android:text="@string/patient_personal_info_age"
+                    android:textColor="@color/global_title_color"/>
 
                 <EditText
+                    android:id="@+id/age"
                     style="@style/TxtMainMyItem"
                     android:background="@color/transparent"
+                    android:hint="设置年龄"
                     android:gravity="right"
-                    android:hint="@string/patient_register_info_skilled_ex"
-                    android:textColor="@color/grey_deep" />
+                    android:textColor="@color/grey_deep"
+                    android:paddingRight="@dimen/global_padding"/>
 
+                <ImageView style="@style/ImageMainMyItemNext" />
             </LinearLayout>
 
             <View style="@style/divider_line_horizontal" />
 
             <LinearLayout style="@style/LayerMainMyItem">
-
-                <TextView
-                    style="@style/TxtMainMyItem"
-                    android:text="@string/patient_register_info_hospital"
-                    android:textColor="@color/global_title_color" />
+                <TextView style="@style/TxtMainMyItem"
+                    android:layout_weight="0.4"
+                    android:text="@string/patient_personal_info_adds"
+                    android:textColor="@color/global_title_color"/>
 
                 <EditText
+                    android:id="@+id/adds"
                     style="@style/TxtMainMyItem"
                     android:background="@color/transparent"
+                    android:hint="设置地址"
                     android:gravity="right"
-                    android:hint="@string/patient_register_info_hospital_ex"
-                    android:textColor="@color/grey_deep" />
+                    android:textColor="@color/grey_deep"
+                    android:paddingRight="@dimen/global_padding"/>
 
+                <ImageView style="@style/ImageMainMyItemNext" />
             </LinearLayout>
 
             <View style="@style/divider_line_horizontal" />
 
             <LinearLayout style="@style/LayerMainMyItem">
+                <TextView style="@style/TxtMainMyItem"
+                    android:layout_weight="0.4"
+                    android:text="@string/patient_personal_info_phone"
+                    android:textColor="@color/global_title_color"/>
 
-                <TextView
-                    style="@style/TxtMainMyItem"
-                    android:text="@string/patient_register_info_subject"
-                    android:textColor="@color/global_title_color" />
-
-                <EditText
-                    style="@style/TxtMainMyItem"
-                    android:background="@color/transparent"
+                <TextView style="@style/TxtMainMyItem"
+                    android:text="@string/patient_personal_info_phone_ex"
                     android:gravity="right"
-                    android:hint="@string/patient_register_info_subject_ex"
-                    android:textColor="@color/grey_deep" />
+                    android:textColor="@color/grey_deep"
+                    android:paddingRight="@dimen/global_padding"/>
 
+                <ImageView style="@style/ImageMainMyItemNext" />
             </LinearLayout>
 
             <View style="@style/divider_line_horizontal" />
 
-            <LinearLayout style="@style/LayerMainMyItem">
-
-                <TextView
-                    style="@style/TxtMainMyItem"
-                    android:text="@string/patient_register_info_job"
-                    android:textColor="@color/global_title_color" />
-
-                <EditText
-                    style="@style/TxtMainMyItem"
-                    android:background="@color/transparent"
-                    android:gravity="right"
-                    android:hint="@string/patient_register_info_job_ex"
-                    android:textColor="@color/grey_deep" />
-
-            </LinearLayout>
-
-            <View style="@style/divider_line_horizontal" />
-
-            <View
-                style="@style/divider_line_horizontal"
-                android:layout_marginTop="@dimen/global_line_padding" />
-
-            <LinearLayout style="@style/LayerMainMyItem">
-
-                <TextView
-                    style="@style/TxtMainMyItem"
-                    android:text="@string/patient_register_info_certificate"
-                    android:textColor="@color/global_title_color" />
-
-                <EditText
-                    style="@style/TxtMainMyItem"
-                    android:background="@color/transparent"
-                    android:gravity="right"
-                    android:hint="@string/patient_register_info_certificate_ex"
-                    android:textColor="@color/grey_deep" />
-
-            </LinearLayout>
-
-            <View style="@style/divider_line_horizontal" />
-
-            <LinearLayout style="@style/LayerMainMyItem">
-
-                <TextView
-                    style="@style/TxtMainMyItem"
-                    android:text="@string/patient_register_info_email"
-                    android:textColor="@color/global_title_color" />
-
-                <EditText
-                    style="@style/TxtMainMyItem"
-                    android:background="@color/transparent"
-                    android:gravity="right"
-                    android:hint="@string/patient_register_info_email_ex"
-                    android:textColor="@color/grey_deep" />
-            </LinearLayout>
-
-            <View style="@style/divider_line_horizontal" />
+            <TextView
+                android:id="@+id/next_step"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/patient_personal_info_save"
+                android:textColor="@color/white"
+                android:textSize="@dimen/global_label"
+                android:padding="@dimen/global_padding"
+                android:background="@drawable/blgl_green_button_selector"
+                android:layout_marginTop="@dimen/global_btn_padding"
+                android:layout_marginLeft="@dimen/global_btn_padding"
+                android:layout_marginRight="@dimen/global_btn_padding"
+                android:layout_marginBottom="@dimen/global_padding"
+                android:gravity="center" />
 
         </LinearLayout>
 
     </ScrollView>
-
-    <TextView
-        android:id="@+id/next_step"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/register"
-        android:textColor="@color/white"
-        android:textSize="@dimen/global_label"
-        android:padding="@dimen/global_padding"
-        android:background="@drawable/login_button_selector_patient"
-        android:layout_marginTop="@dimen/global_btn_padding"
-        android:layout_marginLeft="@dimen/global_btn_padding"
-        android:layout_marginRight="@dimen/global_btn_padding"
-        android:layout_marginBottom="@dimen/global_padding"
-        android:gravity="center" />
 
 </LinearLayout>

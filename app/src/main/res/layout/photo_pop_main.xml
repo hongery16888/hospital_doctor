@@ -6,6 +6,14 @@
 
     <View style="@style/divider_line_horizontal" />
 
+    <LinearLayout
+        android:id="@+id/outside"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:background="#55000000"/>
+
     <TextView
         android:id="@+id/open_photo"
         android:layout_width="match_parent"

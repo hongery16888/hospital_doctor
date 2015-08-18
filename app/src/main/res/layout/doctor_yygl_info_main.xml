@@ -140,7 +140,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:text="@string/blgl_item_reserve_price"
+            android:text="@string/blgl_item_reserve_price_unit"
             android:textColor="@color/red"
             android:textSize="@dimen/global_title_size"
             android:gravity="right"/>

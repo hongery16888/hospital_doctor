@@ -3,13 +3,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/global_bg">
+    android:background="@color/global_bg"
+    android:id="@+id/persion_main">
 
     <include layout="@layout/title_bar" />
 
     <View style="@style/divider_line_horizontal" />
 
     <LinearLayout
+        android:id="@+id/week"
         style="@style/LayerMainMyItem">
 
         <TextView style="@style/TxtMainMyItem"
@@ -19,13 +21,16 @@
             android:textColor="@color/grey_deep"
             android:layout_weight="0.5"/>
 
-        <TextView style="@style/TxtMainMyItem"
+        <TextView
+            android:id="@+id/dset"
+            style="@style/TxtMainMyItem"
             android:paddingTop="@dimen/global_line_padding"
             android:paddingBottom="@dimen/global_line_padding"
-            android:text="@string/doctor_czgl_time_ex"
             android:textColor="@color/global_title_color"
             android:gravity="right"
-            android:paddingRight="@dimen/global_padding"/>
+            android:paddingRight="@dimen/global_padding"
+            android:singleLine="false"
+            android:maxLines="2"/>
 
         <ImageView style="@style/ImageMainMyItemNext" />
 
@@ -43,13 +48,22 @@
             android:textColor="@color/grey_deep"
             android:layout_weight="0.5"/>
 
-        <TextView style="@style/TxtMainMyItem"
+        <EditText
+            android:id="@+id/dnum"
+            style="@style/TxtMainMyItem"
             android:paddingTop="@dimen/global_line_padding"
             android:paddingBottom="@dimen/global_line_padding"
-            android:text="@string/doctor_czgl_yy_count_ex"
             android:textColor="@color/global_title_color"
             android:gravity="right"
-            android:paddingRight="@dimen/global_padding"/>
+            android:background="@color/transparent"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="人"
+            android:textColor="@color/global_title_color"
+            android:paddingRight="@dimen/global_padding"
+            android:textSize="@dimen/global_title_size"/>
 
         <ImageView style="@style/ImageMainMyItemNext" />
 
@@ -60,17 +74,23 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:gravity="center_horizontal">
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <CheckBox
+            android:id="@+id/isopen"
+            style="@style/CustomCheckboxTheme"
+            android:background="@drawable/czsz_selector"
+            android:layout_marginTop="@dimen/doctor_czgl_btn_top"/>
 
         <TextView
+            android:id="@+id/status"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/doctor_cagl_stop_diagnose"
             android:textColor="@color/grey_deep"
             android:textSize="@dimen/global_title_size"
-            android:drawableTop="@drawable/icon_ztjz"
-            android:drawablePadding="@dimen/global_padding"
-            android:layout_marginTop="@dimen/doctor_czgl_btn_top"/>
+            android:paddingTop="@dimen/global_padding"/>
 
     </LinearLayout>
 

@@ -9,28 +9,119 @@
  */
 package iori.hdoctor.net;
 
-import android.transition.SidePropagation;
-
+import iori.hdoctor.activity.PatientPublishActivity;
 import iori.hdoctor.activity.base.HDoctorCode;
 import iori.hdoctor.net.request.CheckVersionRequest;
+import iori.hdoctor.net.request.DoctorAddBankRequest;
 import iori.hdoctor.net.request.DoctorBenchRequest;
+import iori.hdoctor.net.request.DoctorBlglInfoRequest;
+import iori.hdoctor.net.request.DoctorBlglPatientRequest;
+import iori.hdoctor.net.request.DoctorBlglRequest;
+import iori.hdoctor.net.request.DoctorChuSetRequest;
+import iori.hdoctor.net.request.DoctorChuZhenRequest;
+import iori.hdoctor.net.request.DoctorCircleRequest;
+import iori.hdoctor.net.request.DoctorCircleZanRequest;
+import iori.hdoctor.net.request.DoctorDelBankRequest;
 import iori.hdoctor.net.request.DoctorLoginRequest;
+import iori.hdoctor.net.request.DoctorMessageRequest;
+import iori.hdoctor.net.request.DoctorModifyBankRequest;
+import iori.hdoctor.net.request.DoctorPersonalRequest;
 import iori.hdoctor.net.request.DoctorRegisterInfo2Request;
 import iori.hdoctor.net.request.DoctorRegisterInfoRequest;
 import iori.hdoctor.net.request.DoctorRegisterRequest;
+import iori.hdoctor.net.request.DoctorReserveRequest;
+import iori.hdoctor.net.request.DoctorSRXQRequest;
 import iori.hdoctor.net.request.DoctorServiceMagRequest;
 import iori.hdoctor.net.request.DoctorServiceMagSetRequest;
 import iori.hdoctor.net.request.DoctorStaticRequest;
+import iori.hdoctor.net.request.DoctorUserEmailRequest;
+import iori.hdoctor.net.request.DoctorUserHospitalRequest;
+import iori.hdoctor.net.request.DoctorUserImgRequest;
+import iori.hdoctor.net.request.DoctorUserInfoRequest;
+import iori.hdoctor.net.request.DoctorUserJianjieRequest;
+import iori.hdoctor.net.request.DoctorUserKeShiRequest;
+import iori.hdoctor.net.request.DoctorUserRealnameRequest;
+import iori.hdoctor.net.request.DoctorUserShanChangRequest;
+import iori.hdoctor.net.request.DoctorUserZhiChengRequest;
+import iori.hdoctor.net.request.DoctorVerifyRequest;
+import iori.hdoctor.net.request.DoctorZHZXRequest;
+import iori.hdoctor.net.request.PatientAddMedicineNoImgRequest;
+import iori.hdoctor.net.request.PatientAddMedicinePromptRequest;
+import iori.hdoctor.net.request.PatientAddMedicineRequest;
+import iori.hdoctor.net.request.PatientAlyReportRequest;
+import iori.hdoctor.net.request.PatientCircleCollectionRequest;
+import iori.hdoctor.net.request.PatientCircleInfoRequest;
+import iori.hdoctor.net.request.PatientCircleRequest;
+import iori.hdoctor.net.request.PatientCircleZanRequest;
+import iori.hdoctor.net.request.PatientCommentRequest;
+import iori.hdoctor.net.request.PatientCommunityRequest;
+import iori.hdoctor.net.request.PatientCommunityZanRequest;
+import iori.hdoctor.net.request.PatientConsultRecordRequest;
+import iori.hdoctor.net.request.PatientDelMedicineRequest;
+import iori.hdoctor.net.request.PatientGRZXRequest;
+import iori.hdoctor.net.request.PatientHealthyRemindRequest;
+import iori.hdoctor.net.request.PatientInfoImgRequest;
+import iori.hdoctor.net.request.PatientInfoNoImgRequest;
+import iori.hdoctor.net.request.PatientInfoRequest;
+import iori.hdoctor.net.request.PatientLoginRequest;
+import iori.hdoctor.net.request.PatientPublishNoImgRequest;
+import iori.hdoctor.net.request.PatientPublishRequest;
+import iori.hdoctor.net.request.PatientRegisterPhoneRequest;
+import iori.hdoctor.net.request.PatientRegisterRequest;
+import iori.hdoctor.net.request.PatientReplyRequest;
+import iori.hdoctor.net.request.PatientTXARequest;
+import iori.hdoctor.net.request.PatientTXBRequest;
+import iori.hdoctor.net.request.PatientTestRecordRequest;
+import iori.hdoctor.net.request.PatientUserReportRequest;
+import iori.hdoctor.net.request.PatientWDDDInfoRequest;
+import iori.hdoctor.net.request.PatientWDDDRequest;
+import iori.hdoctor.net.request.PatientWDFBRequest;
+import iori.hdoctor.net.request.PatientWDSCRequest;
+import iori.hdoctor.net.request.PatientWDYXRequest;
+import iori.hdoctor.net.request.PatientWDYYRequest;
+import iori.hdoctor.net.request.PatientZHZXModifyRequest;
+import iori.hdoctor.net.request.PatientZHZXRequest;
+import iori.hdoctor.net.response.DoctorCircleResponse;
+import iori.hdoctor.net.response.PatientCircleInfoResponse;
+import iori.hdoctor.net.response.PatientCircleResponse;
+import iori.hdoctor.net.response.PatientCommunityResponse;
+import iori.hdoctor.net.response.PatientGRZXResponse;
+import iori.hdoctor.net.response.PatientInfoResponse;
+import iori.hdoctor.net.response.PatientWDDDInfoResponse;
+import iori.hdoctor.net.response.PatientWDFBResponse;
+import iori.hdoctor.net.response.PatientWDSCResponse;
+import iori.hdoctor.net.response.PatientWDYYResponse;
 import iori.hdoctor.net.request.TestRequest;
 import iori.hdoctor.net.response.CheckVersionResponse;
 import iori.hdoctor.net.response.DoctorBenchResponse;
+import iori.hdoctor.net.response.DoctorBlglInfoResponse;
+import iori.hdoctor.net.response.DoctorBlglPatientResponse;
+import iori.hdoctor.net.response.DoctorBlglResponse;
+import iori.hdoctor.net.response.DoctorChuZhenResponse;
+import iori.hdoctor.net.response.DoctorImgResponse;
 import iori.hdoctor.net.response.DoctorLoginResponse;
-import iori.hdoctor.net.response.DoctorRegisterInfo2Response;
+import iori.hdoctor.net.response.DoctorMessageResponse;
+import iori.hdoctor.net.response.DoctorPersonalResponse;
 import iori.hdoctor.net.response.DoctorRegisterInfoResponse;
 import iori.hdoctor.net.response.DoctorRegisterResponse;
+import iori.hdoctor.net.response.DoctorReserveResponse;
+import iori.hdoctor.net.response.DoctorSRXQResponse;
 import iori.hdoctor.net.response.DoctorServiceMagResponse;
 import iori.hdoctor.net.response.DoctorServiceMagSetResponse;
 import iori.hdoctor.net.response.DoctorStaticResponse;
+import iori.hdoctor.net.response.DoctorUserInfoResponse;
+import iori.hdoctor.net.response.DoctorZHZXResponse;
+import iori.hdoctor.net.response.EmptyResponse;
+import iori.hdoctor.net.response.PatientConsultRecordResponse;
+import iori.hdoctor.net.response.PatientHealthyRemindResponse;
+import iori.hdoctor.net.response.PatientLoginResponse;
+import iori.hdoctor.net.response.PatientRegisterPhoneResponse;
+import iori.hdoctor.net.response.PatientRegisterResponse;
+import iori.hdoctor.net.response.PatientTestRecordResponse;
+import iori.hdoctor.net.response.PatientUserReportResponse;
+import iori.hdoctor.net.response.PatientWDDDResponse;
+import iori.hdoctor.net.response.PatientWDYXResponse;
+import iori.hdoctor.net.response.PatientZHZXResponse;
 import iori.hdoctor.net.response.TestResponse;
 import iori.hdoctor.view.RequestProgressDialog;
 
@@ -120,4 +211,308 @@ public class NetworkAPI implements HttpRequest {
 		mConnection.sendRequestByPost(request, diag, DoctorServiceMagSetResponse.class, listener);
 	}
 
+	public void docchuzhen(RequestProgressDialog diag, NetworkConnectListener listener){
+		DoctorChuZhenRequest request = new DoctorChuZhenRequest();
+		mConnection.sendRequestByPost(request, diag, DoctorChuZhenResponse.class, listener);
+	}
+
+	public void docChuSet(String dset, String isopen, String dnum, RequestProgressDialog diag, NetworkConnectListener listener){
+		DoctorChuSetRequest request = new DoctorChuSetRequest(dset, isopen, dnum, HDoctorCode.YES);
+		mConnection.sendRequestByPost(request, diag, null, listener);
+	}
+
+	public void casesdesc(RequestProgressDialog diag, NetworkConnectListener listener){
+		DoctorBlglRequest request = new DoctorBlglRequest();
+		mConnection.sendRequestByPost(request, diag, DoctorBlglResponse.class, listener);
+	}
+
+	public void casesmange(String orderid, RequestProgressDialog diag, NetworkConnectListener listener){
+		DoctorBlglInfoRequest request = new DoctorBlglInfoRequest(orderid);
+		mConnection.sendRequestByPost(request, diag, DoctorBlglInfoResponse.class, listener);
+	}
+
+	public void casespatient(String bid, RequestProgressDialog diag, NetworkConnectListener listener){
+		DoctorBlglPatientRequest request = new DoctorBlglPatientRequest(bid);
+		mConnection.sendRequestByPost(request, diag, DoctorBlglPatientResponse.class, listener);
+	}
+
+	public void docreserve(RequestProgressDialog diag, NetworkConnectListener listener){
+		DoctorReserveRequest request = new DoctorReserveRequest();
+		mConnection.sendRequestByPost(request, diag, DoctorReserveResponse.class, listener);
+	}
+
+	public void docverify(String orderid, RequestProgressDialog diag, NetworkConnectListener listener){
+		DoctorVerifyRequest request = new DoctorVerifyRequest(orderid);
+		mConnection.sendRequestByPost(request, diag, null, listener);
+	}
+
+	public void docconsulting(RequestProgressDialog diag, NetworkConnectListener listener){
+		DoctorMessageRequest request = new DoctorMessageRequest();
+		mConnection.sendRequestByPost(request, diag, DoctorMessageResponse.class, listener);
+	}
+
+	public void docincome(RequestProgressDialog diag, NetworkConnectListener listener){
+		DoctorSRXQRequest request = new DoctorSRXQRequest();
+		mConnection.sendRequestByPost(request, diag, DoctorSRXQResponse.class, listener);
+	}
+
+	public void docaccount(String password, String bindingphone, String bindingqq, String bindingwei, RequestProgressDialog diag, NetworkConnectListener listener){
+		DoctorZHZXRequest request = new DoctorZHZXRequest(password, bindingphone, bindingqq, bindingwei );
+		mConnection.sendRequestByPost(request, diag, DoctorZHZXResponse.class, listener);
+	}
+
+	public void docinfo(RequestProgressDialog diag, NetworkConnectListener listener){
+		DoctorUserInfoRequest request = new DoctorUserInfoRequest();
+		mConnection.sendRequestByPost(request, diag, DoctorUserInfoResponse.class, listener);
+	}
+
+	public void docRealname(String realname, RequestProgressDialog diag, NetworkConnectListener listener){
+		DoctorUserRealnameRequest request = new DoctorUserRealnameRequest(realname, HDoctorCode.YES);
+		mConnection.sendRequestByPost(request, diag, EmptyResponse.class, listener);
+	}
+
+	public void docImg(RequestProgressDialog diag, NetworkConnectListener listener){
+		DoctorUserImgRequest request = new DoctorUserImgRequest(HDoctorCode.YES);
+		mConnection.sendRequestByPost(request, diag, DoctorImgResponse.class, listener);
+	}
+
+	public void docJianJie(String jianjie, RequestProgressDialog diag, NetworkConnectListener listener){
+		DoctorUserJianjieRequest request = new DoctorUserJianjieRequest(jianjie, HDoctorCode.YES);
+		mConnection.sendRequestByPost(request, diag, EmptyResponse.class, listener);
+	}
+
+	public void docShanChang(String shanchang, RequestProgressDialog diag, NetworkConnectListener listener){
+		DoctorUserShanChangRequest request = new DoctorUserShanChangRequest(shanchang, HDoctorCode.YES);
+		mConnection.sendRequestByPost(request, diag, EmptyResponse.class, listener);
+	}
+
+	public void docHospital(String hospital, RequestProgressDialog diag, NetworkConnectListener listener){
+		DoctorUserHospitalRequest request = new DoctorUserHospitalRequest(hospital, HDoctorCode.YES);
+		mConnection.sendRequestByPost(request, diag, EmptyResponse.class, listener);
+	}
+
+	public void docKeshi(String keshi, RequestProgressDialog diag, NetworkConnectListener listener){
+		DoctorUserKeShiRequest request = new DoctorUserKeShiRequest(keshi, HDoctorCode.YES);
+		mConnection.sendRequestByPost(request, diag, EmptyResponse.class, listener);
+	}
+
+	public void docZhiCheng(String zhicheng, RequestProgressDialog diag, NetworkConnectListener listener){
+		DoctorUserZhiChengRequest request = new DoctorUserZhiChengRequest(zhicheng, HDoctorCode.YES);
+		mConnection.sendRequestByPost(request, diag, EmptyResponse.class, listener);
+	}
+
+	public void docEmail(String email, RequestProgressDialog diag, NetworkConnectListener listener){
+		DoctorUserEmailRequest request = new DoctorUserEmailRequest(email, HDoctorCode.YES);
+		mConnection.sendRequestByPost(request, diag, EmptyResponse.class, listener);
+	}
+
+	public void docpersonal(RequestProgressDialog diag, NetworkConnectListener listener){
+		DoctorPersonalRequest request = new DoctorPersonalRequest();
+		mConnection.sendRequestByPost(request, diag, DoctorPersonalResponse.class, listener);
+	}
+
+	public void docAddBank(String bankname, String bankno, String banksn, RequestProgressDialog diag, NetworkConnectListener listener){
+		DoctorAddBankRequest request = new DoctorAddBankRequest(bankname, bankno, banksn, HDoctorCode.YES, HDoctorCode.ADD);
+		mConnection.sendRequestByPost(request, diag, EmptyResponse.class, listener);
+	}
+
+	public void docDelBank(String bankno, RequestProgressDialog diag, NetworkConnectListener listener){
+		DoctorDelBankRequest request = new DoctorDelBankRequest(bankno, HDoctorCode.YES, HDoctorCode.DEL);
+		mConnection.sendRequestByPost(request, diag, EmptyResponse.class, listener);
+	}
+
+	public void docModifyBank(String bankno, String banksn, String bankisselect, RequestProgressDialog diag, NetworkConnectListener listener){
+		DoctorModifyBankRequest request = new DoctorModifyBankRequest(bankno, banksn, HDoctorCode.YES, HDoctorCode.MODIFY, bankisselect);
+		mConnection.sendRequestByPost(request, diag, EmptyResponse.class, listener);
+	}
+
+	public void patlogin(String username, String password, RequestProgressDialog diag, NetworkConnectListener listener){
+		PatientLoginRequest request = new PatientLoginRequest(username, password);
+		mConnection.sendRequestByPost(request, diag, PatientLoginResponse.class, listener);
+	}
+
+	public void patregisterphone(String username, String password, RequestProgressDialog diag, NetworkConnectListener listener){
+		PatientRegisterPhoneRequest request = new PatientRegisterPhoneRequest(username, password, HDoctorCode.PATIENT, HDoctorCode.YES);
+		mConnection.sendRequestByPost(request, diag, PatientRegisterPhoneResponse.class, listener);
+	}
+
+	public void patregister(String nicheng, String sex, String age, String address, RequestProgressDialog diag, NetworkConnectListener listener){
+		PatientRegisterRequest request = new PatientRegisterRequest(nicheng, sex, age, address, HDoctorCode.PATIENT, HDoctorCode.YES);
+		mConnection.sendRequestByPost(request, diag, PatientRegisterResponse.class, listener);
+	}
+
+	public void medicine(RequestProgressDialog diag, NetworkConnectListener listener){
+		PatientWDYXRequest request = new PatientWDYXRequest();
+		mConnection.sendRequestByPost(request, diag, PatientWDYXResponse.class, listener);
+	}
+
+	public void addmedicine(String name, String beizhu, RequestProgressDialog diag, NetworkConnectListener listener){
+		PatientAddMedicineRequest request = new PatientAddMedicineRequest(name, beizhu, HDoctorCode.YES);
+		mConnection.sendRequestByPost(request, diag, EmptyResponse.class, listener);
+	}
+
+	public void addmedicinenoimg(String name, String beizhu, RequestProgressDialog diag, NetworkConnectListener listener){
+		PatientAddMedicineNoImgRequest request = new PatientAddMedicineNoImgRequest(name, beizhu, HDoctorCode.YES);
+		mConnection.sendRequestByPost(request, diag, EmptyResponse.class, listener);
+	}
+
+	public void delmedicine(String medicineid, RequestProgressDialog diag, NetworkConnectListener listener){
+		PatientDelMedicineRequest request = new PatientDelMedicineRequest(medicineid, HDoctorCode.YES);
+		mConnection.sendRequestByPost(request, diag, EmptyResponse.class, listener);
+	}
+
+	public void alyreport(int score, int height, int weight, int age, String health, RequestProgressDialog diag, NetworkConnectListener listener){
+		PatientAlyReportRequest request = new PatientAlyReportRequest(score, height, weight, age, health);
+		mConnection.sendRequestByPost(request, diag, EmptyResponse.class, listener);
+	}
+
+	public void usereport(RequestProgressDialog diag, NetworkConnectListener listener){
+		PatientUserReportRequest request = new PatientUserReportRequest();
+		mConnection.sendRequestByPost(request, diag, PatientUserReportResponse.class, listener);
+	}
+
+	public void testrecord(RequestProgressDialog diag, NetworkConnectListener listener){
+		PatientTestRecordRequest request = new PatientTestRecordRequest();
+		mConnection.sendRequestByPost(request, diag, PatientTestRecordResponse.class, listener);
+	}
+
+	public void consultrecord(RequestProgressDialog diag, NetworkConnectListener listener){
+		PatientConsultRecordRequest request = new PatientConsultRecordRequest();
+		mConnection.sendRequestByPost(request, diag, PatientConsultRecordResponse.class, listener);
+	}
+
+	public void healthyremind(RequestProgressDialog diag, NetworkConnectListener listener){
+		PatientHealthyRemindRequest request = new PatientHealthyRemindRequest();
+		mConnection.sendRequestByPost(request, diag, PatientHealthyRemindResponse.class, listener);
+	}
+
+	public void txa(String txaid, RequestProgressDialog diag, NetworkConnectListener listener){
+		PatientTXARequest request = new PatientTXARequest(txaid,HDoctorCode.YES);
+		mConnection.sendRequestByPost(request, diag, EmptyResponse.class, listener);
+	}
+
+	public void txb(String txbid, RequestProgressDialog diag, NetworkConnectListener listener){
+		PatientTXBRequest request = new PatientTXBRequest(txbid, HDoctorCode.YES);
+		mConnection.sendRequestByPost(request, diag, EmptyResponse.class, listener);
+	}
+
+	public void addremind(String name, String takeingtime, String takingnum, String takingperiod, String beizhu, RequestProgressDialog diag, NetworkConnectListener listener){
+		PatientAddMedicinePromptRequest request = new PatientAddMedicinePromptRequest(name, takeingtime, takingnum, takingperiod, beizhu, HDoctorCode.YES);
+		mConnection.sendRequestByPost(request, diag, EmptyResponse.class, listener);
+	}
+
+	public void myorder(RequestProgressDialog diag, NetworkConnectListener listener){
+		PatientWDDDRequest request = new PatientWDDDRequest();
+		mConnection.sendRequestByPost(request, diag, PatientWDDDResponse.class, listener);
+	}
+
+	public void patcomment(String orderid, String content, int manyi, int zhuanye, RequestProgressDialog diag, NetworkConnectListener listener){
+		PatientCommentRequest request = new PatientCommentRequest(orderid, content, manyi, zhuanye, HDoctorCode.YES);
+		mConnection.sendRequestByPost(request, diag, EmptyResponse.class, listener);
+	}
+
+	public void myappointment(RequestProgressDialog diag, NetworkConnectListener listener){
+		PatientWDYYRequest request = new PatientWDYYRequest();
+		mConnection.sendRequestByPost(request, diag, PatientWDYYResponse.class, listener);
+	}
+
+	public void patpersonal(RequestProgressDialog diag, NetworkConnectListener listener){
+		PatientGRZXRequest request = new PatientGRZXRequest();
+		mConnection.sendRequestByPost(request, diag, PatientGRZXResponse.class, listener);
+	}
+
+	public void orderdesc(String orderId, RequestProgressDialog diag, NetworkConnectListener listener){
+		PatientWDDDInfoRequest request = new PatientWDDDInfoRequest(orderId);
+		mConnection.sendRequestByPost(request, diag, PatientWDDDInfoResponse.class, listener);
+	}
+
+	public void patinfo( RequestProgressDialog diag, NetworkConnectListener listener){
+		PatientInfoRequest request = new PatientInfoRequest();
+		mConnection.sendRequestByPost(request, diag, PatientInfoResponse.class, listener);
+	}
+
+	public void patinfoimg(String nicheng, String sex, String age, String address, RequestProgressDialog diag, NetworkConnectListener listener){
+		PatientInfoImgRequest request = new PatientInfoImgRequest(nicheng, sex, age, address, HDoctorCode.YES);
+		mConnection.sendRequestByPost(request, diag, PatientInfoResponse.class, listener);
+	}
+
+	public void patinfonoimg(String nicheng, String sex, String age, String address, RequestProgressDialog diag, NetworkConnectListener listener){
+		PatientInfoNoImgRequest request = new PatientInfoNoImgRequest(nicheng, sex, age, address, HDoctorCode.YES);
+		mConnection.sendRequestByPost(request, diag, PatientInfoResponse.class, listener);
+	}
+
+	public void pataccount(String password, String bindingphone, String bindingqq, String bindingwei, RequestProgressDialog diag, NetworkConnectListener listener){
+		PatientZHZXModifyRequest request = new PatientZHZXModifyRequest(password, bindingphone, bindingqq, bindingwei, HDoctorCode.YES);
+		mConnection.sendRequestByPost(request, diag, EmptyResponse.class, listener);
+	}
+
+	public void pataccountinfo(RequestProgressDialog diag, NetworkConnectListener listener){
+		PatientZHZXRequest request = new PatientZHZXRequest();
+		mConnection.sendRequestByPost(request, diag, PatientZHZXResponse.class, listener);
+	}
+
+	public void mypublish(RequestProgressDialog diag, NetworkConnectListener listener){
+		PatientWDFBRequest request = new PatientWDFBRequest();
+		mConnection.sendRequestByPost(request, diag, PatientWDFBResponse.class, listener);
+	}
+
+	public void collection(RequestProgressDialog diag, NetworkConnectListener listener){
+		PatientWDSCRequest request = new PatientWDSCRequest();
+		mConnection.sendRequestByPost(request, diag, PatientWDSCResponse.class, listener);
+	}
+
+	public void patcircle(RequestProgressDialog diag, NetworkConnectListener listener){
+		PatientCircleRequest request = new PatientCircleRequest();
+		mConnection.sendRequestByPost(request, diag, PatientCircleResponse.class, listener);
+	}
+
+	public void patcirclezan(String frumid, RequestProgressDialog diag, NetworkConnectListener listener){
+		PatientCircleZanRequest request = new PatientCircleZanRequest(frumid, HDoctorCode.YES);
+		mConnection.sendRequestByPost(request, diag, PatientCircleResponse.class, listener);
+	}
+
+	public void contentdesc(String frumid, RequestProgressDialog diag, NetworkConnectListener listener){
+		PatientCircleInfoRequest request = new PatientCircleInfoRequest(frumid);
+		mConnection.sendRequestByPost(request, diag, PatientCircleInfoResponse.class, listener);
+	}
+
+	public void patreply(String frumid, String content, RequestProgressDialog diag, NetworkConnectListener listener){
+		PatientReplyRequest request = new PatientReplyRequest(frumid, content, HDoctorCode.YES);
+		mConnection.sendRequestByPost(request, diag, PatientCircleInfoResponse.class, listener);
+	}
+
+	public void circlecollection(String frumid, RequestProgressDialog diag, NetworkConnectListener listener){
+		PatientCircleCollectionRequest request = new PatientCircleCollectionRequest(frumid);
+		mConnection.sendRequestByPost(request, diag, EmptyResponse.class, listener);
+	}
+
+	public void circlepublish(String content, String ispublic, RequestProgressDialog diag, NetworkConnectListener listener){
+		PatientPublishRequest request = new PatientPublishRequest(content, ispublic, HDoctorCode.YES);
+		mConnection.sendRequestByPost(request, diag, EmptyResponse.class, listener);
+	}
+
+	public void circlepublishnoimg(String content, String ispublic, RequestProgressDialog diag, NetworkConnectListener listener){
+		PatientPublishNoImgRequest request = new PatientPublishNoImgRequest(content, ispublic, HDoctorCode.YES);
+		mConnection.sendRequestByPost(request, diag, EmptyResponse.class, listener);
+	}
+
+	public void community(RequestProgressDialog diag, NetworkConnectListener listener){
+		PatientCommunityRequest request = new PatientCommunityRequest();
+		mConnection.sendRequestByPost(request, diag, PatientCommunityResponse.class, listener);
+	}
+
+	public void patcommunityzan(String frumid, RequestProgressDialog diag, NetworkConnectListener listener){
+		PatientCommunityZanRequest request = new PatientCommunityZanRequest(frumid, HDoctorCode.YES);
+		mConnection.sendRequestByPost(request, diag, PatientCommunityResponse.class, listener);
+	}
+
+	public void doccircle(RequestProgressDialog diag, NetworkConnectListener listener){
+		DoctorCircleRequest request = new DoctorCircleRequest();
+		mConnection.sendRequestByPost(request, diag, DoctorCircleResponse.class, listener);
+	}
+
+	public void doccirclezan(String frumid, RequestProgressDialog diag, NetworkConnectListener listener){
+		DoctorCircleZanRequest request = new DoctorCircleZanRequest(frumid, HDoctorCode.YES);
+		mConnection.sendRequestByPost(request, diag, DoctorCircleResponse.class, listener);
+	}
 }

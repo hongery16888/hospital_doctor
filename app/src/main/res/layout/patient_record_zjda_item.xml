@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" 
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white">
+    
+    <LinearLayout style="@style/LayerMainMyItem"
+        android:background="@color/white">
+        
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" 
+            android:paddingTop="@dimen/global_padding"
+            android:paddingBottom="@dimen/global_padding"
+
+            android:text="自检分数："
+            android:textSize="@dimen/global_title_size"/>
+        
+        <TextView
+            android:id="@+id/score"
+            style="@style/TxtMainMyItem"
+            android:text="75"/>
+        
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="@dimen/global_padding"
+        android:paddingRight="@dimen/global_padding"
+        android:paddingBottom="@dimen/global_line_padding"
+        android:text="测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试"
+        android:textColor="@color/global_title_color"/>
+
+    <View style="@style/divider_line_horizontal" />
+
+    <LinearLayout style="@style/LayerMainMyItem"
+        android:background="@color/white">
+
+        <TextView
+            android:id="@+id/time"
+            style="@style/TxtMainMyItem"
+            android:gravity="right"
+            android:text="2015-05-06"/>
+
+    </LinearLayout>
+
+</LinearLayout>

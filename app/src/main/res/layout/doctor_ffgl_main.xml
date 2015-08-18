@@ -7,23 +7,14 @@
 
     <include layout="@layout/title_bar" />
 
-    <LinearLayout style="@style/LayerMainMyItem"
-        android:background="@color/transparent">
-        <TextView style="@style/TxtMainMyItem"
-            android:text="@string/doctor_ffgl_add"
-            android:textColor="@color/grey_deep"/>
-    </LinearLayout>
-
-    <View style="@style/divider_line_horizontal" />
-
     <LinearLayout
-        android:id="@+id/czsz"
+        android:id="@+id/zxzx"
         style="@style/LayerMainMyItem">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/doctor_czgl_time"
+            android:text="@string/doctor_ffgl_zxzx"
             android:textColor="@color/global_title_color"
             android:textSize="@dimen/global_title_size"
             android:paddingTop="@dimen/global_padding"
@@ -33,13 +24,13 @@
             android:gravity="center_vertical"/>
 
         <TextView
-            android:id="@+id/zx_switch"
+            android:id="@+id/zx_status"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:paddingTop="@dimen/global_line_padding"
             android:paddingBottom="@dimen/global_line_padding"
-            android:text="@string/doctor_ffgl_add"
+            android:text="@string/doctor_ffgl_no_add"
             android:textColor="@color/grey_deep"
             android:textSize="@dimen/global_title_size"
             android:gravity="center"
@@ -53,6 +44,7 @@
     <View style="@style/divider_line_horizontal" />
 
     <LinearLayout
+        android:id="@+id/dhzx"
         style="@style/LayerMainMyItem">
 
         <TextView
@@ -68,13 +60,13 @@
             android:gravity="center_vertical"/>
 
         <TextView
-            android:id="@+id/dh_switch"
+            android:id="@+id/dh_status"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:paddingTop="@dimen/global_line_padding"
             android:paddingBottom="@dimen/global_line_padding"
-            android:text="@string/doctor_ffgl_add"
+            android:text="@string/doctor_ffgl_no_add"
             android:textColor="@color/grey_deep"
             android:textSize="@dimen/global_title_size"
             android:gravity="center"
@@ -87,16 +79,8 @@
 
     <View style="@style/divider_line_horizontal" />
 
-    <LinearLayout style="@style/LayerMainMyItem"
-        android:background="@color/transparent">
-        <TextView style="@style/TxtMainMyItem"
-            android:text="@string/doctor_ffgl_no_add"
-            android:textColor="@color/grey_deep"/>
-    </LinearLayout>
-
-    <View style="@style/divider_line_horizontal" />
-
     <LinearLayout
+        android:id="@+id/yyzx"
         style="@style/LayerMainMyItem">
 
         <TextView
@@ -112,7 +96,7 @@
             android:gravity="center_vertical"/>
 
         <TextView
-            android:id="@+id/yy_switch"
+            android:id="@+id/yy_status"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -125,8 +109,7 @@
             android:paddingRight="@dimen/global_padding"
             android:singleLine="false"/>
 
-        <ImageView style="@style/ImageMainMyItemNext"
-            android:src="@drawable/icon_list_plus"/>
+        <ImageView style="@style/ImageMainMyItemNext" />
 
     </LinearLayout>
 

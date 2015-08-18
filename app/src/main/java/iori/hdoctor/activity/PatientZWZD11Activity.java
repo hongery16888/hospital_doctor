@@ -2,6 +2,7 @@ package iori.hdoctor.activity;
 
 import android.content.Intent;
 import android.graphics.Color;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Gallery;
@@ -12,6 +13,7 @@ import butterknife.OnClick;
 import iori.hdoctor.R;
 import iori.hdoctor.activity.base.BaseActivity;
 import iori.hdoctor.adapter.PatientZWZD04Adapter;
+import iori.hdoctor.adapter.PatientZWZD11Adapter;
 
 /**
  * Created by Administrator on 2015/7/11.
@@ -23,9 +25,14 @@ public class PatientZWZD11Activity extends BaseActivity implements AdapterView.O
     @InjectView(R.id.sit_time)
     TextView sitTime;
 
+    private int score = 2;
+
     @OnClick(R.id.next_step)
     public void nextStep() {
         getApp().setActivities(this);
+        getApp().getReport().setScore(getApp().getReport().getScore() + score);
+        getApp().getScores().add(score);
+        showToast(getApp().getReport().getScore() + "" );
         startActivity(new Intent(PatientZWZD11Activity.this, PatientZWZD12Activity.class));
     }
 
@@ -33,6 +40,7 @@ public class PatientZWZD11Activity extends BaseActivity implements AdapterView.O
 
     @OnClick(R.id.last_step)
     public void lastStep(){
+        returnScore();
         finish();
     }
 
@@ -49,7 +57,7 @@ public class PatientZWZD11Activity extends BaseActivity implements AdapterView.O
 
     @Override
     protected void initData() {
-        sitList.setAdapter(new PatientZWZD04Adapter(this));
+        sitList.setAdapter(new PatientZWZD11Adapter(this));
         sitList.setSelection(2);
         sitList.setOnItemSelectedListener(this);
     }
@@ -63,10 +71,23 @@ public class PatientZWZD11Activity extends BaseActivity implements AdapterView.O
         tempTV = (TextView)view.findViewById(R.id.sit_time);
 
         sitTime.setText(position + "");
+        score = position;
     }
 
     @Override
     public void onNothingSelected(AdapterView<?> parent) {
 
+    }
+
+    public boolean onKeyDown(int kCode, KeyEvent kEvent) {
+        if (kCode == KeyEvent.KEYCODE_BACK) {
+            returnScore();
+        }
+        return super.onKeyDown(kCode, kEvent);
+    }
+
+    public void returnScore(){
+        getApp().getReport().setScore(getApp().getReport().getScore() - getApp().getScores().get(getApp().getScores().size() - 1));
+        getApp().getScores().remove(getApp().getScores().size() - 1);
     }
 }

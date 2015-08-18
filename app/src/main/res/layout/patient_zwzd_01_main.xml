@@ -33,7 +33,7 @@
         android:paddingBottom="@dimen/global_padding">
 
         <iori.hdoctor.view.DatePicker
-            android:id="@+id/datePicker1"
+            android:id="@+id/date_picker"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
         </iori.hdoctor.view.DatePicker>

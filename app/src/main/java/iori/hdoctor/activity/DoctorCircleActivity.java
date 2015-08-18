@@ -1,8 +1,10 @@
 package iori.hdoctor.activity;
 
 import android.content.Intent;
+import android.os.Handler;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ListView;
 
 import com.handmark.pulltorefresh.library.PullToRefreshListView;
 
@@ -18,7 +20,7 @@ import iori.hdoctor.adapter.DoctorCircleAdapter;
 public class DoctorCircleActivity extends BaseActivity {
 
     @InjectView(R.id.circle_sq_listview)
-    PullToRefreshListView listView;
+    ListView listView;
 
     @Override
     protected int setContentViewResId() {
@@ -33,7 +35,7 @@ public class DoctorCircleActivity extends BaseActivity {
 
     @Override
     protected void initData() {
-        listView.setAdapter(new DoctorCircleAdapter(this));
+        listView.setAdapter(new DoctorCircleAdapter(this, null, new Handler()));
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {

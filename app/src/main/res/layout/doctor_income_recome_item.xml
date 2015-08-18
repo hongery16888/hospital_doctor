@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout style="@style/LayerMainMyItem">
+
+        <TextView style="@style/TxtMainMyItem"
+            android:paddingTop="@dimen/global_line_padding"
+            android:paddingBottom="@dimen/global_line_padding"
+            android:text="500元"/>
+
+        <TextView style="@style/TxtMainMyItem"
+            android:paddingTop="@dimen/global_line_padding"
+            android:paddingBottom="@dimen/global_line_padding"
+            android:text="@string/doctor_income_bank_card_zs"
+            android:textSize="@dimen/global_sub_title_size"/>
+
+        <TextView style="@style/TxtMainMyItem"
+            android:paddingTop="@dimen/global_line_padding"
+            android:paddingBottom="@dimen/global_line_padding"
+            android:text="...201 454"
+            android:textSize="@dimen/global_sub_title_size"/>
+
+        <TextView style="@style/TxtMainMyItem"
+            android:paddingTop="@dimen/global_line_padding"
+            android:paddingBottom="@dimen/global_line_padding"
+            android:text="2015-07-01"
+            android:textSize="@dimen/global_sub_title_size"/>
+
+    </LinearLayout>
+
+</LinearLayout>

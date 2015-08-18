@@ -45,7 +45,7 @@
             android:id="@+id/odds_info"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/patient_zwzd_piss_unit_little"
+            android:text="@string/patient_zwzd_piss_unit_little_more"
             android:textSize="@dimen/global_title_size"
             android:textColor="@color/patient_top_bar_bg"/>
 
@@ -88,7 +88,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:max="100"
-        android:progress="20"
+        android:progress="50"
         style="@style/Widget.SeekBar.Normal"
         android:layout_margin="@dimen/global_padding"
         android:paddingLeft="@dimen/global_padding"

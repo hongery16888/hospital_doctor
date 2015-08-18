@@ -7,6 +7,8 @@ import android.graphics.Bitmap;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Environment;
+import android.os.Handler;
+import android.widget.TextView;
 
 import com.nostra13.universalimageloader.cache.disc.impl.UnlimitedDiskCache;
 import com.nostra13.universalimageloader.cache.disc.naming.Md5FileNameGenerator;
@@ -24,7 +26,9 @@ import java.io.File;
 import java.util.ArrayList;
 
 import iori.hdoctor.R;
+import iori.hdoctor.net.entity.TestingReport;
 import iori.hdoctor.net.response.DoctorLoginResponse;
+import iori.hdoctor.net.response.DoctorServiceMagResponse;
 
 public class MyApp extends Application {
 
@@ -32,6 +36,16 @@ public class MyApp extends Application {
     private ArrayList<Activity> activities = new ArrayList<Activity>();
     private DisplayImageOptions options;
     private DoctorLoginResponse user;
+    private DoctorServiceMagResponse serviceMag;
+    private TextView isSwith;
+    private TextView personalTv;
+    private Handler avatarHandler;
+    private Handler refreshBankHandler;
+    private Handler refreshMedicineHandler;
+    private TestingReport report;
+    private ArrayList<Integer> scores;
+    private Handler refreshListHandler;
+    private Handler refreshData;
 
     /*客户端在SD卡的存储根目录*/
     public final static String APP_ROOT = Environment.getExternalStorageDirectory().getPath() + File.separator;
@@ -98,14 +112,8 @@ public class MyApp extends Application {
                 .build();
 
         options = new DisplayImageOptions.Builder()
-                .resetViewBeforeLoading(false)  // default
-                .delayBeforeLoading(1000)
                 .cacheInMemory(true) // default
                 .cacheOnDisk(true) // default
-                .considerExifParams(true) // default
-                .imageScaleType(ImageScaleType.IN_SAMPLE_POWER_OF_2) // default
-                .bitmapConfig(Bitmap.Config.ARGB_8888) // default
-                .displayer(new SimpleBitmapDisplayer()) // default
                 .build();
 
         setOptions(options);
@@ -136,5 +144,85 @@ public class MyApp extends Application {
 
     public void setUser(DoctorLoginResponse user) {
         this.user = user;
+    }
+
+    public DoctorServiceMagResponse getServiceMag() {
+        return serviceMag;
+    }
+
+    public void setServiceMag(DoctorServiceMagResponse serviceMag) {
+        this.serviceMag = serviceMag;
+    }
+
+    public TextView getIsSwith() {
+        return isSwith;
+    }
+
+    public void setIsSwith(TextView isSwith) {
+        this.isSwith = isSwith;
+    }
+
+    public TextView getPersonalTv() {
+        return personalTv;
+    }
+
+    public void setPersonalTv(TextView personalTv) {
+        this.personalTv = personalTv;
+    }
+
+    public Handler getAvatarHandler() {
+        return avatarHandler;
+    }
+
+    public void setAvatarHandler(Handler avatarHandler) {
+        this.avatarHandler = avatarHandler;
+    }
+
+    public Handler getRefreshBankHandler() {
+        return refreshBankHandler;
+    }
+
+    public void setRefreshBankHandler(Handler refreshBankHandler) {
+        this.refreshBankHandler = refreshBankHandler;
+    }
+
+    public Handler getRefreshMedicineHandler() {
+        return refreshMedicineHandler;
+    }
+
+    public void setRefreshMedicineHandler(Handler refreshMedicineHandler) {
+        this.refreshMedicineHandler = refreshMedicineHandler;
+    }
+
+    public TestingReport getReport() {
+        return report;
+    }
+
+    public void setReport(TestingReport report) {
+        this.report = report;
+    }
+
+    public ArrayList<Integer> getScores() {
+        return scores;
+    }
+
+    public void setScores(ArrayList<Integer> scores) {
+        this.scores = scores;
+    }
+
+    public Handler getRefreshListHandler() {
+        return refreshListHandler;
+    }
+
+    public void setRefreshListHandler(Handler refreshListHandler) {
+        this.refreshListHandler = refreshListHandler;
+    }
+
+    public Handler getRefreshData() {
+        return refreshData;
+    }
+
+    public void setRefreshData(Handler refreshData) {
+        this.refreshData = refreshData;
     }
 }

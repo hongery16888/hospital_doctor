@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/global_bg">
+
+    <include layout="@layout/patient_title_bar" />
+
+    <LinearLayout style="@style/LayerMainMyItem">
+
+        <TextView
+            android:id="@+id/zjda"
+            style="@style/TxtMainMyItem"
+            android:gravity="center"
+            android:text="自检档案"
+            android:textColor="@color/patient_top_bar_bg"/>
+
+        <View style="@style/divider_line_vertical" />
+
+        <TextView
+            android:id="@+id/zxda"
+            style="@style/TxtMainMyItem"
+            android:gravity="center"
+            android:text="咨询档案"/>
+
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/global_padding"
+        android:cacheColorHint="@color/transparent"
+        android:divider="@color/transparent"
+        android:dividerHeight="@dimen/global_padding"/>
+
+</LinearLayout>

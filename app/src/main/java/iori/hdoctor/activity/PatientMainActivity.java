@@ -1,5 +1,6 @@
 package iori.hdoctor.activity;
 
+import android.content.Intent;
 import android.view.View;
 import android.widget.RadioGroup;
 import android.widget.TextView;
@@ -129,6 +130,7 @@ public class PatientMainActivity extends BaseActivity implements NetworkConnectL
 					viewPager.setCurrentItem(0, false);
 					setTitleAction(getString(R.string.patient_menu_jk));
 					setHideSetting();
+					setHidePublish();
 					break;
 				case R.id.shopping_main:
 					if (oldPosition != 1) {
@@ -138,6 +140,7 @@ public class PatientMainActivity extends BaseActivity implements NetworkConnectL
 					viewPager.setCurrentItem(1, false);
 					setTitleAction(getString(R.string.patient_menu_ys));
 					setHideSetting();
+					setHidePublish();
 					break;
 				case R.id.activity_main:
 					if (oldPosition != 2) {
@@ -147,6 +150,7 @@ public class PatientMainActivity extends BaseActivity implements NetworkConnectL
 					viewPager.setCurrentItem(2, false);
 					setTitleAction(getString(R.string.patient_menu_qz));
 					setHideSetting();
+					showPublish(publishListener);
 					break;
 				case R.id.personal_main:
 					if (oldPosition != 3) {
@@ -155,6 +159,7 @@ public class PatientMainActivity extends BaseActivity implements NetworkConnectL
 					}
 					viewPager.setCurrentItem(3, false);
 					setTitleAction(getString(R.string.text_null));
+					setHidePublish();
 					showSetting(settingListener);
 					break;
 			}
@@ -165,7 +170,14 @@ public class PatientMainActivity extends BaseActivity implements NetworkConnectL
 	private View.OnClickListener settingListener = new View.OnClickListener() {
 		@Override
 		public void onClick(View v) {
+			startActivity(new Intent(PatientMainActivity.this, PatientSettingActivity.class));
+		}
+	};
 
+	private View.OnClickListener publishListener = new View.OnClickListener() {
+		@Override
+		public void onClick(View v) {
+			startActivity(new Intent(PatientMainActivity.this, PatientPublishActivity.class));
 		}
 	};
 }

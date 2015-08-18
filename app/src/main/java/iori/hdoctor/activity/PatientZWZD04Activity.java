@@ -22,10 +22,14 @@ public class PatientZWZD04Activity extends BaseActivity implements AdapterView.O
     Gallery sitList;
     @InjectView(R.id.sit_time)
     TextView sitTime;
+    private int score = 4;
 
     @OnClick(R.id.next_step)
     public void nextStep() {
         getApp().setActivities(this);
+        getApp().getReport().setScore(score);
+        getApp().getScores().add(score);
+        showToast(getApp().getReport().getScore() + "");
         startActivity(new Intent(PatientZWZD04Activity.this, PatientZWZD05Activity.class));
     }
 
@@ -63,6 +67,9 @@ public class PatientZWZD04Activity extends BaseActivity implements AdapterView.O
         tempTV = (TextView)view.findViewById(R.id.sit_time);
 
         sitTime.setText(position * 2 + "");
+
+        score = position*2;
+
     }
 
     @Override

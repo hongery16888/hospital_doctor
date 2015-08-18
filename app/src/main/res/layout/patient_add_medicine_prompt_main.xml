@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/global_bg"
+    android:orientation="vertical"
+    android:id="@+id/persion_main">
+
+    <include layout="@layout/patient_title_bar" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@color/white"
+        android:layout_marginTop="@dimen/global_padding">
+
+        <ImageView
+            android:id="@+id/img"
+            android:layout_width="90dip"
+            android:layout_height="90dip"
+            android:src="@drawable/img_fj_hospital"
+            android:layout_marginLeft="@dimen/global_padding"
+            android:layout_marginTop="@dimen/global_padding"
+            android:layout_marginBottom="@dimen/global_padding"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:paddingTop="@dimen/global_padding"
+            android:paddingBottom="@dimen/global_padding"
+            android:gravity="center">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="药品名称　"
+                android:textColor="@color/global_title_color"
+                android:textSize="@dimen/global_title_size"
+                android:paddingLeft="@dimen/global_padding"/>
+            <EditText
+                android:id="@+id/name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/grey_deep"
+                android:textSize="@dimen/global_sub_title_size"
+                android:layout_marginLeft="@dimen/global_padding"
+                android:layout_marginRight="@dimen/global_padding"
+                android:layout_marginTop="@dimen/five_dip"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/time_lay"
+        style="@style/LayerMainMyItem"
+        android:layout_marginTop="@dimen/global_padding">
+        <TextView style="@style/TxtMainMyItem"
+            android:layout_weight="0.4"
+            android:text="用药时间："/>
+        <TextView
+            android:id="@+id/time"
+            style="@style/TxtMainMyItem"
+            android:layout_weight="1"
+            android:text="8:00"/>
+    </LinearLayout>
+
+    <View style="@style/divider_line_horizontal" />
+
+    <LinearLayout
+        android:id="@+id/count_lay"
+        style="@style/LayerMainMyItem">
+        <TextView style="@style/TxtMainMyItem"
+            android:layout_weight="0.4"
+            android:text="用药量　："/>
+        <TextView
+            android:id="@+id/count"
+            style="@style/TxtMainMyItem"
+            android:layout_weight="1"
+            android:text="2片"/>
+    </LinearLayout>
+
+    <View style="@style/divider_line_horizontal" />
+
+    <LinearLayout
+        android:id="@+id/cycle_lay"
+        style="@style/LayerMainMyItem" >
+        <TextView style="@style/TxtMainMyItem"
+            android:layout_weight="0.4"
+            android:text="用药周期："/>
+        <TextView
+            android:id="@+id/cycle"
+            style="@style/TxtMainMyItem"
+            android:layout_weight="1"
+            android:text="每天"/>
+    </LinearLayout>
+
+    <View style="@style/divider_line_horizontal" />
+
+    <LinearLayout style="@style/LayerMainMyItem">
+        <TextView style="@style/TxtMainMyItem"
+            android:layout_weight="0.4"
+            android:text="备注说明："
+            android:layout_gravity="top"
+            android:layout_marginTop="@dimen/five_dip"/>
+        <EditText
+            android:id="@+id/beizhu"
+            style="@style/TxtMainMyItem"
+            android:layout_height="100dip"
+            android:gravity="top"
+            android:singleLine="false"
+            android:layout_marginTop="@dimen/five_dip"
+            android:layout_marginBottom="@dimen/five_dip"/>
+    </LinearLayout>
+
+</LinearLayout>

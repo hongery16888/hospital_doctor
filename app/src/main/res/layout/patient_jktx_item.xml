@@ -6,8 +6,9 @@
     android:background="@color/white">
 
     <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/img"
+        android:layout_width="80dip"
+        android:layout_height="80dip"
         android:src="@drawable/img_tx"
         android:layout_margin="@dimen/global_padding"/>
 
@@ -20,12 +21,14 @@
         android:paddingBottom="@dimen/global_padding"
         android:gravity="center">
         <TextView
+            android:id="@+id/name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/doctor_circle_info_friend_name"
             android:textColor="@color/global_title_color"
             android:textSize="@dimen/global_title_size"/>
         <TextView
+            android:id="@+id/content"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/doctor_circle_info_friend_remark"
@@ -40,6 +43,7 @@
         android:orientation="vertical">
 
         <TextView
+            android:id="@+id/remark"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/patient_jktx_item_prompt"
@@ -48,6 +52,7 @@
             android:paddingRight="@dimen/global_padding"/>
 
         <iori.hdoctor.view.WiperSwitch
+            android:id="@+id/switcher"
             android:layout_width="80dip"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/global_line_padding"/>

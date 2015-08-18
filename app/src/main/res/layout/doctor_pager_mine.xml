@@ -34,6 +34,7 @@
     <View style="@style/divider_line_horizontal" />
 
     <LinearLayout
+        android:id="@+id/srxq"
         style="@style/LayerMainMyItem">
 
         <LinearLayout
@@ -50,6 +51,7 @@
                 android:textColor="@color/grey_deep"
                 android:textSize="@dimen/global_sub_title_size"/>
             <TextView
+                android:id="@+id/income"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/doctor_personal_income_ex"

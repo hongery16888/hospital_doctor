@@ -2,6 +2,7 @@ package iori.hdoctor.activity;
 
 import android.content.Intent;
 import android.graphics.Color;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Gallery;
@@ -28,6 +29,7 @@ public class PatientZWZD12Activity extends BaseActivity{
 
     @OnClick(R.id.last_step)
     public void lastStep(){
+        returnScore();
         finish();
     }
 
@@ -46,4 +48,15 @@ public class PatientZWZD12Activity extends BaseActivity{
     protected void initData() {
     }
 
+    public boolean onKeyDown(int kCode, KeyEvent kEvent) {
+        if (kCode == KeyEvent.KEYCODE_BACK) {
+            returnScore();
+        }
+        return super.onKeyDown(kCode, kEvent);
+    }
+
+    public void returnScore(){
+        getApp().getReport().setScore(getApp().getReport().getScore() - getApp().getScores().get(getApp().getScores().size() - 1));
+        getApp().getScores().remove(getApp().getScores().size() - 1);
+    }
 }

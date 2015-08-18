@@ -1,6 +1,7 @@
 package iori.hdoctor.activity;
 
 import android.content.Intent;
+import android.view.KeyEvent;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
@@ -14,14 +15,20 @@ import iori.hdoctor.activity.base.BaseActivity;
  */
 public class PatientZWZD06Activity extends BaseActivity implements SeekBar.OnSeekBarChangeListener{
 
+    private int score = 3;
+
     @OnClick(R.id.next_step)
     public void nextStep() {
         getApp().setActivities(this);
+        getApp().getReport().setScore(getApp().getReport().getScore() + score);
+        getApp().getScores().add(score);
+        showToast(getApp().getReport().getScore()  + "");
         startActivity(new Intent(PatientZWZD06Activity.this, PatientZWZD07Activity.class));
     }
 
     @OnClick(R.id.last_step)
     public void lastStep(){
+        returnScore();
         finish();
     }
 
@@ -58,6 +65,19 @@ public class PatientZWZD06Activity extends BaseActivity implements SeekBar.OnSee
             oddsInfo.setText(getResources().getString(R.string.patient_zwzd_piss_unit_little_more));
         else
             oddsInfo.setText(getResources().getString(R.string.patient_zwzd_piss_unit_much));
+
+        if (progress == 100)
+            score = 5;
+        else if(progress > 50)
+            score = 4;
+        else if(progress == 50)
+            score = 3;
+        else if(progress > 20 && progress < 50)
+            score = 2;
+        else if(progress == 20)
+            score = 1;
+        else if (progress >= 0 && progress < 20)
+            score = 0;
     }
 
     @Override
@@ -68,5 +88,17 @@ public class PatientZWZD06Activity extends BaseActivity implements SeekBar.OnSee
     @Override
     public void onStopTrackingTouch(SeekBar seekBar) {
 
+    }
+
+    public boolean onKeyDown(int kCode, KeyEvent kEvent) {
+        if (kCode == KeyEvent.KEYCODE_BACK) {
+            returnScore();
+        }
+        return super.onKeyDown(kCode, kEvent);
+    }
+
+    public void returnScore(){
+        getApp().getReport().setScore(getApp().getReport().getScore() - getApp().getScores().get(getApp().getScores().size() - 1));
+        getApp().getScores().remove(getApp().getScores().size() - 1);
     }
 }

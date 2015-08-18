@@ -3,7 +3,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/global_bg">
+    android:background="@color/global_bg"
+    android:id="@+id/persion_main">
 
     <include layout="@layout/patient_title_bar" />
 
@@ -20,7 +21,9 @@
                 android:id="@+id/head_img"
                 style="@style/LayerMainMyItem"
                 android:paddingTop="@dimen/global_padding"
-                android:paddingBottom="@dimen/global_padding">
+                android:paddingBottom="@dimen/global_padding"
+                android:focusable="true"
+                android:focusableInTouchMode="true">
                 <ImageView
                     android:id="@+id/head"
                     android:layout_width="80dip"
@@ -41,10 +44,14 @@
 
             <LinearLayout style="@style/LayerMainMyItem">
                 <TextView style="@style/TxtMainMyItem"
+                    android:layout_weight="0.4"
                     android:text="@string/patient_personal_info_nickname"
                     android:textColor="@color/global_title_color"/>
 
-                <TextView style="@style/TxtMainMyItem"
+                <EditText
+                    android:background="@color/transparent"
+                    android:id="@+id/name"
+                    style="@style/TxtMainMyItem"
                     android:text="@string/patient_personal_info_nickname_ex"
                     android:gravity="right"
                     android:textColor="@color/grey_deep"
@@ -57,10 +64,14 @@
 
             <LinearLayout style="@style/LayerMainMyItem">
                 <TextView style="@style/TxtMainMyItem"
+                    android:layout_weight="0.4"
                     android:text="@string/patient_personal_info_sex"
                     android:textColor="@color/global_title_color"/>
 
-                <TextView style="@style/TxtMainMyItem"
+                <EditText
+                    android:background="@color/transparent"
+                    android:id="@+id/sex"
+                    style="@style/TxtMainMyItem"
                     android:text="@string/patient_personal_info_sex_ex"
                     android:gravity="right"
                     android:textColor="@color/grey_deep"
@@ -73,11 +84,16 @@
 
             <LinearLayout style="@style/LayerMainMyItem">
                 <TextView style="@style/TxtMainMyItem"
+                    android:layout_weight="0.4"
                     android:text="@string/patient_personal_info_age"
                     android:textColor="@color/global_title_color"/>
 
-                <TextView style="@style/TxtMainMyItem"
+                <EditText
+                    android:background="@color/transparent"
+                    android:id="@+id/age"
+                    style="@style/TxtMainMyItem"
                     android:text="@string/patient_personal_info_age_ex"
+                    android:numeric="integer"
                     android:gravity="right"
                     android:textColor="@color/grey_deep"
                     android:paddingRight="@dimen/global_padding"/>
@@ -89,10 +105,14 @@
 
             <LinearLayout style="@style/LayerMainMyItem">
                 <TextView style="@style/TxtMainMyItem"
+                    android:layout_weight="0.4"
                     android:text="@string/patient_personal_info_adds"
                     android:textColor="@color/global_title_color"/>
 
-                <TextView style="@style/TxtMainMyItem"
+                <EditText
+                    android:background="@color/transparent"
+                    android:id="@+id/adds"
+                    style="@style/TxtMainMyItem"
                     android:text="@string/patient_personal_info_adds_ex"
                     android:gravity="right"
                     android:textColor="@color/grey_deep"
@@ -105,6 +125,7 @@
 
             <LinearLayout style="@style/LayerMainMyItem">
                 <TextView style="@style/TxtMainMyItem"
+                    android:layout_weight="0.4"
                     android:text="@string/patient_personal_info_phone"
                     android:textColor="@color/global_title_color"/>
 
@@ -114,13 +135,14 @@
                     android:textColor="@color/grey_deep"
                     android:paddingRight="@dimen/global_padding"/>
 
-                <ImageView style="@style/ImageMainMyItemNext" />
+                <ImageView style="@style/ImageMainMyItemNext"
+                    android:visibility="invisible"/>
             </LinearLayout>
 
             <View style="@style/divider_line_horizontal" />
 
             <TextView
-                android:id="@+id/next_step"
+                android:id="@+id/confirm"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/patient_personal_info_save"

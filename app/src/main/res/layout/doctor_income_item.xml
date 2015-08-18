@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout style="@style/LayerMainMyItem">
+
+        <ImageView
+            android:id="@+id/bank_ico"
+            android:layout_width="25dip"
+            android:layout_height="25dip"
+            android:src="@drawable/icon_tx_switch_ball"
+            android:layout_marginRight="@dimen/global_padding"/>
+
+        <TextView
+            android:id="@+id/name"
+            style="@style/TxtMainMyItem"
+            android:text="@string/doctor_income_bank_card_zs"/>
+
+        <TextView
+            android:id="@+id/bank_no"
+            style="@style/TxtMainMyItem"
+            android:text="@string/doctor_income_bank_card_ex"/>
+
+        <CheckBox
+            android:id="@+id/choice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableRight="@drawable/week_selector"
+            android:background="@color/white"
+            android:gravity="center"
+            android:padding="@dimen/global_padding"
+            android:button="@null"/>
+
+        <TextView
+            android:id="@+id/del"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ｘ"
+            android:padding="@dimen/global_padding"/>
+
+        <ImageView style="@style/ImageMainMyItemNext" />
+
+    </LinearLayout>
+
+</LinearLayout>

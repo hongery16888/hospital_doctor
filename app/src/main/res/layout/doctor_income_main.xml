@@ -2,88 +2,105 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-     android:orientation="vertical"
-    android:background="@color/global_bg">
+    android:background="@color/global_bg"
+    android:orientation="vertical">
 
     <include layout="@layout/title_bar" />
+
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center"
         android:background="@color/top_bar_bg"
-        android:padding="30dip"
-        android:orientation="vertical">
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="30dip">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/doctor_income_prompt"
             android:textColor="#88ffffff"
-            android:textSize="@dimen/global_third_title_size"/>
+            android:textSize="@dimen/global_third_title_size" />
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
+
             <TextView
+                android:id="@+id/income"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/doctor_income_count"
                 android:textColor="#ffffff"
-                android:textSize="30dip"/>
+                android:textSize="30dip" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:paddingLeft="@dimen/five_dip"
                 android:text="@string/doctor_income_unit"
-                android:textColor="#ffffff"
-                android:paddingLeft="@dimen/five_dip"/>
+                android:textColor="#ffffff" />
         </LinearLayout>
 
     </LinearLayout>
 
-    <LinearLayout style="@style/LayerMainMyItem"
-        android:layout_marginTop="@dimen/global_padding">
-
-        <TextView style="@style/TxtMainMyItem"
-            android:text="@string/doctor_income_bank_card_zs"/>
-
-        <TextView style="@style/TxtMainMyItem"
-            android:text="@string/doctor_income_bank_card_ex"/>
-
-        <ImageView style="@style/ImageMainMyItemNext" />
-
-    </LinearLayout>
-
-    <LinearLayout style="@style/LayerMainMyItem"
-        android:background="@color/transparent">
-
-        <TextView style="@style/TxtMainMyItem"
-            android:text="@string/doctor_income_add_bank_card"
-            android:textColor="@color/top_bar_bg"
-            android:layout_margin="@dimen/global_padding"
-            android:background="@color/white"
-            android:paddingLeft="@dimen/global_padding"/>
-
-    </LinearLayout>
-
-    <LinearLayout style="@style/LayerMainMyItem">
-        <TextView style="@style/TxtMainMyItem"
-            android:text="@string/doctor_income_get_cash"/>
-
-        <ImageView style="@style/ImageMainMyItemNext"/>
-    </LinearLayout>
-
-    <TextView
-        android:id="@+id/next_step"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/doctor_income_apply"
-        android:textColor="@color/white"
-        android:textSize="@dimen/global_label"
-        android:padding="@dimen/global_padding"
-        android:background="@drawable/login_button_selector"
-        android:layout_margin="@dimen/global_btn_padding"
-        android:gravity="center" />
+        android:layout_height="match_parent"
+        android:scrollbars="none">
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <iori.hdoctor.view.NoScrollListView
+                android:id="@+id/bank_list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/global_padding"
+                android:background="@color/white"
+                android:divider="@color/global_bg"
+                android:dividerHeight="@dimen/global_padding" />
+
+            <LinearLayout
+                style="@style/LayerMainMyItem"
+                android:background="@color/transparent">
+
+                <TextView
+                    android:id="@+id/add_bank"
+                    style="@style/TxtMainMyItem"
+                    android:layout_margin="@dimen/global_padding"
+                    android:background="@color/white"
+                    android:paddingLeft="@dimen/global_padding"
+                    android:text="@string/doctor_income_add_bank_card"
+                    android:textColor="@color/top_bar_bg" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/record"
+                style="@style/LayerMainMyItem">
+
+                <TextView
+                    style="@style/TxtMainMyItem"
+                    android:text="@string/doctor_income_get_cash" />
+
+                <ImageView style="@style/ImageMainMyItemNext" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/next_step"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/global_btn_padding"
+                android:background="@drawable/login_button_selector"
+                android:gravity="center"
+                android:padding="@dimen/global_padding"
+                android:text="@string/doctor_income_apply"
+                android:textColor="@color/white"
+                android:textSize="@dimen/global_label" />
+        </LinearLayout>
+    </ScrollView>
 </LinearLayout>

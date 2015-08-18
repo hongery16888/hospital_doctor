@@ -45,7 +45,7 @@ public class DoctorRegisterInfoRequest extends BaseRequest {
 	@Override
 	public HashMap<String, String> getFileEncode() {
 		HashMap<String, String> list = new HashMap<>();
-		list.put("img", Environment.getExternalStorageDirectory() + HDoctorCode.HEAD_PATH + ".jpg");
+		list.put("img", Environment.getExternalStorageDirectory() + "/" + HDoctorCode.HEAD_PATH + ".jpg");
 		return list;
 	}
 

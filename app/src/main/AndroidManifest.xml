@@ -17,60 +17,73 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".activity.DoctorMainActivity" />
-        <activity android:name=".activity.DoctorRegisterActivity" />
-        <activity android:name=".activity.DoctorRegisterPhoneActivity" />
-        <activity android:name=".activity.DoctorRegisterCompleteActivity" />
-        <activity android:name=".activity.DoctorBLGLActivity" />
-        <activity android:name=".activity.DoctorBLGLInfoActivity" />
-        <activity android:name=".activity.DoctorYYZXActivity" />
-        <activity android:name=".activity.DoctorYYZXInfoActivity" />
-        <activity android:name=".activity.DoctorCZSZActivity" />
-        <activity android:name=".activity.DoctorFFGLActivity" />
-        <activity android:name=".activity.DoctorFFGLInfoActivity" />
-        <activity android:name=".activity.DoctorGRZXActivity" />
-        <activity android:name=".activity.DoctorCircleActivity" />
-        <activity android:name=".activity.DoctorCircleInfoActivity" />
-        <activity android:name=".activity.DoctorFriendActivity" />
-        <activity android:name=".activity.DoctorMessageActivity" />
-        <activity android:name=".activity.PatientLoginActivity" />
-        <activity android:name=".activity.PatientRegisterCompleteActivity" />
-        <activity android:name=".activity.PatientMainActivity" />
-        <activity android:name=".activity.PatientZWZD02Activity" />
-        <activity android:name=".activity.PatientZWZD01Activity" />
-        <activity android:name=".activity.PatientZWZD03Activity" />
-        <activity android:name=".activity.PatientZWZD04Activity" />
-        <activity android:name=".activity.PatientZWZD05Activity" />
-        <activity android:name=".activity.PatientZWZD06Activity" />
-        <activity android:name=".activity.PatientZWZD07Activity" />
-        <activity android:name=".activity.PatientZWZD08Activity" />
-        <activity android:name=".activity.PatientZWZD09Activity" />
-        <activity android:name=".activity.PatientZWZD10Activity" />
-        <activity android:name=".activity.PatientZWZD11Activity" />
-        <activity android:name=".activity.PatientZWZD12Activity" />
-        <activity android:name=".activity.PatientZWZD13Activity" />
-        <activity android:name=".activity.PatientZWZD14Activity" />
-        <activity android:name=".activity.PatientZWZD15Activity" />
-        <activity android:name=".activity.PatientFXBGActivity" />
-        <activity android:name=".activity.PatientJKTXActivity" />
-        <activity android:name=".activity.PatientCalendarActivity" />
-        <activity android:name=".activity.PatientWDYXActivity" />
-        <activity android:name=".activity.PatientFJActivity" />
-        <activity android:name=".activity.PatientCircleActivity" />
-        <activity android:name=".activity.PatientFriendActivity" />
-        <activity android:name=".activity.PatientMessageActivity" />
-        <activity android:name=".activity.PatientCircleInfoActivity" />
-        <activity android:name=".activity.PatientBLGLInfoActivity" />
-        <activity android:name=".activity.PatientDoctorIntroduceActivity" />
-        <activity android:name=".activity.PatientWDYYActivity" />
-        <activity android:name=".activity.PatientWDDDActivity" />
-        <activity android:name=".activity.PatientPublishCommentActivity" />
-        <activity android:name=".activity.PatientDoctorYYActivity" />
-        <activity android:name=".activity.PatientWDZLActivity" />
-        <activity android:name=".activity.DoctorStatisticsActivity" />
-        <activity android:name=".activity.DoctorInfoActivity" />
-        <activity android:name=".activity.DoctorSRXQActivity" />
-
+        <activity android:name=".activity.DoctorMainActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".activity.DoctorRegisterActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".activity.DoctorRegisterPhoneActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".activity.DoctorRegisterCompleteActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".activity.DoctorBLGLActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".activity.DoctorBLGLInfoActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".activity.DoctorYYZXActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".activity.DoctorYYZXInfoActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".activity.DoctorCZSZActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".activity.DoctorFFGLActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".activity.DoctorFFGLInfoActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".activity.DoctorGRZXActivity" android:screenOrientation="portrait" /> lp2
+        <activity android:name=".activity.DoctorCircleActivity" android:screenOrientation="portrait" />
+        <activity android:name=".activity.DoctorCircleInfoActivity" android:screenOrientation="portrait" />
+        <activity android:name=".activity.DoctorFriendActivity" android:screenOrientation="portrait" />
+        <activity android:name=".activity.DoctorMessageActivity" android:screenOrientation="portrait" />
+        <activity android:name=".activity.PatientLoginActivity" android:screenOrientation="portrait" />
+        <activity android:name=".activity.PatientRegisterCompleteActivity" android:screenOrientation="portrait" />
+        <activity android:name=".activity.PatientMainActivity" android:screenOrientation="portrait" />
+        <activity android:name=".activity.PatientZWZD02Activity" android:screenOrientation="portrait" />
+        <activity android:name=".activity.PatientZWZD01Activity" android:screenOrientation="portrait" />
+        <activity android:name=".activity.PatientZWZD03Activity" android:screenOrientation="portrait" />
+        <activity android:name=".activity.PatientZWZD04Activity" android:screenOrientation="portrait" />
+        <activity android:name=".activity.PatientZWZD05Activity" android:screenOrientation="portrait" />
+        <activity android:name=".activity.PatientZWZD06Activity" android:screenOrientation="portrait" />
+        <activity android:name=".activity.PatientZWZD07Activity" android:screenOrientation="portrait" />
+        <activity android:name=".activity.PatientZWZD08Activity" android:screenOrientation="portrait" />
+        <activity android:name=".activity.PatientZWZD09Activity" android:screenOrientation="portrait" />
+        <activity android:name=".activity.PatientZWZD10Activity" android:screenOrientation="portrait" />
+        <activity android:name=".activity.PatientZWZD11Activity" android:screenOrientation="portrait" />
+        <activity android:name=".activity.PatientZWZD12Activity" android:screenOrientation="portrait" />
+        <activity android:name=".activity.PatientZWZD13Activity" android:screenOrientation="portrait" />
+        <activity android:name=".activity.PatientZWZD14Activity" android:screenOrientation="portrait" />
+        <activity android:name=".activity.PatientZWZD15Activity" android:screenOrientation="portrait" />
+        <activity android:name=".activity.PatientFXBGActivity" android:screenOrientation="portrait" />
+        <activity android:name=".activity.PatientJKTXActivity" android:screenOrientation="portrait" />
+        <activity android:name=".activity.PatientCalendarActivity" android:screenOrientation="portrait" />
+        <activity android:name=".activity.PatientWDYXActivity" android:screenOrientation="portrait" />
+        <activity android:name=".activity.PatientFJActivity" android:screenOrientation="portrait" />
+        <activity android:name=".activity.PatientCircleActivity" android:screenOrientation="portrait" />
+        <activity android:name=".activity.PatientFriendActivity" android:screenOrientation="portrait" />
+        <activity android:name=".activity.PatientMessageActivity" android:screenOrientation="portrait" />
+        <activity android:name=".activity.PatientCircleInfoActivity" android:screenOrientation="portrait" />
+        <activity android:name=".activity.PatientBLGLInfoActivity" android:screenOrientation="portrait" />
+        <activity android:name=".activity.PatientDoctorIntroduceActivity" android:screenOrientation="portrait" />
+        <activity android:name=".activity.PatientWDYYActivity" android:screenOrientation="portrait" />
+        <activity android:name=".activity.PatientWDDDActivity" android:screenOrientation="portrait" />
+        <activity android:name=".activity.PatientPublishCommentActivity" android:screenOrientation="portrait" />
+        <activity android:name=".activity.PatientDoctorYYActivity" android:screenOrientation="portrait" />
+        <activity android:name=".activity.PatientWDZLActivity" android:screenOrientation="portrait" />
+        <activity android:name=".activity.DoctorStatisticsActivity" android:screenOrientation="portrait" />
+        <activity android:name=".activity.DoctorPatientInfoActivity" android:screenOrientation="portrait" />
+        <activity android:name=".activity.DoctorSRXQActivity" android:screenOrientation="portrait" />
+        <activity android:name=".activity.DoctorSettingActivity" android:screenOrientation="portrait" />
+        <activity android:name=".activity.DoctorZHZXctivity" android:screenOrientation="portrait" />
+        <activity android:name=".activity.DoctorModifyActivity" android:screenOrientation="portrait" />
+        <activity android:name=".activity.DoctorAddBankActivity" android:screenOrientation="portrait" />
+        <activity android:name=".activity.PatientRegisterPhoneActivity" android:screenOrientation="portrait" />
+        <activity android:name=".activity.PatientDAGLActivity" android:screenOrientation="portrait" />
+        <activity android:name=".activity.PatientAddMedicinectivity" android:screenOrientation="portrait" />
+        <activity android:name=".activity.PatientAddMedicinePromptActivity" android:screenOrientation="portrait" />
+        <activity android:name=".activity.PatientWDDDInfoActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".activity.PatientZHZXActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".activity.PatientWDFBActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".activity.PatientWDSCActivity" android:screenOrientation="portrait" />
+        <activity android:name=".activity.PatientSettingActivity" android:screenOrientation="portrait" />
+        <activity android:name=".activity.PatientPublishActivity" android:screenOrientation="portrait" />
     </application>
 
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />

@@ -13,32 +13,50 @@
 
     <LinearLayout style="@style/LayerMainMyItem">
 
+        <ImageView
+            android:id="@+id/head"
+            android:layout_width="40dip"
+            android:layout_height="40dip"
+            android:src="@drawable/img_avater_blgl_head"
+            android:layout_marginTop="@dimen/global_padding"
+            android:layout_marginBottom="@dimen/global_padding"/>
+
         <TextView
+            android:id="@+id/name"
             style="@style/TxtMainMyItem"
             android:layout_weight="2"
-            android:drawableLeft="@drawable/img_avater_blgl_head"
             android:gravity="center_vertical"
             android:paddingLeft="@dimen/global_padding"
             android:text="@string/blgl_item_name"
             android:textColor="@color/top_bar_bg" />
 
         <TextView
-            style="@style/TxtMainMyItem"
-            android:gravity="center_horizontal"
+            android:id="@+id/sex"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:text="@string/blgl_item_sex"
-            android:textColor="@color/global_sub_title_color" />
+            android:textColor="@color/global_sub_title_color"
+            android:textSize="@dimen/global_title_size"
+            android:gravity="center_horizontal"/>
 
         <TextView
-            style="@style/TxtMainMyItem"
+            android:id="@+id/age"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/global_title_size"
+            android:textColor="@color/global_sub_title_color"
             android:gravity="center_horizontal"
-            android:text="@string/blgl_item_age"
-            android:textColor="@color/global_sub_title_color" />
+            android:paddingRight="@dimen/global_line_padding"
+            android:paddingLeft="@dimen/global_line_padding"/>
 
         <TextView
+            android:id="@+id/time"
             style="@style/TxtMainMyItem"
-            android:gravity="center_horizontal"
+            android:layout_weight="1.5"
             android:text="@string/blgl_item_time"
-            android:textColor="@color/global_sub_title_color" />
+            android:textColor="@color/global_sub_title_color"
+            android:textSize="@dimen/global_title_size"
+            android:gravity="center_horizontal"/>
 
     </LinearLayout>
 
@@ -50,6 +68,7 @@
         android:background="@color/white">
 
         <ImageView
+            android:id="@+id/photo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/global_padding"
@@ -75,6 +94,7 @@
             android:textSize="@dimen/global_title_size" />
 
         <TextView
+            android:id="@+id/bingli"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -101,6 +121,7 @@
             android:textSize="@dimen/global_title_size" />
 
         <TextView
+            android:id="@+id/describe"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -121,6 +142,7 @@
         android:paddingBottom="@dimen/global_line_padding">
 
         <TextView
+            android:id="@+id/zixunname"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:text="@string/blgl_item_reserve_type"
@@ -138,9 +160,10 @@
             android:paddingRight="@dimen/global_padding"/>
 
         <TextView
+            android:id="@+id/price"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:text="@string/blgl_item_reserve_price"
+            android:text="@string/blgl_item_reserve_price_unit"
             android:textColor="@color/red"
             android:textSize="@dimen/global_title_size"
             android:gravity="right"/>

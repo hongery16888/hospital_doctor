@@ -48,8 +48,6 @@
     <string name="register_work_card_prompt">请上传能以证明所属医院职称的（工牌、名片、工作证明）照片</string>
     <string name="register_check_prompt">您的信息不会被公开，公用于审核使用</string>
     <string name="register_complete">提交审核</string>
-
-
     <string name="doctor_username_ex">张德华</string>
     <string name="doctor_hospital_ex">爱德华医院</string>
     <string name="doctor_subject_ex">妇产科</string>
@@ -82,6 +80,7 @@
     <string name="doctor_yy_center">预约中心</string>
     <string name="doctor_cz_setting">出诊设置</string>
     <string name="doctor_fw_manager">服务管理</string>
+    <string name="doctor_zx_list_title_main">咨询列表</string>
 
     <!-- 病例管理 -->
     <string name="doctor_blgl_title_main">病例管理</string>
@@ -90,17 +89,17 @@
     <string name="complete_order">已处理</string>
     <string name="blgl_item_name">大布丁</string>
     <string name="blgl_item_sex">男</string>
-    <string name="blgl_item_age">53岁</string>
+    <string name="blgl_item_age">岁</string>
     <string name="blgl_item_time">9分钟前</string>
     <string name="blgl_item_illness">疾病：</string>
     <string name="blgl_item_description">描述：</string>
-    <string name="blgl_item_reserve_type">类型：预约咨询</string>
-    <string name="blgl_item_reserve_price">15元</string>
+    <string name="blgl_item_reserve_type_label">类型：</string>
+    <string name="blgl_item_reserve_type">预约咨询</string>
+    <string name="blgl_item_reserve_price_unit">元</string>
     <string name="blgl_item_pay">已支付</string>
     <string name="blgl_item_do">处理</string>
     <string name="blgl_info_data">查看资料</string>
     <string name="blgl_info_reply">确认并回复</string>
-
     <string name="blgl_item_illness_ex">前列腺炎</string>
     <string name="blgl_item_description_ex">肠胃不适，虚汗频发，多梦失眠！</string>
     
@@ -118,8 +117,22 @@
     <string name="doctor_czgl_time">出诊时间</string>
     <string name="doctor_czgl_time_ex">周一，周三，周五</string>
     <string name="doctor_czgl_yy_count">最大预约量</string>
-    <string name="doctor_czgl_yy_count_ex">30人</string>
+    <string name="doctor_czgl_yy_count_ex">30</string>
     <string name="doctor_cagl_stop_diagnose">暂停接诊</string>
+    <string name="doctor_cagl_start_diagnose">开始接诊</string>
+    <string name="doctor_dnum_empty">预约量不能为空</string>
+    <string name="doctor_cz_success">保存成功</string>
+    <string name="week_cancel">取消</string>
+    <string name="week_confirm">确定</string>
+    <string name="week_title">选择出诊时间</string>
+    <string name="one">周一</string>
+    <string name="two">周二</string>
+    <string name="three">周三</string>
+    <string name="four">周四</string>
+    <string name="five">周五</string>
+    <string name="six">周六</string>
+    <string name="seven">周日</string>
+    <string name="everyday">每天</string>
     
     <!-- 服务管理 -->
     <string name="doctor_ffgl_title_main">服务管理</string>
@@ -128,8 +141,9 @@
     <string name="doctor_ffgl_yyzx">预约咨询</string>
     <string name="doctor_ffgl_add">已添加</string>
     <string name="doctor_ffgl_no_add">未添加</string>
-    <string name="doctor_ffgl_info_price">价格</string>
-    <string name="doctor_ffgl_info_price_ex">20</string>
+    <string name="doctor_ffgl_info_price">收费标准：</string>
+    <string name="doctor_ffgl_info_switch">服务开启</string>
+    <string name="doctor_ffgl_info_price_ex">5</string>
     <string name="doctor_ffgl_info_unit">元/次</string>
     <string name="doctor_ffgl_info_save">保存</string>
     <string name="doctor_ffgl_info_prompt">填写价格不能为空</string>
@@ -193,7 +207,6 @@
     <string name="patient_register_info_job">职称</string>
     <string name="patient_register_info_certificate">身份证</string>
     <string name="patient_register_info_email">邮箱</string>
-
     <string name="patient_register_info_name_ex">请输入姓名</string>
     <string name="patient_register_info_intro_ex">请输入简介</string>
     <string name="patient_register_info_skilled_ex">请输入擅长</string>
@@ -307,6 +320,7 @@
     <string name="patient_jktx_item_info">李医生面诊</string>
     <string name="patient_jktx_item_prompt">预约提醒</string>
     <string name="patient_jktx_add">添加</string>
+    <string name="patient_dagl_title_main"></string>
 
     <!-- 出诊时间 -->
     <string name="patient_czsj_title_main">出诊时间</string>
@@ -464,5 +478,84 @@
     <string name="doctor_income_add_bank_card">添加银行卡</string>
     <string name="doctor_income_get_cash">提现记录</string>
     <string name="doctor_income_apply">申请提现</string>
+    <string name="doctor_income_record_title_main">提现记录</string>
+    <string name="doctor_add_bank_name">银行名称</string>
+    <string name="doctor_add_bank_no">银行卡号</string>
+    <string name="doctor_add_bank_username">持卡人姓名</string>
+    <string name="doctor_add_bank_cash">提款金额</string>
+    <string name="doctor_add_bank_cash_hint">大于500元</string>
+    <string name="doctor_add_bank">添加银行卡</string>
+
+    <!-- 帐户中心 -->
+    <string name="doctor_zhzx_title_main">账户中心</string>
+    <string name="doctor_zhzx_modify_password">修改密码：</string>
+    <string name="doctor_zhzx_phone">绑定手机：</string>
+    <string name="doctor_zhzx_qq">绑定QQ：</string>
+    <string name="doctor_zhzx_wchat">绑定微信：</string>
+    <string name="doctor_zhzx_modify_password_ex">***********</string>
+    <string name="doctor_zhzx_phone_ex">13400000000</string>
+    <string name="doctor_zhzx_qq_ex">416167636</string>
+    <string name="doctor_zhzx_wchat_ex">hongery16888</string>
+    <string name="doctor_zhzx_confirm">提交</string>
+    
+    <!-- 设置中心 -->
+    <string name="doctor_setting_title_main">设置中心</string>
+    <string name="version_code">版本：QLXGJ 1.0</string>
+    <string name="check_version">新版检测</string>
+    <string name="logout">退出</string>
+    <string name="patient_xztx_title_main">新增提醒</string>
+
+    <string-array name="time">
+        <item>6:00</item>
+        <item>7:00</item>
+        <item>8:00</item>
+        <item>9:00</item>
+        <item>10:00</item>
+        <item>11:00</item>
+        <item>12:00</item>
+        <item>13:00</item>
+        <item>14:00</item>
+        <item>15:00</item>
+        <item>16:00</item>
+        <item>17:00</item>
+        <item>18:00</item>
+        <item>19:00</item>
+        <item>20:00</item>
+        <item>21:00</item>
+        <item>22:00</item>
+        <item>23:00</item>
+        <item>0:00</item>
+    </string-array>
+
+    <string-array name="count">
+        <item>2片</item>
+        <item>3片</item>
+        <item>4片</item>
+        <item>5片</item>
+        <item>6片</item>
+        <item>7片</item>
+        <item>8片</item>
+        <item>9片</item>
+        <item>10片</item>
+    </string-array>
+
+    <string-array name="cycle">
+        <item>每天</item>
+        <item>每周</item>
+        <item>每月</item>
+    </string-array>
+
+    <string name="patient_wddd_info_title_main">订单详情</string>
+    <string name="patient_wdfb_title_main">我的发表</string>
+    <string name="patient_wdsc_title_main">我的收藏</string>
+    <string name="publish_title">发表</string>
+    <string name="publish">发布</string>
+    <string name="publish_no_empty">发布内容不能为空</string>
+    <string name="publish_success">发布成功</string>
+    <string name="medicine_input">请输入药品名称</string>
+    <string name="medicine_photo">请先选择图片</string>
+    <string name="add_medicine">添加药箱</string>
+    <string name="medicine_name">药品名称</string>
+    <string name="sedicine_zz">主治：</string>
 
 </resources>

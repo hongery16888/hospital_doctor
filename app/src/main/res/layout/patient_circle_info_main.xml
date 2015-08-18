@@ -19,10 +19,19 @@
 
             <LinearLayout style="@style/LayerMainMyItem" >
 
-                <TextView style="@style/TxtMainMyItem"
+                <ImageView
+                    android:id="@+id/head"
+                    android:layout_width="40dip"
+                    android:layout_height="40dip"
+                    android:src="@drawable/img_avater_blgl_head"
+                    android:layout_marginTop="@dimen/five_dip"
+                    android:layout_marginBottom="@dimen/five_dip"/>
+
+                <TextView
+                    android:id="@+id/name"
+                    style="@style/TxtMainMyItem"
                     android:text="@string/blgl_item_name"
                     android:textColor="@color/top_bar_bg"
-                    android:drawableLeft="@drawable/img_avater_blgl_head"
                     android:gravity="center_vertical"
                     android:layout_weight="2"
                     android:paddingLeft="@dimen/global_padding"
@@ -30,7 +39,9 @@
                     android:focusableInTouchMode="true"/>
 
 
-                <TextView style="@style/TxtMainMyItem"
+                <TextView
+                    android:id="@+id/time"
+                    style="@style/TxtMainMyItem"
                     android:text="@string/blgl_item_time"
                     android:textColor="@color/grey_deep"
                     android:gravity="right"/>
@@ -45,9 +56,9 @@
                 android:background="@color/white">
 
                 <ImageView
+                    android:id="@+id/img"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/circle_info_img"
                     android:paddingLeft="@dimen/global_line_padding"
                     android:paddingRight="@dimen/global_line_padding"
                     android:paddingTop="@dimen/global_padding"
@@ -56,21 +67,17 @@
             </LinearLayout>
 
             <TextView
+                android:id="@+id/content"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@color/white"
-                android:padding="@dimen/global_line_padding"
+                android:padding="@dimen/global_padding"
                 android:text="@string/doctor_circle_item_content"
                 android:textColor="@color/global_title_color"
                 android:textSize="@dimen/global_title_size"
                 android:lineSpacingExtra="@dimen/five_dip"/>
 
             <View style="@style/divider_line_horizontal" />
-
-
-
-            <View style="@style/divider_line_horizontal" />
-
 
             <LinearLayout style="@style/LayerMainMyItem">
 
@@ -86,7 +93,9 @@
                     android:layout_weight="1"
                     android:visibility="invisible"/>
 
-                <TextView style="@style/TxtMainMyItem"
+                <TextView
+                    android:id="@+id/best"
+                    style="@style/TxtMainMyItem"
                     android:text="@string/doctor_circle_item_count"
                     android:textColor="@color/grey_deep"
                     android:layout_weight="1"
@@ -99,6 +108,7 @@
                     android:gravity="center_horizontal">
 
                     <TextView
+                        android:id="@+id/commentnum"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/doctor_circle_item_count"
@@ -124,17 +134,21 @@
                 android:layout_height="wrap_content"
                 android:background="@color/white"
                 android:divider="@color/global_bg"
-                android:dividerHeight="@dimen/one_px" />
+                android:dividerHeight="@dimen/one_px"
+                android:layout_marginBottom="@dimen/global_line_padding"/>
 
         </LinearLayout>
     </ScrollView>
 
     <View style="@style/divider_line_horizontal" />
 
-    <LinearLayout style="@style/LayerMainMyItem"
+    <LinearLayout
+        style="@style/LayerMainMyItem"
         android:paddingTop="@dimen/global_padding"
         android:paddingBottom="@dimen/global_padding">
-        <EditText style="@style/TxtMainMyItem"
+        <EditText
+            android:id="@+id/reply_content"
+            style="@style/TxtMainMyItem"
             android:textColor="@color/global_title_color"
             android:textSize="@dimen/global_title_size"
             android:background="@drawable/edit_bg"
@@ -142,6 +156,7 @@
             android:singleLine="true"/>
 
         <TextView
+            android:id="@+id/reply"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/patient_doctor_comment"

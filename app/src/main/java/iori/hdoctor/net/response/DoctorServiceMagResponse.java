@@ -1,59 +1,36 @@
 package iori.hdoctor.net.response;
 
+import iori.hdoctor.net.entity.DocDhzx;
+import iori.hdoctor.net.entity.DocYyzx;
+import iori.hdoctor.net.entity.DocZxzx;
+
 public class DoctorServiceMagResponse {
 
-	private String uid;
-	private String did;
-	private String price;
-	private String sid;
-	private String isopen;
-	private String name;
+	private DocZxzx a1;
+	private DocDhzx a2;
+	private DocYyzx a3;
 
-	public String getUid() {
-		return uid;
+	public DocZxzx getA1() {
+		return a1;
 	}
 
-	public void setUid(String uid) {
-		this.uid = uid;
+	public void setA1(DocZxzx a1) {
+		this.a1 = a1;
 	}
 
-	public String getDid() {
-		return did;
+	public DocDhzx getA2() {
+		return a2;
 	}
 
-	public void setDid(String did) {
-		this.did = did;
+	public void setA2(DocDhzx a2) {
+		this.a2 = a2;
 	}
 
-	public String getPrice() {
-		return price;
+	public DocYyzx getA3() {
+		return a3;
 	}
 
-	public void setPrice(String price) {
-		this.price = price;
-	}
-
-	public String getSid() {
-		return sid;
-	}
-
-	public void setSid(String sid) {
-		this.sid = sid;
-	}
-
-	public String getIsopen() {
-		return isopen;
-	}
-
-	public void setIsopen(String isopen) {
-		this.isopen = isopen;
-	}
-
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
+	public void setA3(DocYyzx a3) {
+		this.a3 = a3;
 	}
 }

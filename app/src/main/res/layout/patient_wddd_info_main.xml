@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/global_bg">
+
+    <include layout="@layout/patient_title_bar" />
+
+    <LinearLayout style="@style/LayerMainMyItem"
+        android:layout_marginTop="@dimen/global_label">
+
+        <ImageView
+            android:id="@+id/head"
+            android:layout_width="60dip"
+            android:layout_height="60dip"
+            android:layout_margin="@dimen/global_padding"
+            android:src="@drawable/img_fj_doctor" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/global_padding"
+            android:paddingTop="@dimen/global_padding">
+
+            <TextView
+                android:id="@+id/hospital"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/patient_wdyy_item_yy"
+                android:textColor="@color/global_title_color"
+                android:textSize="@dimen/global_title_size" />
+
+            <TextView
+                android:id="@+id/name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="@dimen/five_dip"
+                android:singleLine="true"
+                android:text="@string/patient_wdyy_item_name"
+                android:textColor="@color/global_title_color"
+                android:textSize="@dimen/global_title_size" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/global_padding"
+            android:paddingTop="@dimen/global_padding"
+            android:paddingRight="@dimen/global_padding">
+
+            <TextView
+                android:id="@+id/price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/patient_wddd_item_price"
+                android:textColor="@color/red"
+                android:textSize="@dimen/global_third_title_size" />
+
+            <TextView
+                android:id="@+id/type"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="@dimen/global_padding"
+                android:singleLine="true"
+                android:text="@string/patient_wddd_item_type"
+                android:textColor="@color/global_title_color"
+                android:textSize="@dimen/global_third_title_size" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout style="@style/LayerMainMyItem"
+        android:layout_marginTop="@dimen/global_label">
+
+        <TextView style="@style/TxtMainMyItem"
+            android:text="订单状态"
+            android:textColor="@color/grey_deep"/>
+
+        <TextView
+            android:id="@+id/status"
+            style="@style/TxtMainMyItem"
+            android:gravity="right"
+            android:text="已消费"
+            android:paddingRight="@dimen/global_padding"/>
+
+    </LinearLayout>
+
+    <LinearLayout style="@style/LayerMainMyItem"
+        android:layout_marginTop="@dimen/global_label">
+
+        <TextView style="@style/TxtMainMyItem"
+            android:text="订单详情"
+            android:textColor="@color/grey_deep"/>
+
+    </LinearLayout>
+
+    <View style="@style/divider_line_horizontal" />
+
+    <LinearLayout style="@style/LayerMainMyItem"
+        android:paddingTop="@dimen/global_label">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="3.5"
+            android:text="订单号："
+            android:gravity="right"
+            android:textColor="@color/grey_deep"/>
+
+        <TextView
+            android:id="@+id/order_id"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="22465486548654654"
+            android:textColor="@color/global_title_color"
+            android:paddingRight="@dimen/global_padding"/>
+
+    </LinearLayout>
+
+    <LinearLayout style="@style/LayerMainMyItem"
+        android:paddingTop="@dimen/five_dip">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="3.5"
+            android:text="交易时间："
+            android:gravity="right"
+            android:textColor="@color/grey_deep"/>
+
+        <TextView
+            android:id="@+id/time"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="2015-07-25 15:00:00"
+            android:textColor="@color/global_title_color"
+            android:paddingRight="@dimen/global_padding"/>
+
+    </LinearLayout>
+
+    <LinearLayout style="@style/LayerMainMyItem"
+        android:paddingTop="@dimen/five_dip"
+        android:paddingBottom="@dimen/global_label">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="3.5"
+            android:text="交易类型："
+            android:gravity="right"
+            android:textColor="@color/grey_deep"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="在线咨询"
+            android:textColor="@color/global_title_color"
+            android:paddingRight="@dimen/global_padding"/>
+
+    </LinearLayout>
+
+    <LinearLayout style="@style/LayerMainMyItem"
+        android:layout_marginTop="@dimen/global_label">
+
+        <TextView
+            android:id="@+id/type_2"
+            style="@style/TxtMainMyItem"
+            android:text="实付款："
+            android:gravity="right"
+            android:textColor="@color/grey_deep"/>
+
+        <TextView
+            android:id="@+id/price_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="￥：5元"
+            android:textSize="@dimen/global_title_size"
+            android:textColor="@color/red"
+            android:paddingRight="@dimen/global_padding"/>
+
+    </LinearLayout>
+
+</LinearLayout>
