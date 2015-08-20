@@ -6,6 +6,7 @@ import android.widget.TextView;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import butterknife.OnClick;
 import iori.hdoctor.R;
@@ -20,6 +21,7 @@ import iori.hdoctor.net.NetworkConnectListener;
 public class PatientZWZD15Activity extends BaseActivity implements NetworkConnectListener{
 
     private String health;
+    private HashMap<String, String> jieguo;
 
     @OnClick(R.id.zwzd_complete)
     public void complete() {
@@ -34,7 +36,9 @@ public class PatientZWZD15Activity extends BaseActivity implements NetworkConnec
                                             getApp().getReport().getHeight(),
                                             getApp().getReport().getWeight(),
                                             getApp().getReport().getAge(),
-                                            health, showProgressDialog(), this);
+                                            health,
+                                            jieguo.get(health),
+                                            showProgressDialog(), this);
     }
 
     private TextView tempTV;
@@ -57,18 +61,21 @@ public class PatientZWZD15Activity extends BaseActivity implements NetworkConnec
 
     @Override
     protected void initData() {
-
+        getApp().getActivities().add(this);
+        jieguo = new HashMap<>();
+        jieguo.put("轻度", "建议您平时多注意饮食规律，多运动");
+        jieguo.put("中度", "您有中度前列腺症状，建议您在线咨询医生，或到医院检查");
+        jieguo.put("重度", "您有重度前列腺症状，建议您到医院检查");
     }
 
     @Override
     public void onRequestSucceed(Object data, String requestAction) {
         if (HttpRequest.PAT_ALY_REPORT.equals(requestAction)){
-            for(int i = 0 ; i < getApp().getActivities().size() ; i++){
-                getApp().getActivities().get(i).finish();
-            }
-            startActivity(new Intent(PatientZWZD15Activity.this, PatientFXBGActivity.class));
-            getApp().getActivities().clear();
-            finish();
+            Intent intent = new Intent(PatientZWZD15Activity.this, PatientZWZDCompleteActivity.class);
+            intent.putExtra("jieguo", jieguo.get(health));
+            intent.putExtra("healthy", health);
+            startActivity(intent);
+
         }
         dismissProgressDialog();
     }

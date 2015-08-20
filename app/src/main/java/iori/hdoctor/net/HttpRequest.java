@@ -144,6 +144,14 @@ public interface HttpRequest {
 	public static final String PATH_PAT_COMMUNITY = BASIC_PATH + "user/community";
 	public static final String DOC_CIRCLE = "doccircle";
 	public static final String PATH_DOC_CIRCLE = BASIC_PATH + "user/doccircle";
+	public static final String DOC_ALL_PUBLISH = "allpublic";
+	public static final String PATH_DOC_ALL_PUBLISH = BASIC_PATH + "user/allpublic";
+	public static final String DOC_COMMENTS = "doccomments";
+	public static final String PATH_DOC_COMMENTS = BASIC_PATH + "user/doccomments";
+	public static final String DOC_PUBLISH = "docrelease";
+	public static final String PATH_DOC_PUBLISH = BASIC_PATH + "user/docrelease";
+	public static final String DOC_SHOUCANG = "docshoucang";
+	public static final String PATH_DOC_SHOUCANG = BASIC_PATH + "user/docshoucang";
 
 
 	/** 06、检查更新 **/

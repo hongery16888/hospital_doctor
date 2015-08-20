@@ -53,7 +53,7 @@ public class PatientTestRecordAdapter extends BaseAdapter {
 		}
 
 		holder.score.setText(data.get(position).getScore());
-		holder.content.setText(data.get(position).getHealth());
+		holder.content.setText("健康建议：" + data.get(position).getJieguo());
 		holder.time.setText(data.get(position).getAddtime());
 
 		return view;

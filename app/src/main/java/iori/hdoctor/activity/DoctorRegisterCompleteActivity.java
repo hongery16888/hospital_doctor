@@ -7,6 +7,7 @@ import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.PopupWindow;
 import android.widget.Toast;
 
@@ -42,6 +43,13 @@ public class DoctorRegisterCompleteActivity extends BasePhotoCropActivity implem
     private boolean shenfenFlag, zigeFlag, gongzuoFlag;
 
     private PopupWindow mPhotoPopWindow;
+
+    @InjectView(R.id.shenfen_img)
+    ImageView shenfenImg;
+    @InjectView(R.id.zige_img)
+    ImageView zigeImg;
+    @InjectView(R.id.gongzuo_img)
+    ImageView gongzuoImg;
 
     @OnClick(R.id.shenfen)
     public void shenfen(){
@@ -140,7 +148,7 @@ public class DoctorRegisterCompleteActivity extends BasePhotoCropActivity implem
     private void initPhotoPopWindow() {
         LayoutInflater layoutInflater = LayoutInflater.from(this);
         View popupWindow = layoutInflater.inflate(R.layout.photo_pop_main, null);
-        mPhotoPopWindow = new PopupWindow(popupWindow, ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        mPhotoPopWindow = new PopupWindow(popupWindow, ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
         mPhotoPopWindow.getContentView().measure(0, 0);
         mPhotoPopWindow.setAnimationStyle(R.style.mypopwindow_anim_style);
 
@@ -168,6 +176,13 @@ public class DoctorRegisterCompleteActivity extends BasePhotoCropActivity implem
                 mPhotoPopWindow.dismiss();
             }
         });
+
+        popupWindow.findViewById(R.id.outside).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mPhotoPopWindow.dismiss();
+            }
+        });
     }
 
     @Override
@@ -177,13 +192,16 @@ public class DoctorRegisterCompleteActivity extends BasePhotoCropActivity implem
 
     @Override
     public void onPhotoCropped(Uri uri) {
-        Toast.makeText(this, "Photo Url : " + MyApp.PHOTO_BASIC_PATH + uri.getPath(), Toast.LENGTH_LONG).show();
+//        Toast.makeText(this, "Photo Url : " + MyApp.PHOTO_BASIC_PATH + uri.getPath(), Toast.LENGTH_LONG).show();
         if (isChoice.equals(isShenfenFlag)){
             shenfenFlag = true;
+            shenfenImg.setVisibility(View.VISIBLE);
         }else if(isChoice.equals(isZigeFlag)){
             zigeFlag = true;
+            zigeImg.setVisibility(View.VISIBLE);
         }else if(isChoice.equals(isGongzuoFlag)){
             gongzuoFlag = true;
+            gongzuoImg.setVisibility(View.VISIBLE);
         }
     }
 

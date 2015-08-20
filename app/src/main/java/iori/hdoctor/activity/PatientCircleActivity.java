@@ -36,6 +36,14 @@ public class PatientCircleActivity extends BaseActivity implements NetworkConnec
     @InjectView(R.id.circle_sq_listview)
     PullToRefreshListView listView;
 
+    private Handler refreshHandler = new Handler(){
+        @Override
+        public void handleMessage(Message msg) {
+            super.handleMessage(msg);
+            NetworkAPI.getNetworkAPI().community(showProgressDialog(), PatientCircleActivity.this);
+        }
+    };
+
     private Handler handler = new Handler(){
         @Override
         public void handleMessage(Message msg) {
@@ -102,4 +110,10 @@ public class PatientCircleActivity extends BaseActivity implements NetworkConnec
             startActivity(new Intent(PatientCircleActivity.this, PatientPublishActivity.class));
         }
     };
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        getApp().setCircleRefreshHandler(null);
+    }
 }

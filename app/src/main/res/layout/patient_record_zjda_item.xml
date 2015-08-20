@@ -13,9 +13,9 @@
             android:layout_height="wrap_content" 
             android:paddingTop="@dimen/global_padding"
             android:paddingBottom="@dimen/global_padding"
-
             android:text="自检分数："
-            android:textSize="@dimen/global_title_size"/>
+            android:textSize="@dimen/global_title_size"
+            android:textColor="@color/grey_deep"/>
         
         <TextView
             android:id="@+id/score"
@@ -43,7 +43,8 @@
             android:id="@+id/time"
             style="@style/TxtMainMyItem"
             android:gravity="right"
-            android:text="2015-05-06"/>
+            android:text="2015-05-06"
+            android:textColor="@color/grey_deep"/>
 
     </LinearLayout>
 

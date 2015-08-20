@@ -1,7 +1,9 @@
 package iori.hdoctor.activity;
 
 import android.content.Intent;
+import android.widget.TextView;
 
+import butterknife.InjectView;
 import butterknife.OnClick;
 import iori.hdoctor.R;
 import iori.hdoctor.activity.base.BaseActivity;
@@ -11,14 +13,24 @@ import iori.hdoctor.activity.base.BaseActivity;
  */
 public class PatientZWZDCompleteActivity extends BaseActivity{
 
-    @OnClick(R.id.next_step)
-    public void nextStep() {
-        startActivity(new Intent(PatientZWZDCompleteActivity.this, PatientZWZD02Activity.class));
+    @InjectView(R.id.status)
+    TextView status;
+    @InjectView(R.id.status_info)
+    TextView statusInfo;
+
+    @OnClick(R.id.zwzd_again)
+    public void again() {
+        startActivity(new Intent(PatientZWZDCompleteActivity.this, PatientZWZD01Activity.class));
     }
 
-    @OnClick(R.id.last_step)
-    public void lastStep(){
+    @OnClick(R.id.zwzd_result)
+    public void result(){
+        for(int i = 0 ; i < getApp().getActivities().size() ; i++){
+            getApp().getActivities().get(i).finish();
+        }
+        getApp().getActivities().clear();
         finish();
+        startActivity(new Intent(this, PatientFXBGActivity.class));
     }
 
     @Override
@@ -34,7 +46,8 @@ public class PatientZWZDCompleteActivity extends BaseActivity{
 
     @Override
     protected void initData() {
-
+        status.setText(getIntent().getStringExtra("healthy"));
+        statusInfo.setText(getIntent().getStringExtra("jieguo"));
     }
 
 }

@@ -37,9 +37,9 @@ public class DoctorRegisterInfo2Request extends BaseRequest {
 	@Override
 	public HashMap<String, String> getFileEncode() {
 		HashMap<String, String> list = new HashMap<>();
-		list.put("pic", Environment.getExternalStorageDirectory() + HDoctorCode.SHENFEN_PATH + ".jpg");
-		list.put("zhengshu1", Environment.getExternalStorageDirectory() + HDoctorCode.ZIGE_PATH + ".jpg");
-		list.put("zhengshu2", Environment.getExternalStorageDirectory() + HDoctorCode.GONGZUO_PATH + ".jpg");
+		list.put("pic", Environment.getExternalStorageDirectory() + "/" + HDoctorCode.SHENFEN_PATH + ".jpg");
+		list.put("zhengshu1", Environment.getExternalStorageDirectory() + "/" + HDoctorCode.ZIGE_PATH + ".jpg");
+		list.put("zhengshu2", Environment.getExternalStorageDirectory() + "/"  + HDoctorCode.GONGZUO_PATH + ".jpg");
 		return list;
 	}
 

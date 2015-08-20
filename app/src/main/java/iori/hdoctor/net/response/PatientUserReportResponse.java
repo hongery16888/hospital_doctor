@@ -10,6 +10,7 @@ public class PatientUserReportResponse {
     private int weight;
     private int age;
     private String health;
+    private String jieguo;
 
     public int getScore() {
         return score;
@@ -49,5 +50,13 @@ public class PatientUserReportResponse {
 
     public void setHealth(String health) {
         this.health = health;
+    }
+
+    public String getJieguo() {
+        return jieguo;
+    }
+
+    public void setJieguo(String jieguo) {
+        this.jieguo = jieguo;
     }
 }

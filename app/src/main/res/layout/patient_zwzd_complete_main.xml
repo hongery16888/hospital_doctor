@@ -13,6 +13,7 @@
         android:gravity="center">
 
         <TextView
+            android:id="@+id/status"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:drawablePadding="@dimen/global_padding"
@@ -35,6 +36,7 @@
         android:paddingTop="@dimen/global_padding">
 
         <TextView
+            android:id="@+id/status_info"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/patient_zwzd_complete_info"

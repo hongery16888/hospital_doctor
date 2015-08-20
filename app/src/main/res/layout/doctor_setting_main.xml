@@ -30,7 +30,9 @@
 
     <View style="@style/divider_line_horizontal" />
 
-    <LinearLayout style="@style/LayerMainMyItem" >
+    <LinearLayout
+        android:id="@+id/logout"
+        style="@style/LayerMainMyItem" >
 
         <TextView style="@style/TxtMainMyItem"
             android:text="@string/logout"/>

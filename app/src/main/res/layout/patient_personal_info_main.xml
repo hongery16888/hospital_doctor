@@ -21,9 +21,7 @@
                 android:id="@+id/head_img"
                 style="@style/LayerMainMyItem"
                 android:paddingTop="@dimen/global_padding"
-                android:paddingBottom="@dimen/global_padding"
-                android:focusable="true"
-                android:focusableInTouchMode="true">
+                android:paddingBottom="@dimen/global_padding">
                 <ImageView
                     android:id="@+id/head"
                     android:layout_width="80dip"
@@ -46,13 +44,14 @@
                 <TextView style="@style/TxtMainMyItem"
                     android:layout_weight="0.4"
                     android:text="@string/patient_personal_info_nickname"
-                    android:textColor="@color/global_title_color"/>
+                    android:textColor="@color/global_title_color"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"/>
 
                 <EditText
                     android:background="@color/transparent"
                     android:id="@+id/name"
                     style="@style/TxtMainMyItem"
-                    android:text="@string/patient_personal_info_nickname_ex"
                     android:gravity="right"
                     android:textColor="@color/grey_deep"
                     android:paddingRight="@dimen/global_padding"/>
@@ -72,7 +71,6 @@
                     android:background="@color/transparent"
                     android:id="@+id/sex"
                     style="@style/TxtMainMyItem"
-                    android:text="@string/patient_personal_info_sex_ex"
                     android:gravity="right"
                     android:textColor="@color/grey_deep"
                     android:paddingRight="@dimen/global_padding"/>
@@ -92,7 +90,6 @@
                     android:background="@color/transparent"
                     android:id="@+id/age"
                     style="@style/TxtMainMyItem"
-                    android:text="@string/patient_personal_info_age_ex"
                     android:numeric="integer"
                     android:gravity="right"
                     android:textColor="@color/grey_deep"
@@ -113,7 +110,6 @@
                     android:background="@color/transparent"
                     android:id="@+id/adds"
                     style="@style/TxtMainMyItem"
-                    android:text="@string/patient_personal_info_adds_ex"
                     android:gravity="right"
                     android:textColor="@color/grey_deep"
                     android:paddingRight="@dimen/global_padding"/>
@@ -123,14 +119,14 @@
 
             <View style="@style/divider_line_horizontal" />
 
-            <LinearLayout style="@style/LayerMainMyItem">
+            <LinearLayout style="@style/LayerMainMyItem"
+                android:visibility="gone">
                 <TextView style="@style/TxtMainMyItem"
                     android:layout_weight="0.4"
                     android:text="@string/patient_personal_info_phone"
                     android:textColor="@color/global_title_color"/>
 
                 <TextView style="@style/TxtMainMyItem"
-                    android:text="@string/patient_personal_info_phone_ex"
                     android:gravity="right"
                     android:textColor="@color/grey_deep"
                     android:paddingRight="@dimen/global_padding"/>

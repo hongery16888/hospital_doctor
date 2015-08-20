@@ -1,5 +1,8 @@
 package iori.hdoctor.activity;
 
+import android.content.Intent;
+import android.view.KeyEvent;
+import android.view.View;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 
@@ -47,6 +50,7 @@ public class DoctorMainActivity extends BaseActivity implements NetworkConnectLi
 
 	@Override
 	protected void initData() {
+		getApp().setMainActivity(this);
 		pages.clear();
 		pages.add(new DoctorIndexPager(this));
 		pages.add(new DoctorCirclePager(this));
@@ -123,6 +127,7 @@ public class DoctorMainActivity extends BaseActivity implements NetworkConnectLi
 					}
 					viewPager.setCurrentItem(0, false);
 					setTitleAction(getResources().getString(R.string.doctor_title_main));
+					setHidePublish();
 					break;
 				case R.id.shopping_main:
 					if (oldPosition != 1) {
@@ -131,6 +136,7 @@ public class DoctorMainActivity extends BaseActivity implements NetworkConnectLi
 					}
 					viewPager.setCurrentItem(1, false);
 					setTitleAction(getResources().getString(R.string.doctor_menu_qz));
+					showPublish(publishListener);
 					break;
 				case R.id.personal_main:
 					if (oldPosition != 2) {
@@ -139,9 +145,29 @@ public class DoctorMainActivity extends BaseActivity implements NetworkConnectLi
 					}
 					viewPager.setCurrentItem(2, false);
 					setTitleAction(getResources().getString(R.string.doctor_menu_wo));
+					setHidePublish();
 					break;
 			}
 			currentItem = checkedId;
 		}
 	};
+
+	private View.OnClickListener publishListener = new View.OnClickListener() {
+		@Override
+		public void onClick(View v) {
+			startActivity(new Intent(DoctorMainActivity.this, DoctorPublishActivity.class));
+		}
+	};
+
+	@Override
+	public boolean onKeyDown(int keyCode, KeyEvent event) {
+		if(keyCode == KeyEvent.KEYCODE_BACK || keyCode == KeyEvent.KEYCODE_HOME){
+			Intent intent=new Intent(Intent.ACTION_MAIN);
+			intent.addCategory(Intent.CATEGORY_HOME);
+			startActivity(intent);
+			return true;
+		}
+
+		return super.onKeyDown(keyCode, event);
+	}
 }

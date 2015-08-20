@@ -43,6 +43,7 @@
         android:layout_height="wrap_content"
         android:text="@string/doctor_circle_item_content"
         android:textSize="@dimen/global_title_size"
+        android:textColor="@color/global_title_color"
         android:paddingLeft="@dimen/global_padding"
         android:paddingRight="@dimen/global_padding"
         android:paddingTop="@dimen/global_line_padding"

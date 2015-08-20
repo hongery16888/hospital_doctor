@@ -116,9 +116,11 @@ public class DoctorIndexPager extends BasePager implements NetworkConnectListene
     public void onRequestSucceed(Object data, String requestAction) {
         if (HttpRequest.DOC_BENCH == requestAction) {
             jrfk.setText(((DoctorBenchResponse)data).getVnum());
-            jrhz.setText(((DoctorBenchResponse)data).getHnum());
-            zxzxBV.setText(((DoctorBenchResponse)data).getNolooknum());
-            zxzxBV.show();
+            jrhz.setText(((DoctorBenchResponse) data).getHnum());
+            if (Integer.parseInt(((DoctorBenchResponse)data).getNolooknum()) > 0) {
+                zxzxBV.setText(((DoctorBenchResponse) data).getNolooknum());
+                zxzxBV.show();
+            }
         }
     }
 

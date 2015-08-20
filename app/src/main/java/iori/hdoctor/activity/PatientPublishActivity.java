@@ -31,7 +31,7 @@ import iori.hdoctor.view.crop.CropParams;
 /**
  * Created by Administrator on 2015/7/11.
  */
-public class PatientPublishActivity extends BasePhotoCropActivity implements NetworkConnectListener{
+public class PatientPublishActivity extends BasePhotoCropActivity implements NetworkConnectListener {
 
     private CropParams mCropParams = new CropParams(HDoctorCode.HEAD_PATH);
     private ImageLoader imageLoader = ImageLoader.getInstance();
@@ -47,7 +47,7 @@ public class PatientPublishActivity extends BasePhotoCropActivity implements Net
     ImageView img;
 
     @OnClick(R.id.img)
-    public void setimg(){
+    public void setimg() {
         getPhotoPopWindowInstance();
         mPhotoPopWindow.setFocusable(true);
         mPhotoPopWindow.showAtLocation(this
@@ -94,9 +94,11 @@ public class PatientPublishActivity extends BasePhotoCropActivity implements Net
 
     @Override
     public void onRequestSucceed(Object data, String requestAction) {
-        if (HttpRequest.PAT_CIRCLE_PUBLISH.equals(requestAction)){
+        if (HttpRequest.PAT_CIRCLE_PUBLISH.equals(requestAction)) {
             showToast(getString(R.string.publish_success));
             finish();
+            if (getApp().getCircleRefreshHandler() != null)
+                getApp().getCircleRefreshHandler().sendEmptyMessage(0);
         }
         dismissProgressDialog();
     }

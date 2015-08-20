@@ -1,10 +1,12 @@
 package iori.hdoctor.activity;
 
+import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.widget.TextView;
 
 import butterknife.InjectView;
+import butterknife.OnClick;
 import iori.hdoctor.R;
 import iori.hdoctor.activity.base.BaseActivity;
 
@@ -15,6 +17,13 @@ public class DoctorSettingActivity extends BaseActivity {
 
     @InjectView(R.id.version)
     TextView version;
+
+    @OnClick(R.id.logout)
+    public void logout(){
+        startActivity(new Intent(DoctorSettingActivity.this, DoctorLoginActivity.class));
+        getApp().getMainActivity().finish();
+        finish();
+    }
 
     @Override
     protected int setContentViewResId() {

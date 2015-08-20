@@ -9,13 +9,15 @@ public class PatientAlyReportRequest extends BaseRequest {
 	protected int weight;
 	protected int age;
 	protected String health;
+	protected String jieguo;
 
-	public PatientAlyReportRequest(int score, int height, int weight, int age, String health) {
+	public PatientAlyReportRequest(int score, int height, int weight, int age, String health, String jieguo) {
 		this.score = score;
 		this.height = height;
 		this.weight = weight;
 		this.age = age;
 		this.health = health;
+		this.jieguo = jieguo;
 	}
 	
 	@Override

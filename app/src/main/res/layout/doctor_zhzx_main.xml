@@ -21,7 +21,6 @@
             android:id="@+id/password"
             android:password="true"
             style="@style/TxtMainMyItem"
-            android:text="@string/doctor_zhzx_modify_password_ex"
             android:textColor="@color/grey_deep"/>
 
     </LinearLayout>
@@ -38,7 +37,6 @@
             android:background="@color/transparent"
             android:id="@+id/phone"
             style="@style/TxtMainMyItem"
-            android:text="@string/doctor_zhzx_phone_ex"
             android:textColor="@color/grey_deep"/>
 
     </LinearLayout>
@@ -55,7 +53,6 @@
             android:background="@color/transparent"
             android:id="@+id/qq"
             style="@style/TxtMainMyItem"
-            android:text="@string/doctor_zhzx_qq_ex"
             android:textColor="@color/grey_deep"/>
 
     </LinearLayout>
@@ -72,7 +69,6 @@
             android:background="@color/transparent"
             android:id="@+id/wchat"
             style="@style/TxtMainMyItem"
-            android:text="@string/doctor_zhzx_wchat_ex"
             android:textColor="@color/grey_deep"/>
 
     </LinearLayout>

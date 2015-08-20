@@ -71,8 +71,8 @@
     <string name="doctor_menu_wo">我</string>
     <string name="doctor_today_visitor">今日访客</string>
     <string name="doctor_today_patient">今日患者</string>
-    <string name="doctor_today_visitor_ex">120</string>
-    <string name="doctor_today_patient_ex">29</string>
+    <string name="doctor_today_visitor_ex">0</string>
+    <string name="doctor_today_patient_ex">0</string>
     <string name="doctor_phone_consult">电话咨询</string>
     <string name="doctor_online_consult">在线咨询</string>
     <string name="doctor_reserve_consult">预约咨询</string>

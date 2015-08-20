@@ -1,12 +1,18 @@
 package iori.hdoctor.activity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.text.TextUtils;
+import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.PopupWindow;
 import android.widget.Toast;
 
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
@@ -38,6 +44,7 @@ public class DoctorRegisterActivity extends BasePhotoCropActivity implements Net
     private CropParams mCropParams = new CropParams(HDoctorCode.HEAD_PATH);
     private ImageLoader imageLoader;
     private DisplayImageOptions options;
+    private PopupWindow mPhotoPopWindow;
     private boolean imgFlag = false;
 
     @OnClick(R.id.next_step)
@@ -58,8 +65,11 @@ public class DoctorRegisterActivity extends BasePhotoCropActivity implements Net
 
     @OnClick(R.id.head)
     public void setHead() {
-        Intent intent = CropHelper.buildCaptureIntent(mCropParams.uri);
-        startActivityForResult(intent, CropHelper.REQUEST_CAMERA);
+        ((InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE)).hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
+        getPhotoPopWindowInstance();
+        mPhotoPopWindow.showAtLocation(this
+                .findViewById(R.id.persion_main), Gravity.BOTTOM | Gravity
+                .CENTER_HORIZONTAL, 0, 0);
     }
 
     @InjectView(R.id.name)
@@ -120,6 +130,55 @@ public class DoctorRegisterActivity extends BasePhotoCropActivity implements Net
         }
     };
 
+    private void getPhotoPopWindowInstance() {
+        if (null != mPhotoPopWindow) {
+            mPhotoPopWindow.dismiss();
+            return;
+        } else {
+            initPhotoPopWindow();
+        }
+    }
+
+    private void initPhotoPopWindow() {
+        LayoutInflater layoutInflater = LayoutInflater.from(this);
+        View popupWindow = layoutInflater.inflate(R.layout.photo_pop_main, null);
+        mPhotoPopWindow = new PopupWindow(popupWindow, ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
+        mPhotoPopWindow.getContentView().measure(0, 0);
+        mPhotoPopWindow.setAnimationStyle(R.style.mypopwindow_anim_style);
+
+        popupWindow.findViewById(R.id.photo_cancel).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mPhotoPopWindow.dismiss();
+            }
+        });
+
+        popupWindow.findViewById(R.id.open_photo).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                CropHelper.clearCachedCropFile(mCropParams.uri);
+                startActivityForResult(CropHelper.buildCropFromGalleryIntent(mCropParams), CropHelper.REQUEST_CROP);
+                mPhotoPopWindow.dismiss();
+            }
+        });
+
+        popupWindow.findViewById(R.id.open_camera).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = CropHelper.buildCaptureIntent(mCropParams.uri);
+                startActivityForResult(intent, CropHelper.REQUEST_CAMERA);
+                mPhotoPopWindow.dismiss();
+            }
+        });
+
+        popupWindow.findViewById(R.id.outside).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mPhotoPopWindow.dismiss();
+            }
+        });
+    }
+
     @Override
     public CropParams getCropParams() {
         return mCropParams;
@@ -128,17 +187,17 @@ public class DoctorRegisterActivity extends BasePhotoCropActivity implements Net
     @Override
     public void onPhotoCropped(Uri uri) {
         imgFlag = true;
-        Toast.makeText(this, "Photo Url : " + MyApp.PHOTO_BASIC_PATH + uri.getPath(), Toast.LENGTH_LONG).show();
+//        Toast.makeText(this, "Photo Url : " + MyApp.PHOTO_BASIC_PATH + uri.getPath(), Toast.LENGTH_LONG).show();
         imageLoader.displayImage(MyApp.PHOTO_BASIC_PATH + uri.getPath(), head, options);
     }
 
     @Override
     public void onCropCancel() {
-        Toast.makeText(this, "Crop canceled!", Toast.LENGTH_LONG).show();
+//        Toast.makeText(this, "Crop canceled!", Toast.LENGTH_LONG).show();
     }
 
     @Override
     public void onCropFailed(String message) {
-        Toast.makeText(this, "Crop failed:" + message, Toast.LENGTH_LONG).show();
+//        Toast.makeText(this, "Crop failed:" + message, Toast.LENGTH_LONG).show();
     }
 }

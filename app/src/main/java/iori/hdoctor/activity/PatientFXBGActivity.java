@@ -31,14 +31,14 @@ public class PatientFXBGActivity extends BaseActivity implements NetworkConnectL
     TextView score;
     @InjectView(R.id.status)
     TextView status;
+    @InjectView(R.id.jieguo)
+    TextView jieguo;
 
     @OnClick(R.id.zwzd_again)
     public void again() {
         startActivity(new Intent(PatientFXBGActivity.this, PatientZWZD01Activity.class));
         finish();
     }
-
-    private TextView tempTV;
 
     @Override
     protected int setContentViewResId() {
@@ -60,7 +60,7 @@ public class PatientFXBGActivity extends BaseActivity implements NetworkConnectL
     public void onRequestSucceed(Object data, String requestAction) {
         if (HttpRequest.PAT_USER_REPORT.equals(requestAction)){
             TestingReport testingReport = new TestingReport();
-            testingReport.setScore(((PatientUserReportResponse)data).getScore());
+            testingReport.setScore(((PatientUserReportResponse) data).getScore());
             testingReport.setHeight(((PatientUserReportResponse) data).getHeight());
             testingReport.setWeight(((PatientUserReportResponse) data).getWeight());
             testingReport.setAge(((PatientUserReportResponse) data).getAge());
@@ -69,6 +69,7 @@ public class PatientFXBGActivity extends BaseActivity implements NetworkConnectL
                 height.setText(getApp().getReport().getHeight() + "");
                 weight.setText(getApp().getReport().getWeight() + "");
                 age.setText(getApp().getReport().getAge() + "");
+                jieguo.setText(((PatientUserReportResponse) data).getJieguo());
                 if (getApp().getReport().getScore() * 100 / 35 <= 100) {
                     score.setText((100 - getApp().getReport().getScore() * 100 / 35) + "");
                     progress.setProgress((100 - getApp().getReport().getScore() * 100 / 35) * 360 / 100);
@@ -92,6 +93,7 @@ public class PatientFXBGActivity extends BaseActivity implements NetworkConnectL
 
     @Override
     public void onRequestFailure(int error, String errorMsg, String requestAction) {
-
+        showToast(errorMsg);
+        dismissProgressDialog();
     }
 }

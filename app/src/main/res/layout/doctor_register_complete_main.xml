@@ -35,7 +35,11 @@
                 android:paddingTop="@dimen/five_dip"/>
         </LinearLayout>
 
-        <ImageView style="@style/ImageMainMyItemNext" />
+        <ImageView
+            android:id="@+id/shenfen_img"
+            style="@style/ImageMainMyItemNext"
+            android:src="@drawable/finish_p"
+            android:visibility="invisible"/>
 
     </LinearLayout>
 
@@ -66,7 +70,11 @@
                 android:paddingTop="@dimen/five_dip"/>
         </LinearLayout>
 
-        <ImageView style="@style/ImageMainMyItemNext" />
+        <ImageView
+            android:id="@+id/zige_img"
+            style="@style/ImageMainMyItemNext"
+            android:src="@drawable/finish_p"
+            android:visibility="invisible"/>
 
     </LinearLayout>
 
@@ -97,7 +105,11 @@
                 android:paddingTop="@dimen/five_dip"/>
         </LinearLayout>
 
-        <ImageView style="@style/ImageMainMyItemNext" />
+        <ImageView
+            android:id="@+id/gongzuo_img"
+            style="@style/ImageMainMyItemNext"
+            android:src="@drawable/finish_p"
+            android:visibility="invisible"/>
 
     </LinearLayout>
 

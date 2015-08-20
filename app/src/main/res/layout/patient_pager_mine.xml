@@ -55,7 +55,7 @@
                 android:id="@+id/order_num"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/patient_mine_wddd_ex"
+                android:text="@string/patient_mine_wdyy_ex"
                 android:textColor="@color/white"
                 android:textSize="@dimen/patient_fj_doctor_price"
                 android:textStyle="bold"/>

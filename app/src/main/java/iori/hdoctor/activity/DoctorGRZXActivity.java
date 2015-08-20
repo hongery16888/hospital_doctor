@@ -1,5 +1,6 @@
 package iori.hdoctor.activity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.net.Uri;
@@ -8,6 +9,7 @@ import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.PopupWindow;
@@ -59,6 +61,7 @@ public class DoctorGRZXActivity extends BasePhotoCropActivity implements Network
 
     @OnClick(R.id.head_img)
     public void setHead(){
+        ((InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE)).hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
         getPhotoPopWindowInstance();
         mPhotoPopWindow.setFocusable(true);
         mPhotoPopWindow.showAtLocation(this
@@ -151,7 +154,7 @@ public class DoctorGRZXActivity extends BasePhotoCropActivity implements Network
     private void initPhotoPopWindow() {
         LayoutInflater layoutInflater = LayoutInflater.from(this);
         View popupWindow = layoutInflater.inflate(R.layout.photo_pop_main, null);
-        mPhotoPopWindow = new PopupWindow(popupWindow, ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        mPhotoPopWindow = new PopupWindow(popupWindow, ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
         mPhotoPopWindow.getContentView().measure(0, 0);
         mPhotoPopWindow.setAnimationStyle(R.style.mypopwindow_anim_style);
 
@@ -176,6 +179,13 @@ public class DoctorGRZXActivity extends BasePhotoCropActivity implements Network
             public void onClick(View v) {
                 Intent intent = CropHelper.buildCaptureIntent(mCropParams.uri);
                 startActivityForResult(intent, CropHelper.REQUEST_CAMERA);
+                mPhotoPopWindow.dismiss();
+            }
+        });
+
+        popupWindow.findViewById(R.id.outside).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
                 mPhotoPopWindow.dismiss();
             }
         });

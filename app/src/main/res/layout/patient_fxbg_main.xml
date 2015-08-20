@@ -64,7 +64,7 @@
                     android:id="@+id/height"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="126"
+                    android:text="0"
                     android:textColor="@color/white"
                     android:textSize="@dimen/global_title_size" />
 
@@ -88,7 +88,7 @@
                     android:id="@+id/weight"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="54"
+                    android:text="0"
                     android:textColor="@color/white"
                     android:textSize="@dimen/global_title_size" />
 
@@ -112,7 +112,7 @@
                     android:id="@+id/age"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="26"
+                    android:text="0"
                     android:textColor="@color/white"
                     android:textSize="@dimen/global_title_size" />
 
@@ -154,7 +154,7 @@
                         android:id="@+id/score"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="75"
+                        android:text="0"
                         android:textColor="@color/white"
                         android:textSize="@dimen/patient_fxbg_point"/>
 
@@ -190,6 +190,7 @@
         </FrameLayout>
 
         <TextView
+            android:id="@+id/jieguo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/patient_fxbg_info"

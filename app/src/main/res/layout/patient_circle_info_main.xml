@@ -30,7 +30,6 @@
                 <TextView
                     android:id="@+id/name"
                     style="@style/TxtMainMyItem"
-                    android:text="@string/blgl_item_name"
                     android:textColor="@color/top_bar_bg"
                     android:gravity="center_vertical"
                     android:layout_weight="2"
@@ -42,7 +41,6 @@
                 <TextView
                     android:id="@+id/time"
                     style="@style/TxtMainMyItem"
-                    android:text="@string/blgl_item_time"
                     android:textColor="@color/grey_deep"
                     android:gravity="right"/>
 
@@ -72,7 +70,6 @@
                 android:layout_height="wrap_content"
                 android:background="@color/white"
                 android:padding="@dimen/global_padding"
-                android:text="@string/doctor_circle_item_content"
                 android:textColor="@color/global_title_color"
                 android:textSize="@dimen/global_title_size"
                 android:lineSpacingExtra="@dimen/five_dip"/>
@@ -96,7 +93,6 @@
                 <TextView
                     android:id="@+id/best"
                     style="@style/TxtMainMyItem"
-                    android:text="@string/doctor_circle_item_count"
                     android:textColor="@color/grey_deep"
                     android:layout_weight="1"
                     android:gravity="center_vertical"
@@ -111,7 +107,6 @@
                         android:id="@+id/commentnum"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/doctor_circle_item_count"
                         android:textColor="@color/grey_deep"
                         android:textSize="@dimen/global_title_size"
                         android:paddingRight="@dimen/global_line_padding"

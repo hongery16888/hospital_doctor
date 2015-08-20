@@ -1,7 +1,9 @@
 package iori.hdoctor.activity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.text.TextUtils;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.EditText;
 
@@ -53,15 +55,16 @@ public class PatientLoginActivity extends BaseActivity implements NetworkConnect
 
     @Override
     protected void initData() {
-
+        getLoginHistoryInfo();
     }
 
     @Override
     public void onRequestSucceed(Object data, String requestAction) {
         if (HttpRequest.PAT_LOGIN.equals(requestAction)) {
             DataTransfer.setUid(((PatientLoginResponse) data).getUid());
-            showToast(((PatientLoginResponse) data).getName());
+            saveLoginHistoryInfo();
             startActivity(new Intent(PatientLoginActivity.this, PatientMainActivity.class));
+            finish();
         }
         dismissProgressDialog();
     }
@@ -79,4 +82,31 @@ public class PatientLoginActivity extends BaseActivity implements NetworkConnect
             finish();
         }
     };
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if(keyCode == KeyEvent.KEYCODE_BACK || keyCode == KeyEvent.KEYCODE_HOME){
+            Intent intent=new Intent(Intent.ACTION_MAIN);
+            intent.addCategory(Intent.CATEGORY_HOME);
+            startActivity(intent);
+        }
+        return super.onKeyDown(keyCode, event);
+    }
+
+    private void getLoginHistoryInfo()
+    {
+        SharedPreferences prefs = getSharedPreferences("HDoctor", MODE_WORLD_WRITEABLE);
+        String username = prefs.getString("pat_username", "");
+        this.username.setText(username);
+        String password = prefs.getString("pat_password", "");
+        this.password.setText(password);
+    }
+
+    private void saveLoginHistoryInfo()
+    {
+        SharedPreferences.Editor editor = getSharedPreferences("HDoctor", MODE_WORLD_WRITEABLE).edit();
+        editor.putString("pat_username", this.username.getText().toString());
+        editor.putString("pat_password", this.password.getText().toString());
+        editor.commit();
+    }
 }

@@ -1,5 +1,6 @@
 package iori.hdoctor.activity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.net.Uri;
@@ -9,6 +10,8 @@ import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.PopupWindow;
@@ -82,8 +85,8 @@ public class PatientWDZLActivity extends BasePhotoCropActivity implements Networ
 
     @OnClick(R.id.head_img)
     public void setHead() {
+        ((InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE)).hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
         getPhotoPopWindowInstance();
-        mPhotoPopWindow.setFocusable(true);
         mPhotoPopWindow.showAtLocation(this
                 .findViewById(R.id.persion_main), Gravity.BOTTOM | Gravity
                 .CENTER_HORIZONTAL, 0, 0);
@@ -199,11 +202,11 @@ public class PatientWDZLActivity extends BasePhotoCropActivity implements Networ
 
     @Override
     public void onCropCancel() {
-        Toast.makeText(this, "Crop canceled!", Toast.LENGTH_LONG).show();
+//        Toast.makeText(this, "Crop canceled!", Toast.LENGTH_LONG).show();
     }
 
     @Override
     public void onCropFailed(String message) {
-        Toast.makeText(this, "Crop failed:" + message, Toast.LENGTH_LONG).show();
+//        Toast.makeText(this, "Crop failed:" + message, Toast.LENGTH_LONG).show();
     }
 }

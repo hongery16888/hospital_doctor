@@ -1,8 +1,10 @@
 package iori.hdoctor.activity.base;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -170,6 +172,12 @@ public abstract class BaseActivity extends SysKeyInvalidActivity {
             Toast.makeText(this, getString(R.string.network_error), Toast.LENGTH_SHORT).show();
             return flag;
         }
+    }
+
+    public void hideInput(Context context,View view){
+        InputMethodManager inputMethodManager =
+                (InputMethodManager)context.getSystemService(Context.INPUT_METHOD_SERVICE);
+        inputMethodManager.hideSoftInputFromWindow(view.getWindowToken(), 0);
     }
     
     /*显示提示信息*/

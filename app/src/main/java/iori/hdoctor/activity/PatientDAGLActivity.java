@@ -50,7 +50,7 @@ public class PatientDAGLActivity extends BaseActivity implements NetworkConnectL
     @Override
     protected void initView() {
         setBackAction();
-        setTitleAction(getString(R.string.patient_dagl_title_main));
+        setTitleAction("健康档案");
     }
 
     @Override

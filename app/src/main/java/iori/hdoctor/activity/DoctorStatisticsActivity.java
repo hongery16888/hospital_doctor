@@ -82,17 +82,28 @@ public class DoctorStatisticsActivity extends BaseActivity implements NetworkCon
             todayYyzx.setText(((DoctorStaticResponse)data).getTodaystatic().getYuyuenum());
             yesVisitor.setText(((DoctorStaticResponse)data).getYesterdaystatic().getVnum());
             yesPatient.setText(((DoctorStaticResponse)data).getYesterdaystatic().getHnum());
-            yesZxzx.setText(((DoctorStaticResponse)data).getYesterdaystatic().getOnlinenum());
-            yesDhzx.setText(((DoctorStaticResponse)data).getTodaystatic().getTelnum());
-            yesYyzx.setText(((DoctorStaticResponse)data).getTodaystatic().getYuyuenum());
+            yesZxzx.setText(((DoctorStaticResponse) data).getYesterdaystatic().getOnlinenum());
+            yesDhzx.setText(((DoctorStaticResponse) data).getTodaystatic().getTelnum());
+            yesYyzx.setText(((DoctorStaticResponse) data).getTodaystatic().getYuyuenum());
 
-            float[] humidity = {360 - (patientTotals*100)/vistorTotals, (patientTotals*100)/vistorTotals};
 
-            String str[] = { (100 - (patientTotals*100)/vistorTotals) + "%", (patientTotals*100)/vistorTotals  + "%"};
+            if (vistorTotals != 0) {
+                float[] humidity = {360 - (patientTotals * 100) / vistorTotals, (patientTotals * 100) / vistorTotals};
 
-            mChart.setHumidity(humidity);
-            mChart.setStr(str);
-            mChart.start(2);
+                String str[] = {(100 - (patientTotals * 100) / vistorTotals) + "%", (patientTotals * 100) / vistorTotals + "%"};
+
+                mChart.setHumidity(humidity);
+                mChart.setStr(str);
+                mChart.start(2);
+            }else {
+                float[] humidity = {360, 0};
+
+                String str[] = {100 + "%", "0%"};
+
+                mChart.setHumidity(humidity);
+                mChart.setStr(str);
+                mChart.start(2);
+            }
 
         }
         dismissProgressDialog();

@@ -55,7 +55,8 @@ public class DoctorMessageActivity extends BaseActivity implements NetworkConnec
     @Override
     public void onRequestSucceed(Object data, String requestAction) {
         if (HttpRequest.DOC_CONSULTING.equals(requestAction)){
-            listView.setAdapter(new DoctorMessageAdapter(this, ((DoctorMessageResponse)data).getConsultinglist()));
+            if (((DoctorMessageResponse)data).getConsultinglist() != null)
+                listView.setAdapter(new DoctorMessageAdapter(this, ((DoctorMessageResponse)data).getConsultinglist()));
         }
         dismissProgressDialog();
     }

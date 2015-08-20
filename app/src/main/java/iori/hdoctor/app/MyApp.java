@@ -46,6 +46,8 @@ public class MyApp extends Application {
     private ArrayList<Integer> scores;
     private Handler refreshListHandler;
     private Handler refreshData;
+    private Handler circleRefreshHandler;
+    private Activity mainActivity;
 
     /*客户端在SD卡的存储根目录*/
     public final static String APP_ROOT = Environment.getExternalStorageDirectory().getPath() + File.separator;
@@ -224,5 +226,21 @@ public class MyApp extends Application {
 
     public void setRefreshData(Handler refreshData) {
         this.refreshData = refreshData;
+    }
+
+    public Handler getCircleRefreshHandler() {
+        return circleRefreshHandler;
+    }
+
+    public void setCircleRefreshHandler(Handler circleRefreshHandler) {
+        this.circleRefreshHandler = circleRefreshHandler;
+    }
+
+    public Activity getMainActivity() {
+        return mainActivity;
+    }
+
+    public void setMainActivity(Activity mainActivity) {
+        this.mainActivity = mainActivity;
     }
 }

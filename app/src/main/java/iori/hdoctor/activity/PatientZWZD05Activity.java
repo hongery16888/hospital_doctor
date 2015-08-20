@@ -22,7 +22,6 @@ public class PatientZWZD05Activity extends BaseActivity implements SeekBar.OnSee
         getApp().setActivities(this);
         getApp().getReport().setScore(getApp().getReport().getScore() + score);
         getApp().getScores().add(score);
-        showToast(getApp().getReport().getScore() + "" );
         startActivity(new Intent(PatientZWZD05Activity.this, PatientZWZD06Activity.class));
     }
 

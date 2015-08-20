@@ -1,6 +1,7 @@
 package iori.hdoctor.activity;
 
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
@@ -9,6 +10,7 @@ import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.PopupWindow;
@@ -59,6 +61,7 @@ public class PatientAddMedicinePromptActivity extends BasePhotoCropActivity impl
 
     @OnClick(R.id.img)
     public void setHead() {
+        ((InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE)).hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
         getPhotoPopWindowInstance();
         mPhotoPopWindow.setFocusable(true);
         mPhotoPopWindow.showAtLocation(this

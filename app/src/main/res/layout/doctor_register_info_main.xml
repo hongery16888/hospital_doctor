@@ -3,7 +3,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/global_bg">
+    android:background="@color/global_bg"
+    android:id="@+id/persion_main">
 
     <include layout="@layout/title_bar" />
 
@@ -49,8 +50,8 @@
             android:id="@+id/name"
             style="@style/TxtMainMyItem"
             android:background="@color/transparent"
-            android:text="@string/doctor_username_ex"
-            android:textColor="@color/register_title_name_ex"/>
+            android:hint="填写姓名"
+            android:textColor="@color/global_title_color"/>
 
         <ImageView style="@style/ImageMainMyItemNext" />
 
@@ -72,8 +73,8 @@
             android:id="@+id/hospital"
             style="@style/TxtMainMyItem"
             android:background="@color/transparent"
-            android:text="@string/doctor_hospital_ex"
-            android:textColor="@color/register_title_name_ex"/>
+            android:hint="填写医院"
+            android:textColor="@color/global_title_color"/>
 
         <ImageView style="@style/ImageMainMyItemNext" />
 
@@ -95,8 +96,8 @@
             android:id="@+id/keshi"
             style="@style/TxtMainMyItem"
             android:background="@color/transparent"
-            android:text="@string/doctor_subject_ex"
-            android:textColor="@color/register_title_name_ex"/>
+            android:hint="填写科室"
+            android:textColor="@color/global_title_color"/>
 
         <ImageView style="@style/ImageMainMyItemNext" />
 
@@ -118,8 +119,8 @@
             android:id="@+id/tel"
             style="@style/TxtMainMyItem"
             android:background="@color/transparent"
-            android:text="@string/doctor_work_phone_ex"
-            android:textColor="@color/register_title_name_ex"/>
+            android:hint="填写电话"
+            android:textColor="@color/global_title_color"/>
 
         <ImageView style="@style/ImageMainMyItemNext" />
 

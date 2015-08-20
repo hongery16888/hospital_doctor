@@ -27,7 +27,6 @@ public class PatientZWZD01Activity extends BaseActivity {
         if (age > 0) {
             getApp().getActivities().clear();
             getApp().setActivities(this);
-            showToast(getApp().getReport().getAge() + "");
             startActivity(new Intent(PatientZWZD01Activity.this, PatientZWZD02Activity.class));
         } else
             showToast("选择的生日不正确");

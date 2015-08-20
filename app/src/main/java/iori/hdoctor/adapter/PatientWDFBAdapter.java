@@ -1,6 +1,7 @@
 package iori.hdoctor.adapter;
 
 import android.content.Context;
+import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -26,10 +27,12 @@ public class PatientWDFBAdapter extends BaseAdapter {
 	private Context context;
 	private ImageLoader imageLoader = ImageLoader.getInstance();
 	private DisplayImageOptions options;
+	private Handler handler;
 
-	public PatientWDFBAdapter(Context context, ArrayList<PatientWDFB> patientWDFBs) {
+	public PatientWDFBAdapter(Context context, ArrayList<PatientWDFB> patientWDFBs, Handler handler) {
 		this.context = context;
 		data.addAll(patientWDFBs);
+		this.handler = handler;
 		options = new DisplayImageOptions.Builder()
 				.showImageOnLoading(R.drawable.img_avater_blgl_head)
 				.showImageOnFail(R.drawable.img_avater_blgl_head)
@@ -74,6 +77,14 @@ public class PatientWDFBAdapter extends BaseAdapter {
 		holder.content.setText(data.get(position).getContent());
 		holder.best.setText(data.get(position).getBest());
 		holder.commentnum.setText(data.get(position).getCommentnum());
+		holder.del.setTag(position);
+
+		holder.del.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				handler.sendEmptyMessage(Integer.parseInt(v.getTag().toString()));
+			}
+		});
 
 		return view;
 	}
@@ -92,9 +103,17 @@ public class PatientWDFBAdapter extends BaseAdapter {
 		TextView best;
 		@InjectView(R.id.commentnum)
 		TextView commentnum;
+		@InjectView(R.id.del)
+		ImageView del;
 
 		public ViewHolder(View view) {
 			ButterKnife.inject(this, view);
 		}
+	}
+
+	public void addData(ArrayList<PatientWDFB> patientWDFBs){
+		data.clear();
+		data.addAll(patientWDFBs);
+		notifyDataSetChanged();
 	}
 }

@@ -15,6 +15,7 @@ import iori.hdoctor.activity.base.BaseActivity;
 import iori.hdoctor.net.HttpRequest;
 import iori.hdoctor.net.NetworkAPI;
 import iori.hdoctor.net.NetworkConnectListener;
+import iori.hdoctor.net.response.DoctorZHZXResponse;
 
 /**
  * Created by Administrator on 2015/7/11.
@@ -32,11 +33,8 @@ public class DoctorZHZXctivity extends BaseActivity implements NetworkConnectLis
 
     @OnClick(R.id.confirm)
     public void confirm() {
-        if (TextUtils.isEmpty(passwrod.getText().toString()) ||
-                TextUtils.isEmpty(passwrod.getText().toString()) ||
-                TextUtils.isEmpty(passwrod.getText().toString()) ||
-                TextUtils.isEmpty(passwrod.getText().toString()))
-            showToast("修改信息不能为空");
+        if (TextUtils.isEmpty(passwrod.getText().toString()))
+            showToast("密码不能为空");
         else
             NetworkAPI.getNetworkAPI().docaccount(passwrod.getText().toString(),
                     phone.getText().toString(),
@@ -59,12 +57,16 @@ public class DoctorZHZXctivity extends BaseActivity implements NetworkConnectLis
 
     @Override
     protected void initData() {
-
+        NetworkAPI.getNetworkAPI().docaccountinfo(showProgressDialog(), this);
     }
 
     @Override
     public void onRequestSucceed(Object data, String requestAction) {
         if (HttpRequest.DOC_ACCOUNT.equals(requestAction)){
+            passwrod.setText(((DoctorZHZXResponse)data).getPassword());
+            phone.setText(((DoctorZHZXResponse)data).getBindingphone());
+            qq.setText(((DoctorZHZXResponse)data).getBindingqq());
+            wchat.setText(((DoctorZHZXResponse)data).getBindingwei());
             finish();
         }
         dismissProgressDialog();

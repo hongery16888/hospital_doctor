@@ -1,6 +1,7 @@
 package iori.hdoctor.activity;
 
 import android.content.Intent;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.RadioGroup;
 import android.widget.TextView;
@@ -52,6 +53,7 @@ public class PatientMainActivity extends BaseActivity implements NetworkConnectL
 
 	@Override
 	protected void initData() {
+		getApp().setMainActivity(this);
 		pages.clear();
 		pages.add(new PatientIndexPager(this));
 		pages.add(new PatientDoctorPager(this));
@@ -180,4 +182,16 @@ public class PatientMainActivity extends BaseActivity implements NetworkConnectL
 			startActivity(new Intent(PatientMainActivity.this, PatientPublishActivity.class));
 		}
 	};
+
+	@Override
+	public boolean onKeyDown(int keyCode, KeyEvent event) {
+		if(keyCode == KeyEvent.KEYCODE_BACK || keyCode == KeyEvent.KEYCODE_HOME){
+			Intent intent=new Intent(Intent.ACTION_MAIN);
+			intent.addCategory(Intent.CATEGORY_HOME);
+			startActivity(intent);
+			return true;
+		}
+
+		return super.onKeyDown(keyCode, event);
+	}
 }

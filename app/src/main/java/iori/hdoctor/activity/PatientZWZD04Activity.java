@@ -29,7 +29,6 @@ public class PatientZWZD04Activity extends BaseActivity implements AdapterView.O
         getApp().setActivities(this);
         getApp().getReport().setScore(score);
         getApp().getScores().add(score);
-        showToast(getApp().getReport().getScore() + "");
         startActivity(new Intent(PatientZWZD04Activity.this, PatientZWZD05Activity.class));
     }
 

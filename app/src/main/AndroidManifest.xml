@@ -29,7 +29,7 @@
         <activity android:name=".activity.DoctorFFGLActivity" android:screenOrientation="portrait"/>
         <activity android:name=".activity.DoctorFFGLInfoActivity" android:screenOrientation="portrait"/>
         <activity android:name=".activity.DoctorGRZXActivity" android:screenOrientation="portrait" /> lp2
-        <activity android:name=".activity.DoctorCircleActivity" android:screenOrientation="portrait" />
+        <activity android:name=".activity.DoctorPublicActivity" android:screenOrientation="portrait" />
         <activity android:name=".activity.DoctorCircleInfoActivity" android:screenOrientation="portrait" />
         <activity android:name=".activity.DoctorFriendActivity" android:screenOrientation="portrait" />
         <activity android:name=".activity.DoctorMessageActivity" android:screenOrientation="portrait" />
@@ -51,6 +51,7 @@
         <activity android:name=".activity.PatientZWZD13Activity" android:screenOrientation="portrait" />
         <activity android:name=".activity.PatientZWZD14Activity" android:screenOrientation="portrait" />
         <activity android:name=".activity.PatientZWZD15Activity" android:screenOrientation="portrait" />
+        <activity android:name=".activity.PatientZWZDCompleteActivity" android:screenOrientation="portrait" />
         <activity android:name=".activity.PatientFXBGActivity" android:screenOrientation="portrait" />
         <activity android:name=".activity.PatientJKTXActivity" android:screenOrientation="portrait" />
         <activity android:name=".activity.PatientCalendarActivity" android:screenOrientation="portrait" />
@@ -84,6 +85,7 @@
         <activity android:name=".activity.PatientWDSCActivity" android:screenOrientation="portrait" />
         <activity android:name=".activity.PatientSettingActivity" android:screenOrientation="portrait" />
         <activity android:name=".activity.PatientPublishActivity" android:screenOrientation="portrait" />
+        <activity android:name=".activity.DoctorPublishActivity" android:screenOrientation="portrait" />
     </application>
 
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />

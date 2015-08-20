@@ -6,7 +6,7 @@ package iori.hdoctor.net.entity;
 public class TestRecord {
 
     private String score;
-    private String health;
+    private String jieguo;
     private String addtime;
 
     public String getScore() {
@@ -17,12 +17,12 @@ public class TestRecord {
         this.score = score;
     }
 
-    public String getHealth() {
-        return health;
+    public String getJieguo() {
+        return jieguo;
     }
 
-    public void setHealth(String health) {
-        this.health = health;
+    public void setJieguo(String jieguo) {
+        this.jieguo = jieguo;
     }
 
     public String getAddtime() {

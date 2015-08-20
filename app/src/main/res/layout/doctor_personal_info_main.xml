@@ -50,7 +50,6 @@
 
                 <TextView style="@style/TxtMainMyItem"
                     android:id="@+id/name"
-                    android:text="@string/doctor_personal_info_name_ex"
                     android:gravity="right"
                     android:textColor="@color/grey_deep"
                     android:paddingRight="@dimen/global_padding"/>
@@ -71,7 +70,6 @@
 
                 <TextView style="@style/TxtMainMyItem"
                     android:id="@+id/introduce"
-                    android:text="@string/doctor_personal_info_intro_ex"
                     android:gravity="right"
                     android:textColor="@color/grey_deep"
                     android:paddingRight="@dimen/global_padding"/>
@@ -92,7 +90,6 @@
 
                  <TextView style="@style/TxtMainMyItem"
                     android:id="@+id/skill"
-                    android:text="@string/doctor_personal_info_skilled_ex"
                     android:gravity="right"
                     android:textColor="@color/grey_deep"
                     android:paddingRight="@dimen/global_padding"/>
@@ -114,7 +111,6 @@
 
                 <TextView style="@style/TxtMainMyItem"
                     android:id="@+id/hospital"
-                    android:text="@string/doctor_personal_info_hospital_ex"
                     android:gravity="right"
                     android:textColor="@color/grey_deep"
                     android:paddingRight="@dimen/global_padding"/>
@@ -135,7 +131,6 @@
 
                 <TextView style="@style/TxtMainMyItem"
                     android:id="@+id/keshi"
-                    android:text="@string/doctor_personal_info_subject_ex"
                     android:gravity="right"
                     android:textColor="@color/grey_deep"
                     android:paddingRight="@dimen/global_padding"/>
@@ -156,7 +151,6 @@
 
                 <TextView style="@style/TxtMainMyItem"
                     android:id="@+id/post"
-                    android:text="@string/doctor_personal_info_job_ex"
                     android:gravity="right"
                     android:textColor="@color/grey_deep"
                     android:paddingRight="@dimen/global_padding"/>

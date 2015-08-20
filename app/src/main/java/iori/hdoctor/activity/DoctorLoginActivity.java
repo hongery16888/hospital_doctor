@@ -1,6 +1,8 @@
 package iori.hdoctor.activity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.EditText;
 
@@ -49,7 +51,7 @@ public class DoctorLoginActivity extends BaseActivity implements NetworkConnectL
 
     @Override
     protected void initData() {
-
+        getLoginHistoryInfo();
     }
 
     private View.OnClickListener typeListener = new View.OnClickListener() {
@@ -63,11 +65,11 @@ public class DoctorLoginActivity extends BaseActivity implements NetworkConnectL
     @Override
     public void onRequestSucceed(Object data, String requestAction) {
         if (HttpRequest.DOC_LOGIN.equals(requestAction)) {
-            showToast(((DoctorLoginResponse)data).getName());
             DataTransfer.setUid(((DoctorLoginResponse) data).getUid());
-            getApp().setUser((DoctorLoginResponse)data);
+            getApp().setUser((DoctorLoginResponse) data);
+            saveLoginHistoryInfo();
             startActivity(new Intent(DoctorLoginActivity.this, DoctorMainActivity.class));
-//            finish();
+            finish();
         }
         dismissProgressDialog();
     }
@@ -77,5 +79,22 @@ public class DoctorLoginActivity extends BaseActivity implements NetworkConnectL
         startActivity(new Intent(DoctorLoginActivity.this, DoctorMainActivity.class));
         showToast(errorMsg);
         dismissProgressDialog();
+    }
+
+    private void getLoginHistoryInfo()
+    {
+        SharedPreferences prefs = getSharedPreferences("HDoctor", MODE_WORLD_WRITEABLE);
+        String username = prefs.getString("doc_username", "");
+        this.username.setText(username);
+        String password = prefs.getString("doc_password", "");
+        this.password.setText(password);
+    }
+
+    private void saveLoginHistoryInfo()
+    {
+        SharedPreferences.Editor editor = getSharedPreferences("HDoctor", MODE_WORLD_WRITEABLE).edit();
+        editor.putString("doc_username", this.username.getText().toString());
+        editor.putString("doc_password", this.password.getText().toString());
+        editor.commit();
     }
 }
