@@ -2,6 +2,7 @@ package iori.hdoctor.activity;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.text.TextUtils;
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.EditText;
@@ -15,6 +16,7 @@ import iori.hdoctor.net.HttpRequest;
 import iori.hdoctor.net.NetworkAPI;
 import iori.hdoctor.net.NetworkConnectListener;
 import iori.hdoctor.net.response.DoctorLoginResponse;
+import iori.hdoctor.util.DateUtil;
 
 /**
  * Created by Administrator on 2015/7/11.
@@ -29,12 +31,21 @@ public class DoctorLoginActivity extends BaseActivity implements NetworkConnectL
 
     @OnClick(R.id.register)
     public void register() {
-        startActivity(new Intent(DoctorLoginActivity.this, DoctorRegisterPhoneActivity.class));
+        if (DateUtil.LoginFlag()) {
+            startActivity(new Intent(DoctorLoginActivity.this, DoctorRegisterPhoneActivity.class));
+        }else
+            showToast("不好意思，已过试用期了");
     }
 
     @OnClick(R.id.login)
     public void login() {
-        NetworkAPI.getNetworkAPI().login(username.getText().toString(), password.getText().toString(), showProgressDialog(), DoctorLoginActivity.this);
+        if (DateUtil.LoginFlag()) {
+            if (TextUtils.isEmpty(username.getText().toString()) || TextUtils.isEmpty(password.getText().toString())){
+                showToast("用户名或密码不能为空");
+            }else
+                NetworkAPI.getNetworkAPI().login(username.getText().toString(), password.getText().toString(), showProgressDialog(), DoctorLoginActivity.this);
+        }else
+            showToast("不好意思，已过试用期了");
     }
 
     @Override
@@ -76,7 +87,6 @@ public class DoctorLoginActivity extends BaseActivity implements NetworkConnectL
 
     @Override
     public void onRequestFailure(int error, String errorMsg, String requestAction) {
-        startActivity(new Intent(DoctorLoginActivity.this, DoctorMainActivity.class));
         showToast(errorMsg);
         dismissProgressDialog();
     }

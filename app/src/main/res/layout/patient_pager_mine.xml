@@ -108,7 +108,7 @@
     <View style="@style/divider_line_horizontal"/>
 
     <View style="@style/divider_line_horizontal"
-        android:layout_marginTop="@dimen/global_line_padding"/>
+        android:layout_marginTop="@dimen/global_padding"/>
 
     <LinearLayout style="@style/LayerMainMyItem">
 
@@ -156,7 +156,7 @@
     <View style="@style/divider_line_horizontal"/>
 
     <View style="@style/divider_line_horizontal"
-        android:layout_marginTop="@dimen/global_line_padding"/>
+        android:layout_marginTop="@dimen/global_padding"/>
 
     <LinearLayout
         android:id="@+id/wdzl"

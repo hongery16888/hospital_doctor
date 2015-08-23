@@ -16,6 +16,7 @@ import iori.hdoctor.net.HttpRequest;
 import iori.hdoctor.net.NetworkAPI;
 import iori.hdoctor.net.NetworkConnectListener;
 import iori.hdoctor.net.response.PatientLoginResponse;
+import iori.hdoctor.util.DateUtil;
 
 /**
  * Created by Administrator on 2015/7/11.
@@ -29,16 +30,22 @@ public class PatientLoginActivity extends BaseActivity implements NetworkConnect
 
     @OnClick(R.id.register)
     public void register() {
-        startActivity(new Intent(PatientLoginActivity.this, PatientRegisterPhoneActivity.class));
+        if (DateUtil.LoginFlag()) {
+            startActivity(new Intent(PatientLoginActivity.this, PatientRegisterPhoneActivity.class));
+        } else
+            showToast("不好意思，已过试用期了");
     }
 
     @OnClick(R.id.login)
     public void login() {
-        if (TextUtils.isEmpty(username.getText().toString()) || TextUtils.isEmpty(password.getText().toString())){
-            showToast("用户名或密码不能为空");
-        }else
-            NetworkAPI.getNetworkAPI().patlogin(username.getText().toString(), password.getText().toString(),
-                showProgressDialog(), this);
+        if (DateUtil.LoginFlag()) {
+            if (TextUtils.isEmpty(username.getText().toString()) || TextUtils.isEmpty(password.getText().toString())) {
+                showToast("用户名或密码不能为空");
+            } else
+                NetworkAPI.getNetworkAPI().patlogin(username.getText().toString(), password.getText().toString(),
+                        showProgressDialog(), this);
+        } else
+            showToast("不好意思，已过试用期了");
     }
 
     @Override
@@ -85,16 +92,15 @@ public class PatientLoginActivity extends BaseActivity implements NetworkConnect
 
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
-        if(keyCode == KeyEvent.KEYCODE_BACK || keyCode == KeyEvent.KEYCODE_HOME){
-            Intent intent=new Intent(Intent.ACTION_MAIN);
+        if (keyCode == KeyEvent.KEYCODE_BACK || keyCode == KeyEvent.KEYCODE_HOME) {
+            Intent intent = new Intent(Intent.ACTION_MAIN);
             intent.addCategory(Intent.CATEGORY_HOME);
             startActivity(intent);
         }
         return super.onKeyDown(keyCode, event);
     }
 
-    private void getLoginHistoryInfo()
-    {
+    private void getLoginHistoryInfo() {
         SharedPreferences prefs = getSharedPreferences("HDoctor", MODE_WORLD_WRITEABLE);
         String username = prefs.getString("pat_username", "");
         this.username.setText(username);
@@ -102,8 +108,7 @@ public class PatientLoginActivity extends BaseActivity implements NetworkConnect
         this.password.setText(password);
     }
 
-    private void saveLoginHistoryInfo()
-    {
+    private void saveLoginHistoryInfo() {
         SharedPreferences.Editor editor = getSharedPreferences("HDoctor", MODE_WORLD_WRITEABLE).edit();
         editor.putString("pat_username", this.username.getText().toString());
         editor.putString("pat_password", this.password.getText().toString());

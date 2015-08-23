@@ -78,18 +78,11 @@ public class PatientWDDDInfoActivity extends BaseActivity implements NetworkConn
             name.setText(((PatientWDDDInfoResponse) data).getRealname());
             price.setText(((PatientWDDDInfoResponse) data).getPrice() + "元");
             price2.setText(((PatientWDDDInfoResponse) data).getPrice() + "元");
+            status.setText("已消费");
             orderId.setText(((PatientWDDDInfoResponse) data).getOrderid());
             time.setText(((PatientWDDDInfoResponse) data).getYuyuetime());
-            if (((PatientWDDDInfoResponse) data).getZixunname().equals("1")) {
-                type.setText("电话咨询");
-                type2.setText("电话咨询");
-            } else if (((PatientWDDDInfoResponse) data).getZixunname().equals("2")) {
-                type.setText("在线咨询");
-                type2.setText("在线咨询");
-            } else if (((PatientWDDDInfoResponse) data).getZixunname().equals("3")) {
-                type.setText("预约咨询");
-                type2.setText("预约咨询");
-            }
+            type.setText(((PatientWDDDInfoResponse) data).getZixunname());
+            type2.setText(((PatientWDDDInfoResponse) data).getZixunname());
         }
         dismissProgressDialog();
     }

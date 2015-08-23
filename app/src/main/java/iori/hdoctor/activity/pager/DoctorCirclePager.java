@@ -16,6 +16,7 @@ import com.handmark.pulltorefresh.library.PullToRefreshListView;
 import java.util.ArrayList;
 
 import iori.hdoctor.R;
+import iori.hdoctor.activity.DoctorCircleYSActivity;
 import iori.hdoctor.activity.DoctorPublicActivity;
 import iori.hdoctor.activity.DoctorCircleInfoActivity;
 import iori.hdoctor.activity.DoctorFriendActivity;
@@ -76,6 +77,7 @@ public class DoctorCirclePager extends BasePager implements NetworkConnectListen
             }
         });
         view.findViewById(R.id.sq).setOnClickListener(sqListener);
+        view.findViewById(R.id.ysq).setOnClickListener(ysqListener);
         view.findViewById(R.id.hy).setOnClickListener(hyListener);
         view.findViewById(R.id.xx).setOnClickListener(xxListener);
 
@@ -118,6 +120,13 @@ public class DoctorCirclePager extends BasePager implements NetworkConnectListen
         @Override
         public void onClick(View v) {
             context.startActivity(new Intent(context, DoctorPublicActivity.class));
+        }
+    };
+
+    private View.OnClickListener ysqListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            context.startActivity(new Intent(context, DoctorCircleYSActivity.class));
         }
     };
 

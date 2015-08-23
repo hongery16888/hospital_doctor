@@ -26,13 +26,13 @@
             android:id="@+id/name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/doctor_personal_name"
             android:textColor="@color/white"
             android:textSize="@dimen/global_title_size"
             android:paddingBottom="@dimen/global_line_padding"/>
     </LinearLayout>
 
-    <LinearLayout style="@style/LayerMainMyItem">
+    <LinearLayout style="@style/LayerMainMyItem"
+        android:visibility="gone">
 
         <TextView style="@style/TxtMainMyItem"
             android:text="@string/doctor_doc_info_dt"
@@ -54,7 +54,6 @@
         <TextView
             android:id="@+id/signature"
             style="@style/TxtMainMyItem"
-            android:text="@string/doctor_doc_info_remark_ex"
             android:textColor="@color/grey_deep"/>
 
         <ImageView style="@style/ImageMainMyItemNext" />
@@ -72,8 +71,7 @@
 
         <TextView
             android:id="@+id/age"
-            style="@style/TxtMainMyItem"
-            android:text="@string/doctor_doc_info_age_ex" />
+            style="@style/TxtMainMyItem"/>
 
         <ImageView style="@style/ImageMainMyItemNext" />
 
@@ -90,8 +88,7 @@
 
         <TextView
             android:id="@+id/adds"
-            style="@style/TxtMainMyItem"
-            android:text="@string/doctor_doc_info_adds_ex" />
+            style="@style/TxtMainMyItem" />
 
         <ImageView style="@style/ImageMainMyItemNext" />
 

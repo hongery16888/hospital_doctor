@@ -1,6 +1,7 @@
 package iori.hdoctor.activity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.widget.TextView;
@@ -20,6 +21,7 @@ public class PatientSettingActivity extends BaseActivity {
 
     @OnClick(R.id.logout)
     public void logout(){
+        saveLoginHistoryInfo();
         startActivity(new Intent(PatientSettingActivity.this, PatientLoginActivity.class));
         getApp().getMainActivity().finish();
         finish();
@@ -57,4 +59,9 @@ public class PatientSettingActivity extends BaseActivity {
         }
     }
 
+    private void saveLoginHistoryInfo() {
+        SharedPreferences.Editor editor = getSharedPreferences("HDoctor", MODE_WORLD_WRITEABLE).edit();
+        editor.putString("pat_password", "");
+        editor.commit();
+    }
 }

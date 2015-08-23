@@ -66,7 +66,7 @@
     <View style="@style/divider_line_horizontal"/>
 
     <View style="@style/divider_line_horizontal"
-        android:layout_marginTop="@dimen/global_line_padding"/>
+        android:layout_marginTop="@dimen/global_padding"/>
 
     <LinearLayout
         android:id="@+id/zhzx"
@@ -98,8 +98,38 @@
 
     <View style="@style/divider_line_horizontal"/>
 
+    <LinearLayout style="@style/LayerMainMyItem">
+
+        <TextView
+            android:id="@+id/wdsc"
+            style="@style/TxtMainMyItem"
+            android:text="@string/patient_mine_wdsc"
+            android:textColor="@color/global_title_color"
+            android:drawableLeft="@drawable/icon_wo_wdsc"/>
+
+        <ImageView style="@style/ImageMainMyItemNext" />
+
+    </LinearLayout>
+
+    <View style="@style/divider_line_horizontal"/>
+
+    <LinearLayout style="@style/LayerMainMyItem">
+
+        <TextView
+            android:id="@+id/wdfb"
+            style="@style/TxtMainMyItem"
+            android:text="@string/patient_mine_wdfb"
+            android:textColor="@color/global_title_color"
+            android:drawableLeft="@drawable/icon_wo_wdfb"/>
+
+        <ImageView style="@style/ImageMainMyItemNext" />
+
+    </LinearLayout>
+
+    <View style="@style/divider_line_horizontal"/>
+
     <View style="@style/divider_line_horizontal"
-        android:layout_marginTop="@dimen/global_line_padding"/>
+        android:layout_marginTop="@dimen/global_padding"/>
 
     <LinearLayout
         android:id="@+id/wdzl"

@@ -31,17 +31,21 @@ public class DoctorZHZXctivity extends BaseActivity implements NetworkConnectLis
     @InjectView(R.id.wchat)
     EditText wchat;
 
+    private boolean isModify = false;
+
     @OnClick(R.id.confirm)
     public void confirm() {
         if (TextUtils.isEmpty(passwrod.getText().toString()))
             showToast("密码不能为空");
-        else
+        else {
             NetworkAPI.getNetworkAPI().docaccount(passwrod.getText().toString(),
                     phone.getText().toString(),
                     qq.getText().toString(),
                     wchat.getText().toString(),
                     showProgressDialog(),
                     this);
+            isModify = true;
+        }
     }
 
     @Override
@@ -67,7 +71,8 @@ public class DoctorZHZXctivity extends BaseActivity implements NetworkConnectLis
             phone.setText(((DoctorZHZXResponse)data).getBindingphone());
             qq.setText(((DoctorZHZXResponse)data).getBindingqq());
             wchat.setText(((DoctorZHZXResponse)data).getBindingwei());
-            finish();
+            if (isModify)
+                finish();
         }
         dismissProgressDialog();
     }

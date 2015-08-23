@@ -18,21 +18,21 @@ import butterknife.ButterKnife;
 import butterknife.InjectView;
 import iori.hdoctor.R;
 import iori.hdoctor.net.HttpRequest;
-import iori.hdoctor.net.entity.PatientWDFB;
-import iori.hdoctor.net.entity.PatientWDSC;
+import iori.hdoctor.net.entity.DocCircle;
 import iori.hdoctor.view.CircleBitmapDisplayer;
 
-public class PatientWDSCAdapter extends BaseAdapter {
+public class DoctorMyAdapter extends BaseAdapter {
 
-	private ArrayList<PatientWDSC> data = new ArrayList<>();
+	private ArrayList<DocCircle> data = new ArrayList<>();
 	private Context context;
 	private ImageLoader imageLoader = ImageLoader.getInstance();
 	private DisplayImageOptions options;
 	private Handler handler;
 
-	public PatientWDSCAdapter(Context context, ArrayList<PatientWDSC> patientWDFBs, Handler handler) {
+	public DoctorMyAdapter(Context context, ArrayList<DocCircle> docCircles, Handler handler) {
 		this.context = context;
-		data.addAll(patientWDFBs);
+		if (docCircles != null)
+			data.addAll(docCircles);
 		this.handler = handler;
 		options = new DisplayImageOptions.Builder()
 				.showImageOnLoading(R.drawable.img_avater_blgl_head)
@@ -43,7 +43,6 @@ public class PatientWDSCAdapter extends BaseAdapter {
 				.displayer(new CircleBitmapDisplayer())
 				.build();
 	}
-
 	@Override
 	public int getCount() {
 		// TODO Auto-generated method stub
@@ -67,7 +66,7 @@ public class PatientWDSCAdapter extends BaseAdapter {
 		if (view != null) {
 			holder = (ViewHolder) view.getTag();
 		} else {
-			view = LayoutInflater.from(context).inflate(R.layout.patient_wdsc_item, parent, false);
+			view = LayoutInflater.from(context).inflate(R.layout.doctor_my_item, parent, false);
 			holder = new ViewHolder(view);
 			view.setTag(holder);
 		}
@@ -78,6 +77,7 @@ public class PatientWDSCAdapter extends BaseAdapter {
 		holder.content.setText(data.get(position).getContent());
 		holder.best.setText(data.get(position).getBest());
 		holder.commentnum.setText(data.get(position).getCommentnum());
+		holder.best.setTag(position);
 
 		holder.del.setTag(position);
 		holder.del.setOnClickListener(new View.OnClickListener() {
@@ -110,11 +110,12 @@ public class PatientWDSCAdapter extends BaseAdapter {
 		public ViewHolder(View view) {
 			ButterKnife.inject(this, view);
 		}
+
 	}
 
-	public void addData(ArrayList<PatientWDSC> patientWDSCs){
+	public void setData(ArrayList<DocCircle> patCircles){
 		data.clear();
-		data.addAll(patientWDSCs);
+		data.addAll(patCircles);
 		notifyDataSetChanged();
 	}
 }

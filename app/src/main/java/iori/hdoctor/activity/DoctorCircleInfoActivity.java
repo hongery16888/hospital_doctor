@@ -56,6 +56,8 @@ public class DoctorCircleInfoActivity extends BaseActivity implements NetworkCon
     public void zan(){
         if (getIntent().getStringExtra("type") != null && getIntent().getStringExtra("type").equals("allpublic"))
             NetworkAPI.getNetworkAPI().docpubliczan(getIntent().getStringExtra("frumid"), showProgressDialog(), DoctorCircleInfoActivity.this);
+        else if (getIntent().getStringExtra("type") != null && getIntent().getStringExtra("type").equals("circle_ys"))
+            NetworkAPI.getNetworkAPI().docquanzan(getIntent().getStringExtra("frumid"), showProgressDialog(), DoctorCircleInfoActivity.this);
         else
             NetworkAPI.getNetworkAPI().doccirclezan(getIntent().getStringExtra("frumid"), showProgressDialog(), DoctorCircleInfoActivity.this);
     }

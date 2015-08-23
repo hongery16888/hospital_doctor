@@ -76,9 +76,9 @@ public class PatientWDDDAdapter extends BaseAdapter {
 		holder.name.setText(data.get(position).getRealname());
 		holder.price.setText("￥" + data.get(position).getPrice() + "元");
 //		holder.type.setText(data.get(position).getType());
-		if (data.get(position).getType().equals("1"))
+		if (data.get(position).getType().equals("2"))
 			holder.type.setText("电话咨询");
-		else if (data.get(position).getType().equals("2"))
+		else if (data.get(position).getType().equals("1"))
 			holder.type.setText("在线咨询");
 		else if (data.get(position).getType().equals("3"))
 			holder.type.setText("预约咨询");

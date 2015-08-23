@@ -152,6 +152,12 @@ public interface HttpRequest {
 	public static final String PATH_DOC_PUBLISH = BASIC_PATH + "user/docrelease";
 	public static final String DOC_SHOUCANG = "docshoucang";
 	public static final String PATH_DOC_SHOUCANG = BASIC_PATH + "user/docshoucang";
+	public static final String DOC_MY_FABIAO = "docmyfabiao";
+	public static final String PATH_DOC_MY_FABIAO = BASIC_PATH + "user/docmyfabiao";
+	public static final String DOC_MY_SHOUCANG = "docmyshoucang";
+	public static final String PATH_DOC_MY_SHOUCANG = BASIC_PATH + "user/docmyshoucang";
+	public static final String DOC_CIRCLE_YS = "docquan";
+	public static final String PATH_DOC_CIRCLE_YS = BASIC_PATH + "user/docquan";
 
 
 	/** 06、检查更新 **/

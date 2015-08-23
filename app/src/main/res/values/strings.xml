@@ -180,7 +180,8 @@
 
     <!-- 圈子 -->
     <string name="doctor_circle_title_main">圈子</string>
-    <string name="doctor_circle_sq">社区</string>
+    <string name="doctor_circle_sq">公共社区</string>
+    <string name="doctor_circle_ysq">医生圈</string>
     <string name="doctor_circle_hy">好友</string>
     <string name="doctor_circle_xx">消息</string>
     <string name="doctor_circle_item_content">昨天我刚刚下载的这款APP可以时时关注自已的健康状况，整的很好用，推荐给你们不用谢！嘿嘿！</string>
@@ -406,7 +407,7 @@
     <string name="patient_wddd_title_main">我的订单</string>
     <string name="patient_wddd_all_order">全部订单</string>
     <string name="patient_wddd_wait_order">待评价</string>
-    <string name="patient_wddd_item_price">￥5元</string>
+    <string name="patient_wddd_item_price">￥0元</string>
     <string name="patient_wddd_item_type">在线咨询</string>
     <string name="patient_wddd_item_reply">立即评价 >></string>
 

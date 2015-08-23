@@ -18,6 +18,8 @@ import com.nostra13.universalimageloader.core.assist.ImageScaleType;
 import iori.hdoctor.R;
 import iori.hdoctor.activity.DoctorGRZXActivity;
 import iori.hdoctor.activity.DoctorMainActivity;
+import iori.hdoctor.activity.DoctorMyFaBiaoActivity;
+import iori.hdoctor.activity.DoctorMyShouCangActivity;
 import iori.hdoctor.activity.DoctorSRXQActivity;
 import iori.hdoctor.activity.DoctorSettingActivity;
 import iori.hdoctor.activity.DoctorZHZXctivity;
@@ -83,6 +85,8 @@ public class DoctorMinePager extends BasePager implements View.OnClickListener, 
         view.findViewById(R.id.zhzx).setOnClickListener(this);
         view.findViewById(R.id.szzx).setOnClickListener(this);
         view.findViewById(R.id.wdzl).setOnClickListener(this);
+        view.findViewById(R.id.wdfb).setOnClickListener(this);
+        view.findViewById(R.id.wdsc).setOnClickListener(this);
 
         ((DoctorMainActivity) context).getApp().setAvatarHandler(avatarHandler);
 
@@ -103,6 +107,12 @@ public class DoctorMinePager extends BasePager implements View.OnClickListener, 
                 break;
             case R.id.wdzl:
                 context.startActivity(new Intent(context, DoctorGRZXActivity.class));
+                break;
+            case R.id.wdfb:
+                context.startActivity(new Intent(context, DoctorMyFaBiaoActivity.class));
+                break;
+            case R.id.wdsc:
+                context.startActivity(new Intent(context, DoctorMyShouCangActivity.class));
                 break;
             default:
                 break;

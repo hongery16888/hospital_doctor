@@ -8,7 +8,7 @@
 
     <include layout="@layout/title_bar" />
 
-    <com.handmark.pulltorefresh.library.PullToRefreshListView
+    <ListView
         android:id="@+id/circle_sq_listview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -17,7 +17,6 @@
         android:layout_gravity="start"
         android:choiceMode="singleChoice"
         android:dividerHeight="@dimen/global_padding"
-        android:background="@color/white"
-        ptr:ptrHeaderTextColor="@color/global_title_color"/>
+        android:background="@color/white"/>
 
 </LinearLayout>

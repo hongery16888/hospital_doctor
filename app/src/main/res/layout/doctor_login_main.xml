@@ -59,7 +59,8 @@
             android:hint="@string/password_hint"
             android:textColor="@color/black_color"
             android:textSize="@dimen/global_title_size"
-            android:drawableLeft="@drawable/icon_login_pwd"/>
+            android:drawableLeft="@drawable/icon_login_pwd"
+            android:password="true"/>
 
     </LinearLayout>
 

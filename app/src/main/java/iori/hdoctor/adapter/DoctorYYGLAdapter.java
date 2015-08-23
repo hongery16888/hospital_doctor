@@ -91,8 +91,8 @@ public class DoctorYYGLAdapter extends BaseAdapter {
 		holder.bingli.setText(data.get(position).getBingli());
 		holder.describe.setText(data.get(position).getDescribe());
 
-		holder.date.setText(DateUtil.long2Date(Long.parseLong(data.get(position).getYuyuetime()), "yyyy-MM-dd"));
-		holder.time.setText(DateUtil.long2Date(Long.parseLong(data.get(position).getYuyuetime()), "HH:mm"));
+		holder.date.setText(DateUtil.getDates(data.get(position).getYuyuetime(), "yyyy-MM-dd HH:mm:ss",  "yyyy-MM-dd"));
+		holder.time.setText(DateUtil.getDates(data.get(position).getYuyuetime(), "yyyy-MM-dd HH:mm:ss", "HH:mm"));
 		holder.confirm.setTag(data.get(position).getOrderid());
 		if (data.get(position).getIsok() == HDoctorCode.DONE)
 			holder.confirm.setVisibility(View.INVISIBLE);

@@ -13,6 +13,7 @@ public class DocCircle {
     private String content;
     private String commentnum;
     private String best;
+    private String collectionid;
 
     public String getPubuid() {
         return pubuid;
@@ -76,5 +77,13 @@ public class DocCircle {
 
     public void setBest(String best) {
         this.best = best;
+    }
+
+    public String getCollectionid() {
+        return collectionid;
+    }
+
+    public void setCollectionid(String collectionid) {
+        this.collectionid = collectionid;
     }
 }

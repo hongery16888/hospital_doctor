@@ -27,14 +27,12 @@
             android:layout_weight="2"
             android:gravity="center_vertical"
             android:paddingLeft="@dimen/global_padding"
-            android:text="@string/blgl_item_name"
             android:textColor="@color/top_bar_bg" />
 
         <TextView
             android:id="@+id/sex"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/blgl_item_sex"
             android:textColor="@color/global_sub_title_color"
             android:textSize="@dimen/global_title_size"
             android:gravity="center_horizontal"/>
@@ -53,7 +51,6 @@
             android:id="@+id/time"
             style="@style/TxtMainMyItem"
             android:layout_weight="1.5"
-            android:text="@string/blgl_item_time"
             android:textColor="@color/global_sub_title_color"
             android:textSize="@dimen/global_title_size"
             android:gravity="center_horizontal"/>
@@ -71,9 +68,7 @@
             android:id="@+id/photo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="@dimen/global_padding"
-            android:background="@drawable/blgl_info_head_fuzzy"
-            android:src="@drawable/blgl_info_head" />
+            android:layout_margin="@dimen/global_padding"/>
 
     </LinearLayout>
 
@@ -98,7 +93,6 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="@string/blgl_item_illness_ex"
             android:textColor="@color/grey_deep"
             android:textSize="@dimen/global_title_size" />
 
@@ -125,7 +119,6 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="@string/blgl_item_description_ex"
             android:textColor="@color/grey_deep"
             android:textSize="@dimen/global_title_size" />
 

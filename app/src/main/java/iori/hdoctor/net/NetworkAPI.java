@@ -21,11 +21,17 @@ import iori.hdoctor.net.request.DoctorChuSetRequest;
 import iori.hdoctor.net.request.DoctorChuZhenRequest;
 import iori.hdoctor.net.request.DoctorCircleInfoRequest;
 import iori.hdoctor.net.request.DoctorCircleRequest;
+import iori.hdoctor.net.request.DoctorCircleYSRequest;
+import iori.hdoctor.net.request.DoctorCircleYSZanRequest;
 import iori.hdoctor.net.request.DoctorCircleZanRequest;
 import iori.hdoctor.net.request.DoctorDelBankRequest;
 import iori.hdoctor.net.request.DoctorLoginRequest;
 import iori.hdoctor.net.request.DoctorMessageRequest;
 import iori.hdoctor.net.request.DoctorModifyBankRequest;
+import iori.hdoctor.net.request.DoctorMyFaBiaoDelRequest;
+import iori.hdoctor.net.request.DoctorMyFaBiaoRequest;
+import iori.hdoctor.net.request.DoctorMyShouCangDelRequest;
+import iori.hdoctor.net.request.DoctorMyShouCangRequest;
 import iori.hdoctor.net.request.DoctorPersonalRequest;
 import iori.hdoctor.net.request.DoctorPublicRequest;
 import iori.hdoctor.net.request.DoctorPublicZanRequest;
@@ -85,6 +91,7 @@ import iori.hdoctor.net.request.PatientWDDDInfoRequest;
 import iori.hdoctor.net.request.PatientWDDDRequest;
 import iori.hdoctor.net.request.PatientWDFBDelRequest;
 import iori.hdoctor.net.request.PatientWDFBRequest;
+import iori.hdoctor.net.request.PatientWDSCDelRequest;
 import iori.hdoctor.net.request.PatientWDSCRequest;
 import iori.hdoctor.net.request.PatientWDYXRequest;
 import iori.hdoctor.net.request.PatientWDYYRequest;
@@ -92,6 +99,9 @@ import iori.hdoctor.net.request.PatientZHZXModifyRequest;
 import iori.hdoctor.net.request.PatientZHZXRequest;
 import iori.hdoctor.net.response.DoctorCircleInfoResponse;
 import iori.hdoctor.net.response.DoctorCircleResponse;
+import iori.hdoctor.net.response.DoctorCircleYSResponse;
+import iori.hdoctor.net.response.DoctorMyFaBiaoResponse;
+import iori.hdoctor.net.response.DoctorMyShouCangResponse;
 import iori.hdoctor.net.response.DoctorPublicResponse;
 import iori.hdoctor.net.response.PatientCircleInfoResponse;
 import iori.hdoctor.net.response.PatientCircleResponse;
@@ -482,6 +492,11 @@ public class NetworkAPI implements HttpRequest {
 		mConnection.sendRequestByPost(request, diag, PatientWDSCResponse.class, listener);
 	}
 
+	public void delcollection(String collectionid, RequestProgressDialog diag, NetworkConnectListener listener){
+		PatientWDSCDelRequest request = new PatientWDSCDelRequest(collectionid, HDoctorCode.YES);
+		mConnection.sendRequestByPost(request, diag, PatientWDSCResponse.class, listener);
+	}
+
 	public void patcircle(RequestProgressDialog diag, NetworkConnectListener listener){
 		PatientCircleRequest request = new PatientCircleRequest();
 		mConnection.sendRequestByPost(request, diag, PatientCircleResponse.class, listener);
@@ -542,6 +557,16 @@ public class NetworkAPI implements HttpRequest {
 		mConnection.sendRequestByPost(request, diag, DoctorPublicResponse.class, listener);
 	}
 
+	public void docquan(RequestProgressDialog diag, NetworkConnectListener listener){
+		DoctorCircleYSRequest request = new DoctorCircleYSRequest();
+		mConnection.sendRequestByPost(request, diag, DoctorCircleYSResponse.class, listener);
+	}
+
+	public void docquanzan(String frumid, RequestProgressDialog diag, NetworkConnectListener listener){
+		DoctorCircleYSZanRequest request = new DoctorCircleYSZanRequest(frumid, HDoctorCode.YES);
+		mConnection.sendRequestByPost(request, diag, DoctorCircleYSResponse.class, listener);
+	}
+
 	public void docpubliczan(String frumid, RequestProgressDialog diag, NetworkConnectListener listener){
 		DoctorPublicZanRequest request = new DoctorPublicZanRequest(frumid, HDoctorCode.YES);
 		mConnection.sendRequestByPost(request, diag, DoctorPublicResponse.class, listener);
@@ -570,5 +595,25 @@ public class NetworkAPI implements HttpRequest {
 	public void docpublishnoimg(String content, String ispublic, RequestProgressDialog diag, NetworkConnectListener listener){
 		DoctorPublishNoImgRequest request = new DoctorPublishNoImgRequest(content, ispublic, HDoctorCode.YES);
 		mConnection.sendRequestByPost(request, diag, EmptyResponse.class, listener);
+	}
+
+	public void docmyfabiao(RequestProgressDialog diag, NetworkConnectListener listener){
+		DoctorMyFaBiaoRequest request = new DoctorMyFaBiaoRequest();
+		mConnection.sendRequestByPost(request, diag, DoctorMyFaBiaoResponse.class, listener);
+	}
+
+	public void deldocmyfabiao(String frumid, RequestProgressDialog diag, NetworkConnectListener listener){
+		DoctorMyFaBiaoDelRequest request = new DoctorMyFaBiaoDelRequest(frumid, HDoctorCode.YES);
+		mConnection.sendRequestByPost(request, diag, DoctorMyFaBiaoResponse.class, listener);
+	}
+
+	public void docmyshoucang(RequestProgressDialog diag, NetworkConnectListener listener){
+		DoctorMyShouCangRequest request = new DoctorMyShouCangRequest();
+		mConnection.sendRequestByPost(request, diag, DoctorMyShouCangResponse.class, listener);
+	}
+
+	public void deldocmyshoucang(String collectionid, RequestProgressDialog diag, NetworkConnectListener listener){
+		DoctorMyShouCangDelRequest request = new DoctorMyShouCangDelRequest(collectionid, HDoctorCode.YES);
+		mConnection.sendRequestByPost(request, diag, DoctorMyShouCangResponse.class, listener);
 	}
 }

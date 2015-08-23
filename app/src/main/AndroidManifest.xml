@@ -86,6 +86,9 @@
         <activity android:name=".activity.PatientSettingActivity" android:screenOrientation="portrait" />
         <activity android:name=".activity.PatientPublishActivity" android:screenOrientation="portrait" />
         <activity android:name=".activity.DoctorPublishActivity" android:screenOrientation="portrait" />
+        <activity android:name=".activity.DoctorMyFaBiaoActivity" android:screenOrientation="portrait" />
+        <activity android:name=".activity.DoctorMyShouCangActivity" android:screenOrientation="portrait" />
+        <activity android:name=".activity.DoctorCircleYSActivity" android:screenOrientation="portrait" />
     </application>
 
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />

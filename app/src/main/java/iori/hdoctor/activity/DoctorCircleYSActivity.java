@@ -20,12 +20,13 @@ import iori.hdoctor.net.HttpRequest;
 import iori.hdoctor.net.NetworkAPI;
 import iori.hdoctor.net.NetworkConnectListener;
 import iori.hdoctor.net.entity.DocCircle;
+import iori.hdoctor.net.response.DoctorCircleYSResponse;
 import iori.hdoctor.net.response.DoctorPublicResponse;
 
 /**
  * Created by Administrator on 2015/7/11.
  */
-public class DoctorPublicActivity extends BaseActivity implements NetworkConnectListener{
+public class DoctorCircleYSActivity extends BaseActivity implements NetworkConnectListener{
 
     private DoctorCircleAdapter adapter;
     private ArrayList<DocCircle> docCircles = new ArrayList<>();
@@ -37,7 +38,7 @@ public class DoctorPublicActivity extends BaseActivity implements NetworkConnect
         @Override
         public void handleMessage(Message msg) {
             super.handleMessage(msg);
-            NetworkAPI.getNetworkAPI().allpublic(showProgressDialog(), DoctorPublicActivity.this);
+            NetworkAPI.getNetworkAPI().docquan(showProgressDialog(), DoctorCircleYSActivity.this);
         }
     };
 
@@ -45,7 +46,7 @@ public class DoctorPublicActivity extends BaseActivity implements NetworkConnect
         @Override
         public void handleMessage(Message msg) {
             super.handleMessage(msg);
-            NetworkAPI.getNetworkAPI().docpubliczan(docCircles.get(msg.what).getFrumid(), showProgressDialog(), DoctorPublicActivity.this);
+            NetworkAPI.getNetworkAPI().docquanzan(docCircles.get(msg.what).getFrumid(), showProgressDialog(), DoctorCircleYSActivity.this);
         }
     };
 
@@ -69,27 +70,27 @@ public class DoctorPublicActivity extends BaseActivity implements NetworkConnect
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent intent = new Intent(DoctorPublicActivity.this, DoctorCircleInfoActivity.class);
+                Intent intent = new Intent(DoctorCircleYSActivity.this, DoctorCircleInfoActivity.class);
                 intent.putExtra("frumid", docCircles.get(position - 1).getFrumid());
-                intent.putExtra("type", "allpublic");
+                intent.putExtra("type", "circle_ys");
                 startActivity(intent);
             }
         });
         listView.setOnRefreshListener(new PullToRefreshBase.OnRefreshListener<ListView>() {
             @Override
             public void onRefresh(PullToRefreshBase<ListView> pullToRefreshBase) {
-                NetworkAPI.getNetworkAPI().allpublic(null, DoctorPublicActivity.this);
+                NetworkAPI.getNetworkAPI().docquan(null, DoctorCircleYSActivity.this);
             }
         });
 
-        NetworkAPI.getNetworkAPI().allpublic(showProgressDialog(), DoctorPublicActivity.this);
+        NetworkAPI.getNetworkAPI().docquan(showProgressDialog(), DoctorCircleYSActivity.this);
     }
 
     @Override
     public void onRequestSucceed(Object data, String requestAction) {
-        if (HttpRequest.DOC_ALL_PUBLISH.equals(requestAction)){
+        if (HttpRequest.DOC_CIRCLE_YS.equals(requestAction)){
             docCircles.clear();
-            docCircles.addAll(((DoctorPublicResponse) data).getAllpubliclist());
+            docCircles.addAll(((DoctorCircleYSResponse) data).getYishenglist());
             adapter.setData(docCircles);
         }
         listView.onRefreshComplete();
@@ -106,7 +107,7 @@ public class DoctorPublicActivity extends BaseActivity implements NetworkConnect
     private View.OnClickListener publishListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            startActivity(new Intent(DoctorPublicActivity.this, DoctorPublishActivity.class));
+            startActivity(new Intent(DoctorCircleYSActivity.this, DoctorPublishActivity.class));
         }
     };
 

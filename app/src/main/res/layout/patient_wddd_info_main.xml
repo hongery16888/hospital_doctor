@@ -29,7 +29,6 @@
                 android:id="@+id/hospital"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/patient_wdyy_item_yy"
                 android:textColor="@color/global_title_color"
                 android:textSize="@dimen/global_title_size" />
 
@@ -39,7 +38,6 @@
                 android:layout_height="wrap_content"
                 android:paddingTop="@dimen/five_dip"
                 android:singleLine="true"
-                android:text="@string/patient_wdyy_item_name"
                 android:textColor="@color/global_title_color"
                 android:textSize="@dimen/global_title_size" />
         </LinearLayout>
@@ -57,7 +55,6 @@
                 android:id="@+id/price"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/patient_wddd_item_price"
                 android:textColor="@color/red"
                 android:textSize="@dimen/global_third_title_size" />
 
@@ -67,7 +64,6 @@
                 android:layout_height="wrap_content"
                 android:paddingTop="@dimen/global_padding"
                 android:singleLine="true"
-                android:text="@string/patient_wddd_item_type"
                 android:textColor="@color/global_title_color"
                 android:textSize="@dimen/global_third_title_size" />
         </LinearLayout>
@@ -84,7 +80,6 @@
             android:id="@+id/status"
             style="@style/TxtMainMyItem"
             android:gravity="right"
-            android:text="已消费"
             android:paddingRight="@dimen/global_padding"/>
 
     </LinearLayout>
@@ -116,7 +111,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="22465486548654654"
             android:textColor="@color/global_title_color"
             android:paddingRight="@dimen/global_padding"/>
 
@@ -138,7 +132,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="2015-07-25 15:00:00"
             android:textColor="@color/global_title_color"
             android:paddingRight="@dimen/global_padding"/>
 
@@ -157,10 +150,10 @@
             android:textColor="@color/grey_deep"/>
 
         <TextView
+            android:id="@+id/type_2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="在线咨询"
             android:textColor="@color/global_title_color"
             android:paddingRight="@dimen/global_padding"/>
 
@@ -170,7 +163,6 @@
         android:layout_marginTop="@dimen/global_label">
 
         <TextView
-            android:id="@+id/type_2"
             style="@style/TxtMainMyItem"
             android:text="实付款："
             android:gravity="right"
@@ -180,7 +172,6 @@
             android:id="@+id/price_2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="￥：5元"
             android:textSize="@dimen/global_title_size"
             android:textColor="@color/red"
             android:paddingRight="@dimen/global_padding"/>
