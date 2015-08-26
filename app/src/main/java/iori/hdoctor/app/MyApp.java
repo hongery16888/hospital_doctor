@@ -2,14 +2,20 @@ package iori.hdoctor.app;
 
 import android.app.Activity;
 import android.app.Application;
+import android.app.Service;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Environment;
 import android.os.Handler;
+import android.os.Vibrator;
 import android.widget.TextView;
 
+import com.baidu.location.BDLocation;
+import com.baidu.location.BDLocationListener;
+import com.baidu.location.LocationClient;
+import com.baidu.mapapi.SDKInitializer;
 import com.nostra13.universalimageloader.cache.disc.impl.UnlimitedDiskCache;
 import com.nostra13.universalimageloader.cache.disc.naming.Md5FileNameGenerator;
 import com.nostra13.universalimageloader.cache.memory.impl.UsingFreqLimitedMemoryCache;
@@ -24,6 +30,7 @@ import com.nostra13.universalimageloader.utils.StorageUtils;
 
 import java.io.File;
 import java.util.ArrayList;
+import java.util.List;
 
 import iori.hdoctor.R;
 import iori.hdoctor.net.entity.TestingReport;
@@ -49,6 +56,12 @@ public class MyApp extends Application {
     private Handler circleRefreshHandler;
     private Activity mainActivity;
 
+    public LocationClient mLocationClient;
+    public Vibrator mVibrator;
+    public MyLocationListener mMyLocationListener;
+    private double latitude;
+    private double longitude;
+
     /*客户端在SD卡的存储根目录*/
     public final static String APP_ROOT = Environment.getExternalStorageDirectory().getPath() + File.separator;
     public final static String PHOTO_BASIC_PATH = "file://";
@@ -58,6 +71,14 @@ public class MyApp extends Application {
         density = getResources().getDisplayMetrics().density;
         super.onCreate();
         initImageLoader(getApplicationContext());
+
+        SDKInitializer.initialize(getApplicationContext());
+
+        mLocationClient = new LocationClient(this.getApplicationContext());
+        mMyLocationListener = new MyLocationListener();
+        mLocationClient.registerLocationListener(mMyLocationListener);
+        mVibrator =(Vibrator)getApplicationContext().getSystemService(Service.VIBRATOR_SERVICE);
+
     }
 
     /*
@@ -122,6 +143,18 @@ public class MyApp extends Application {
 
         //全局初始化此配置
         ImageLoader.getInstance().init(config);
+    }
+
+    /**
+     * 实现实时位置回调监听
+     */
+    public class MyLocationListener implements BDLocationListener {
+
+        @Override
+        public void onReceiveLocation(BDLocation location) {
+            setLatitude(location.getLatitude());
+            setLongitude(location.getLongitude());
+        }
     }
 
     public ArrayList<Activity> getActivities() {
@@ -242,5 +275,21 @@ public class MyApp extends Application {
 
     public void setMainActivity(Activity mainActivity) {
         this.mainActivity = mainActivity;
+    }
+
+    public double getLatitude() {
+        return latitude;
+    }
+
+    public void setLatitude(double latitude) {
+        this.latitude = latitude;
+    }
+
+    public double getLongitude() {
+        return longitude;
+    }
+
+    public void setLongitude(double longitude) {
+        this.longitude = longitude;
     }
 }

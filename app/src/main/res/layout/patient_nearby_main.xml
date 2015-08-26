@@ -86,6 +86,6 @@
         android:choiceMode="singleChoice"
         android:dividerHeight="@dimen/one_dip"
         android:background="@color/white"
-        android:layout_marginTop="@dimen/global_line_padding"/>
+        android:layout_marginTop="@dimen/global_padding"/>
 
 </LinearLayout>

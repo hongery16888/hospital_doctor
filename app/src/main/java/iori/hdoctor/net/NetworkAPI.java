@@ -78,11 +78,15 @@ import iori.hdoctor.net.request.PatientInfoImgRequest;
 import iori.hdoctor.net.request.PatientInfoNoImgRequest;
 import iori.hdoctor.net.request.PatientInfoRequest;
 import iori.hdoctor.net.request.PatientLoginRequest;
+import iori.hdoctor.net.request.PatientNearByDocRequest;
+import iori.hdoctor.net.request.PatientNearByHospRequest;
 import iori.hdoctor.net.request.PatientPublishNoImgRequest;
 import iori.hdoctor.net.request.PatientPublishRequest;
 import iori.hdoctor.net.request.PatientRegisterPhoneRequest;
 import iori.hdoctor.net.request.PatientRegisterRequest;
 import iori.hdoctor.net.request.PatientReplyRequest;
+import iori.hdoctor.net.request.PatientSearchByDocRequest;
+import iori.hdoctor.net.request.PatientSearchByHospRequest;
 import iori.hdoctor.net.request.PatientTXARequest;
 import iori.hdoctor.net.request.PatientTXBRequest;
 import iori.hdoctor.net.request.PatientTestRecordRequest;
@@ -95,8 +99,11 @@ import iori.hdoctor.net.request.PatientWDSCDelRequest;
 import iori.hdoctor.net.request.PatientWDSCRequest;
 import iori.hdoctor.net.request.PatientWDYXRequest;
 import iori.hdoctor.net.request.PatientWDYYRequest;
+import iori.hdoctor.net.request.PatientYSJSRequest;
 import iori.hdoctor.net.request.PatientZHZXModifyRequest;
 import iori.hdoctor.net.request.PatientZHZXRequest;
+import iori.hdoctor.net.request.PatientZiZhiDocRequest;
+import iori.hdoctor.net.request.PatientZiZhiHospRequest;
 import iori.hdoctor.net.response.DoctorCircleInfoResponse;
 import iori.hdoctor.net.response.DoctorCircleResponse;
 import iori.hdoctor.net.response.DoctorCircleYSResponse;
@@ -108,6 +115,10 @@ import iori.hdoctor.net.response.PatientCircleResponse;
 import iori.hdoctor.net.response.PatientCommunityResponse;
 import iori.hdoctor.net.response.PatientGRZXResponse;
 import iori.hdoctor.net.response.PatientInfoResponse;
+import iori.hdoctor.net.response.PatientNearByDocResponse;
+import iori.hdoctor.net.response.PatientNearByHospResponse;
+import iori.hdoctor.net.response.PatientSearchByDocResponse;
+import iori.hdoctor.net.response.PatientSearchByHospResponse;
 import iori.hdoctor.net.response.PatientWDDDInfoResponse;
 import iori.hdoctor.net.response.PatientWDFBResponse;
 import iori.hdoctor.net.response.PatientWDSCResponse;
@@ -142,7 +153,10 @@ import iori.hdoctor.net.response.PatientTestRecordResponse;
 import iori.hdoctor.net.response.PatientUserReportResponse;
 import iori.hdoctor.net.response.PatientWDDDResponse;
 import iori.hdoctor.net.response.PatientWDYXResponse;
+import iori.hdoctor.net.response.PatientYSJSResponse;
 import iori.hdoctor.net.response.PatientZHZXResponse;
+import iori.hdoctor.net.response.PatientZiZhiDocResponse;
+import iori.hdoctor.net.response.PatientZiZhiHospResponse;
 import iori.hdoctor.net.response.TestResponse;
 import iori.hdoctor.view.RequestProgressDialog;
 
@@ -187,10 +201,10 @@ public class NetworkAPI implements HttpRequest {
 		mConnection.sendRequestByPost(request, diag, TestResponse.class, listener);
 	}
 
-    public void checkVersion(String versionCode, RequestProgressDialog diag, NetworkConnectListener listener){
-        CheckVersionRequest request = new CheckVersionRequest(versionCode);
-        mConnection.sendRequestByPost(request, diag, CheckVersionResponse.class, listener);
-    }
+//    public void checkVersion(String versionCode, RequestProgressDialog diag, NetworkConnectListener listener){
+//        CheckVersionRequest request = new CheckVersionRequest(versionCode);
+//        mConnection.sendRequestByPost(request, diag, CheckVersionResponse.class, listener);
+//    }
 
 	public void login(String username, String password, RequestProgressDialog diag, NetworkConnectListener listener){
 		DoctorLoginRequest request = new DoctorLoginRequest(username, password);
@@ -615,5 +629,40 @@ public class NetworkAPI implements HttpRequest {
 	public void deldocmyshoucang(String collectionid, RequestProgressDialog diag, NetworkConnectListener listener){
 		DoctorMyShouCangDelRequest request = new DoctorMyShouCangDelRequest(collectionid, HDoctorCode.YES);
 		mConnection.sendRequestByPost(request, diag, DoctorMyShouCangResponse.class, listener);
+	}
+
+	public void nearbydoc(String jingdu, String weidu, RequestProgressDialog diag, NetworkConnectListener listener){
+		PatientNearByDocRequest request = new PatientNearByDocRequest(jingdu, weidu);
+		mConnection.sendRequestByPost(request, diag, PatientNearByDocResponse.class, listener);
+	}
+
+	public void nearbyhosp(String jingdu, String weidu, RequestProgressDialog diag, NetworkConnectListener listener){
+		PatientNearByHospRequest request = new PatientNearByHospRequest(jingdu, weidu);
+		mConnection.sendRequestByPost(request, diag, PatientNearByHospResponse.class, listener);
+	}
+
+	public void zizhidoc(String jingdu, String weidu, RequestProgressDialog diag, NetworkConnectListener listener){
+		PatientZiZhiDocRequest request = new PatientZiZhiDocRequest(jingdu, weidu);
+		mConnection.sendRequestByPost(request, diag, PatientZiZhiDocResponse.class, listener);
+	}
+
+	public void zizhihosp(String jingdu, String weidu, RequestProgressDialog diag, NetworkConnectListener listener){
+		PatientZiZhiHospRequest request = new PatientZiZhiHospRequest(jingdu, weidu);
+		mConnection.sendRequestByPost(request, diag, PatientZiZhiHospResponse.class, listener);
+	}
+
+	public void docservitem(String did, RequestProgressDialog diag, NetworkConnectListener listener){
+		PatientYSJSRequest request = new PatientYSJSRequest(did);
+		mConnection.sendRequestByPost(request, diag, PatientYSJSResponse.class, listener);
+	}
+
+	public void searchbydoc(String jingdu, String weidu, String keyword, RequestProgressDialog diag, NetworkConnectListener listener){
+		PatientSearchByDocRequest request = new PatientSearchByDocRequest(jingdu, weidu, keyword);
+		mConnection.sendRequestByPost(request, diag, PatientSearchByDocResponse.class, listener);
+	}
+
+	public void searchbyhosp(String jingdu, String weidu, String keyword, RequestProgressDialog diag, NetworkConnectListener listener){
+		PatientSearchByHospRequest request = new PatientSearchByHospRequest(jingdu, weidu, keyword);
+		mConnection.sendRequestByPost(request, diag, PatientSearchByHospResponse.class, listener);
 	}
 }

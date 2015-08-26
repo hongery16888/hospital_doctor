@@ -87,7 +87,7 @@ public class DoctorYYGLAdapter extends BaseAdapter {
 		holder.age.setText(data.get(position).getAge() + context.getString(R.string.blgl_item_age));
 		holder.sex.setText(data.get(position).getSex());
 		holder.name.setText(data.get(position).getNicheng());
-		holder.time.setText(data.get(position).getCha());
+		holder.timeInfo.setText(data.get(position).getCha());
 		holder.bingli.setText(data.get(position).getBingli());
 		holder.describe.setText(data.get(position).getDescribe());
 

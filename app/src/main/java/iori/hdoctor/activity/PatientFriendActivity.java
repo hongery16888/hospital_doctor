@@ -2,6 +2,7 @@ package iori.hdoctor.activity;
 
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import com.handmark.pulltorefresh.library.PullToRefreshListView;
@@ -19,7 +20,7 @@ import iori.hdoctor.adapter.PatientFriendAdapter;
 public class PatientFriendActivity extends BaseActivity {
 
     @InjectView(R.id.friend_listview)
-    PullToRefreshListView listView;
+    ListView listView;
     @InjectView(R.id.mid_left_icon)
     TextView midLeftText;
     @InjectView(R.id.mid_right_icon)

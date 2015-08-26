@@ -38,14 +38,15 @@
                     android:layout_marginTop="@dimen/patient_fj_doctor_avater_padding">
 
                     <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:id="@+id/head"
+                        android:layout_width="80dip"
+                        android:layout_height="80dip"
                         android:src="@drawable/patient_doctor_introduce_avater"/>
 
                     <TextView
+                        android:id="@+id/name"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/patient_doctor_name"
                         android:textColor="@color/global_title_color"
                         android:textSize="@dimen/global_title_size"
                         android:paddingTop="@dimen/five_dip"/>
@@ -56,7 +57,7 @@
                         android:orientation="vertical">
 
                         <LinearLayout
-                            android:layout_width="wrap_content"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:paddingTop="@dimen/global_padding">
 
@@ -68,9 +69,9 @@
                                 android:textSize="@dimen/global_sub_title_size"/>
 
                             <TextView
+                                android:id="@+id/adds"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="@string/patient_doctor_jg_ex"
                                 android:textColor="@color/global_title_color"
                                 android:textSize="@dimen/global_sub_title_size"/>
                         </LinearLayout>
@@ -89,9 +90,9 @@
                                 android:textSize="@dimen/global_sub_title_size"/>
 
                             <TextView
+                                android:id="@+id/zili"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="@string/patient_doctor_jg_zl_ex"
                                 android:textColor="@color/global_title_color"
                                 android:textSize="@dimen/global_sub_title_size"/>
 
@@ -101,13 +102,14 @@
                                 android:gravity="right">
 
                                 <TextView
+                                    android:id="@+id/status"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="@string/patient_doctor_status"
                                     android:textColor="@color/global_title_color"
                                     android:textSize="@dimen/global_sub_title_size"
                                     android:drawableLeft="@drawable/icon_ysjs_czz"
-                                    android:drawablePadding="@dimen/five_dip"/>
+                                    android:drawablePadding="@dimen/five_dip"
+                                    android:layout_marginLeft="@dimen/five_dip"/>
 
                             </LinearLayout>
                         </LinearLayout>
@@ -130,7 +132,10 @@
 
             <View style="@style/divider_line_horizontal" />
 
-            <LinearLayout style="@style/LayerMainMyItem">
+            <LinearLayout
+                android:id="@+id/yyzx"
+                style="@style/LayerMainMyItem"
+                android:visibility="gone">
 
                 <ImageView
                     android:layout_width="wrap_content"
@@ -170,9 +175,9 @@
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent">
                         <TextView
+                            android:id="@+id/yyzx_price"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="@string/patient_doctor_unit_ex"
                             android:textColor="@color/red"
                             android:textSize="@dimen/patient_fj_doctor_price"/>
                     </LinearLayout>
@@ -211,7 +216,10 @@
 
             <View style="@style/divider_line_horizontal" />
 
-            <LinearLayout style="@style/LayerMainMyItem">
+            <LinearLayout
+                android:id="@+id/zxzx"
+                style="@style/LayerMainMyItem"
+                android:visibility="gone">
 
                 <ImageView
                     android:layout_width="wrap_content"
@@ -251,9 +259,9 @@
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent">
                         <TextView
+                            android:id="@+id/zxzx_price"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="@string/patient_doctor_unit_ex"
                             android:textColor="@color/red"
                             android:textSize="@dimen/patient_fj_doctor_price"/>
                     </LinearLayout>
@@ -292,7 +300,10 @@
 
             <View style="@style/divider_line_horizontal" />
 
-            <LinearLayout style="@style/LayerMainMyItem">
+            <LinearLayout
+                android:id="@+id/dhzx"
+                style="@style/LayerMainMyItem"
+                android:visibility="gone">
 
                 <ImageView
                     android:layout_width="wrap_content"
@@ -332,9 +343,9 @@
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent">
                         <TextView
+                            android:id="@+id/dhzx_price"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="@string/patient_doctor_unit_ex"
                             android:textColor="@color/red"
                             android:textSize="@dimen/patient_fj_doctor_price"/>
                     </LinearLayout>
@@ -372,7 +383,8 @@
             </LinearLayout>
 
             <LinearLayout style="@style/LayerMainMyItem"
-                android:layout_marginTop="@dimen/global_line_padding">
+                android:layout_marginTop="@dimen/global_line_padding"
+                android:visibility="gone">
 
                 <TextView style="@style/TxtMainMyItem"
                     android:text="@string/patient_doctor_info_introduce"
@@ -386,7 +398,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 expandableTextView:maxCollapsedLines="2"
-                android:background="@color/white">
+                android:background="@color/white"
+                android:visibility="gone">
 
                 <TextView
                     android:id="@id/expandable_text"
@@ -411,7 +424,8 @@
             </com.ms.square.android.expandabletextview.ExpandableTextView>
 
             <LinearLayout style="@style/LayerMainMyItem"
-                android:layout_marginTop="@dimen/global_line_padding">
+                android:layout_marginTop="@dimen/global_line_padding"
+                android:visibility="gone">
 
                 <TextView style="@style/TxtMainMyItem"
                     android:text="@string/patient_doctor_info_sc"
@@ -426,7 +440,8 @@
                 android:layout_height="wrap_content"
                 expandableTextView:maxCollapsedLines="2"
                 android:background="@color/white"
-                android:layout_marginBottom="@dimen/global_line_padding">
+                android:layout_marginBottom="@dimen/global_line_padding"
+                android:visibility="gone">
 
                 <TextView
                     android:id="@id/expandable_text"

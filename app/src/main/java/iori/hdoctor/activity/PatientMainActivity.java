@@ -6,6 +6,9 @@ import android.view.View;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 
+import com.baidu.location.LocationClient;
+import com.baidu.location.LocationClientOption;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,20 +16,19 @@ import butterknife.InjectView;
 import iori.hdoctor.R;
 import iori.hdoctor.activity.base.BaseActivity;
 import iori.hdoctor.activity.base.BasePager;
-import iori.hdoctor.activity.pager.DoctorIndexPager;
-import iori.hdoctor.activity.pager.DoctorMinePager;
 import iori.hdoctor.activity.pager.PatientCirclePager;
 import iori.hdoctor.activity.pager.PatientDoctorPager;
 import iori.hdoctor.activity.pager.PatientIndexPager;
 import iori.hdoctor.activity.pager.PatientMinePager;
 import iori.hdoctor.adapter.ViewPagerAdapter;
-import iori.hdoctor.net.NetworkAPI;
 import iori.hdoctor.net.NetworkConnectListener;
 import iori.hdoctor.net.response.CheckVersionResponse;
 import iori.hdoctor.view.LazyViewPager.OnPageChangeListener;
 import iori.hdoctor.view.MyViewPager;
 
 public class PatientMainActivity extends BaseActivity implements NetworkConnectListener {
+
+	private LocationClient mLocationClient;
 
 	@InjectView(R.id.viewpager)
 	MyViewPager viewPager;
@@ -53,6 +55,8 @@ public class PatientMainActivity extends BaseActivity implements NetworkConnectL
 
 	@Override
 	protected void initData() {
+		mLocationClient = getApp().mLocationClient;
+		mLocationClient.setLocOption(new LocationClientOption());
 		getApp().setMainActivity(this);
 		pages.clear();
 		pages.add(new PatientIndexPager(this));
@@ -65,7 +69,8 @@ public class PatientMainActivity extends BaseActivity implements NetworkConnectL
 		main_radio.setOnCheckedChangeListener(checkedChangeListener);
 		main_radio.check(currentItem);
 		pages.get(oldPosition).onResume();
-		NetworkAPI.getNetworkAPI().checkVersion("1", null, this);
+//		NetworkAPI.getNetworkAPI().checkVersion("1", null, this);
+		mLocationClient.start();
 	}
 
 	@Override
@@ -81,12 +86,19 @@ public class PatientMainActivity extends BaseActivity implements NetworkConnectL
 	}
 
 	@Override
+	protected void onStop() {
+		// TODO Auto-generated method stub
+		super.onStop();
+	}
+
+	@Override
 	protected void onDestroy() {
 		if (pages != null) {
 			for (BasePager pager : pages) {
 				pager.onDestroy();
 			}
 		}
+//		mLocationClient.stop();
 		super.onDestroy();
 	}
 
@@ -194,4 +206,5 @@ public class PatientMainActivity extends BaseActivity implements NetworkConnectL
 
 		return super.onKeyDown(keyCode, event);
 	}
+
 }

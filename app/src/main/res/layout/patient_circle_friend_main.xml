@@ -7,7 +7,7 @@
 
     <include layout="@layout/patient_title_bar" />
 
-    <com.handmark.pulltorefresh.library.PullToRefreshListView
+    <ListView
         android:id="@+id/friend_listview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

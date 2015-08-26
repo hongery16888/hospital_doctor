@@ -6,8 +6,9 @@
     android:background="@color/white">
 
     <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/head"
+        android:layout_width="80dip"
+        android:layout_height="80dip"
         android:src="@drawable/img_fj_doctor"
         android:layout_margin="@dimen/global_padding"/>
 
@@ -22,14 +23,13 @@
             android:layout_weight="1">
 
             <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1">
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
 
                 <TextView
-                    android:layout_width="match_parent"
+                    android:id="@+id/name"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
                     android:text="@string/patient_fj_item_name"
                     android:textColor="@color/patient_top_bar_bg"
                     android:textSize="@dimen/patient_fj_item_name"
@@ -45,6 +45,7 @@
                 android:gravity="right">
 
                 <TextView
+                    android:id="@+id/distance"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:text="@string/patient_fj_item_distance"
@@ -77,9 +78,11 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/patient_fj_item_zl"
+                        android:textColor="@color/grey_deep"
                         android:paddingLeft="@dimen/global_padding"/>
 
                     <TextView
+                        android:id="@+id/zili"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/patient_fj_item_zl_ex"
@@ -96,9 +99,11 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/patient_fj_item_jg"
+                        android:textColor="@color/grey_deep"
                         android:paddingLeft="@dimen/global_padding"/>
 
                     <TextView
+                        android:id="@+id/adds"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/patient_fj_item_jg_ex"
@@ -117,9 +122,11 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/patient_fj_item_sc"
+                        android:textColor="@color/grey_deep"
                         android:paddingLeft="@dimen/global_padding"/>
 
                     <TextView
+                        android:id="@+id/skill"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/patient_fj_item_sc_ex"
@@ -134,15 +141,22 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="2"
-                android:gravity="center">
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/status_img"
+                    android:layout_width="30dip"
+                    android:layout_height="30dip"
+                    android:src="@drawable/patient_fj_item_zx"/>
 
                 <TextView
+                    android:id="@+id/status"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/patient_fj_item_online"
                     android:textColor="@color/grey_deep"
                     android:textSize="@dimen/patient_fj_item_zx"
-                    android:drawableTop="@drawable/patient_fj_item_zx"
                     android:gravity="center_horizontal"/>
 
             </LinearLayout>

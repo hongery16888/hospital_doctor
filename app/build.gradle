@@ -17,6 +17,13 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+        }
+    }
+
 }
 
 dependencies {
@@ -29,4 +36,6 @@ dependencies {
     compile project(':pulltorefresh')
     compile 'com.ms-square:expandableTextView:0.1.4'
     compile files('libs/mpandroidchartlibrary-2-1-2.jar')
+    compile files('libs/baidumapapi_v3_5_0.jar')
+    compile files('libs/locSDK_6.05.jar')
 }

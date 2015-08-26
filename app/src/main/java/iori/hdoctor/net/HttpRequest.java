@@ -158,6 +158,20 @@ public interface HttpRequest {
 	public static final String PATH_DOC_MY_SHOUCANG = BASIC_PATH + "user/docmyshoucang";
 	public static final String DOC_CIRCLE_YS = "docquan";
 	public static final String PATH_DOC_CIRCLE_YS = BASIC_PATH + "user/docquan";
+	public static final String PAT_ZIZHI_DOC = "zizhidoc";
+	public static final String PATH_PAT_ZIZHI_DOC = BASIC_PATH + "user/zizhidoc";
+	public static final String PAT_ZIZHI_HOSP = "zizhihosp";
+	public static final String PATH_PAT_ZIZHI_HOSP = BASIC_PATH + "user/zizhihosp";
+	public static final String PAT_NEARBYDOC = "nearbydoc";
+	public static final String PATH_PAT_NEARBYDOC = BASIC_PATH + "user/nearbydoc";
+	public static final String PAT_NEARBYHOSP = "nearbyhosp";
+	public static final String PATH_PAT_NEARBYHOSP = BASIC_PATH + "user/nearbyhosp";
+	public static final String PAT_DOC_SERVITEM = "docservitem";
+	public static final String PATH_PAT_DOC_SERVITEM = BASIC_PATH + "user/docservitem";
+	public static final String PAT_SEARCH_BY_DOC = "yssearch";
+	public static final String PATH_PAT_SEARCH_BY_DOC = BASIC_PATH + "user/yssearch";
+	public static final String PAT_SEARCH_BY_HOSP = "yysearch";
+	public static final String PATH_PAT_SEARCH_BY_HOSP = BASIC_PATH + "user/yysearch";
 
 
 	/** 06、检查更新 **/

@@ -89,6 +89,14 @@
         <activity android:name=".activity.DoctorMyFaBiaoActivity" android:screenOrientation="portrait" />
         <activity android:name=".activity.DoctorMyShouCangActivity" android:screenOrientation="portrait" />
         <activity android:name=".activity.DoctorCircleYSActivity" android:screenOrientation="portrait" />
+        <activity android:name=".activity.PatientZiZhiDocActivity" android:screenOrientation="portrait" />
+        <activity android:name=".activity.PatientMapActivity" android:screenOrientation="portrait" />
+        <activity android:name=".activity.PatientSearchActivity" android:screenOrientation="portrait" />
+
+        <!-- meta-data需要写在application中 -->
+        <meta-data
+            android:name="com.baidu.lbsapi.API_KEY"
+            android:value="SjGOL6R5whGAPGjfCQ4t8IHF" />
     </application>
 
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
@@ -112,5 +120,16 @@
     <uses-feature android:name="android.hardware.camera.autofocus" />
     <uses-permission android:name="android.permission.VIBRATE"/>
     <uses-permission android:name="android.permission.FLASHLIGHT"/>
+
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="com.android.launcher.permission.READ_SETTINGS" />
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
 
 </manifest>
