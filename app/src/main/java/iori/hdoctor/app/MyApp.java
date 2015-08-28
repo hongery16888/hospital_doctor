@@ -55,6 +55,7 @@ public class MyApp extends Application {
     private Handler refreshData;
     private Handler circleRefreshHandler;
     private Activity mainActivity;
+    private Activity patDocInfoActivity;
 
     public LocationClient mLocationClient;
     public Vibrator mVibrator;
@@ -291,5 +292,13 @@ public class MyApp extends Application {
 
     public void setLongitude(double longitude) {
         this.longitude = longitude;
+    }
+
+    public Activity getPatDocInfoActivity() {
+        return patDocInfoActivity;
+    }
+
+    public void setPatDocInfoActivity(Activity patDocInfoActivity) {
+        this.patDocInfoActivity = patDocInfoActivity;
     }
 }

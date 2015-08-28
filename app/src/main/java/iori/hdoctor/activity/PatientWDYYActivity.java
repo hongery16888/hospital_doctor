@@ -40,7 +40,6 @@ public class PatientWDYYActivity extends BaseActivity implements NetworkConnectL
     @Override
     public void onRequestSucceed(Object data, String requestAction) {
         if (HttpRequest.PAT_MY_POINTMENT.equals(requestAction)){
-            System.out.println("size : " + ((PatientWDYYResponse)data).getAppointmentlist().size());
             listView.setAdapter(new PatientWDYYAdapter(this, ((PatientWDYYResponse)data).getAppointmentlist()));
             listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                 @Override

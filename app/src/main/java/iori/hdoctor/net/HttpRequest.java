@@ -172,6 +172,13 @@ public interface HttpRequest {
 	public static final String PATH_PAT_SEARCH_BY_DOC = BASIC_PATH + "user/yssearch";
 	public static final String PAT_SEARCH_BY_HOSP = "yysearch";
 	public static final String PATH_PAT_SEARCH_BY_HOSP = BASIC_PATH + "user/yysearch";
+	public static final String PAT_YUYUE = "patyuyue";
+	public static final String PATH_PAT_YUYUE = BASIC_PATH + "user/patyuyue";
+	public static final String PAT_ONLINE_CONS = "onlinecons";
+	public static final String PATH_PAT_ONLINE_CONS = BASIC_PATH + "user/onlinecons";
+	public static final String PAT_ONLINE_TEL = "onlinetel";
+	public static final String PATH_PAT_ONLINE_TEL = BASIC_PATH + "user/onlinetel";
+
 
 
 	/** 06、检查更新 **/

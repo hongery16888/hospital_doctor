@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/persion_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/global_bg"
+    android:orientation="vertical">
+
+    <include layout="@layout/patient_title_bar" />
+
+    <EditText
+        android:id="@+id/content"
+        android:layout_width="match_parent"
+        android:layout_height="100dip"
+        android:layout_marginTop="@dimen/global_padding"
+        android:background="@color/white"
+        android:gravity="top"
+        android:hint="病情简述"
+        android:padding="@dimen/global_padding" />
+
+    <View style="@style/divider_line_horizontal" />
+
+    <LinearLayout style="@style/LayerMainMyItem">
+
+        <ImageView
+            android:id="@+id/img"
+            android:layout_width="80dip"
+            android:layout_height="80dip"
+            android:padding="@dimen/five_dip"
+            android:scaleType="center"
+            android:src="@drawable/icon_camera" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="@dimen/global_padding"
+            android:text="添加图片，方便医生准确诊断"
+            android:textColor="@color/grey_deep"
+            android:textSize="@dimen/global_title_size" />
+    </LinearLayout>
+
+    <LinearLayout
+        style="@style/LayerMainMyItem"
+        android:layout_marginTop="@dimen/global_padding">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/global_padding"
+            android:paddingTop="@dimen/global_padding"
+            android:text="医院："
+            android:textColor="@color/grey_deep"
+            android:textSize="@dimen/global_title_size" />
+
+        <TextView
+            android:id="@+id/hospital"
+            style="@style/TxtMainMyItem" />
+
+        <ImageView
+            style="@style/ImageMainMyItemNext"
+            android:src="@drawable/list_ys_arrow" />
+
+    </LinearLayout>
+
+    <View style="@style/divider_line_horizontal" />
+
+    <LinearLayout style="@style/LayerMainMyItem">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/global_padding"
+            android:paddingTop="@dimen/global_padding"
+            android:text="医生："
+            android:textColor="@color/grey_deep"
+            android:textSize="@dimen/global_title_size" />
+
+        <TextView
+            android:id="@+id/doctor"
+            style="@style/TxtMainMyItem" />
+
+        <ImageView
+            style="@style/ImageMainMyItemNext"
+            android:src="@drawable/list_ys_arrow" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/confirm"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="提交咨询"
+        android:textColor="@color/white"
+        android:textSize="@dimen/global_label"
+        android:padding="@dimen/global_padding"
+        android:background="@drawable/fbpl_orange_button_selector"
+        android:layout_marginTop="@dimen/global_btn_padding"
+        android:layout_marginLeft="@dimen/global_btn_padding"
+        android:layout_marginRight="@dimen/global_btn_padding"
+        android:layout_marginBottom="@dimen/global_padding"
+        android:gravity="center" />
+
+</LinearLayout>
+

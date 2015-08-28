@@ -11,99 +11,7 @@ package iori.hdoctor.net;
 
 import iori.hdoctor.activity.PatientPublishActivity;
 import iori.hdoctor.activity.base.HDoctorCode;
-import iori.hdoctor.net.request.CheckVersionRequest;
-import iori.hdoctor.net.request.DoctorAddBankRequest;
-import iori.hdoctor.net.request.DoctorBenchRequest;
-import iori.hdoctor.net.request.DoctorBlglInfoRequest;
-import iori.hdoctor.net.request.DoctorBlglPatientRequest;
-import iori.hdoctor.net.request.DoctorBlglRequest;
-import iori.hdoctor.net.request.DoctorChuSetRequest;
-import iori.hdoctor.net.request.DoctorChuZhenRequest;
-import iori.hdoctor.net.request.DoctorCircleInfoRequest;
-import iori.hdoctor.net.request.DoctorCircleRequest;
-import iori.hdoctor.net.request.DoctorCircleYSRequest;
-import iori.hdoctor.net.request.DoctorCircleYSZanRequest;
-import iori.hdoctor.net.request.DoctorCircleZanRequest;
-import iori.hdoctor.net.request.DoctorDelBankRequest;
-import iori.hdoctor.net.request.DoctorLoginRequest;
-import iori.hdoctor.net.request.DoctorMessageRequest;
-import iori.hdoctor.net.request.DoctorModifyBankRequest;
-import iori.hdoctor.net.request.DoctorMyFaBiaoDelRequest;
-import iori.hdoctor.net.request.DoctorMyFaBiaoRequest;
-import iori.hdoctor.net.request.DoctorMyShouCangDelRequest;
-import iori.hdoctor.net.request.DoctorMyShouCangRequest;
-import iori.hdoctor.net.request.DoctorPersonalRequest;
-import iori.hdoctor.net.request.DoctorPublicRequest;
-import iori.hdoctor.net.request.DoctorPublicZanRequest;
-import iori.hdoctor.net.request.DoctorPublishNoImgRequest;
-import iori.hdoctor.net.request.DoctorPublishRequest;
-import iori.hdoctor.net.request.DoctorRegisterInfo2Request;
-import iori.hdoctor.net.request.DoctorRegisterInfoRequest;
-import iori.hdoctor.net.request.DoctorRegisterRequest;
-import iori.hdoctor.net.request.DoctorReplyRequest;
-import iori.hdoctor.net.request.DoctorReserveRequest;
-import iori.hdoctor.net.request.DoctorSRXQRequest;
-import iori.hdoctor.net.request.DoctorServiceMagRequest;
-import iori.hdoctor.net.request.DoctorServiceMagSetRequest;
-import iori.hdoctor.net.request.DoctorShouCangRequest;
-import iori.hdoctor.net.request.DoctorStaticRequest;
-import iori.hdoctor.net.request.DoctorUserEmailRequest;
-import iori.hdoctor.net.request.DoctorUserHospitalRequest;
-import iori.hdoctor.net.request.DoctorUserImgRequest;
-import iori.hdoctor.net.request.DoctorUserInfoRequest;
-import iori.hdoctor.net.request.DoctorUserJianjieRequest;
-import iori.hdoctor.net.request.DoctorUserKeShiRequest;
-import iori.hdoctor.net.request.DoctorUserRealnameRequest;
-import iori.hdoctor.net.request.DoctorUserShanChangRequest;
-import iori.hdoctor.net.request.DoctorUserZhiChengRequest;
-import iori.hdoctor.net.request.DoctorVerifyRequest;
-import iori.hdoctor.net.request.DoctorZHZXInfoRequest;
-import iori.hdoctor.net.request.DoctorZHZXRequest;
-import iori.hdoctor.net.request.PatientAddMedicineNoImgRequest;
-import iori.hdoctor.net.request.PatientAddMedicinePromptRequest;
-import iori.hdoctor.net.request.PatientAddMedicineRequest;
-import iori.hdoctor.net.request.PatientAlyReportRequest;
-import iori.hdoctor.net.request.PatientCircleCollectionRequest;
-import iori.hdoctor.net.request.PatientCircleInfoRequest;
-import iori.hdoctor.net.request.PatientCircleRequest;
-import iori.hdoctor.net.request.PatientCircleZanRequest;
-import iori.hdoctor.net.request.PatientCommentRequest;
-import iori.hdoctor.net.request.PatientCommunityRequest;
-import iori.hdoctor.net.request.PatientCommunityZanRequest;
-import iori.hdoctor.net.request.PatientConsultRecordRequest;
-import iori.hdoctor.net.request.PatientDelMedicineRequest;
-import iori.hdoctor.net.request.PatientGRZXRequest;
-import iori.hdoctor.net.request.PatientHealthyRemindRequest;
-import iori.hdoctor.net.request.PatientInfoImgRequest;
-import iori.hdoctor.net.request.PatientInfoNoImgRequest;
-import iori.hdoctor.net.request.PatientInfoRequest;
-import iori.hdoctor.net.request.PatientLoginRequest;
-import iori.hdoctor.net.request.PatientNearByDocRequest;
-import iori.hdoctor.net.request.PatientNearByHospRequest;
-import iori.hdoctor.net.request.PatientPublishNoImgRequest;
-import iori.hdoctor.net.request.PatientPublishRequest;
-import iori.hdoctor.net.request.PatientRegisterPhoneRequest;
-import iori.hdoctor.net.request.PatientRegisterRequest;
-import iori.hdoctor.net.request.PatientReplyRequest;
-import iori.hdoctor.net.request.PatientSearchByDocRequest;
-import iori.hdoctor.net.request.PatientSearchByHospRequest;
-import iori.hdoctor.net.request.PatientTXARequest;
-import iori.hdoctor.net.request.PatientTXBRequest;
-import iori.hdoctor.net.request.PatientTestRecordRequest;
-import iori.hdoctor.net.request.PatientUserReportRequest;
-import iori.hdoctor.net.request.PatientWDDDInfoRequest;
-import iori.hdoctor.net.request.PatientWDDDRequest;
-import iori.hdoctor.net.request.PatientWDFBDelRequest;
-import iori.hdoctor.net.request.PatientWDFBRequest;
-import iori.hdoctor.net.request.PatientWDSCDelRequest;
-import iori.hdoctor.net.request.PatientWDSCRequest;
-import iori.hdoctor.net.request.PatientWDYXRequest;
-import iori.hdoctor.net.request.PatientWDYYRequest;
-import iori.hdoctor.net.request.PatientYSJSRequest;
-import iori.hdoctor.net.request.PatientZHZXModifyRequest;
-import iori.hdoctor.net.request.PatientZHZXRequest;
-import iori.hdoctor.net.request.PatientZiZhiDocRequest;
-import iori.hdoctor.net.request.PatientZiZhiHospRequest;
+import iori.hdoctor.net.request.*;
 import iori.hdoctor.net.response.DoctorCircleInfoResponse;
 import iori.hdoctor.net.response.DoctorCircleResponse;
 import iori.hdoctor.net.response.DoctorCircleYSResponse;
@@ -113,6 +21,7 @@ import iori.hdoctor.net.response.DoctorPublicResponse;
 import iori.hdoctor.net.response.PatientCircleInfoResponse;
 import iori.hdoctor.net.response.PatientCircleResponse;
 import iori.hdoctor.net.response.PatientCommunityResponse;
+import iori.hdoctor.net.response.PatientDHZXResponse;
 import iori.hdoctor.net.response.PatientGRZXResponse;
 import iori.hdoctor.net.response.PatientInfoResponse;
 import iori.hdoctor.net.response.PatientNearByDocResponse;
@@ -123,7 +32,6 @@ import iori.hdoctor.net.response.PatientWDDDInfoResponse;
 import iori.hdoctor.net.response.PatientWDFBResponse;
 import iori.hdoctor.net.response.PatientWDSCResponse;
 import iori.hdoctor.net.response.PatientWDYYResponse;
-import iori.hdoctor.net.request.TestRequest;
 import iori.hdoctor.net.response.CheckVersionResponse;
 import iori.hdoctor.net.response.DoctorBenchResponse;
 import iori.hdoctor.net.response.DoctorBlglInfoResponse;
@@ -154,7 +62,9 @@ import iori.hdoctor.net.response.PatientUserReportResponse;
 import iori.hdoctor.net.response.PatientWDDDResponse;
 import iori.hdoctor.net.response.PatientWDYXResponse;
 import iori.hdoctor.net.response.PatientYSJSResponse;
+import iori.hdoctor.net.response.PatientYYResponse;
 import iori.hdoctor.net.response.PatientZHZXResponse;
+import iori.hdoctor.net.response.PatientZXZXResponse;
 import iori.hdoctor.net.response.PatientZiZhiDocResponse;
 import iori.hdoctor.net.response.PatientZiZhiHospResponse;
 import iori.hdoctor.net.response.TestResponse;
@@ -664,5 +574,50 @@ public class NetworkAPI implements HttpRequest {
 	public void searchbyhosp(String jingdu, String weidu, String keyword, RequestProgressDialog diag, NetworkConnectListener listener){
 		PatientSearchByHospRequest request = new PatientSearchByHospRequest(jingdu, weidu, keyword);
 		mConnection.sendRequestByPost(request, diag, PatientSearchByHospResponse.class, listener);
+	}
+
+	public void patyuyue(String did, RequestProgressDialog diag, NetworkConnectListener listener){
+		PatientYYRequest request = new PatientYYRequest(did);
+		mConnection.sendRequestByPost(request, diag, PatientYYResponse.class, listener);
+	}
+
+	public void patyuyueimg(String did,String describe, String yuyuetime, String isremind, String tixingtime, RequestProgressDialog diag, NetworkConnectListener listener){
+		PatientYYIMGRequest request = new PatientYYIMGRequest(did, describe, yuyuetime, isremind, tixingtime);
+		mConnection.sendRequestByPost(request, diag, EmptyResponse.class, listener);
+	}
+
+	public void patyuyuenoimg(String did,String describe, String yuyuetime, String isremind, String tixingtime, RequestProgressDialog diag, NetworkConnectListener listener){
+		PatientYYNOIMGRequest request = new PatientYYNOIMGRequest(did, describe, yuyuetime, isremind, tixingtime);
+		mConnection.sendRequestByPost(request, diag, EmptyResponse.class, listener);
+	}
+
+	public void patzxzx(String did, RequestProgressDialog diag, NetworkConnectListener listener){
+		PatientZXZXRequest request = new PatientZXZXRequest(did);
+		mConnection.sendRequestByPost(request, diag, PatientZXZXResponse.class, listener);
+	}
+
+	public void patzxzximg(String did,String describe, RequestProgressDialog diag, NetworkConnectListener listener){
+		PatientZXZXImgRequest request = new PatientZXZXImgRequest(did, describe);
+		mConnection.sendRequestByPost(request, diag, EmptyResponse.class, listener);
+	}
+
+	public void patzxzxnoimg(String did,String describe, RequestProgressDialog diag, NetworkConnectListener listener){
+		PatientZXZXNoImgRequest request = new PatientZXZXNoImgRequest(did, describe);
+		mConnection.sendRequestByPost(request, diag, EmptyResponse.class, listener);
+	}
+
+	public void patdhzx(String did, RequestProgressDialog diag, NetworkConnectListener listener){
+		PatientDHZXRequest request = new PatientDHZXRequest(did);
+		mConnection.sendRequestByPost(request, diag, PatientDHZXResponse.class, listener);
+	}
+
+	public void patdhzximg(String did,String describe, RequestProgressDialog diag, NetworkConnectListener listener){
+		PatientDHZXImgRequest request = new PatientDHZXImgRequest(did, describe);
+		mConnection.sendRequestByPost(request, diag, EmptyResponse.class, listener);
+	}
+
+	public void patdhzxnoimg(String did,String describe, RequestProgressDialog diag, NetworkConnectListener listener){
+		PatientDHZXNoImgRequest request = new PatientDHZXNoImgRequest(did, describe);
+		mConnection.sendRequestByPost(request, diag, EmptyResponse.class, listener);
 	}
 }

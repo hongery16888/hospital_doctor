@@ -92,6 +92,9 @@
         <activity android:name=".activity.PatientZiZhiDocActivity" android:screenOrientation="portrait" />
         <activity android:name=".activity.PatientMapActivity" android:screenOrientation="portrait" />
         <activity android:name=".activity.PatientSearchActivity" android:screenOrientation="portrait" />
+        <activity android:name=".activity.PatientYYActivity" android:screenOrientation="portrait" />
+        <activity android:name=".activity.PatientZXZXActivity" android:screenOrientation="portrait" />
+        <activity android:name=".activity.PatientDHZXActivity" android:screenOrientation="portrait" />
 
         <!-- meta-data需要写在application中 -->
         <meta-data

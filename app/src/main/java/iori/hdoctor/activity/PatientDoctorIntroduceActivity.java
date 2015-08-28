@@ -55,9 +55,25 @@ public class PatientDoctorIntroduceActivity extends BaseActivity implements Netw
     @InjectView(R.id.dhzx)
     View dhzx;
 
-    @OnClick(R.id.patient_yy)
-    public void patientYY() {
-        startActivity(new Intent(PatientDoctorIntroduceActivity.this, PatientDoctorYYActivity.class));
+    @OnClick({R.id.patient_yy, R.id.yyzx_btn})
+    public void yy(){
+        Intent intent = new Intent(this, PatientYYActivity.class);
+        intent.putExtra("did", getIntent().getStringExtra("did"));
+        startActivity(intent);
+    }
+
+    @OnClick({R.id.patient_zz, R.id.zxzx_btn})
+    public void zz(){
+        Intent intent = new Intent(this, PatientZXZXActivity.class);
+        intent.putExtra("did", getIntent().getStringExtra("did"));
+        startActivity(intent);
+    }
+
+    @OnClick(R.id.dhzx_btn)
+    public void dh(){
+        Intent intent = new Intent(this, PatientDHZXActivity.class);
+        intent.putExtra("did", getIntent().getStringExtra("did"));
+        startActivity(intent);
     }
 
     @Override
@@ -83,7 +99,7 @@ public class PatientDoctorIntroduceActivity extends BaseActivity implements Netw
                 .build();
 //        doctorIntroduce.setText(getString(R.string.patient_doctor_info_introduce_ex));
 //        doctorSkill.setText(getString(R.string.patient_doctor_info_sc_ex));
-
+        getApp().setPatDocInfoActivity(this);
         NetworkAPI.getNetworkAPI().docservitem(getIntent().getStringExtra("did"), showProgressDialog(), this);
     }
 

@@ -3,6 +3,7 @@ package iori.hdoctor.util;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -173,5 +174,15 @@ public class DateUtil {
 			}
 		}
 		return age;
+	}
+
+	public static ArrayList<String> getAllDayTime(){
+		ArrayList<String> list = new ArrayList<>();
+
+		for (int i = 0; i < 24; i++){
+			list.add(i + ":00");
+		}
+
+		return  list;
 	}
 }
