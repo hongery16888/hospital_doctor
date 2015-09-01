@@ -43,6 +43,7 @@
             android:paddingBottom="@dimen/global_line_padding">
 
             <TextView
+                android:id="@+id/pingjia"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="评价"
@@ -68,9 +69,10 @@
             android:paddingRight="@dimen/global_padding">
 
             <TextView
+                android:id="@+id/type"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="距离"
+                android:text="筛选"
                 android:textColor="@color/global_title_color"
                 android:textSize="@dimen/global_title_size"/>
 

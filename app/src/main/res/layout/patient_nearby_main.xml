@@ -59,9 +59,10 @@
             android:layout_gravity="center_vertical|right">
 
             <TextView
+                android:id="@+id/type"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/patient_fj_bar_order"
+                android:text="筛选"
                 android:textColor="@color/global_title_color"
                 android:textSize="@dimen/global_title_size"/>
 

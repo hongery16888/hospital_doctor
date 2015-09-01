@@ -73,7 +73,7 @@ public class MyApp extends Application {
         super.onCreate();
         initImageLoader(getApplicationContext());
 
-        SDKInitializer.initialize(getApplicationContext());
+//        SDKInitializer.initialize(getApplicationContext());
 
         mLocationClient = new LocationClient(this.getApplicationContext());
         mMyLocationListener = new MyLocationListener();

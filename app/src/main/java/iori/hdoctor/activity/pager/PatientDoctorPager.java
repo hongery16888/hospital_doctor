@@ -11,6 +11,7 @@ import iori.hdoctor.activity.DoctorBLGLActivity;
 import iori.hdoctor.activity.DoctorCZSZActivity;
 import iori.hdoctor.activity.DoctorFFGLActivity;
 import iori.hdoctor.activity.DoctorYYZXActivity;
+import iori.hdoctor.activity.PatientChuZhenActivity;
 import iori.hdoctor.activity.PatientFJActivity;
 import iori.hdoctor.activity.PatientSearchActivity;
 import iori.hdoctor.activity.PatientZiZhiDocActivity;
@@ -41,8 +42,7 @@ public class PatientDoctorPager extends BasePager{
     public void initData() {
         view.findViewById(R.id.fj).setOnClickListener(fjClickListener);
         view.findViewById(R.id.zzys).setOnClickListener(zzysClickListener);
-//        view.findViewById(R.id.yygh).setOnClickListener(yyghClickListener);
-//        view.findViewById(R.id.czcx).setOnClickListener(czcxClickListener);
+        view.findViewById(R.id.czys).setOnClickListener(czysClickListener);
         view.findViewById(R.id.search).setOnClickListener(searchClickListener);
     }
 
@@ -68,17 +68,10 @@ public class PatientDoctorPager extends BasePager{
         }
     };
 
-    private View.OnClickListener yyghClickListener = new View.OnClickListener() {
+    private View.OnClickListener czysClickListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            context.startActivity(new Intent(context, DoctorCZSZActivity.class));
-        }
-    };
-
-    private View.OnClickListener czcxClickListener = new View.OnClickListener() {
-        @Override
-        public void onClick(View v) {
-            context.startActivity(new Intent(context, DoctorFFGLActivity.class));
+            context.startActivity(new Intent(context, PatientChuZhenActivity.class));
         }
     };
 

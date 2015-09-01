@@ -147,6 +147,21 @@
 
     </LinearLayout>
 
+    <LinearLayout
+        android:id="@+id/price_lay"
+        style="@style/LayerMainMyItem"
+        android:background="@color/transparent"
+        android:visibility="invisible">
+
+        <TextView
+            android:id="@+id/price"
+            style="@style/TxtMainMyItem"
+            android:textColor="@color/red"
+            android:gravity="center"
+            android:text="支付金额："/>
+
+    </LinearLayout>
+
     <TextView
         android:id="@+id/confirm"
         android:layout_width="match_parent"
@@ -156,7 +171,6 @@
         android:textSize="@dimen/global_label"
         android:padding="@dimen/global_padding"
         android:background="@drawable/fbpl_orange_button_selector"
-        android:layout_marginTop="@dimen/global_btn_padding"
         android:layout_marginLeft="@dimen/global_btn_padding"
         android:layout_marginRight="@dimen/global_btn_padding"
         android:layout_marginBottom="@dimen/global_padding"

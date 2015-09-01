@@ -22,7 +22,9 @@ import iori.hdoctor.net.response.PatientCircleInfoResponse;
 import iori.hdoctor.net.response.PatientCircleResponse;
 import iori.hdoctor.net.response.PatientCommunityResponse;
 import iori.hdoctor.net.response.PatientDHZXResponse;
+import iori.hdoctor.net.response.PatientDHZXResultResponse;
 import iori.hdoctor.net.response.PatientGRZXResponse;
+import iori.hdoctor.net.response.PatientHospitalIntroResponse;
 import iori.hdoctor.net.response.PatientInfoResponse;
 import iori.hdoctor.net.response.PatientNearByDocResponse;
 import iori.hdoctor.net.response.PatientNearByHospResponse;
@@ -64,6 +66,7 @@ import iori.hdoctor.net.response.PatientWDYXResponse;
 import iori.hdoctor.net.response.PatientYSJSResponse;
 import iori.hdoctor.net.response.PatientYYResponse;
 import iori.hdoctor.net.response.PatientZHZXResponse;
+import iori.hdoctor.net.response.PatientZXResponse;
 import iori.hdoctor.net.response.PatientZXZXResponse;
 import iori.hdoctor.net.response.PatientZiZhiDocResponse;
 import iori.hdoctor.net.response.PatientZiZhiHospResponse;
@@ -551,6 +554,17 @@ public class NetworkAPI implements HttpRequest {
 		mConnection.sendRequestByPost(request, diag, PatientNearByHospResponse.class, listener);
 	}
 
+	public void chuzhenbydoc(String jingdu, String weidu, RequestProgressDialog diag, NetworkConnectListener listener){
+		PatientChuZhenByDocRequest request = new PatientChuZhenByDocRequest(jingdu, weidu);
+		mConnection.sendRequestByPost(request, diag, PatientNearByDocResponse.class, listener);
+	}
+
+	public void pingjia(String jingdu, String weidu, RequestProgressDialog diag, NetworkConnectListener listener){
+		PatientPingJiaDocRequest request = new PatientPingJiaDocRequest(jingdu, weidu);
+		mConnection.sendRequestByPost(request, diag, PatientZiZhiDocResponse.class, listener);
+	}
+
+
 	public void zizhidoc(String jingdu, String weidu, RequestProgressDialog diag, NetworkConnectListener listener){
 		PatientZiZhiDocRequest request = new PatientZiZhiDocRequest(jingdu, weidu);
 		mConnection.sendRequestByPost(request, diag, PatientZiZhiDocResponse.class, listener);
@@ -583,12 +597,12 @@ public class NetworkAPI implements HttpRequest {
 
 	public void patyuyueimg(String did,String describe, String yuyuetime, String isremind, String tixingtime, RequestProgressDialog diag, NetworkConnectListener listener){
 		PatientYYIMGRequest request = new PatientYYIMGRequest(did, describe, yuyuetime, isremind, tixingtime);
-		mConnection.sendRequestByPost(request, diag, EmptyResponse.class, listener);
+		mConnection.sendRequestByPost(request, diag, PatientZXResponse.class, listener);
 	}
 
 	public void patyuyuenoimg(String did,String describe, String yuyuetime, String isremind, String tixingtime, RequestProgressDialog diag, NetworkConnectListener listener){
 		PatientYYNOIMGRequest request = new PatientYYNOIMGRequest(did, describe, yuyuetime, isremind, tixingtime);
-		mConnection.sendRequestByPost(request, diag, EmptyResponse.class, listener);
+		mConnection.sendRequestByPost(request, diag, PatientZXResponse.class, listener);
 	}
 
 	public void patzxzx(String did, RequestProgressDialog diag, NetworkConnectListener listener){
@@ -598,12 +612,12 @@ public class NetworkAPI implements HttpRequest {
 
 	public void patzxzximg(String did,String describe, RequestProgressDialog diag, NetworkConnectListener listener){
 		PatientZXZXImgRequest request = new PatientZXZXImgRequest(did, describe);
-		mConnection.sendRequestByPost(request, diag, EmptyResponse.class, listener);
+		mConnection.sendRequestByPost(request, diag, PatientZXResponse.class, listener);
 	}
 
 	public void patzxzxnoimg(String did,String describe, RequestProgressDialog diag, NetworkConnectListener listener){
 		PatientZXZXNoImgRequest request = new PatientZXZXNoImgRequest(did, describe);
-		mConnection.sendRequestByPost(request, diag, EmptyResponse.class, listener);
+		mConnection.sendRequestByPost(request, diag, PatientZXResponse.class, listener);
 	}
 
 	public void patdhzx(String did, RequestProgressDialog diag, NetworkConnectListener listener){
@@ -613,11 +627,21 @@ public class NetworkAPI implements HttpRequest {
 
 	public void patdhzximg(String did,String describe, RequestProgressDialog diag, NetworkConnectListener listener){
 		PatientDHZXImgRequest request = new PatientDHZXImgRequest(did, describe);
-		mConnection.sendRequestByPost(request, diag, EmptyResponse.class, listener);
+		mConnection.sendRequestByPost(request, diag, PatientZXResponse.class, listener);
 	}
 
 	public void patdhzxnoimg(String did,String describe, RequestProgressDialog diag, NetworkConnectListener listener){
 		PatientDHZXNoImgRequest request = new PatientDHZXNoImgRequest(did, describe);
-		mConnection.sendRequestByPost(request, diag, EmptyResponse.class, listener);
+		mConnection.sendRequestByPost(request, diag, PatientZXResponse.class, listener);
+	}
+
+	public void pathospital(String hospitalid, RequestProgressDialog diag, NetworkConnectListener listener){
+		PatientHospitalIntroRequest request = new PatientHospitalIntroRequest(hospitalid);
+		mConnection.sendRequestByPost(request, diag, PatientHospitalIntroResponse.class, listener);
+	}
+
+	public void doctel(String did, String orderid, RequestProgressDialog diag, NetworkConnectListener listener){
+		PatientDHZXResultRequest request = new PatientDHZXResultRequest(did, orderid);
+		mConnection.sendRequestByPost(request, diag, PatientDHZXResultResponse.class, listener);
 	}
 }

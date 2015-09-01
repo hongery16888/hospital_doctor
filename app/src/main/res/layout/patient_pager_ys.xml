@@ -136,65 +136,7 @@
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/yygh"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/global_padding"
-        android:layout_marginRight="@dimen/global_padding"
-        android:layout_marginTop="@dimen/global_padding"
-        android:background="@drawable/selector_item"
-        android:orientation="horizontal">
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/global_line_padding"
-            android:src="@drawable/icon_ys_yygh" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:orientation="vertical"
-            android:paddingBottom="@dimen/global_padding"
-            android:paddingTop="@dimen/global_padding">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/patient_ys_yygh"
-                android:textColor="@color/global_title_color"
-                android:textSize="@dimen/global_title_size" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingTop="@dimen/five_dip"
-                android:text="@string/patient_ys_yygh_ex"
-                android:textColor="@color/grey_deep"
-                android:textSize="@dimen/global_sub_title_size"
-                android:lines="2"/>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            android:orientation="vertical">
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:padding="@dimen/global_line_padding"
-                android:src="@drawable/list_ys_arrow" />
-
-        </LinearLayout>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/czcx"
+        android:id="@+id/czys"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="@dimen/global_padding"
@@ -221,7 +163,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/patient_ys_czcx"
+                android:text="出诊医生"
                 android:textColor="@color/global_title_color"
                 android:textSize="@dimen/global_title_size" />
 
@@ -229,7 +171,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingTop="@dimen/five_dip"
-                android:text="@string/patient_ys_czcx_ex"
+                android:text="查看出诊中的医生"
                 android:textColor="@color/grey_deep"
                 android:textSize="@dimen/global_sub_title_size" />
         </LinearLayout>

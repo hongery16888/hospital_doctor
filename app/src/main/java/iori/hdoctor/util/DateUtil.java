@@ -180,7 +180,7 @@ public class DateUtil {
 		ArrayList<String> list = new ArrayList<>();
 
 		for (int i = 0; i < 24; i++){
-			list.add(i + ":00");
+			list.add(i + ":00:00");
 		}
 
 		return  list;

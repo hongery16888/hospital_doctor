@@ -1,5 +1,6 @@
 package iori.hdoctor.activity;
 
+import android.app.Dialog;
 import android.content.Intent;
 import android.view.View;
 import android.widget.AdapterView;
@@ -35,6 +36,7 @@ public class PatientFJActivity extends BaseActivity implements NetworkConnectLis
     private ArrayList<PatNearDoc> patNearDocs = new ArrayList<>();
     private ArrayList<PatNearHosp> patNearHosps = new ArrayList<>();
     private boolean isDoc = true;
+    private Dialog dialog;
 
     @InjectView(R.id.fj_listview)
     ListView listView;
@@ -42,6 +44,13 @@ public class PatientFJActivity extends BaseActivity implements NetworkConnectLis
     TextView midLeftText;
     @InjectView(R.id.mid_right_yy)
     TextView midRightText;
+
+    @OnClick(R.id.type)
+    public void type(){
+        if (dialog == null)
+            initDialog();
+        dialog.show();
+    }
 
     @OnClick({R.id.mid_left_ys, R.id.mid_right_yy})
     public void midIcon(TextView textView) {
@@ -87,6 +96,10 @@ public class PatientFJActivity extends BaseActivity implements NetworkConnectLis
                     Intent intent = new Intent(PatientFJActivity.this, PatientDoctorIntroduceActivity.class);
                     intent.putExtra("did", patNearDocs.get(position).getDid());
                     startActivity(intent);
+                }else{
+                    Intent intent = new Intent(PatientFJActivity.this, PatientHospitalIntroduceActivity.class);
+                    intent.putExtra("hospitalid", patNearHosps.get(position).getHospitalid());
+                    startActivity(intent);
                 }
             }
         });
@@ -126,5 +139,38 @@ public class PatientFJActivity extends BaseActivity implements NetworkConnectLis
         }
         showToast(errorMsg);
         dismissProgressDialog();
+    }
+
+    private void initDialog(){
+        dialog = new Dialog(this, R.style.dialog);
+        View view = View.inflate(this, R.layout.doctor_type_dialog, null);
+        dialog.setContentView(view);
+        dialog.setCancelable(true);
+        dialog.setCanceledOnTouchOutside(true);
+
+        dialog.findViewById(R.id.juli).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                dialog.hide();
+            }
+        });
+
+        dialog.findViewById(R.id.zizhi).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(PatientFJActivity.this, PatientZiZhiDocActivity.class));
+                dialog.hide();
+                finish();
+            }
+        });
+
+        dialog.findViewById(R.id.chuzhen).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(PatientFJActivity.this, PatientChuZhenActivity.class));
+                dialog.hide();
+                finish();
+            }
+        });
     }
 }

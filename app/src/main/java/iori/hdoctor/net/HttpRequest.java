@@ -178,6 +178,14 @@ public interface HttpRequest {
 	public static final String PATH_PAT_ONLINE_CONS = BASIC_PATH + "user/onlinecons";
 	public static final String PAT_ONLINE_TEL = "onlinetel";
 	public static final String PATH_PAT_ONLINE_TEL = BASIC_PATH + "user/onlinetel";
+	public static final String PAT_HOSPITAL = "hospital";
+	public static final String PATH_PAT_HOSPITAL = BASIC_PATH + "user/hospital";
+	public static final String PAT_DOC_TEL = "doctel";
+	public static final String PATH_PAT_DOC_TEL = BASIC_PATH + "user/doctel";
+	public static final String PAT_CHUZHEN = "dchuzhen";
+	public static final String PATH_PAT_CHUZHEN = BASIC_PATH + "user/dchuzhen";
+	public static final String PAT_PINGJIA = "pingjia";
+	public static final String PATH_PAT_PINGJIA = BASIC_PATH + "user/pingjia";
 
 
 

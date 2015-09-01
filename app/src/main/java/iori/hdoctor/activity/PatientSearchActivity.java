@@ -122,9 +122,15 @@ public class PatientSearchActivity extends BaseActivity implements NetworkConnec
         searchListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent intent = new Intent(PatientSearchActivity.this, PatientDoctorIntroduceActivity.class);
-                intent.putExtra("did", patSearchDocs.get(position).getDid());
-                startActivity(intent);
+                if (typeId == DOCTOR) {
+                    Intent intent = new Intent(PatientSearchActivity.this, PatientDoctorIntroduceActivity.class);
+                    intent.putExtra("did", patSearchDocs.get(position).getDid());
+                    startActivity(intent);
+                }else if (typeId == HOSPITAL){
+                    Intent intent = new Intent(PatientSearchActivity.this, PatientHospitalIntroduceActivity.class);
+                    intent.putExtra("hospitalid", patSearchHosps.get(position).getHospitalid());
+                    startActivity(intent);
+                }
             }
         });
 

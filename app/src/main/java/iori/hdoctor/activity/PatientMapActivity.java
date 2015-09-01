@@ -6,6 +6,7 @@ import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.widget.TextView;
 
+import com.baidu.mapapi.SDKInitializer;
 import com.baidu.mapapi.map.BaiduMap;
 import com.baidu.mapapi.map.BitmapDescriptor;
 import com.baidu.mapapi.map.BitmapDescriptorFactory;
@@ -33,6 +34,7 @@ public class PatientMapActivity extends BaseActivity {
 
     @Override
     protected int setContentViewResId() {
+        SDKInitializer.initialize(getApplicationContext());
         return R.layout.patient_map_main;
     }
 

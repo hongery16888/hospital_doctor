@@ -22,7 +22,6 @@
             android:text="@string/blgl_item_name"
             android:textColor="@color/top_bar_bg"
             android:gravity="center_vertical"
-            android:layout_weight="2"
             android:paddingLeft="@dimen/global_padding"/>
 
 
