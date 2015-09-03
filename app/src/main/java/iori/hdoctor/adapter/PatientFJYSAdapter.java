@@ -15,6 +15,8 @@ import java.util.ArrayList;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
+import io.rong.imkit.MainActivity;
+import io.rong.imkit.RongIM;
 import iori.hdoctor.R;
 import iori.hdoctor.net.HttpRequest;
 import iori.hdoctor.net.entity.PatNearDoc;

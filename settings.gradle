@@ -1,1 +1,1 @@
-include ':app', ':pulltorefresh', ':PhotoCropper'
+include ':app', ':pulltorefresh', ':PhotoCropper', ':kit'

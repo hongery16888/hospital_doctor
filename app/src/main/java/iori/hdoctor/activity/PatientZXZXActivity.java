@@ -35,6 +35,7 @@ import java.util.Random;
 
 import butterknife.InjectView;
 import butterknife.OnClick;
+import io.rong.imkit.RongIM;
 import iori.hdoctor.R;
 import iori.hdoctor.activity.base.BaseActivity;
 import iori.hdoctor.activity.base.HDoctorCode;
@@ -273,7 +274,9 @@ public class PatientZXZXActivity extends BasePhotoCropActivity implements Networ
                             // 其他值就可以判断为支付失败，包括用户主动取消支付，或者系统返回的错误
                             Toast.makeText(PatientZXZXActivity.this, "支付失败",
                                     Toast.LENGTH_SHORT).show();
-
+                            if (RongIM.getInstance() != null) {
+                                RongIM.getInstance().startPrivateChat(PatientZXZXActivity.this, "11396", "盗版哥");
+                            }
                         }
                     }
                     break;

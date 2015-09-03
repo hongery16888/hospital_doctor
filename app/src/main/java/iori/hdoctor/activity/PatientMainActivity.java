@@ -1,10 +1,14 @@
 package iori.hdoctor.activity;
 
+import android.app.ActivityManager;
+import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.RadioGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.baidu.location.LocationClient;
 import com.baidu.location.LocationClientOption;
@@ -13,6 +17,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.InjectView;
+import io.rong.imkit.MainActivity;
+import io.rong.imkit.RongIM;
+import io.rong.imlib.RongIMClient;
+import io.rong.imlib.model.UserInfo;
 import iori.hdoctor.R;
 import iori.hdoctor.activity.base.BaseActivity;
 import iori.hdoctor.activity.base.BasePager;
@@ -21,12 +29,15 @@ import iori.hdoctor.activity.pager.PatientDoctorPager;
 import iori.hdoctor.activity.pager.PatientIndexPager;
 import iori.hdoctor.activity.pager.PatientMinePager;
 import iori.hdoctor.adapter.ViewPagerAdapter;
+import iori.hdoctor.net.DataTransfer;
 import iori.hdoctor.net.NetworkConnectListener;
 import iori.hdoctor.net.response.CheckVersionResponse;
 import iori.hdoctor.view.LazyViewPager.OnPageChangeListener;
 import iori.hdoctor.view.MyViewPager;
 
 public class PatientMainActivity extends BaseActivity implements NetworkConnectListener {
+
+	private String Token = "I9NjvTRCmx9+Brqh+D2ojgoiHXyvhjY180IPwm5VcEO9tluflJrL2C8CEEWkikc6ErEj/4uWOC1oe/vTttnYMA==";
 
 	private LocationClient mLocationClient;
 
@@ -71,6 +82,26 @@ public class PatientMainActivity extends BaseActivity implements NetworkConnectL
 		pages.get(oldPosition).onResume();
 //		NetworkAPI.getNetworkAPI().checkVersion("1", null, this);
 		mLocationClient.start();
+
+		RongIM.connect(Token, new RongIMClient.ConnectCallback() {
+			@Override
+			public void onTokenIncorrect() {
+				//Connect Token 失效的状态处理，需要重新获取 Token
+				Toast.makeText(PatientMainActivity.this, "onTokenIncorrect", Toast.LENGTH_LONG).show();
+			}
+
+			@Override
+			public void onSuccess(String userId) {
+				Toast.makeText(PatientMainActivity.this, "onSuccess userId : " + userId, Toast.LENGTH_LONG).show();
+			}
+
+			@Override
+			public void onError(RongIMClient.ErrorCode errorCode) {
+				Toast.makeText(PatientMainActivity.this, "onError errorCode : " + errorCode, Toast.LENGTH_LONG).show();
+			}
+		});
+
+		RongIM.getInstance().refreshUserInfoCache(new UserInfo("44", "盗版哥", Uri.parse("http://rongcloud-web.qiniudn.com/docs_demo_rongcloud_logo.png")));
 	}
 
 	@Override

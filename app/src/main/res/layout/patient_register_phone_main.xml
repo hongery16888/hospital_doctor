@@ -29,6 +29,7 @@
             android:id="@+id/username"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:numeric="integer"
             android:layout_weight="0.5"
             android:padding="@dimen/global_line_padding"
             android:drawablePadding="@dimen/global_line_padding"

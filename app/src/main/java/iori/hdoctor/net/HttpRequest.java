@@ -186,6 +186,8 @@ public interface HttpRequest {
 	public static final String PATH_PAT_CHUZHEN = BASIC_PATH + "user/dchuzhen";
 	public static final String PAT_PINGJIA = "pingjia";
 	public static final String PATH_PAT_PINGJIA = BASIC_PATH + "user/pingjia";
+	public static final String PAT_FRIEND = "friends";
+	public static final String PATH_PAT_FRIENDS = BASIC_PATH + "user/friends";
 
 
 

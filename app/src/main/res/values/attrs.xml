@@ -23,7 +23,7 @@
         <attr name="rimWidth" format="dimension" />
         <attr name="spinSpeed" format="integer" />
         <attr name="circleColor" format="color" />
-        <attr name="radius" format="dimension" />
+        <attr name="radiusC" format="dimension" />
         <attr name="barWidth" format="dimension" />
         <attr name="barLength" format="dimension" />
         <attr name="delayMillis" format="dimension"/>

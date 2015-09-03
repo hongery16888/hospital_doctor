@@ -5,6 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/HDoctor.iml" filepath="$PROJECT_DIR$/HDoctor.iml" />
       <module fileurl="file://$PROJECT_DIR$/PhotoCropper/PhotoCropper.iml" filepath="$PROJECT_DIR$/PhotoCropper/PhotoCropper.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/kit/kit.iml" filepath="$PROJECT_DIR$/kit/kit.iml" />
       <module fileurl="file://$PROJECT_DIR$/pulltorefresh/pulltorefresh.iml" filepath="$PROJECT_DIR$/pulltorefresh/pulltorefresh.iml" />
     </modules>
   </component>

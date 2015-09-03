@@ -15,6 +15,9 @@ import com.handmark.pulltorefresh.library.PullToRefreshListView;
 
 import java.util.ArrayList;
 
+import io.rong.imkit.MainActivity;
+import io.rong.imkit.RongIM;
+import io.rong.imlib.model.Conversation;
 import iori.hdoctor.R;
 import iori.hdoctor.activity.DoctorCircleInfoActivity;
 import iori.hdoctor.activity.PatientCircleActivity;
@@ -23,6 +26,8 @@ import iori.hdoctor.activity.PatientFriendActivity;
 import iori.hdoctor.activity.PatientMainActivity;
 import iori.hdoctor.activity.PatientMessageActivity;
 import iori.hdoctor.activity.base.BasePager;
+import iori.hdoctor.activity.im.ConversationListActivity;
+import iori.hdoctor.activity.im.SubConversationActivity;
 import iori.hdoctor.adapter.DoctorCircleAdapter;
 import iori.hdoctor.adapter.PatientCircleAdapter;
 import iori.hdoctor.net.HttpRequest;
@@ -133,7 +138,10 @@ public class PatientCirclePager extends BasePager implements NetworkConnectListe
     private View.OnClickListener xxListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            context.startActivity(new Intent(context, PatientMessageActivity.class));
+//            context.startActivity(new Intent(context, PatientMessageActivity.class));
+            context.startActivity(new Intent(context, ConversationListActivity.class));
+//            if(RongIM.getInstance() != null)
+//                RongIM.getInstance().startSubConversationList(context, Conversation.ConversationType.PRIVATE);
         }
     };
 

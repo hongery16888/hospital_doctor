@@ -33,6 +33,7 @@ public class PatientLoginResponse {
 	private String uid;
 	private String created_at;
 	private String updated_at;
+	private String liaotiantoken;
 
 	public String getId() {
 		return id;
@@ -280,5 +281,13 @@ public class PatientLoginResponse {
 
 	public void setUpdated_at(String updated_at) {
 		this.updated_at = updated_at;
+	}
+
+	public String getLiaotiantoken() {
+		return liaotiantoken;
+	}
+
+	public void setLiaotiantoken(String liaotiantoken) {
+		this.liaotiantoken = liaotiantoken;
 	}
 }

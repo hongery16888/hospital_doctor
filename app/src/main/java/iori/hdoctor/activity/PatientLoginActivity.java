@@ -69,6 +69,7 @@ public class PatientLoginActivity extends BaseActivity implements NetworkConnect
     public void onRequestSucceed(Object data, String requestAction) {
         if (HttpRequest.PAT_LOGIN.equals(requestAction)) {
             DataTransfer.setUid(((PatientLoginResponse) data).getUid());
+            getApp().setRongToken(((PatientLoginResponse) data).getLiaotiantoken());
             saveLoginHistoryInfo();
             startActivity(new Intent(PatientLoginActivity.this, PatientMainActivity.class));
             finish();

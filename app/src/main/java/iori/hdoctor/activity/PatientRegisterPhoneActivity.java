@@ -56,8 +56,10 @@ public class PatientRegisterPhoneActivity extends BaseActivity implements Networ
     @Override
     public void onRequestSucceed(Object data, String requestAction) {
         if (HttpRequest.PAT_REGISTER_PHONE.equals(requestAction)) {
-            DataTransfer.setUid(((PatientRegisterPhoneResponse)data).getUid());
-            startActivity(new Intent(this, PatientRegisterCompleteActivity.class));
+            DataTransfer.setUid(((PatientRegisterPhoneResponse) data).getUid());
+            Intent intent = new Intent(this, PatientRegisterCompleteActivity.class);
+            intent.putExtra("phone", username.getText().toString());
+            startActivity(intent);
             dismissProgressDialog();
         }
     }

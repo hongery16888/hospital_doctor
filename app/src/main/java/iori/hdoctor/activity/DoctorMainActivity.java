@@ -5,11 +5,14 @@ import android.view.KeyEvent;
 import android.view.View;
 import android.widget.RadioGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.InjectView;
+import io.rong.imkit.RongIM;
+import io.rong.imlib.RongIMClient;
 import iori.hdoctor.R;
 import iori.hdoctor.activity.base.BaseActivity;
 import iori.hdoctor.activity.base.BasePager;
@@ -24,6 +27,8 @@ import iori.hdoctor.view.MyViewPager;
 import iori.hdoctor.view.LazyViewPager.OnPageChangeListener;
 
 public class DoctorMainActivity extends BaseActivity implements NetworkConnectListener {
+
+	private String Token = "S019M/DUUsP2K/jRFnkWkYsGJwjRLDdMdu1+fbajavOeScEzdOGCe1Nc6AM8Vl5apYEUp7TNrjt2HQDTrdDYQQ==";
 
 	@InjectView(R.id.viewpager)
 	MyViewPager viewPager;
@@ -62,6 +67,24 @@ public class DoctorMainActivity extends BaseActivity implements NetworkConnectLi
 		main_radio.check(currentItem);
 		pages.get(oldPosition).onResume();
 //		NetworkAPI.getNetworkAPI().checkVersion("1", null, this);
+
+		RongIM.connect(Token, new RongIMClient.ConnectCallback() {
+			@Override
+			public void onTokenIncorrect() {
+				//Connect Token 失效的状态处理，需要重新获取 Token
+				Toast.makeText(DoctorMainActivity.this, "onTokenIncorrect", Toast.LENGTH_LONG).show();
+			}
+
+			@Override
+			public void onSuccess(String userId) {
+				Toast.makeText(DoctorMainActivity.this, "onSuccess userId : " + userId, Toast.LENGTH_LONG).show();
+			}
+
+			@Override
+			public void onError(RongIMClient.ErrorCode errorCode) {
+				Toast.makeText(DoctorMainActivity.this, "onError errorCode : " + errorCode, Toast.LENGTH_LONG).show();
+			}
+		});
 	}
 
 	@Override

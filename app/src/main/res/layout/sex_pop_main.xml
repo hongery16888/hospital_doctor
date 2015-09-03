@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/outside"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="horizontal"/>
+
+    <View style="@style/divider_line_horizontal" />
+
+    <TextView
+        android:id="@+id/male"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="男"
+        android:textColor="@color/global_title_color"
+        android:textSize="@dimen/global_title_size"
+        android:background="@drawable/selector_item"
+        android:gravity="center"
+        android:padding="@dimen/global_padding"/>
+
+    <View style="@style/divider_line_horizontal" />
+
+    <TextView
+        android:id="@+id/famale"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="女"
+        android:textColor="@color/global_title_color"
+        android:textSize="@dimen/global_title_size"
+        android:background="@drawable/selector_item"
+        android:gravity="center"
+        android:padding="@dimen/global_padding"/>
+
+    <View style="@style/divider_line_horizontal" />
+
+    <TextView
+        android:id="@+id/cancel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="取消"
+        android:textColor="@color/global_title_color"
+        android:textSize="@dimen/global_title_size"
+        android:background="@drawable/selector_item"
+        android:gravity="center"
+        android:padding="@dimen/global_padding"/>
+
+</LinearLayout>

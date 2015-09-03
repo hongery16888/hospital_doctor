@@ -1,10 +1,10 @@
 package iori.hdoctor.app;
 
 import android.app.Activity;
+import android.app.ActivityManager;
 import android.app.Application;
 import android.app.Service;
 import android.content.Context;
-import android.graphics.Bitmap;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Environment;
@@ -15,24 +15,21 @@ import android.widget.TextView;
 import com.baidu.location.BDLocation;
 import com.baidu.location.BDLocationListener;
 import com.baidu.location.LocationClient;
-import com.baidu.mapapi.SDKInitializer;
 import com.nostra13.universalimageloader.cache.disc.impl.UnlimitedDiskCache;
 import com.nostra13.universalimageloader.cache.disc.naming.Md5FileNameGenerator;
 import com.nostra13.universalimageloader.cache.memory.impl.UsingFreqLimitedMemoryCache;
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
-import com.nostra13.universalimageloader.core.assist.ImageScaleType;
 import com.nostra13.universalimageloader.core.assist.QueueProcessingType;
-import com.nostra13.universalimageloader.core.display.SimpleBitmapDisplayer;
 import com.nostra13.universalimageloader.core.download.BaseImageDownloader;
 import com.nostra13.universalimageloader.utils.StorageUtils;
 
 import java.io.File;
 import java.util.ArrayList;
-import java.util.List;
 
-import iori.hdoctor.R;
+import io.rong.imkit.RongIM;
+import io.rong.imlib.ipc.RongExceptionHandler;
 import iori.hdoctor.net.entity.TestingReport;
 import iori.hdoctor.net.response.DoctorLoginResponse;
 import iori.hdoctor.net.response.DoctorServiceMagResponse;
@@ -56,12 +53,12 @@ public class MyApp extends Application {
     private Handler circleRefreshHandler;
     private Activity mainActivity;
     private Activity patDocInfoActivity;
-
     public LocationClient mLocationClient;
     public Vibrator mVibrator;
     public MyLocationListener mMyLocationListener;
     private double latitude;
     private double longitude;
+    private String rongToken;
 
     /*客户端在SD卡的存储根目录*/
     public final static String APP_ROOT = Environment.getExternalStorageDirectory().getPath() + File.separator;
@@ -74,6 +71,13 @@ public class MyApp extends Application {
         initImageLoader(getApplicationContext());
 
 //        SDKInitializer.initialize(getApplicationContext());
+
+        if ("iori.hdoctor".equals(getCurProcessName(getApplicationContext())) ||
+                "io.rong.push".equals(getCurProcessName(getApplicationContext()))) {
+
+            RongIM.init(this);
+
+        }
 
         mLocationClient = new LocationClient(this.getApplicationContext());
         mMyLocationListener = new MyLocationListener();
@@ -105,17 +109,6 @@ public class MyApp extends Application {
     }
 
     public void initImageLoader(Context context) {
-
-        /*
-        //我们在项目中不需要每一个都自己设置，一般使用createDefault()创建的ImageLoaderConfiguration就能使用，然后调用ImageLoader的init（）
-        //方法将ImageLoaderConfiguration参数传递进去，ImageLoader使用单例模式
-        //创建默认的ImageLoader配置参数
-        */
-//        ImageLoaderConfiguration configuration = ImageLoaderConfiguration
-//                .createDefault(context);
-//        //Initialize ImageLoader with configuration.
-//        ImageLoader.getInstance().init(configuration);
-
 
         //缓存文件的目录
         File cacheDir = StorageUtils.getOwnCacheDirectory(context, "universalimageloader/Cache");
@@ -156,6 +149,19 @@ public class MyApp extends Application {
             setLatitude(location.getLatitude());
             setLongitude(location.getLongitude());
         }
+    }
+
+    public static String getCurProcessName(Context context) {
+        int pid = android.os.Process.myPid();
+        ActivityManager activityManager = (ActivityManager) context
+                .getSystemService(Context.ACTIVITY_SERVICE);
+        for (ActivityManager.RunningAppProcessInfo appProcess : activityManager
+                .getRunningAppProcesses()) {
+            if (appProcess.pid == pid) {
+                return appProcess.processName;
+            }
+        }
+        return null;
     }
 
     public ArrayList<Activity> getActivities() {
@@ -300,5 +306,13 @@ public class MyApp extends Application {
 
     public void setPatDocInfoActivity(Activity patDocInfoActivity) {
         this.patDocInfoActivity = patDocInfoActivity;
+    }
+
+    public String getRongToken() {
+        return rongToken;
+    }
+
+    public void setRongToken(String rongToken) {
+        this.rongToken = rongToken;
     }
 }

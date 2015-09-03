@@ -63,7 +63,7 @@ public class DateUtil {
 	}
 
 	public static boolean LoginFlag(){
-		long startTime = StrToDate("2015-08-21", "yyyy-MM-dd").getTime();
+		long startTime = StrToDate("2015-10-01", "yyyy-MM-dd").getTime();
 		long dayTime = 86400000;
 		System.out.println("startTime : " + (System.currentTimeMillis() - startTime) + "    nowTime : " + dayTime*30);
 		if ((System.currentTimeMillis() - startTime) > dayTime*30){
