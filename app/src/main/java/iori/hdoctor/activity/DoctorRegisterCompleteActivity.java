@@ -26,6 +26,7 @@ import iori.hdoctor.net.HttpRequest;
 import iori.hdoctor.net.NetworkAPI;
 import iori.hdoctor.net.NetworkConnectListener;
 import iori.hdoctor.net.response.DoctorLoginResponse;
+import iori.hdoctor.net.response.PatientRegisterPhoneResponse;
 import iori.hdoctor.view.CircleBitmapDisplayer;
 import iori.hdoctor.view.crop.CropHelper;
 import iori.hdoctor.view.crop.CropParams;
@@ -117,6 +118,7 @@ public class DoctorRegisterCompleteActivity extends BasePhotoCropActivity implem
     public void onRequestSucceed(Object data, String requestAction) {
         if (HttpRequest.DOC_REGISTER_INFO_2.equals(requestAction)) {
             DataTransfer.setUid(((DoctorLoginResponse) data).getUid());
+            getApp().setRongToken(((DoctorLoginResponse) data).getLiaotiantoken());
             getApp().setUser((DoctorLoginResponse)data);
             startActivity(new Intent(DoctorRegisterCompleteActivity.this, DoctorMainActivity.class));
         }

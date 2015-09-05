@@ -114,6 +114,7 @@ public class DoctorCirclePager extends BasePager implements NetworkConnectListen
     public void onRequestFailure(int error, String errorMsg, String requestAction) {
         Toast.makeText(context, errorMsg, Toast.LENGTH_LONG).show();
         ((DoctorMainActivity)context).dismissProgressDialog();
+        listView.onRefreshComplete();
     }
 
     private View.OnClickListener sqListener = new View.OnClickListener() {

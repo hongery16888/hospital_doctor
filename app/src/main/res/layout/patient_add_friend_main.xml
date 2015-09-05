@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/global_bg">
+
+    <include layout="@layout/patient_title_bar" />
+
+    <LinearLayout style="@style/LayerMainMyItem"
+        android:layout_marginTop="@dimen/global_padding">
+
+        <TextView style="@style/TxtMainMyItem"
+            android:text="好友帐号"
+            android:layout_weight="0.4"/>
+
+        <EditText
+            android:id="@+id/username"
+            style="@style/TxtMainMyItem"
+            android:hint="请输入好友帐号"
+            android:background="@color/transparent"
+            android:numeric="integer"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="添加好友"
+        android:textColor="@color/white"
+        android:textSize="@dimen/global_label"
+        android:padding="@dimen/global_padding"
+        android:background="@drawable/blgl_green_button_selector"
+        android:layout_margin="@dimen/global_btn_padding"
+        android:gravity="center"
+        android:onClick="addFriend"/>
+
+</LinearLayout>

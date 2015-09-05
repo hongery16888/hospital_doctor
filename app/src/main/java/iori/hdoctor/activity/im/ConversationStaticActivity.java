@@ -9,6 +9,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
@@ -19,12 +20,14 @@ import io.rong.imkit.widget.provider.CameraInputProvider;
 import io.rong.imkit.widget.provider.ImageInputProvider;
 import io.rong.imkit.widget.provider.InputProvider;
 import io.rong.imkit.widget.provider.VoIPInputProvider;
+import io.rong.imlib.RongIMClient;
 import io.rong.imlib.model.Conversation;
 import io.rong.imlib.model.Message;
 import io.rong.imlib.model.UserInfo;
 import io.rong.message.ImageMessage;
 import io.rong.message.VoiceMessage;
 import iori.hdoctor.R;
+import iori.hdoctor.app.MyApp;
 
 /**
  * Created by Administrator on 2015/8/30.
@@ -33,6 +36,8 @@ public class ConversationStaticActivity extends FragmentActivity implements Rong
 
     @InjectView(R.id.mid_title)
     TextView midTitle;
+    @InjectView(R.id.title_bar)
+    View titleBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,28 +46,21 @@ public class ConversationStaticActivity extends FragmentActivity implements Rong
         setContentView(R.layout.conversation);
         ButterKnife.inject(this);
 
-        //扩展功能自定义
-        InputProvider.ExtendProvider[] provider = {
-                new ImageInputProvider(RongContext.getInstance()),//图片
-                new CameraInputProvider(RongContext.getInstance()),//相机
-//                new VoIPInputProvider(RongContext.getInstance()),// 语音通话
-        };
-
+        titleBar.setBackgroundColor(((MyApp)getApplication()).isDoc()?getResources().getColor(R.color.top_bar_bg):getResources().getColor(R.color.patient_top_bar_bg));
+//
         midTitle.setText(getIntent().getData().getQueryParameter("title"));
-
-        RongIM.getInstance().resetInputExtensionProvider(Conversation.ConversationType.PRIVATE, provider);
-
+//
 //        ConversationFragment fragment =
 //                (ConversationFragment)getSupportFragmentManager().findFragmentById(R.id.conversation);
 //        /* 传入私聊会话 PRIVATE 的参数*/
 //        Uri uri = Uri.parse("rong://" + getApplicationInfo().packageName).buildUpon().appendPath("conversation")
 //                .appendPath(io.rong.imlib.model.Conversation.ConversationType.PRIVATE.getName().toLowerCase())
-//                .appendQueryParameter("targetId", "44").appendQueryParameter("title", "盗版哥").build();
+//                .appendQueryParameter("targetId", getIntent().getData().getQueryParameter("targetId")).appendQueryParameter("title", getIntent().getData().getQueryParameter("title")).build();
 //
 //        fragment.setUri(uri);
-
-//        RongIM.setConversationBehaviorListener(this);
-
+//
+        RongIM.setConversationBehaviorListener(this);
+//
         findViewById(R.id.left_icon).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -95,8 +93,7 @@ public class ConversationStaticActivity extends FragmentActivity implements Rong
 
             startActivity(intent);
         }else if (message.getContent() instanceof VoiceMessage) {//语音消息
-            VoiceMessage voiceMessage = (VoiceMessage) message.getContent();
-
+            return false;
         }
         return true;
     }

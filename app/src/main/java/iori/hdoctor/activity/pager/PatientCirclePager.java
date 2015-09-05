@@ -138,8 +138,8 @@ public class PatientCirclePager extends BasePager implements NetworkConnectListe
     private View.OnClickListener xxListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-//            context.startActivity(new Intent(context, PatientMessageActivity.class));
-            context.startActivity(new Intent(context, ConversationListActivity.class));
+            context.startActivity(new Intent(context, PatientMessageActivity.class));
+//            context.startActivity(new Intent(context, ConversationListActivity.class));
 //            if(RongIM.getInstance() != null)
 //                RongIM.getInstance().startSubConversationList(context, Conversation.ConversationType.PRIVATE);
         }

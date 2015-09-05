@@ -82,10 +82,10 @@ public interface HttpRequest {
 	public static final String PATH_DOC_VERIFY = BASIC_PATH + "user/docverify";
 	public static final String DOC_CONSULTING = "docconsulting";
 	public static final String PATH_DOC_CONSULTING = BASIC_PATH + "user/docconsulting";
+	public static final String DOC_INCOME_RECORD = "docwithdrawal";
+	public static final String PATH_DOC_INCOME_RECORD = BASIC_PATH + "user/docwithdrawal";
 	public static final String DOC_INCOME = "docincome";
 	public static final String PATH_DOC_INCOME = BASIC_PATH + "user/docincome";
-	public static final String DOC_INCOME_RECORD = "";
-	public static final String PATH_DOC_INCOME_RECORD = BASIC_PATH + "user/";
 	public static final String DOC_ACCOUNT = "docaccount";
 	public static final String PATH_DOC_ACCOUNT = BASIC_PATH + "user/docaccount";
 	public static final String DOC_INFO = "docinfo";
@@ -188,6 +188,17 @@ public interface HttpRequest {
 	public static final String PATH_PAT_PINGJIA = BASIC_PATH + "user/pingjia";
 	public static final String PAT_FRIEND = "friends";
 	public static final String PATH_PAT_FRIENDS = BASIC_PATH + "user/friends";
+	public static final String PAT_ADD_FRIEND = "patadd";
+	public static final String PATH_PAT_ADD_FRIENDS = BASIC_PATH + "user/patadd";
+	public static final String PAT_AGREE_FRIEND = "agree";
+	public static final String PATH_PAT_AGREE_FRIENDS = BASIC_PATH + "user/agree";
+	public static final String DOC_FRIEND = "docfriend";
+	public static final String PATH_DOC_FRIENDS = BASIC_PATH + "user/docfriend";
+	public static final String DOC_ADD_FRIEND = "docjia";
+	public static final String PATH_DOC_ADD_FRIENDS = BASIC_PATH + "user/docjia";
+	public static final String DOC_AGREE_FRIEND = "docjiasucess";
+	public static final String PATH_DOC_AGREE_FRIENDS = BASIC_PATH + "user/docjiasucess";
+
 
 
 

@@ -21,12 +21,21 @@ import iori.hdoctor.view.NoScrollListView;
  */
 public class DoctorSRXQActivity extends BaseActivity implements NetworkConnectListener{
 
+    private int totalIncome;
     @InjectView(R.id.bank_list)
     NoScrollListView bankList;
     @InjectView(R.id.income)
     TextView income;
     @OnClick(R.id.record)
     public void record(){
+        startActivity(new Intent(this, DoctorBankRecordActivity.class));
+    }
+
+    @OnClick(R.id.next_step)
+    public void next(){
+        if (totalIncome < 500){
+            showToast("小于500不能提现");
+        }
 
     }
 
@@ -65,6 +74,7 @@ public class DoctorSRXQActivity extends BaseActivity implements NetworkConnectLi
     public void onRequestSucceed(Object data, String requestAction) {
         if (HttpRequest.DOC_INCOME.equals(requestAction)){
             income.setText(((DoctorSRXQResponse)data).getTotal());
+            totalIncome = Integer.parseInt(((DoctorSRXQResponse)data).getTotal());
             bankList.setAdapter(new DoctorBankAdapter(this, ((DoctorSRXQResponse)data).getBanklist()));
         }
         dismissProgressDialog();

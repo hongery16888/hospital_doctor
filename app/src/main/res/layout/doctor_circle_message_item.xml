@@ -27,8 +27,8 @@
                 android:id="@+id/content"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/doctor_circle_info_message_last_comment"
                 android:textColor="@color/grey_deep"
+                android:text="无"
                 android:textSize="@dimen/global_title_size"
                 android:paddingTop="@dimen/five_dip"
                 android:singleLine="true"/>

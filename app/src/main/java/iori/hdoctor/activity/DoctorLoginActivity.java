@@ -78,6 +78,7 @@ public class DoctorLoginActivity extends BaseActivity implements NetworkConnectL
         if (HttpRequest.DOC_LOGIN.equals(requestAction)) {
             DataTransfer.setUid(((DoctorLoginResponse) data).getUid());
             getApp().setUser((DoctorLoginResponse) data);
+            getApp().setRongToken(((DoctorLoginResponse) data).getLiaotiantoken());
             saveLoginHistoryInfo();
             startActivity(new Intent(DoctorLoginActivity.this, DoctorMainActivity.class));
             finish();

@@ -28,7 +28,8 @@
         <activity android:name=".activity.DoctorCZSZActivity" android:screenOrientation="portrait"/>
         <activity android:name=".activity.DoctorFFGLActivity" android:screenOrientation="portrait"/>
         <activity android:name=".activity.DoctorFFGLInfoActivity" android:screenOrientation="portrait"/>
-        <activity android:name=".activity.DoctorGRZXActivity" android:screenOrientation="portrait" /> lp2
+        <activity android:name=".activity.DoctorGRZXActivity" android:screenOrientation="portrait" />
+        <activity android:name=".activity.DoctorBankRecordActivity" android:screenOrientation="portrait" />
         <activity android:name=".activity.DoctorPublicActivity" android:screenOrientation="portrait" />
         <activity android:name=".activity.DoctorCircleInfoActivity" android:screenOrientation="portrait" />
         <activity android:name=".activity.DoctorFriendActivity" android:screenOrientation="portrait" />
@@ -98,9 +99,10 @@
         <activity android:name=".activity.PatientHospitalIntroduceActivity" android:screenOrientation="portrait" />
         <activity android:name=".activity.PatientDHZXResultActivity" android:screenOrientation="portrait" />
         <activity android:name=".activity.PatientChuZhenActivity" android:screenOrientation="portrait" />
-
+        <activity android:name=".activity.PatientAddFriendActivity" android:screenOrientation="portrait" />
         <activity android:name=".activity.im.ConversationListActivity" android:screenOrientation="portrait" />
         <activity android:name=".activity.im.PhotoActivity" android:screenOrientation="portrait" />
+        <activity android:name=".activity.DoctorAddFriendActivity" android:screenOrientation="portrait" />
 
         <!-- meta-data需要写在application中 -->
         <meta-data
@@ -241,10 +243,13 @@
         </receiver>
         <receiver android:name="io.rong.imlib.ConnectChangeReceiver" />
 
-
         <meta-data
             android:name="RONG_CLOUD_APP_KEY"
-            android:value="sfci50a7cpa0i" />
+            android:value="x18ywvqf8uqrc" />
+
+        <!--<meta-data-->
+            <!--android:name="RONG_CLOUD_APP_KEY"-->
+            <!--android:value="sfci50a7cpa0i" />-->
     </application>
 
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />

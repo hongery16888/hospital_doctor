@@ -11,8 +11,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.InjectView;
+import io.rong.imkit.RongContext;
 import io.rong.imkit.RongIM;
+import io.rong.imkit.widget.provider.CameraInputProvider;
+import io.rong.imkit.widget.provider.ImageInputProvider;
+import io.rong.imkit.widget.provider.InputProvider;
 import io.rong.imlib.RongIMClient;
+import io.rong.imlib.model.Conversation;
 import iori.hdoctor.R;
 import iori.hdoctor.activity.base.BaseActivity;
 import iori.hdoctor.activity.base.BasePager;
@@ -27,8 +32,6 @@ import iori.hdoctor.view.MyViewPager;
 import iori.hdoctor.view.LazyViewPager.OnPageChangeListener;
 
 public class DoctorMainActivity extends BaseActivity implements NetworkConnectListener {
-
-	private String Token = "S019M/DUUsP2K/jRFnkWkYsGJwjRLDdMdu1+fbajavOeScEzdOGCe1Nc6AM8Vl5apYEUp7TNrjt2HQDTrdDYQQ==";
 
 	@InjectView(R.id.viewpager)
 	MyViewPager viewPager;
@@ -66,25 +69,17 @@ public class DoctorMainActivity extends BaseActivity implements NetworkConnectLi
 		main_radio.setOnCheckedChangeListener(checkedChangeListener);
 		main_radio.check(currentItem);
 		pages.get(oldPosition).onResume();
-//		NetworkAPI.getNetworkAPI().checkVersion("1", null, this);
 
-		RongIM.connect(Token, new RongIMClient.ConnectCallback() {
-			@Override
-			public void onTokenIncorrect() {
-				//Connect Token 失效的状态处理，需要重新获取 Token
-				Toast.makeText(DoctorMainActivity.this, "onTokenIncorrect", Toast.LENGTH_LONG).show();
-			}
+		getApp().connectRong();
 
-			@Override
-			public void onSuccess(String userId) {
-				Toast.makeText(DoctorMainActivity.this, "onSuccess userId : " + userId, Toast.LENGTH_LONG).show();
-			}
+		//扩展功能自定义
+		InputProvider.ExtendProvider[] provider = {
+				new ImageInputProvider(RongContext.getInstance()),//图片
+				new CameraInputProvider(RongContext.getInstance()),//相机
+//                new VoIPInputProvider(RongContext.getInstance()),// 语音通话
+		};
 
-			@Override
-			public void onError(RongIMClient.ErrorCode errorCode) {
-				Toast.makeText(DoctorMainActivity.this, "onError errorCode : " + errorCode, Toast.LENGTH_LONG).show();
-			}
-		});
+		RongIM.getInstance().resetInputExtensionProvider(Conversation.ConversationType.PRIVATE, provider);
 	}
 
 	@Override
@@ -111,7 +106,7 @@ public class DoctorMainActivity extends BaseActivity implements NetworkConnectLi
 
 	@Override
 	public void onRequestSucceed(Object data, String requestAction) {
-		result.setText(((CheckVersionResponse)data).toString());
+
 	}
 
 	@Override

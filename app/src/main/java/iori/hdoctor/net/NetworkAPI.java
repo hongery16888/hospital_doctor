@@ -12,9 +12,11 @@ package iori.hdoctor.net;
 import iori.hdoctor.activity.PatientPublishActivity;
 import iori.hdoctor.activity.base.HDoctorCode;
 import iori.hdoctor.net.request.*;
+import iori.hdoctor.net.response.DoctorBankRecordResponse;
 import iori.hdoctor.net.response.DoctorCircleInfoResponse;
 import iori.hdoctor.net.response.DoctorCircleResponse;
 import iori.hdoctor.net.response.DoctorCircleYSResponse;
+import iori.hdoctor.net.response.DoctorFriendResponse;
 import iori.hdoctor.net.response.DoctorMyFaBiaoResponse;
 import iori.hdoctor.net.response.DoctorMyShouCangResponse;
 import iori.hdoctor.net.response.DoctorPublicResponse;
@@ -23,6 +25,7 @@ import iori.hdoctor.net.response.PatientCircleResponse;
 import iori.hdoctor.net.response.PatientCommunityResponse;
 import iori.hdoctor.net.response.PatientDHZXResponse;
 import iori.hdoctor.net.response.PatientDHZXResultResponse;
+import iori.hdoctor.net.response.PatientFriendResponse;
 import iori.hdoctor.net.response.PatientGRZXResponse;
 import iori.hdoctor.net.response.PatientHospitalIntroResponse;
 import iori.hdoctor.net.response.PatientInfoResponse;
@@ -202,6 +205,11 @@ public class NetworkAPI implements HttpRequest {
 	public void docincome(RequestProgressDialog diag, NetworkConnectListener listener){
 		DoctorSRXQRequest request = new DoctorSRXQRequest();
 		mConnection.sendRequestByPost(request, diag, DoctorSRXQResponse.class, listener);
+	}
+
+	public void docincomerecord(RequestProgressDialog diag, NetworkConnectListener listener){
+		DoctorBankRecordRequest request = new DoctorBankRecordRequest();
+		mConnection.sendRequestByPost(request, diag, DoctorBankRecordResponse.class, listener);
 	}
 
 	public void docaccountinfo(RequestProgressDialog diag, NetworkConnectListener listener){
@@ -643,5 +651,35 @@ public class NetworkAPI implements HttpRequest {
 	public void doctel(String did, String orderid, RequestProgressDialog diag, NetworkConnectListener listener){
 		PatientDHZXResultRequest request = new PatientDHZXResultRequest(did, orderid);
 		mConnection.sendRequestByPost(request, diag, PatientDHZXResultResponse.class, listener);
+	}
+
+	public void patfriend(int isdoc, RequestProgressDialog diag, NetworkConnectListener listener){
+		PatientFriendRequest request = new PatientFriendRequest(isdoc);
+		mConnection.sendRequestByPost(request, diag, PatientFriendResponse.class, listener);
+	}
+
+	public void pataddfriend(String name, RequestProgressDialog diag, NetworkConnectListener listener){
+		PatientAddFriendRequest request = new PatientAddFriendRequest(name);
+		mConnection.sendRequestByPost(request, diag, EmptyResponse.class, listener);
+	}
+
+	public void patagreefriend(String haoyouid, RequestProgressDialog diag, NetworkConnectListener listener){
+		PatientAgreeFriendRequest request = new PatientAgreeFriendRequest(haoyouid);
+		mConnection.sendRequestByPost(request, diag, EmptyResponse.class, listener);
+	}
+
+	public void docfriend(int isdoc, RequestProgressDialog diag, NetworkConnectListener listener){
+		DoctorFriendRequest request = new DoctorFriendRequest(isdoc);
+		mConnection.sendRequestByPost(request, diag, DoctorFriendResponse.class, listener);
+	}
+
+	public void docaddfriend(String name, RequestProgressDialog diag, NetworkConnectListener listener){
+		DoctorAddFriendRequest request = new DoctorAddFriendRequest(name);
+		mConnection.sendRequestByPost(request, diag, EmptyResponse.class, listener);
+	}
+
+	public void docagreefriend(String haoyouid, RequestProgressDialog diag, NetworkConnectListener listener){
+		DoctorAgreeFriendRequest request = new DoctorAgreeFriendRequest(haoyouid);
+		mConnection.sendRequestByPost(request, diag, EmptyResponse.class, listener);
 	}
 }

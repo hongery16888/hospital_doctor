@@ -5,24 +5,32 @@
 
     <LinearLayout style="@style/LayerMainMyItem">
 
-        <TextView style="@style/TxtMainMyItem"
+        <TextView
+            android:id="@+id/price"
+            style="@style/TxtMainMyItem"
             android:paddingTop="@dimen/global_line_padding"
             android:paddingBottom="@dimen/global_line_padding"
             android:text="500元"/>
 
-        <TextView style="@style/TxtMainMyItem"
+        <TextView
+            android:id="@+id/name"
+            style="@style/TxtMainMyItem"
             android:paddingTop="@dimen/global_line_padding"
             android:paddingBottom="@dimen/global_line_padding"
             android:text="@string/doctor_income_bank_card_zs"
             android:textSize="@dimen/global_sub_title_size"/>
 
-        <TextView style="@style/TxtMainMyItem"
+        <TextView
+            android:id="@+id/card_no"
+            style="@style/TxtMainMyItem"
             android:paddingTop="@dimen/global_line_padding"
             android:paddingBottom="@dimen/global_line_padding"
             android:text="...201 454"
             android:textSize="@dimen/global_sub_title_size"/>
 
-        <TextView style="@style/TxtMainMyItem"
+        <TextView
+            android:id="@+id/time"
+            style="@style/TxtMainMyItem"
             android:paddingTop="@dimen/global_line_padding"
             android:paddingBottom="@dimen/global_line_padding"
             android:text="2015-07-01"

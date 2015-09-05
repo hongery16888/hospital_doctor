@@ -12,6 +12,7 @@ import iori.hdoctor.net.DataTransfer;
 import iori.hdoctor.net.HttpRequest;
 import iori.hdoctor.net.NetworkAPI;
 import iori.hdoctor.net.NetworkConnectListener;
+import iori.hdoctor.net.response.DoctorLoginResponse;
 import iori.hdoctor.net.response.DoctorRegisterResponse;
 import iori.hdoctor.net.response.PatientRegisterPhoneResponse;
 import iori.hdoctor.net.response.PatientRegisterResponse;
@@ -57,6 +58,7 @@ public class PatientRegisterPhoneActivity extends BaseActivity implements Networ
     public void onRequestSucceed(Object data, String requestAction) {
         if (HttpRequest.PAT_REGISTER_PHONE.equals(requestAction)) {
             DataTransfer.setUid(((PatientRegisterPhoneResponse) data).getUid());
+            getApp().setRongToken(((PatientRegisterPhoneResponse) data).getLiaotiantoken());
             Intent intent = new Intent(this, PatientRegisterCompleteActivity.class);
             intent.putExtra("phone", username.getText().toString());
             startActivity(intent);

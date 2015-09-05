@@ -18,8 +18,13 @@ import java.util.List;
 
 import butterknife.InjectView;
 import io.rong.imkit.MainActivity;
+import io.rong.imkit.RongContext;
 import io.rong.imkit.RongIM;
+import io.rong.imkit.widget.provider.CameraInputProvider;
+import io.rong.imkit.widget.provider.ImageInputProvider;
+import io.rong.imkit.widget.provider.InputProvider;
 import io.rong.imlib.RongIMClient;
+import io.rong.imlib.model.Conversation;
 import io.rong.imlib.model.UserInfo;
 import iori.hdoctor.R;
 import iori.hdoctor.activity.base.BaseActivity;
@@ -36,8 +41,6 @@ import iori.hdoctor.view.LazyViewPager.OnPageChangeListener;
 import iori.hdoctor.view.MyViewPager;
 
 public class PatientMainActivity extends BaseActivity implements NetworkConnectListener {
-
-	private String Token = "I9NjvTRCmx9+Brqh+D2ojgoiHXyvhjY180IPwm5VcEO9tluflJrL2C8CEEWkikc6ErEj/4uWOC1oe/vTttnYMA==";
 
 	private LocationClient mLocationClient;
 
@@ -83,25 +86,18 @@ public class PatientMainActivity extends BaseActivity implements NetworkConnectL
 //		NetworkAPI.getNetworkAPI().checkVersion("1", null, this);
 		mLocationClient.start();
 
-		RongIM.connect(Token, new RongIMClient.ConnectCallback() {
-			@Override
-			public void onTokenIncorrect() {
-				//Connect Token 失效的状态处理，需要重新获取 Token
-				Toast.makeText(PatientMainActivity.this, "onTokenIncorrect", Toast.LENGTH_LONG).show();
-			}
+		getApp().connectRong();
 
-			@Override
-			public void onSuccess(String userId) {
-				Toast.makeText(PatientMainActivity.this, "onSuccess userId : " + userId, Toast.LENGTH_LONG).show();
-			}
 
-			@Override
-			public void onError(RongIMClient.ErrorCode errorCode) {
-				Toast.makeText(PatientMainActivity.this, "onError errorCode : " + errorCode, Toast.LENGTH_LONG).show();
-			}
-		});
+		//扩展功能自定义
+		InputProvider.ExtendProvider[] provider = {
+				new ImageInputProvider(RongContext.getInstance()),//图片
+				new CameraInputProvider(RongContext.getInstance()),//相机
+//                new VoIPInputProvider(RongContext.getInstance()),// 语音通话
+		};
 
-		RongIM.getInstance().refreshUserInfoCache(new UserInfo("44", "盗版哥", Uri.parse("http://rongcloud-web.qiniudn.com/docs_demo_rongcloud_logo.png")));
+		RongIM.getInstance().resetInputExtensionProvider(Conversation.ConversationType.PRIVATE, provider);
+
 	}
 
 	@Override

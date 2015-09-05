@@ -24,7 +24,8 @@ import iori.hdoctor.activity.PatientMainActivity;
  */
 public class ConversationListActivity extends FragmentActivity {
 
-    private String Token = "I9NjvTRCmx9+Brqh+D2ojgoiHXyvhjY180IPwm5VcEO9tluflJrL2C8CEEWkikc6ErEj/4uWOC1oe/vTttnYMA==";
+//    private String Token = "I9NjvTRCmx9+Brqh+D2ojgoiHXyvhjY180IPwm5VcEO9tluflJrL2C8CEEWkikc6ErEj/4uWOC1oe/vTttnYMA==";
+    private String Token = "TfynpUnV6bdFqWe5GLOHxHNZCCEdVyJ6ySRsvLU67UuZo3T+dLpQFHveMgJ7IZKkr4dFuq/njsZd/lw6orbk7Q==";
 
     @InjectView(R.id.mid_title)
     TextView midTitle;
@@ -59,8 +60,17 @@ public class ConversationListActivity extends FragmentActivity {
 
         fragment.setUri(uri);
 
-        if (RongIM.getInstance() == null)
-            connectRong();
+//        connectRong();
+
+        if (RongIM.getInstance().getRongIMClient().getCurrentConnectionStatus().getValue() != 0 &&
+        RongIM.getInstance().getRongIMClient().getCurrentConnectionStatus().getValue() != 1 ){
+            new Thread(new Runnable() {
+                @Override
+                public void run() {
+                    connectRong();
+                }
+            }).start();
+        }
 
     }
 

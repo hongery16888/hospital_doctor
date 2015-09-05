@@ -123,7 +123,7 @@ public class DoctorMinePager extends BasePager implements View.OnClickListener, 
     public void onRequestSucceed(Object data, String requestAction) {
         if (HttpRequest.DOC_PERSONAL.equals(requestAction)){
             ((TextView) view.findViewById(R.id.name)).setText(((DoctorMainActivity) context).getApp().getUser().getName());
-            ((TextView) view.findViewById(R.id.income)).setText(((DoctorPersonalResponse)data).getTotal());
+            ((TextView) view.findViewById(R.id.income)).setText(((DoctorPersonalResponse)data).getTotal() + context.getString(R.string.rmb_unit));
             imageLoader.displayImage(HttpRequest.PHOTO_PATH + ((DoctorPersonalResponse)data).getImg(), head, options);
         }
     }

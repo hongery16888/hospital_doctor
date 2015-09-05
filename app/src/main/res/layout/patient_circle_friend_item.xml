@@ -3,8 +3,9 @@
     style="@style/LayerMainMyItem">
 
     <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/head"
+        android:layout_width="70dip"
+        android:layout_height="70dip"
         android:src="@drawable/img_fj_doctor"
         android:layout_margin="@dimen/global_padding"/>
 
@@ -16,12 +17,14 @@
             android:paddingTop="@dimen/global_padding"
             android:paddingBottom="@dimen/global_padding">
             <TextView
+                android:id="@+id/name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/doctor_circle_info_friend_name"
                 android:textColor="@color/global_title_color"
                 android:textSize="@dimen/global_title_size"/>
             <TextView
+                android:id="@+id/signature"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/doctor_circle_info_friend_remark"
@@ -34,13 +37,15 @@
         android:layout_width="wrap_content"
         android:layout_height="match_parent">
         <TextView
+            android:id="@+id/type"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/doctor_circle_info_doctor"
             android:textColor="@color/white"
             android:layout_marginTop="@dimen/global_line_padding"
             android:background="@drawable/btn_green_friend"
-            android:layout_marginRight="@dimen/global_padding"/>
+            android:layout_marginRight="@dimen/global_padding"
+            android:visibility="gone"/>
     </LinearLayout>
 
 

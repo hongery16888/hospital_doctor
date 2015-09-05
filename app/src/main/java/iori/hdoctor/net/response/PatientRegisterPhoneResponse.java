@@ -6,6 +6,7 @@ package iori.hdoctor.net.response;
 public class PatientRegisterPhoneResponse {
 
     private String uid;
+    private String liaotiantoken;
 
     public String getUid() {
         return uid;
@@ -13,5 +14,13 @@ public class PatientRegisterPhoneResponse {
 
     public void setUid(String uid) {
         this.uid = uid;
+    }
+
+    public String getLiaotiantoken() {
+        return liaotiantoken;
+    }
+
+    public void setLiaotiantoken(String liaotiantoken) {
+        this.liaotiantoken = liaotiantoken;
     }
 }

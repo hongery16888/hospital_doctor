@@ -11,6 +11,7 @@ import android.os.Environment;
 import android.os.Handler;
 import android.os.Vibrator;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.baidu.location.BDLocation;
 import com.baidu.location.BDLocationListener;
@@ -29,7 +30,10 @@ import java.io.File;
 import java.util.ArrayList;
 
 import io.rong.imkit.RongIM;
+import io.rong.imlib.RongIMClient;
 import io.rong.imlib.ipc.RongExceptionHandler;
+import iori.hdoctor.activity.PatientMainActivity;
+import iori.hdoctor.activity.im.ConversationListActivity;
 import iori.hdoctor.net.entity.TestingReport;
 import iori.hdoctor.net.response.DoctorLoginResponse;
 import iori.hdoctor.net.response.DoctorServiceMagResponse;
@@ -59,6 +63,8 @@ public class MyApp extends Application {
     private double latitude;
     private double longitude;
     private String rongToken;
+    private Handler friendHandler ;
+    private boolean isDoc;
 
     /*客户端在SD卡的存储根目录*/
     public final static String APP_ROOT = Environment.getExternalStorageDirectory().getPath() + File.separator;
@@ -162,6 +168,26 @@ public class MyApp extends Application {
             }
         }
         return null;
+    }
+
+    public void connectRong(){
+        RongIM.connect(getRongToken(), new RongIMClient.ConnectCallback() {
+            @Override
+            public void onTokenIncorrect() {
+                //Connect Token 失效的状态处理，需要重新获取 Token
+                Toast.makeText(getApplicationContext(), "onTokenIncorrect", Toast.LENGTH_LONG).show();
+            }
+
+            @Override
+            public void onSuccess(String userId) {
+                Toast.makeText(getApplicationContext(), "onSuccess userId : " + userId, Toast.LENGTH_LONG).show();
+            }
+
+            @Override
+            public void onError(RongIMClient.ErrorCode errorCode) {
+                Toast.makeText(getApplicationContext(), "onError errorCode : " + errorCode, Toast.LENGTH_LONG).show();
+            }
+        });
     }
 
     public ArrayList<Activity> getActivities() {
@@ -314,5 +340,21 @@ public class MyApp extends Application {
 
     public void setRongToken(String rongToken) {
         this.rongToken = rongToken;
+    }
+
+    public Handler getFriendHandler() {
+        return friendHandler;
+    }
+
+    public void setFriendHandler(Handler friendHandler) {
+        this.friendHandler = friendHandler;
+    }
+
+    public boolean isDoc() {
+        return isDoc;
+    }
+
+    public void setIsDoc(boolean isDoc) {
+        this.isDoc = isDoc;
     }
 }
