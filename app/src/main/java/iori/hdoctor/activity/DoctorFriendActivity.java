@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import com.handmark.pulltorefresh.library.PullToRefreshListView;
@@ -38,8 +39,8 @@ public class DoctorFriendActivity extends BaseActivity implements NetworkConnect
 
     private int tempId = R.id.mid_left_icon;
 
-    @InjectView(R.id.friend_listview)
-    PullToRefreshListView listView;
+    @InjectView(R.id.listview)
+    ListView listView;
     @InjectView(R.id.mid_left_icon)
     TextView midLeftText;
     @InjectView(R.id.mid_right_icon)

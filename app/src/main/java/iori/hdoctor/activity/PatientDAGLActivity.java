@@ -35,10 +35,15 @@ public class PatientDAGLActivity extends BaseActivity implements NetworkConnectL
     public void load(TextView v){
         if (choiceTv != v.getId()){
             if (v.getId() == R.id.zjda){
+                zjda.setTextColor(getResources().getColor(R.color.patient_top_bar_bg));
+                zxda.setTextColor(getResources().getColor(R.color.global_title_color));
                 NetworkAPI.getNetworkAPI().testrecord(showProgressDialog(), this);
             }else{
+                zxda.setTextColor(getResources().getColor(R.color.patient_top_bar_bg));
+                zjda.setTextColor(getResources().getColor(R.color.global_title_color));
                 NetworkAPI.getNetworkAPI().consultrecord(showProgressDialog(), this);
             }
+            choiceTv = v.getId();
         }
     }
 

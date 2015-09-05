@@ -2,6 +2,7 @@ package iori.hdoctor.activity;
 
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ListView;
 
 import com.handmark.pulltorefresh.library.PullToRefreshListView;
 
@@ -19,8 +20,8 @@ import iori.hdoctor.net.response.DoctorMessageResponse;
  */
 public class DoctorMessageActivity extends BaseActivity implements NetworkConnectListener{
 
-    @InjectView(R.id.friend_listview)
-    PullToRefreshListView listView;
+    @InjectView(R.id.listview)
+    ListView listView;
 
     @Override
     protected int setContentViewResId() {

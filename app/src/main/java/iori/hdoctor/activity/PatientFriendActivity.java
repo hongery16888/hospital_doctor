@@ -37,7 +37,7 @@ public class PatientFriendActivity extends BaseActivity implements NetworkConnec
 
     private int tempId = R.id.mid_left_icon;
 
-    @InjectView(R.id.friend_listview)
+    @InjectView(R.id.listview)
     ListView listView;
     @InjectView(R.id.mid_left_icon)
     TextView midLeftText;

@@ -24,7 +24,6 @@
            android:id="@+id/name"
            android:layout_width="wrap_content"
            android:layout_height="wrap_content"
-           android:text="@string/doctor_personal_name"
            android:textColor="@color/white"
            android:textSize="@dimen/global_title_size"
            android:gravity="center_horizontal"

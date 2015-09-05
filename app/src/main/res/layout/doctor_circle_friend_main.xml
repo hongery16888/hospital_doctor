@@ -7,8 +7,8 @@
 
     <include layout="@layout/title_bar" />
 
-    <com.handmark.pulltorefresh.library.PullToRefreshListView
-        android:id="@+id/friend_listview"
+    <ListView
+        android:id="@+id/listview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:cacheColorHint="@android:color/transparent"

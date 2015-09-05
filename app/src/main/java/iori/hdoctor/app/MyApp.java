@@ -175,17 +175,17 @@ public class MyApp extends Application {
             @Override
             public void onTokenIncorrect() {
                 //Connect Token 失效的状态处理，需要重新获取 Token
-                Toast.makeText(getApplicationContext(), "onTokenIncorrect", Toast.LENGTH_LONG).show();
+//                Toast.makeText(getApplicationContext(), "onTokenIncorrect", Toast.LENGTH_LONG).show();
             }
 
             @Override
             public void onSuccess(String userId) {
-                Toast.makeText(getApplicationContext(), "onSuccess userId : " + userId, Toast.LENGTH_LONG).show();
+//                Toast.makeText(getApplicationContext(), "onSuccess userId : " + userId, Toast.LENGTH_LONG).show();
             }
 
             @Override
             public void onError(RongIMClient.ErrorCode errorCode) {
-                Toast.makeText(getApplicationContext(), "onError errorCode : " + errorCode, Toast.LENGTH_LONG).show();
+//                Toast.makeText(getApplicationContext(), "onError errorCode : " + errorCode, Toast.LENGTH_LONG).show();
             }
         });
     }

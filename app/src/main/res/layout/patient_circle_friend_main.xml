@@ -8,7 +8,7 @@
     <include layout="@layout/patient_title_bar" />
 
     <ListView
-        android:id="@+id/friend_listview"
+        android:id="@+id/listview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:cacheColorHint="@android:color/transparent"
