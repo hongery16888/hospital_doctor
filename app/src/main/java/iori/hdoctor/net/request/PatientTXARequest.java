@@ -5,10 +5,12 @@ import java.util.Queue;
 
 public class PatientTXARequest extends BaseRequest {
 
+	protected String type;
 	protected String txaid;
 	protected String submit;
 
-	public PatientTXARequest(String txaid, String submit) {
+	public PatientTXARequest(String type, String txaid, String submit) {
+		this.type = type;
 		this.txaid = txaid;
 		this.submit = submit;
 	}

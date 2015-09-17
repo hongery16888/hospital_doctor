@@ -47,15 +47,35 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/patient_jktx_item_prompt"
+            android:textColor="@color/grey_deep"
             android:textSize="@dimen/global_sub_title_size"
             android:paddingTop="@dimen/five_dip"
             android:paddingRight="@dimen/global_padding"/>
 
-        <iori.hdoctor.view.WiperSwitch
-            android:id="@+id/switcher"
-            android:layout_width="80dip"
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center_vertical">
+
+            <iori.hdoctor.view.WiperSwitch
+                android:id="@+id/switcher"
+                android:layout_width="80dip"
+                android:layout_height="30dip"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/del"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/global_line_padding"/>
+            android:text="删除提醒"
+            android:textColor="@color/grey_deep"
+            android:textSize="@dimen/global_sub_title_size"
+            android:paddingRight="@dimen/global_padding"
+            android:paddingBottom="@dimen/five_dip"/>
+
+
     </LinearLayout>
 
 

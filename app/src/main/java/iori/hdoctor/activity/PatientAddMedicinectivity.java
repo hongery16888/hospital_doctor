@@ -39,6 +39,7 @@ public class PatientAddMedicinectivity extends BasePhotoCropActivity implements 
 
     private CropParams mCropParams = new CropParams(HDoctorCode.HEAD_PATH);
     private ImageLoader imageLoader = ImageLoader.getInstance();
+    private DisplayImageOptions options;
     private PopupWindow mPhotoPopWindow;
     private boolean flag;
 
@@ -73,7 +74,13 @@ public class PatientAddMedicinectivity extends BasePhotoCropActivity implements 
 
     @Override
     protected void initData() {
-
+        options = new DisplayImageOptions.Builder()
+                .showImageOnLoading(R.drawable.img_fj_hospital)
+                .showImageOnFail(R.drawable.img_fj_hospital)
+                .showImageForEmptyUri(R.drawable.img_fj_hospital)
+                .cacheInMemory(true)
+                .cacheOnDisk(true)
+                .build();
     }
 
     private View.OnClickListener addListener = new View.OnClickListener() {
@@ -168,7 +175,7 @@ public class PatientAddMedicinectivity extends BasePhotoCropActivity implements 
     @Override
     public void onPhotoCropped(Uri uri) {
         flag = true;
-        imageLoader.displayImage(MyApp.PHOTO_BASIC_PATH + uri.getPath(), img, getApp().getOptions());
+        imageLoader.displayImage(MyApp.PHOTO_BASIC_PATH + uri.getPath(), img, options);
     }
 
     @Override

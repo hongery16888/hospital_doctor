@@ -198,8 +198,24 @@ public interface HttpRequest {
 	public static final String PATH_DOC_ADD_FRIENDS = BASIC_PATH + "user/docjia";
 	public static final String DOC_AGREE_FRIEND = "docjiasucess";
 	public static final String PATH_DOC_AGREE_FRIENDS = BASIC_PATH + "user/docjiasucess";
-
-
+	public static final String FIND_PWD = "findpwd";
+	public static final String PATH_FIND_PWD = BASIC_PATH + "user/findpwd";
+	public static final String RESET_PWD = "resetpwd";
+	public static final String PATH_RESET_PWD = BASIC_PATH + "user/resetpwd";
+	public static final String FORCE_ADD = "forceadd";
+	public static final String PATH_FORCE_ADD = BASIC_PATH + "user/forceadd";
+	public static final String DOC_TIXIAN = "docapply";
+	public static final String PATH_DOC_TIXIAN = BASIC_PATH + "user/docapply";
+	public static final String SCAN_SN = "scansn";
+	public static final String PATH_SCAN_SN = BASIC_PATH + "user/scansn";
+	public static final String FRIEND_MSG_LIST = "friendmsglist";
+	public static final String PATH_FRIEND_MSG_LIST = BASIC_PATH + "user/friendmsglist";
+	public static final String CONFIRM_FRIEND = "confirmfriend";
+	public static final String PATH_CONFIRM_FRIEND = BASIC_PATH + "user/confirmfriend";
+	public static final String LOGIN_WCHAT = "threeloginofwx";
+	public static final String PATH_LOGIN_WCHAT = BASIC_PATH + "user/threeloginofwx";
+	public static final String LOGIN_QQ = "threeloginofqq";
+	public static final String PATH_LOGIN_QQ = BASIC_PATH + "user/threeloginofqq";
 
 
 	/** 06、检查更新 **/

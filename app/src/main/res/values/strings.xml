@@ -34,8 +34,9 @@
     <string name="next_step">下一步</string>
     <string name="doctor_register_name">账号</string>
     <string name="doctor_register_password">密码</string>
-    <string name="doctor_register_check">验证</string>
+    <string name="doctor_register_check">验证码</string>
     <string name="doctor_register_get_verify">获取验证码</string>
+    <string name="register_end">秒后重获</string>
     <string name="register">注册</string>
     <string name="register_phone_hint">请输入密码</string>
     <string name="register_phone_hint_again">请再次输入密码</string>
@@ -492,8 +493,8 @@
     <string name="doctor_zhzx_title_main">账户中心</string>
     <string name="doctor_zhzx_modify_password">修改密码：</string>
     <string name="doctor_zhzx_phone">绑定手机：</string>
-    <string name="doctor_zhzx_qq">绑定QQ：</string>
-    <string name="doctor_zhzx_wchat">绑定微信：</string>
+    <string name="doctor_zhzx_qq">绑定QQ</string>
+    <string name="doctor_zhzx_wchat">绑定微信</string>
     <string name="doctor_zhzx_modify_password_ex">***********</string>
     <string name="doctor_zhzx_phone_ex">13400000000</string>
     <string name="doctor_zhzx_qq_ex">416167636</string>
@@ -547,6 +548,40 @@
         <item>每月</item>
     </string-array>
 
+    <string-array name="bank_sn">
+        <item>0801020000</item>
+        <item>0801030000</item>
+        <item>0801040000</item>
+        <item>0801050000</item>
+        <item>0803010000</item>
+        <item>0801000000</item>
+        <item>0803080000</item>
+        <item>0803100000</item>
+        <item>0803030000</item>
+        <item>0803050000</item>
+        <item>0803020000</item>
+        <item>0803020000</item>
+        <item>0803040000</item>
+        <item>0803090000</item>
+    </string-array>
+
+    <string-array name="bank_name">
+        <item>中国工商银行</item>
+        <item>中国农业银行</item>
+        <item>中国银行</item>
+        <item>中国建设银行</item>
+        <item>交通银行</item>
+        <item>邮政储蓄</item>
+        <item>招商银行</item>
+        <item>上海浦东发展银行</item>
+        <item>中国光大银行</item>
+        <item>中国民生银行</item>
+        <item>中信银行</item>
+        <item>广发银行</item>
+        <item>华夏银行</item>
+        <item>兴业银行</item>
+    </string-array>
+
     <string name="patient_wddd_info_title_main">订单详情</string>
     <string name="patient_wdfb_title_main">我的发表</string>
     <string name="patient_wdsc_title_main">我的收藏</string>
@@ -560,4 +595,7 @@
     <string name="medicine_name">药品名称</string>
     <string name="sedicine_zz">主治：</string>
 
+    <!-- 二维码 -->
+    <string name="code_prompt">将二维码放入框内，即可自动扫描识别</string>
+    <string name="code_btn_prompt">点击即可扫描二维码</string>
 </resources>

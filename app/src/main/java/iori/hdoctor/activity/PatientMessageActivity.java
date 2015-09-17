@@ -1,5 +1,7 @@
 package iori.hdoctor.activity;
 
+import android.os.Handler;
+import android.os.Message;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
@@ -15,6 +17,7 @@ import iori.hdoctor.net.HttpRequest;
 import iori.hdoctor.net.NetworkAPI;
 import iori.hdoctor.net.NetworkConnectListener;
 import iori.hdoctor.net.response.DoctorMessageResponse;
+import iori.hdoctor.net.response.FriendMsgResponse;
 
 /**
  * Created by Administrator on 2015/7/11.
@@ -23,6 +26,14 @@ public class PatientMessageActivity extends BaseActivity implements NetworkConne
 
     @InjectView(R.id.listview)
     ListView listView;
+
+    private Handler handler = new Handler(){
+        @Override
+        public void handleMessage(Message msg) {
+            super.handleMessage(msg);
+            finish();
+        }
+    };
 
     @Override
     protected int setContentViewResId() {
@@ -37,21 +48,14 @@ public class PatientMessageActivity extends BaseActivity implements NetworkConne
 
     @Override
     protected void initData() {
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
-            }
-        });
-
-        NetworkAPI.getNetworkAPI().docconsulting(showProgressDialog(), this);
+        NetworkAPI.getNetworkAPI().friendmsg(showProgressDialog(), this);
     }
 
     @Override
     public void onRequestSucceed(Object data, String requestAction) {
-        if (HttpRequest.DOC_CONSULTING.equals(requestAction)){
-            if (data != null && ((DoctorMessageResponse)data).getConsultinglist() != null)
-                listView.setAdapter(new DoctorMessageAdapter(this, ((DoctorMessageResponse)data).getConsultinglist()));
+        if (HttpRequest.FRIEND_MSG_LIST.equals(requestAction)){
+            if (data != null && ((FriendMsgResponse)data).getAddfriend() != null)
+                listView.setAdapter(new DoctorMessageAdapter(this, ((FriendMsgResponse)data).getAddfriend(), handler));
         }
         dismissProgressDialog();
     }

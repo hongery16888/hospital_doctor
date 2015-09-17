@@ -9,6 +9,8 @@
  */
 package iori.hdoctor.net;
 
+import java.lang.reflect.Type;
+
 import iori.hdoctor.activity.PatientPublishActivity;
 import iori.hdoctor.activity.base.HDoctorCode;
 import iori.hdoctor.net.request.*;
@@ -20,6 +22,8 @@ import iori.hdoctor.net.response.DoctorFriendResponse;
 import iori.hdoctor.net.response.DoctorMyFaBiaoResponse;
 import iori.hdoctor.net.response.DoctorMyShouCangResponse;
 import iori.hdoctor.net.response.DoctorPublicResponse;
+import iori.hdoctor.net.response.FindPasswordResponse;
+import iori.hdoctor.net.response.FriendMsgResponse;
 import iori.hdoctor.net.response.PatientCircleInfoResponse;
 import iori.hdoctor.net.response.PatientCircleResponse;
 import iori.hdoctor.net.response.PatientCommunityResponse;
@@ -31,6 +35,7 @@ import iori.hdoctor.net.response.PatientHospitalIntroResponse;
 import iori.hdoctor.net.response.PatientInfoResponse;
 import iori.hdoctor.net.response.PatientNearByDocResponse;
 import iori.hdoctor.net.response.PatientNearByHospResponse;
+import iori.hdoctor.net.response.PatientScanSnResponse;
 import iori.hdoctor.net.response.PatientSearchByDocResponse;
 import iori.hdoctor.net.response.PatientSearchByHospResponse;
 import iori.hdoctor.net.response.PatientWDDDInfoResponse;
@@ -347,13 +352,13 @@ public class NetworkAPI implements HttpRequest {
 		mConnection.sendRequestByPost(request, diag, PatientHealthyRemindResponse.class, listener);
 	}
 
-	public void txa(String txaid, RequestProgressDialog diag, NetworkConnectListener listener){
-		PatientTXARequest request = new PatientTXARequest(txaid,HDoctorCode.YES);
+	public void txa(String type, String txaid, RequestProgressDialog diag, NetworkConnectListener listener){
+		PatientTXARequest request = new PatientTXARequest(type, txaid,HDoctorCode.YES);
 		mConnection.sendRequestByPost(request, diag, EmptyResponse.class, listener);
 	}
 
-	public void txb(String txbid, RequestProgressDialog diag, NetworkConnectListener listener){
-		PatientTXBRequest request = new PatientTXBRequest(txbid, HDoctorCode.YES);
+	public void txb(String type, String txbid, RequestProgressDialog diag, NetworkConnectListener listener){
+		PatientTXBRequest request = new PatientTXBRequest(type, txbid, HDoctorCode.YES);
 		mConnection.sendRequestByPost(request, diag, EmptyResponse.class, listener);
 	}
 
@@ -402,8 +407,18 @@ public class NetworkAPI implements HttpRequest {
 		mConnection.sendRequestByPost(request, diag, PatientInfoResponse.class, listener);
 	}
 
-	public void pataccount(String password, String bindingphone, String bindingqq, String bindingwei, RequestProgressDialog diag, NetworkConnectListener listener){
-		PatientZHZXModifyRequest request = new PatientZHZXModifyRequest(password, bindingphone, bindingqq, bindingwei, HDoctorCode.YES);
+	public void pataccountQQ(String bangdingqq, RequestProgressDialog diag, NetworkConnectListener listener){
+		PatientZHZXModifyQQRequest request = new PatientZHZXModifyQQRequest(bangdingqq);
+		mConnection.sendRequestByPost(request, diag, EmptyResponse.class, listener);
+	}
+
+	public void pataccountWchat(String bangdingwei, RequestProgressDialog diag, NetworkConnectListener listener){
+		PatientZHZXModifyWchatRequest request = new PatientZHZXModifyWchatRequest(bangdingwei);
+		mConnection.sendRequestByPost(request, diag, EmptyResponse.class, listener);
+	}
+
+	public void pataccountpassword(String password, RequestProgressDialog diag, NetworkConnectListener listener){
+		PatientZHZXModifyRequest request = new PatientZHZXModifyRequest(password);
 		mConnection.sendRequestByPost(request, diag, EmptyResponse.class, listener);
 	}
 
@@ -681,5 +696,60 @@ public class NetworkAPI implements HttpRequest {
 	public void docagreefriend(String haoyouid, RequestProgressDialog diag, NetworkConnectListener listener){
 		DoctorAgreeFriendRequest request = new DoctorAgreeFriendRequest(haoyouid);
 		mConnection.sendRequestByPost(request, diag, EmptyResponse.class, listener);
+	}
+
+	public void findpassword(String username, RequestProgressDialog diag, NetworkConnectListener listener){
+		FindPasswordRequest request = new FindPasswordRequest(username);
+		mConnection.sendRequestByPost(request, diag, FindPasswordResponse.class, listener);
+	}
+
+	public void resetpassword(String username, String pwdcode, RequestProgressDialog diag, NetworkConnectListener listener){
+		ResetPasswordRequest request = new ResetPasswordRequest(username, pwdcode);
+		mConnection.sendRequestByPost(request, diag, EmptyResponse.class, listener);
+	}
+
+	public void forceadd(String haoyouid, RequestProgressDialog diag, NetworkConnectListener listener){
+		ForceAddRequest request = new ForceAddRequest(haoyouid);
+		mConnection.sendRequestByPost(request, diag, EmptyResponse.class, listener);
+	}
+
+	public void tixian(RequestProgressDialog diag, NetworkConnectListener listener){
+		DoctorTixianRequest request = new DoctorTixianRequest();
+		mConnection.sendRequestByPost(request, diag, EmptyResponse.class, listener);
+	}
+
+	public void scansn(String sn, RequestProgressDialog diag, NetworkConnectListener listener){
+		PatientScanSnRequest request = new PatientScanSnRequest(sn);
+		mConnection.sendRequestByPost(request, diag, PatientScanSnResponse.class, listener);
+	}
+
+	public void friendmsg(RequestProgressDialog diag, NetworkConnectListener listener){
+		FriendMsgRequest request = new FriendMsgRequest();
+		mConnection.sendRequestByPost(request, diag, FriendMsgResponse.class, listener);
+	}
+
+	public void confirmfriend(String personalid, String type,RequestProgressDialog diag, NetworkConnectListener listener){
+		ConfirmFriendRequest request = new ConfirmFriendRequest(personalid, type);
+		mConnection.sendRequestByPost(request, diag, EmptyResponse.class, listener);
+	}
+
+	public void patloginwchat(String bangdingwei,RequestProgressDialog diag, NetworkConnectListener listener){
+		LoginWchatRequest request = new LoginWchatRequest(bangdingwei);
+		mConnection.sendRequestByPost(request, diag, PatientLoginResponse.class, listener);
+	}
+
+	public void docloginwchat(String bangdingwei,RequestProgressDialog diag, NetworkConnectListener listener){
+		LoginWchatRequest request = new LoginWchatRequest(bangdingwei);
+		mConnection.sendRequestByPost(request, diag, PatientLoginResponse.class, listener);
+	}
+
+	public void patloginqq(String bangdingqq,RequestProgressDialog diag, NetworkConnectListener listener){
+		LoginQQRequest request = new LoginQQRequest(bangdingqq);
+		mConnection.sendRequestByPost(request, diag, PatientLoginResponse.class, listener);
+	}
+
+	public void docloginqq(String bangdingqq,RequestProgressDialog diag, NetworkConnectListener listener){
+		LoginQQRequest request = new LoginQQRequest(bangdingqq);
+		mConnection.sendRequestByPost(request, diag, PatientLoginResponse.class, listener);
 	}
 }

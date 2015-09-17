@@ -1,6 +1,7 @@
 package iori.hdoctor.activity;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -11,6 +12,9 @@ import com.nostra13.universalimageloader.core.ImageLoader;
 
 import butterknife.InjectView;
 import butterknife.OnClick;
+import io.rong.imkit.RongIM;
+import io.rong.imlib.NativeObject;
+import io.rong.imlib.model.UserInfo;
 import iori.hdoctor.R;
 import iori.hdoctor.activity.base.BaseActivity;
 import iori.hdoctor.net.HttpRequest;
@@ -66,6 +70,7 @@ public class PatientDoctorIntroduceActivity extends BaseActivity implements Netw
     public void zz(){
         Intent intent = new Intent(this, PatientZXZXActivity.class);
         intent.putExtra("did", getIntent().getStringExtra("did"));
+        intent.putExtra("name", name.getText().toString());
         startActivity(intent);
     }
 
@@ -112,6 +117,8 @@ public class PatientDoctorIntroduceActivity extends BaseActivity implements Netw
             zili.setText(((PatientYSJSResponse) data).getDocintro().getZhicheng());
             status.setText(((PatientYSJSResponse) data).getDocintro().getStatus());
 
+            final String imgPath = ((PatientYSJSResponse) data).getDocintro().getImg();
+
             if (((PatientYSJSResponse) data).getServitem() != null) {
                 for (int i = 0; i < ((PatientYSJSResponse) data).getServitem().size(); i++) {
                     if (((PatientYSJSResponse) data).getServitem().get(i).getItemname().equals("在线咨询")) {
@@ -126,6 +133,18 @@ public class PatientDoctorIntroduceActivity extends BaseActivity implements Netw
                     }
                 }
             }
+
+            new Thread(new Runnable() {
+                @Override
+                public void run() {
+                    if (RongIM.getInstance() != null) {
+                            RongIM.getInstance().refreshUserInfoCache(
+                                    new UserInfo(getIntent().getStringExtra("did"),
+                                            name.getText().toString(),
+                                            Uri.parse(HttpRequest.PHOTO_PATH + imgPath)));
+                    }
+                }
+            }).start();
         }
         dismissProgressDialog();
     }

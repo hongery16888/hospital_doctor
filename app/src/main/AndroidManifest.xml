@@ -1,4 +1,4 @@
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="iori.hdoctor">
+﻿<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="iori.hdoctor">
 
     <application
         android:name=".app.MyApp"
@@ -103,6 +103,44 @@
         <activity android:name=".activity.im.ConversationListActivity" android:screenOrientation="portrait" />
         <activity android:name=".activity.im.PhotoActivity" android:screenOrientation="portrait" />
         <activity android:name=".activity.DoctorAddFriendActivity" android:screenOrientation="portrait" />
+        <activity android:name=".activity.DoctorTiXianActivity" android:screenOrientation="portrait" />
+        <activity android:name=".activity.DoctorForgetPwdActivity" android:screenOrientation="portrait" />
+        <activity android:name=".activity.DoctorResetPasswordActivity" android:screenOrientation="portrait" />
+        <activity android:name=".activity.PatientForgetPwdActivity" android:screenOrientation="portrait" />
+        <activity android:name=".activity.PatientResetPasswordActivity" android:screenOrientation="portrait" />
+        <activity android:name=".activity.CaptureActivity" android:screenOrientation="portrait" />
+
+        <activity
+            android:name="iori.hdoctor.wxapi.WXEntryActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:exported="true"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" >
+                </action>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+
+        <activity
+            android:name="com.tencent.tauth.AuthActivity"
+            android:noHistory="true"
+            android:launchMode="singleTask" >
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="tencent1104740141" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name="com.tencent.connect.common.AssistActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
 
         <!-- meta-data需要写在application中 -->
         <meta-data
@@ -245,7 +283,7 @@
 
         <meta-data
             android:name="RONG_CLOUD_APP_KEY"
-            android:value="x18ywvqf8uqrc" />
+            android:value="x4vkb1qpvcq3k" />
 
         <!--<meta-data-->
             <!--android:name="RONG_CLOUD_APP_KEY"-->

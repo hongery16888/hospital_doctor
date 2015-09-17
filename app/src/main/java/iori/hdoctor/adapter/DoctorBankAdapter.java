@@ -12,10 +12,14 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.nostra13.universalimageloader.core.DisplayImageOptions;
+import com.nostra13.universalimageloader.core.ImageLoader;
+
 import java.util.ArrayList;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
+import butterknife.OnClick;
 import iori.hdoctor.R;
 import iori.hdoctor.activity.DoctorSRXQActivity;
 import iori.hdoctor.net.HttpRequest;
@@ -26,6 +30,8 @@ import iori.hdoctor.net.entity.DocBankInfo;
 public class DoctorBankAdapter extends BaseAdapter implements NetworkConnectListener{
 
 	private ArrayList<DocBankInfo> data = new ArrayList<>();
+	private ImageLoader imageLoader = ImageLoader.getInstance();
+	private DisplayImageOptions options;
 	private Context context;
 	private CheckBox checkBox;
 	private CheckBox checkBoxed;
@@ -38,6 +44,13 @@ public class DoctorBankAdapter extends BaseAdapter implements NetworkConnectList
 	public DoctorBankAdapter(Context context, ArrayList<DocBankInfo> docBankInfos) {
 		this.context = context;
 		data.addAll(docBankInfos);
+		options = new DisplayImageOptions.Builder()
+				.showImageOnLoading(R.drawable.icon_tx_switch_ball)
+				.showImageOnFail(R.drawable.icon_tx_switch_ball)
+				.showImageForEmptyUri(R.drawable.icon_tx_switch_ball)
+				.cacheInMemory(true)
+				.cacheOnDisk(true)
+				.build();
 	}
 
 	@Override
@@ -68,6 +81,8 @@ public class DoctorBankAdapter extends BaseAdapter implements NetworkConnectList
 			view.setTag(holder);
 		}
 
+		imageLoader.displayImage(HttpRequest.BASIC_PATH + "yinhang/" + data.get(position).getBanksn() + ".jpg", holder.icon, options);
+
 		holder.name.setText(data.get(position).getBankname());
 		if(data.get(position).getBankno().length() > 4)
 			holder.bankNo.setText("**** " + data.get(position).getBankno().substring(data.get(position).getBankno().length() - 4, data.get(position).getBankno().length()));
@@ -88,12 +103,12 @@ public class DoctorBankAdapter extends BaseAdapter implements NetworkConnectList
 					checkBox.setChecked(false);
 					del = false;
 					NetworkAPI.getNetworkAPI().docModifyBank(data.get(Integer.parseInt(v.getTag().toString())).getBankno(),
-							"001", "1", ((DoctorSRXQActivity) context).showProgressDialog(), DoctorBankAdapter.this);
+							data.get(Integer.parseInt(v.getTag().toString())).getBanksn(), "1", ((DoctorSRXQActivity) context).showProgressDialog(), DoctorBankAdapter.this);
 				}
 
 				if(checkBox == null){
 					NetworkAPI.getNetworkAPI().docModifyBank(data.get(Integer.parseInt(v.getTag().toString())).getBankno(),
-							"001", "1", ((DoctorSRXQActivity) context).showProgressDialog(), DoctorBankAdapter.this);
+							data.get(Integer.parseInt(v.getTag().toString())).getBanksn(), "1", ((DoctorSRXQActivity) context).showProgressDialog(), DoctorBankAdapter.this);
 				}
 				checkBoxBefore = checkBox;
 				checkBox = (CheckBox) v;

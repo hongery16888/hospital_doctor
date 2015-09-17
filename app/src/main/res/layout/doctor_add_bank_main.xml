@@ -3,23 +3,27 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/global_bg">
+    android:background="@color/global_bg"
+    android:id="@+id/persion_main">
 
     <include layout="@layout/title_bar" />
 
     <View style="@style/divider_line_horizontal" />
 
-    <LinearLayout style="@style/LayerMainMyItem"
+    <LinearLayout
+        android:id="@+id/bank_lay"
+        style="@style/LayerMainMyItem"
         android:layout_marginTop="@dimen/global_padding">
 
         <TextView style="@style/TxtMainMyItem"
             android:layout_weight="0.4"
             android:text="@string/doctor_add_bank_name"/>
 
-        <EditText
+        <TextView
             android:id="@+id/bank_name"
             style="@style/TxtMainMyItem"
-            android:background="@color/transparent"/>
+            android:background="@color/transparent"
+            android:hint="点击设置"/>
 
     </LinearLayout>
 
@@ -36,11 +40,13 @@
             style="@style/TxtMainMyItem"
             android:background="@color/transparent"
             android:singleLine="false"
-            android:maxLines="2"/>
+            android:maxLines="2"
+            android:numeric="integer"
+            android:hint="请输入银行卡号"/>
 
     </LinearLayout>
 
-    <View style="@style/divider_line_horizontal" />
+
 
     <TextView
         android:id="@+id/confirm"

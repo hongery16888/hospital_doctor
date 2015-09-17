@@ -45,6 +45,7 @@ import iori.hdoctor.app.MyApp;
 import iori.hdoctor.net.HttpRequest;
 import iori.hdoctor.net.NetworkAPI;
 import iori.hdoctor.net.NetworkConnectListener;
+import iori.hdoctor.net.response.PatientDHZXResponse;
 import iori.hdoctor.net.response.PatientYYResponse;
 import iori.hdoctor.net.response.PatientZXResponse;
 import iori.hdoctor.net.response.PatientZXZXResponse;
@@ -67,6 +68,10 @@ public class PatientZXZXActivity extends BasePhotoCropActivity implements Networ
     private boolean hadConfirm = false;
     private String orderId;
     private String pricePay;
+    private String parterID;
+    private String sellerID;
+    private String rsa_private;
+    private String return_url;
 
     @InjectView(R.id.content)
     TextView content;
@@ -148,6 +153,10 @@ public class PatientZXZXActivity extends BasePhotoCropActivity implements Networ
                 priceLay.setVisibility(View.VISIBLE);
                 orderId = ((PatientZXResponse)data).getOrderid();
                 content.setEnabled(false);
+                parterID = ((PatientZXResponse) data).getParterID();
+                sellerID = ((PatientZXResponse) data).getSellerID();
+                rsa_private = ((PatientZXResponse) data).getRsa_private();
+                return_url = ((PatientZXResponse) data).getReturn_url();
             } else {
                 hospital.setText(((PatientZXZXResponse) data).getHospital());
                 doctor.setText(((PatientZXZXResponse) data).getRealname());
@@ -234,14 +243,6 @@ public class PatientZXZXActivity extends BasePhotoCropActivity implements Networ
         Toast.makeText(this, "Crop failed:" + message, Toast.LENGTH_LONG).show();
     }
 
-    // 商户PID
-    public static final String PARTNER = "2088021102299606";
-    // 商户收款账号
-    public static final String SELLER = "cdxt999@126.com";
-    // 商户私钥，pkcs8格式
-    public static final String RSA_PRIVATE = "MIICdgIBADANBgkqhkiG9w0BAQEFAASCAmAwggJcAgEAAoGBALuY0R1drK1NvUg+1SvzS+iawrjiONnnbJTMZJAsHPr2xp3xRVQNPfCBdrDzZ5nVOwx5pY/4c60KzlpZ9nRTQdYvLIXdmhCX62hGq59b8MGKfoYY1wQAUcMwcZMT+V+iTkw4J73EwmqS2y4kOHEcoMp8TB63qgQIvLb+0bHV35mDAgMBAAECgYAQtsHS2vi6jBWULTzy6H9X3woATO+BwpOzAi7nhXajiX8SrV9e6LsfBXnctCMD2rKjHud4V0t/HFpcRG2n2Y8g7gY+K3DQSeaQSyGuSTX5QE6tv14Ov/Kl7uB8qkIw/jcbPk5uQhm9oXIH9drTc4/QU5MdIV9h6rFlH1UM+LxPuQJBAOUqBRAAOVpAn66C6R1WM+Kp5aMxlIOGZ7GWgwDzPKXYt0iqTo7I2P3GPJ0sGcYVZGmbXWQhbfR8kHI+Z25/bN0CQQDRkK2JeC5epMS/4cyb+msB1/TbBSPQYsDACDKL0W0baH8VYn1vwpnnhY8EXHkUjIslsvXUPAYB3dzF6iFrfAnfAkA3829y/asDFx4lnH7QE9jtMXAIzTUme61blZT8qWaYU3ZEfphZkj4wj7MC6N6OF3EBu9YseWEAPV2DFytntiLdAkBWTt6ZwkxeoD+Dw0wQZUcS4E0wsuI4HaPCst2WZe8onZXRSdndYGkgSApJwof/ZY6dPSIvgXT76dLWFAIlkVVDAkEAsnFzGE409zb4UifADQmo767s2NDBFtTnaUpetZjYjGUmHClYXEQFZQMOK71rJKu9KVRBeNzRYdvFs+3jLnXezw==";
-    // 支付宝公钥
-    public static final String RSA_PUBLIC = "";
     private static final int SDK_PAY_FLAG = 1;
 
     private static final int SDK_CHECK_FLAG = 2;
@@ -261,6 +262,10 @@ public class PatientZXZXActivity extends BasePhotoCropActivity implements Networ
                     if (TextUtils.equals(resultStatus, "9000")) {
                         getApp().getPatDocInfoActivity().finish();
                         finish();
+                        if (RongIM.getInstance() != null) {
+                            RongIM.getInstance().startPrivateChat(PatientZXZXActivity.this, getIntent().getStringExtra("did"), getIntent().getStringExtra("name"));
+                        }
+                        NetworkAPI.getNetworkAPI().forceadd(getIntent().getStringExtra("did"), null, PatientZXZXActivity.this);
                         Toast.makeText(PatientZXZXActivity.this, "支付成功",
                                 Toast.LENGTH_SHORT).show();
                     } else {
@@ -274,9 +279,6 @@ public class PatientZXZXActivity extends BasePhotoCropActivity implements Networ
                             // 其他值就可以判断为支付失败，包括用户主动取消支付，或者系统返回的错误
                             Toast.makeText(PatientZXZXActivity.this, "支付失败",
                                     Toast.LENGTH_SHORT).show();
-                            if (RongIM.getInstance() != null) {
-                                RongIM.getInstance().startPrivateChat(PatientZXZXActivity.this, "11396", "盗版哥");
-                            }
                         }
                     }
                     break;
@@ -297,8 +299,9 @@ public class PatientZXZXActivity extends BasePhotoCropActivity implements Networ
      *
      */
     public void pay() {
-        if (TextUtils.isEmpty(PARTNER) || TextUtils.isEmpty(RSA_PRIVATE)
-                || TextUtils.isEmpty(SELLER)) {
+        System.out.println("parterID : " + parterID + "     sellerID : " + sellerID + "     rsa_private :" + rsa_private);
+        if (TextUtils.isEmpty(parterID) || TextUtils.isEmpty(rsa_private)
+                || TextUtils.isEmpty(sellerID)) {
             new AlertDialog.Builder(this)
                     .setTitle("警告")
                     .setMessage("需要配置PARTNER | RSA_PRIVATE| SELLER")
@@ -393,10 +396,10 @@ public class PatientZXZXActivity extends BasePhotoCropActivity implements Networ
     public String getOrderInfo(String subject, String body, String price) {
 
         // 签约合作者身份ID
-        String orderInfo = "partner=" + "\"" + PARTNER + "\"";
+        String orderInfo = "partner=" + "\"" + parterID + "\"";
 
         // 签约卖家支付宝账号
-        orderInfo += "&seller_id=" + "\"" + SELLER + "\"";
+        orderInfo += "&seller_id=" + "\"" + sellerID + "\"";
 
         // 商户网站唯一订单号
         orderInfo += "&out_trade_no=" + "\"" + orderId + "\"";
@@ -411,8 +414,7 @@ public class PatientZXZXActivity extends BasePhotoCropActivity implements Networ
         orderInfo += "&total_fee=" + "\"" + price + "\"";
 
         // 服务器异步通知页面路径
-        orderInfo += "&notify_url=" + "\"" + "http://notify.msp.hk/notify.htm"
-                + "\"";
+        orderInfo += "&notify_url=" + "\"" + return_url + "\"";
 
         // 服务接口名称， 固定值
         orderInfo += "&service=\"mobile.securitypay.pay\"";
@@ -465,7 +467,7 @@ public class PatientZXZXActivity extends BasePhotoCropActivity implements Networ
      *            待签名订单信息
      */
     public String sign(String content) {
-        return SignUtils.sign(content, RSA_PRIVATE);
+        return SignUtils.sign(content, rsa_private);
     }
 
     /**

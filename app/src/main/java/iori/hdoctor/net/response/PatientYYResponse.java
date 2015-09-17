@@ -32,4 +32,5 @@ public class PatientYYResponse {
     public void setPrice(String price) {
         this.price = price;
     }
+
 }

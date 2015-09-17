@@ -4,6 +4,7 @@ import java.util.HashMap;
 
 public class PatientHealthyRemindRequest extends BaseRequest {
 
+
 	public PatientHealthyRemindRequest() {
 
 	}

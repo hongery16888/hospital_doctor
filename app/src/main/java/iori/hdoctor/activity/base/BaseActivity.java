@@ -43,7 +43,6 @@ public abstract class BaseActivity extends SysKeyInvalidActivity {
     @SuppressWarnings("unused")
     private void startAnmiActivity(Intent intent) {
         startActivity(intent);
-//        overridePendingTransition(R.anim.right_in, R.anim.left_out);
     }
 
     @Override

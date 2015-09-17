@@ -29,6 +29,13 @@ public class DoctorLoginActivity extends BaseActivity implements NetworkConnectL
     @InjectView(R.id.password)
     EditText password;
 
+    @OnClick(R.id.forget_password)
+    public void forgetPwd(){
+        Intent intent = new Intent(this, DoctorForgetPwdActivity.class);
+        intent.getBooleanExtra("isDoctor", true);
+        startActivity(intent);
+    }
+
     @OnClick(R.id.register)
     public void register() {
         if (DateUtil.LoginFlag()) {
@@ -107,5 +114,25 @@ public class DoctorLoginActivity extends BaseActivity implements NetworkConnectL
         editor.putString("doc_username", this.username.getText().toString());
         editor.putString("doc_password", this.password.getText().toString());
         editor.commit();
+    }
+
+    public void getLoginWchatInfo(View view) {
+        SharedPreferences prefs = getSharedPreferences("HDoctor", MODE_WORLD_WRITEABLE);
+        String wchatID = prefs.getString("wchatID", "");
+        if (TextUtils.isEmpty(wchatID)){
+            showToast("没有绑定微信号");
+        }else{
+            NetworkAPI.getNetworkAPI().docloginwchat(wchatID, showProgressDialog(), this);
+        }
+    }
+
+    public void getLoginQQInfo(View view) {
+        SharedPreferences prefs = getSharedPreferences("HDoctor", MODE_WORLD_WRITEABLE);
+        String qq = prefs.getString("openId", "");
+        if (TextUtils.isEmpty(qq)){
+            showToast("没有绑定QQ");
+        }else{
+            NetworkAPI.getNetworkAPI().docloginqq(qq, showProgressDialog(), this);
+        }
     }
 }

@@ -63,4 +63,11 @@
   <!-- 医生介绍 -->
   <color name="patient_doctor_status">#f8b552</color>
 
+  <!-- ZXing -->
+  <color name="viewfinder_frame">#ff000000</color>
+  <color name="viewfinder_laser">#ffff0000</color>
+  <color name="viewfinder_mask">#60000000</color>
+  <color name="result_view">#b0000000</color>
+  <color name="possible_result_points">#c0ffff00</color>
+
 </resources>

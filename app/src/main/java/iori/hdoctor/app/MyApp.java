@@ -65,6 +65,9 @@ public class MyApp extends Application {
     private String rongToken;
     private Handler friendHandler ;
     private boolean isDoc;
+    private Handler getMedicineHandler;
+    private boolean isModify;
+    private Handler loginWXHandler;
 
     /*客户端在SD卡的存储根目录*/
     public final static String APP_ROOT = Environment.getExternalStorageDirectory().getPath() + File.separator;
@@ -356,5 +359,29 @@ public class MyApp extends Application {
 
     public void setIsDoc(boolean isDoc) {
         this.isDoc = isDoc;
+    }
+
+    public Handler getGetMedicineHandler() {
+        return getMedicineHandler;
+    }
+
+    public void setGetMedicineHandler(Handler getMedicineHandler) {
+        this.getMedicineHandler = getMedicineHandler;
+    }
+
+    public boolean isModify() {
+        return isModify;
+    }
+
+    public void setIsModify(boolean isModify) {
+        this.isModify = isModify;
+    }
+
+    public Handler getLoginWXHandler() {
+        return loginWXHandler;
+    }
+
+    public void setLoginWXHandler(Handler loginWXHandler) {
+        this.loginWXHandler = loginWXHandler;
     }
 }

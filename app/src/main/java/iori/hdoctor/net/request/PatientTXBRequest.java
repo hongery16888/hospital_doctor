@@ -4,10 +4,12 @@ import java.util.HashMap;
 
 public class PatientTXBRequest extends BaseRequest {
 
+	protected String type;
 	protected String txbid;
 	protected String submit;
 
-	public PatientTXBRequest(String txbid, String submit) {
+	public PatientTXBRequest(String type, String txbid, String submit) {
+		this.type = type;
 		this.txbid = txbid;
 		this.submit = submit;
 	}

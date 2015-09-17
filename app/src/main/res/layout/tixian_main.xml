@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/global_bg">
+
+    <include layout="@layout/title_bar" />
+
+    <LinearLayout style="@style/LayerMainMyItem"
+        android:layout_marginTop="@dimen/global_padding">
+
+        <TextView style="@style/TxtMainMyItem"
+            android:text="可提金额"
+            android:layout_weight="0.4"/>
+
+        <TextView
+            android:id="@+id/total"
+            style="@style/TxtMainMyItem"
+            android:textColor="@color/red"/>
+
+    </LinearLayout>
+
+    <LinearLayout style="@style/LayerMainMyItem"
+        android:layout_marginTop="@dimen/global_padding">
+
+        <TextView style="@style/TxtMainMyItem"
+            android:text="提现金额"
+            android:layout_weight="0.4"/>
+
+        <EditText
+            android:id="@+id/tixian"
+            style="@style/TxtMainMyItem"
+            android:textColor="@color/red"
+            android:background="@color/transparent"
+            android:numeric="integer"/>
+
+    </LinearLayout>
+
+    <LinearLayout style="@style/LayerMainMyItem"
+        android:layout_marginTop="@dimen/global_line_padding">
+
+        <ImageView
+            android:id="@+id/bank_ico"
+            android:layout_width="25dip"
+            android:layout_height="25dip"
+            android:src="@drawable/icon_tx_switch_ball"
+            android:layout_marginRight="@dimen/global_padding"/>
+
+        <TextView
+            android:id="@+id/bank_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/global_title_color"
+            android:text="@string/doctor_income_bank_card_zs"
+            android:textSize="@dimen/global_title_size"
+            android:padding="@dimen/global_padding"/>
+
+        <TextView
+            android:id="@+id/bank_no"
+            style="@style/TxtMainMyItem"
+            android:text="**** **** ***** 4444"
+            android:gravity="center"/>
+
+        <ImageView style="@style/ImageMainMyItemNext" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/confirm"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="提交申请"
+        android:textColor="@color/white"
+        android:textSize="@dimen/global_label"
+        android:padding="@dimen/global_padding"
+        android:background="@drawable/fbpl_red_button_selector"
+        android:layout_marginTop="40dip"
+        android:layout_marginLeft="@dimen/global_btn_padding"
+        android:layout_marginRight="@dimen/global_btn_padding"
+        android:layout_marginBottom="@dimen/global_padding"
+        android:gravity="center" />
+
+
+</LinearLayout>

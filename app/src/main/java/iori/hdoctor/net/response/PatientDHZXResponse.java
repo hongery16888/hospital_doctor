@@ -32,4 +32,5 @@ public class PatientDHZXResponse {
     public void setPrice(String price) {
         this.price = price;
     }
+
 }

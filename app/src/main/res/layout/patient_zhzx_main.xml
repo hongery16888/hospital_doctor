@@ -58,49 +58,27 @@
 
     <View style="@style/divider_line_horizontal" />
 
-    <LinearLayout style="@style/LayerMainMyItem">
+    <LinearLayout
+        style="@style/LayerMainMyItem"
+        android:onClick="tencent">
 
-        <TextView style="@style/TxtMainMyItem"
-            android:layout_weight="0.4"
-            android:text="@string/doctor_zhzx_phone"/>
-
-        <EditText
-            android:background="@color/transparent"
-            android:id="@+id/phone"
+        <TextView
+            android:id="@+id/tencent"
             style="@style/TxtMainMyItem"
-            android:textColor="@color/grey_deep"/>
-
-    </LinearLayout>
-
-    <View style="@style/divider_line_horizontal" />
-
-    <LinearLayout style="@style/LayerMainMyItem">
-
-        <TextView style="@style/TxtMainMyItem"
-            android:layout_weight="0.4"
             android:text="@string/doctor_zhzx_qq"/>
 
-        <EditText
-            android:background="@color/transparent"
-            android:id="@+id/qq"
-            style="@style/TxtMainMyItem"
-            android:textColor="@color/grey_deep"/>
-
     </LinearLayout>
 
     <View style="@style/divider_line_horizontal" />
 
-    <LinearLayout style="@style/LayerMainMyItem">
+    <LinearLayout style="@style/LayerMainMyItem"
+        android:onClick="wchat">
 
-        <TextView style="@style/TxtMainMyItem"
-            android:layout_weight="0.4"
-            android:text="@string/doctor_zhzx_wchat"/>
-
-        <EditText
-            android:background="@color/transparent"
+        <TextView
             android:id="@+id/wchat"
             style="@style/TxtMainMyItem"
-            android:textColor="@color/grey_deep"/>
+            android:layout_weight="0.4"
+            android:text="@string/doctor_zhzx_wchat" />
 
     </LinearLayout>
 

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/hd_pic_bg">
+
+    <SurfaceView
+        android:id="@+id/preview_view"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_centerInParent="true"
+        android:layout_gravity="center" />
+
+    <iori.hdoctor.view.Zxing.view.ViewfinderView
+        android:id="@+id/viewfinder_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/transparent" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/transparent"
+        android:orientation="vertical">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"/>
+
+        <TextView
+            android:layout_weight="3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/code_prompt"
+            android:textSize="@dimen/global_sub_title_size"
+            android:textColor="@color/white"
+            android:gravity="center_horizontal"
+            android:layout_below="@id/viewfinder_view"/>
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/left_icon"
+        android:layout_width="@dimen/title_lefticon_width"
+        android:layout_height="wrap_content"
+        android:src="@drawable/scan_back"
+        android:scaleType="center"
+        android:background="@drawable/bg_titlebar_action"
+        android:paddingTop="@dimen/global_padding"
+        android:paddingBottom="@dimen/global_padding"
+        android:onClick="callback"/>
+</FrameLayout>

@@ -13,6 +13,7 @@ import android.widget.Toast;
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
 import com.nostra13.universalimageloader.core.ImageLoader;
 
+import java.security.KeyStore;
 import java.util.ArrayList;
 
 import butterknife.ButterKnife;
@@ -33,11 +34,19 @@ public class PatientJKTXAdapter extends BaseAdapter implements NetworkConnectLis
 	private ImageLoader imageLoader = ImageLoader.getInstance();
 	private int pid;
 	private WiperSwitch switcher;
+	private boolean isDel;
+	private int positionId;
 
 	public PatientJKTXAdapter(Context context, ArrayList<HealthyRemind> healthyReminds, DisplayImageOptions options) {
 		this.context = context;
 		data.addAll(healthyReminds);
-		this.options = options;
+		this.options = new DisplayImageOptions.Builder()
+				.showImageOnLoading(R.drawable.img_tx)
+				.showImageForEmptyUri(R.drawable.img_tx)
+				.showImageOnFail(R.drawable.img_tx)
+				.cacheOnDisk(true)
+				.cacheInMemory(true)
+				.build();
 	}
 
 	@Override
@@ -88,12 +97,26 @@ public class PatientJKTXAdapter extends BaseAdapter implements NetworkConnectLis
 		holder.wiperSwitch.setOnChangedListener(new WiperSwitch.OnChangedListener() {
 			@Override
 			public void OnChanged(WiperSwitch wiperSwitch, boolean checkState) {
+				isDel = false;
 				if (!TextUtils.isEmpty(data.get(Integer.parseInt(wiperSwitch.getTag().toString())).getIsremind()))
-					NetworkAPI.getNetworkAPI().txa(data.get(Integer.parseInt(wiperSwitch.getTag().toString())).getTxaid(), ((PatientJKTXActivity)context).showProgressDialog(), PatientJKTXAdapter.this);
+					NetworkAPI.getNetworkAPI().txa("change", data.get(Integer.parseInt(wiperSwitch.getTag().toString())).getTxaid(), ((PatientJKTXActivity)context).showProgressDialog(), PatientJKTXAdapter.this);
 				if (!TextUtils.isEmpty(data.get(Integer.parseInt(wiperSwitch.getTag().toString())).getIstixing()))
-					NetworkAPI.getNetworkAPI().txb(data.get(Integer.parseInt(wiperSwitch.getTag().toString())).getTxbid(),((PatientJKTXActivity) context).showProgressDialog(), PatientJKTXAdapter.this);
+					NetworkAPI.getNetworkAPI().txb("change", data.get(Integer.parseInt(wiperSwitch.getTag().toString())).getTxbid(),((PatientJKTXActivity) context).showProgressDialog(), PatientJKTXAdapter.this);
 				pid = Integer.parseInt(wiperSwitch.getTag().toString());
 				switcher = wiperSwitch;
+			}
+		});
+
+		holder.del.setTag(position);
+		holder.del.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				isDel = true;
+				positionId = Integer.parseInt(v.getTag().toString());
+				if (!TextUtils.isEmpty(data.get(Integer.parseInt(v.getTag().toString())).getIsremind()))
+					NetworkAPI.getNetworkAPI().txa("del", data.get(Integer.parseInt(v.getTag().toString())).getTxaid(), ((PatientJKTXActivity)context).showProgressDialog(), PatientJKTXAdapter.this);
+				if (!TextUtils.isEmpty(data.get(Integer.parseInt(v.getTag().toString())).getIstixing()))
+					NetworkAPI.getNetworkAPI().txb("del", data.get(Integer.parseInt(v.getTag().toString())).getTxbid(),((PatientJKTXActivity) context).showProgressDialog(), PatientJKTXAdapter.this);
 			}
 		});
 
@@ -112,6 +135,8 @@ public class PatientJKTXAdapter extends BaseAdapter implements NetworkConnectLis
 		TextView remark;
 		@InjectView(R.id.switcher)
 		WiperSwitch wiperSwitch;
+		@InjectView(R.id.del)
+		TextView del;
 
 		public ViewHolder(View view) {
 			ButterKnife.inject(this, view);
@@ -119,15 +144,25 @@ public class PatientJKTXAdapter extends BaseAdapter implements NetworkConnectLis
 	}
 
 	@Override
-	public void onRequestSucceed(Object data, String requestAction) {
+	public void onRequestSucceed(Object datas, String requestAction) {
 		if (HttpRequest.PAT_HEALTHY_REMIND.equals(requestAction)){
+			if (isDel){
+				data.remove(positionId);
+				notifyDataSetChanged();
+			}
 		}
 		((PatientJKTXActivity)context).dismissProgressDialog();
 	}
 
 	@Override
 	public void onRequestFailure(int error, String errorMsg, String requestAction) {
-		switcher.setChecked(!switcher.isChecked());
+		if (HttpRequest.PAT_HEALTHY_REMIND.equals(requestAction)){
+			if (isDel){
+				data.clear();
+				notifyDataSetChanged();
+			}else
+				switcher.setChecked(!switcher.isChecked());
+		}
 		Toast.makeText(context, errorMsg, Toast.LENGTH_LONG).show();
 		((PatientJKTXActivity)context).dismissProgressDialog();
 	}

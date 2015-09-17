@@ -2,20 +2,16 @@ package iori.hdoctor.net.request;
 
 import java.util.HashMap;
 
+import iori.hdoctor.activity.base.HDoctorCode;
+
 public class PatientZHZXModifyRequest extends BaseRequest {
 
 	protected String password;
-	protected String bindingphone;
-	protected String bindingqq;
-	protected String bindingwei;
 	protected String submit;
 
-	public PatientZHZXModifyRequest(String password, String bindingphone, String bindingqq, String bindingwei, String submit) {
+	public PatientZHZXModifyRequest(String password) {
 		this.password = password;
-		this.bindingphone = bindingphone;
-		this.bindingqq = bindingqq;
-		this.bindingwei = bindingwei;
-		this.submit = submit;
+		this.submit = HDoctorCode.YES;
 	}
 	
 	@Override

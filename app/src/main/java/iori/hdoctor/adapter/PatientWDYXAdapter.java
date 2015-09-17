@@ -32,7 +32,7 @@ public class PatientWDYXAdapter extends BaseAdapter implements NetworkConnectLis
 	private DisplayImageOptions options;
 	private int pid;
 
-	public PatientWDYXAdapter(Context context, ArrayList<Medicine> medicines, DisplayImageOptions options) {
+	public PatientWDYXAdapter(Context context, ArrayList<Medicine> medicines) {
 		this.context = context;
 		this.data.addAll(medicines);
 		this.options = new DisplayImageOptions.Builder()

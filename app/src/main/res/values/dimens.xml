@@ -19,6 +19,7 @@
     <dimen name="global_line_padding">20dip</dimen>
     <dimen name="global_btn_padding">30dip</dimen>
     <dimen name="global_prompt">14dip</dimen>
+    <dimen name="sub_title_size">15sp</dimen>
 
     <!-- title bar -->
     <dimen name="title_lefticon_width">42dp</dimen>
